@@ -4,7 +4,7 @@ import sys
 import paramiko
 
 
-home_dir = '/home/yan'
+home_dir = '/root/'
 id_rsa_pub = '%s/.ssh/id_rsa.pub' %home_dir
 
 if not  id_rsa_pub:
@@ -51,3 +51,22 @@ def run():
 
 if __name__ == '__main__':
     run()
+"""
+ps:默认id_rsa.pub创建在~/.ssh/id_rsa.pub
+home_dir = ""
+修改为本地家目录
+把host.list和copy_key.py放在同一级目录下。执行
+python copy_key.py
+192.168.18.46:22:root:123456
+192.168.18.13:22:root:sysion13
+如下：
+
+yan@yan:~$ python Batch_key.py 
+create Host:192.168.18.46 .ssh dir......
+upload id_rsa.pub to Host:192.168.18.46......
+host:root@192.168.18.46 auth success!
+
+create Host:192.168.18.13 .ssh dir......
+upload id_rsa.pub to Host:192.168.18.13......
+host:root@192.168.18.13 auth success!
+"""
