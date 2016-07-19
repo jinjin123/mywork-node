@@ -1,0 +1,23 @@
+main_collective = mcollective
+collectives = mcollective
+libdir = /usr/libexec/mcollective
+logfile = /var/log/mcollective.log
+loglevel = info
+daemonize = 1
+connector = activemq
+direct_addressing = 1
+plugin.activemq.pool.size = 1
+plugin.activemq.pool.1.host = <%= @activemq_server %>
+plugin.activemq.pool.1.port = 61613
+plugin.activemq.pool.1.user = mcollective
+plugin.activemq.pool.1.password = <%= @mcollective_password %>
+securityprovider = ssl
+plugin.ssl_client_cert_dir = /etc/mcollective/clients
+plugin.ssl_server_private = /etc/mcollective/server_private.pem
+plugin.ssl_server_public = /etc/mcollective/server_public.pem
+#plugin.puppet.resource_allow_managed_resources = true
+#plugin.puppet.resource_type_whitelist = exec,file
+factsource = yaml
+plugin.yaml = /etc/mcollective/facts.yaml
+registerinterval = 600
+
