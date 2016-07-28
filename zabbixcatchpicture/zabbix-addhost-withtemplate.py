@@ -121,7 +121,7 @@ def add_hostdata():
             ],
             "groups": [
                 {
-                    "groupid": "30" #group-live-uxdata-windows
+                    "groupid": "30" #group-live-uxdata-windows  groupid
                 }
             ],
             "templates": [
@@ -168,3 +168,4 @@ for template in Http_access(templatedata):
 10077 Template OS HP-UX
 10078 Template OS Solaris
 
+添加一个Host Name=Mail CAS_1.1，IP=10.16.3.4的主机，并加入组groupID=30，连接模板templateID=10132.
