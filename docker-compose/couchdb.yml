@@ -1,0 +1,10 @@
+version: "2"                                                                                                                                                                                
+services:                                                                                                                                                                                   
+  couchdb:                                                                                                                                                                                  
+    image: lenkan/couchdb                                                                                                                                                                   
+    container_name: couchdb                                                                                                                                                                 
+    volumes:                                                                                                                                                                                
+      - /root/docker/couchdb/data:/couchdb/data                                                                                                                                             
+      - /root/docker/couchdb/etc/local.ini:/couchdb/etc/local.ini                                                                                                                           
+    ports:                                                                                                                                                                                  
+      - "5984:5984" 

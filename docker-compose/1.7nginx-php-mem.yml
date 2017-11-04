@@ -1,0 +1,51 @@
+  nginxphp:
+    image: dockerpriv.sparkpos.cn/admin/drupalnginxphp7shanghai:7.1.4_v4
+    container_name: nginx-php
+    environment:
+      NEWRELICKEY: 'b01487901593e2c9d5691180152c46dd59682599'
+      NEWRELICAPPNAME: 'azuretv'
+#    cpuset: "3"
+#    mem_limit: 10032385536
+    mem_limit: 20064771072
+    volumes:
+      - /data/files:/data/files
+      - /root/scripts/nginx.conf:/usr/local/nginx/conf/nginx.conf
+      - /root/scripts/mime.types:/usr/local/nginx/conf/mime.types
+      - /root/scripts/default:/usr/local/nginx/conf/vhost/default
+      - /root/scripts/php-fpm.conf:/usr/local/php/etc/php-fpm.conf
+      - /root/scripts/php.ini:/usr/local/php/etc/php.ini
+      - /root/scripts/www.conf:/usr/local/php/etc/php-fpm.d/www.conf
+      - /var/www/html_20170807:/var/www/html
+    #privileged: true
+    links:
+      - memcached
+    ports:
+      - "80:80"
+    #network_mode: host
+
+  memcached:
+    image: memcached:latest
+    mem_limit: 2032385536
+    container_name: memcached
+    ports:
+      - "11211:11211"
+    #network_mode: host
+    command: memcached -m 1024M
+  testphp:
+    image: dockerpriv.sparkpos.cn/admin/drupalnginxphp7shanghai:7.1.4_v4
+    container_name: testphp
+#    cpuset: "1"
+    mem_limit: 1073741824
+    volumes:
+      - /data/files:/data/files
+      - /root/scripts/nginx.conf:/usr/local/nginx/conf/nginx.conf
+      - /root/scripts/mime.types:/usr/local/nginx/conf/mime.types
+      - /root/scripts/default:/usr/local/nginx/conf/vhost/default
+      - /root/scripts/php-fpm.conf:/usr/local/php/etc/php-fpm.conf
+      - /root/scripts/php.ini:/usr/local/php/etc/php.ini
+      - /root/scripts/www.conf:/usr/local/php/etc/php-fpm.d/www.conf
+      - /var/www/html_20170807:/var/www/html
+    links:
+      - memcached
+    ports:
+      - "6666:80"

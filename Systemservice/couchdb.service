@@ -1,0 +1,14 @@
+[Unit]                                                                                                                                                                                      
+Description=couchdb                                                                                                                                                                         
+After=docker.service                                                                                                                                                                        
+Requires=docker.service                                                                                                                                                                     
+                                                                                                                                                                                            
+[Service]                                                                                                                                                                                   
+Restart=always                                                                                                                                                                              
+TimeoutStartSec=0                                                                                                                                                                           
+ExecStop=/usr/bin/docker-compose --file /root/docker/couchdb.yml down                                                                                                                       
+ExecStartPre=/usr/bin/docker-compose --file /root/docker/couchdb.yml down                                                                                                                   
+ExecStart=/usr/bin/docker-compose --file /root/docker/couchdb.yml up                                                                                                                        
+                                                                                                                                                                                            
+[Install]                                                                                                                                                                                   
+WantedBy=multi-user.target.wants 

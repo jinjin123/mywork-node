@@ -1,0 +1,163 @@
+version: '2'                                                                                                                                                                                  
+services:                                                                                                                                                                                     
+  mysql:                                                                                                                                                                                      
+    image: dockerpriv.kybot.io:5002/keithyau/mysql7-server:latest                                                                                                                             
+    container_name: mysql                                                                                                                                                                     
+    environment:                                                                                                                                                                              
+      MYSQL_ROOT_PASSWORD: 111111                                                                                                                                                             
+    volumes:                                                                                                                                                                                  
+      - /Users/xl28/work/drupal/mysql:/var/lib/mysql                                                                                                                                          
+    mem_limit: 14032385536                                                                                                                                                                    
+    privileged: true                                                                                                                                                                          
+    restart: always                                                                                                                                                                           
+    ports:                                                                                                                                                                                    
+      - "7777:3306"                                                                                                                                                                           
+    #network_mode: host                                                                                                                                                                       
+                                                                                                                                                                                              
+  phy-dev-neuro-nyu-edu:                                                                                                                                                                      
+    image: dockerpriv.kybot.io:5002/keithyau/drupalnginxphp7shanghai:7.1.4_v4                                                                                                                 
+    container_name: phy-dev-neuro-nyu-edu                                                                                                                                                     
+    environment:                                                                                                                                                                              
+      NEWRELICKEY: '5cf3b0bb8d5f66a0f1a3ac095cb96661d5bf6f23'                                                                                                                                 
+      NEWRELICAPPNAME: 'phy-dev-neuro-nyu-edu'                                                                                                                                                
+    mem_limit: 1003238553                                                                                                                                                                     
+    volumes:                                                                                                                                                                                  
+      - /Users/xl28/work/drupal/default:/usr/local/nginx/conf/nginx.conf                                                                                                                      
+      - /Users/xl28/work/drupal/neuro/nyu-neuro:/var/www/html                                                                                                                                 
+    #privileged: true                                                                                                                                                                         
+    links:                                                                                                                                                                                    
+      - mysql                                                                                                                                                                                 
+    ports:                                                                                                                                                                                    
+      - "7778:80"                                                                                                                                                                             
+    #network_mode: host                                                                                                                                                                       
+                                                                                                                                                                                              
+  phy-dev-major-nyu-edu:                                                                                                                                                                      
+    image: dockerpriv.kybot.io:5002/keithyau/drupalnginxphp7shanghai:7.1.4_v4                                                                                                                 
+    container_name: phy-dev-major-nyu-edu                                                                                                                                                     
+    environment:                                                                                                                                                                              
+      NEWRELICKEY: '5cf3b0bb8d5f66a0f1a3ac095cb96661d5bf6f23'                                                                                                                                 
+      NEWRELICAPPNAME: 'phy-dev-major-nyu-edu'                                                                                                                                                
+    mem_limit: 1003238553                                                                                                                                                                     
+    volumes:                                                                                                                                                                                  
+      - /Users/xl28/work/drupal/default:/usr/local/nginx/conf/nginx.conf                                                                                                                      
+      - /Users/xl28/work/drupal/major/nyu-major:/var/www/html                                                                                                                                 
+    #privileged: true                                                                                                                                                                         
+    links:                                                                                                                                                                                    
+      - mysql                                                                                                                                                                                 
+    ports:                                                                                                                                                                                    
+      - "7779:80"                                                                                                                                                                             
+    #network_mode: host                                                                                                                                                                       
+                                                                                                                                                                                              
+  phy-dev-shwp-nyu-edu:                                                                                                                                                                       
+    image: dockerpriv.kybot.io:5002/keithyau/drupalnginxphp7shanghai:7.1.4_v4                                                                                                                 
+    container_name: phy-dev-shwp-nyu-edu                                                                                                                                                      
+    environment:                                                                                                                                                                              
+      NEWRELICKEY: '5cf3b0bb8d5f66a0f1a3ac095cb96661d5bf6f23'                                                                                                                                 
+      NEWRELICAPPNAME: 'phy-dev-shwp-nyu-edu'                                                                                                                                                 
+    mem_limit: 1003238553                                                                                                                                                                     
+    volumes:                                                                                                                                                                                  
+      - /Users/xl28/work/drupal/default:/usr/local/nginx/conf/nginx.conf                                                                                                                      
+      - /Users/xl28/work/drupal/shwp/nyu-shwp:/var/www/html                                                                                                                                   
+    #privileged: true                                                                                                                                                                         
+    links:                                                                                                                                                                                    
+      - mysql                                                                                                                                                                                 
+    ports:                                                                                                                                                                                    
+      - "7780:80"                                                                                                                                                                             
+    #network_mode: host                                                                                                                                                                       
+                                                                                                                                                                                              
+  phy-dev-textbooks-nyu-edu:                                                                                                                                                                  
+    image: dockerpriv.kybot.io:5002/keithyau/drupalnginxphp7shanghai:7.1.4_v4                                                                                                                 
+    container_name: phy-dev-textbooks-nyu-edu                                                                                                                                                 
+    environment:                                                                                                                                                                              
+      NEWRELICKEY: '5cf3b0bb8d5f66a0f1a3ac095cb96661d5bf6f23'                                                                                                                                 
+      NEWRELICAPPNAME: 'phy-dev-textbooks-nyu-edu'                                                                                                                                            
+    mem_limit: 1003238553                                                                                                                                                                     
+    volumes:                                                                                                                                                                                  
+      - /Users/xl28/work/drupal/default:/usr/local/nginx/conf/nginx.conf                                                                                                                      
+      - /Users/xl28/work/drupal/textbooks/nyu-textbooks:/var/www/html                                                                                                                         
+    #privileged: true                                                                                                                                                                         
+    links:                                                                                                                                                                                    
+      - mysql                                                                                                                                                                                 
+    ports:                                                                                                                                                                                    
+      - "7781:80"                                                                                                                                                                             
+    #network_mode: host                                                                                                                                                                       
+  phy-dev-researchsymposium-nyu-edu:                                                                                                                                                          
+    image: dockerpriv.kybot.io:5002/keithyau/drupalnginxphp7shanghai:7.1.4_v4                                                                                                                 
+    container_name: phy-dev-researchsymposium-nyu-edu                                                                                                                                         
+    environment:                                                                                                                                                                              
+      NEWRELICKEY: '5cf3b0bb8d5f66a0f1a3ac095cb96661d5bf6f23'                                                                                                                                 
+      NEWRELICAPPNAME: 'phy-dev-researchsymposium-nyu-edu'                                                                                                                                    
+    mem_limit: 1003238553                                                                                                                                                                     
+    volumes:                                                                                                                                                                                  
+      - /Users/xl28/work/drupal/default:/usr/local/nginx/conf/nginx.conf                                                                                                                      
+      - /Users/xl28/work/drupal/researchsymposium/nyu-researchsymposium:/var/www/html                                                                                                         
+    #privileged: true                                                                                                                                                                         
+    links:                                                                                                                                                                                    
+      - mysql                                                                                                                                                                                 
+    ports:                                                                                                                                                                                    
+      - "7782:80"                                                                                                                                                                             
+    #network_mode: host                                                                                                                                                                       
+  phy-dev-foundation-nyu-edu:                                                                                                                                                                 
+    image: dockerpriv.kybot.io:5002/keithyau/drupalnginxphp7shanghai:7.1.4_v4                                                                                                                 
+    container_name: phy-dev-foundation-nyu-edu                                                                                                                                                
+    environment:                                                                                                                                                                              
+      NEWRELICKEY: '5cf3b0bb8d5f66a0f1a3ac095cb96661d5bf6f23'                                                                                                                                 
+      NEWRELICAPPNAME: 'phy-dev-foundation-nyu-edu'                                                                                                                                           
+    mem_limit: 1003238553                                                                                                                                                                     
+    volumes:                                                                                                                                                                                  
+      - /Users/xl28/work/drupal/default:/usr/local/nginx/conf/nginx.conf                                                                                                                      
+      - /Users/xl28/work/drupal/foundation/nyu-foundation:/var/www/html                                                                                                                       
+    #privileged: true                                                                                                                                                                         
+    links:                                                                                                                                                                                    
+      - mysql                                                                                                                                                                                 
+    ports:                                                                                                                                                                                    
+      - "7783:80"                                                                                                                                                                             
+    #network_mode: host                                                                                                                                                                       
+  phy-dev-research-nyu-edu:                                                                                                                                                                   
+    image: dockerpriv.kybot.io:5002/keithyau/drupalnginxphp7shanghai:7.1.4_v4                                                                                                                 
+    container_name: phy-dev-research-nyu-edu                                                                                                                                                  
+    environment:                                                                                                                                                                              
+      NEWRELICKEY: '5cf3b0bb8d5f66a0f1a3ac095cb96661d5bf6f23'                                                                                                                                 
+      NEWRELICAPPNAME: 'phy-dev-research-nyu-edu'                                                                                                                                             
+    mem_limit: 10032385536                                                                                                                                                                    
+    volumes:                                                                                                                                                                                  
+      - /Users/xl28/work/drupal/default:/usr/local/nginx/conf/nginx.conf                                                                                                                      
+      - /Users/xl28/work/drupal/research/nyu-research:/var/www/html                                                                                                                           
+   #privileged: true                                                                                                                                                                          
+    links:                                                                                                                                                                                    
+      - mysql                                                                                                                                                                                 
+    ports:                                                                                                                                                                                    
+      - "7784:80"                                                                                                                                                                             
+   #network_mode: host                                                                                                                                                                        
+  phy-dev-portals-nyu-edu:                                                                                                                                                                    
+    image: dockerpriv.kybot.io:5002/keithyau/drupalnginxphp7shanghai:7.1.4_v4                                                                                                                 
+    container_name: phy-dev-portals-nyu-edu                                                                                                                                                   
+    environment:                                                                                                                                                                              
+      NEWRELICKEY: '5cf3b0bb8d5f66a0f1a3ac095cb96661d5bf6f23'                                                                                                                                 
+      NEWRELICAPPNAME: 'phy-dev-portals-nyu-edu'                                                                                                                                              
+    mem_limit: 10032385536                                                                                                                                                                    
+    volumes:                                                                                                                                                                                  
+      - /Users/xl28/work/drupal/default:/usr/local/nginx/conf/nginx.conf                                                                                                                      
+      - /Users/xl28/work/drupal/portals/nyu-portals:/var/www/html                                                                                                                             
+   #privileged: true                                                                                                                                                                          
+    links:                                                                                                                                                                                    
+      - mysql                                                                                                                                                                                 
+    ports:                                                                                                                                                                                    
+      - "7785:80"                                                                                                                                                                             
+   #network_mode: host                                                                                                                                                                        
+  phy-prod-shanghai-nyu-edu:                                                                                                                                                                  
+    image: dockerpriv.kybot.io:5002/keithyau/drupalnginxphp7shanghai:7.1.4_v4                                                                                                                 
+    container_name: phy-prod-shanghai-nyu-edu                                                                                                                                                 
+    environment:                                                                                                                                                                              
+      NEWRELICKEY: '5cf3b0bb8d5f66a0f1a3ac095cb96661d5bf6f23'                                                                                                                                 
+      NEWRELICAPPNAME: 'phy-shanghai-portals-nyu-edu'                                                                                                                                         
+    mem_limit: 10032385536                                                                                                                                                                    
+    volumes:                                                                                                                                                                                  
+      - /Users/xl28/work/drupal/default:/usr/local/nginx/conf/nginx.conf                                                                                                                      
+      - /Users/xl28/work/drupal/pdshanghai:/var/www/html                                                                                                                                      
+      - /Users/xl28/work/key/server.cer:/usr/local/nginx/conf/server.cer                                                                                                                      
+      - /Users/xl28/work/key/server.key:/usr/local/nginx/conf/server.key                                                                                                                      
+    links:                                                                                                                                                                                    
+      - mysql                                                                                                                                                                                 
+    ports:                                                                                                                                                                                    
+      - "7786:80" 

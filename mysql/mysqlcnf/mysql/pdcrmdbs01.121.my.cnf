@@ -1,0 +1,103 @@
+[mysqld]
+#####Basic settings######
+character-set-server=utf8
+default-storage-engine=innodb
+basedir=/app/mysql
+datadir=/app/mysql/data
+#socket=/app/mysql/lib/mysql.sock
+socket=/tmp/mysql.sock
+user=mysql
+wait_timeout		= 300
+skip_name_resolve       = 1
+explicit_defaults_for_timestamp=true
+symbolic-links          =0
+max_allowed_packet      = 100M
+thread_stack            = 192K
+thread_cache_size       = 8
+max_connections         = 1000
+max_connect_errors      = 1500
+transaction_isolation   = READ-COMMITTED
+explicit_defaults_for_timestamp = 1
+join_buffer_size        = 134217728
+tmp_table_size          = 67108864
+tmpdir                  = /tmp
+####OC NEED this#####
+event_scheduler = 1
+##### Inno settings#####
+innodb_log_buffer_size  = 32M
+innodb_log_file_size    = 512M
+#innodb_page_size = 8192
+innodb_buffer_pool_size = 24G
+innodb_buffer_pool_instances = 8
+innodb_buffer_pool_load_at_startup = 1
+innodb_buffer_pool_dump_at_shutdown = 1
+innodb_lru_scan_depth = 2000
+innodb_lock_wait_timeout = 5
+innodb_io_capacity = 4000
+innodb_io_capacity_max = 8000
+innodb_flush_method = O_DIRECT
+innodb_file_format = Barracuda
+innodb_file_format_max = Barracuda
+#innodb_log_group_home_dir = /redolog/
+#innodb_undo_directory = /undolog/
+#innodb_undo_logs = 128
+#innodb_undo_tablespaces = 3
+innodb_flush_neighbors = 1
+innodb_log_file_size = 4G
+innodb_log_buffer_size = 16777216
+innodb_purge_threads = 4
+innodb_large_prefix = 1
+innodb_thread_concurrency = 64
+innodb_print_all_deadlocks = 1
+innodb_strict_mode = 1
+innodb_sort_buffer_size = 67108864
+#####Logs Settings#####
+query_cache_limit       = 32M
+query_cache_size        = 32M
+expire_logs_days        = 3
+max_binlog_size         = 100M
+
+#for replication
+server-id=1
+log-bin=mysql-bin
+
+binlog-do-db=crm
+#binlog-do-db=erp
+#binlog-do-db=test
+binlog-ignore-db=mysql
+binlog-ignore-db=information_schema
+binlog-ignore-db=performance_schema
+binlog-ignore-db=sys
+
+replicate-do-db=crm
+#replicate-do-db=erp
+#replicate-do-db=test
+replicate-ignore-db=mysql
+replicate-ignore-db=information_schema
+replicate-ignore-db=performance_schema
+replicate-ignore-db=sys
+log-slave-updates
+sync_binlog=1
+innodb_flush_log_at_trx_commit=2
+auto_increment_increment=2
+auto_increment_offset=1
+slave-skip-errors=1032,1062
+
+slow_query_log          = 1
+slow_query_log_file     = /var/log/mysql/log-slow-queries.log
+[client]
+#socket=/app/mysql/lib/mysql.sock
+socket=/tmp/mysql.sock
+
+[mysqld_safe]
+log-error=/var/log/mysqld.log
+pid-file=/var/run/mysqld/mysqld.pid
+[mysqldump]
+quick
+quote-names
+max_allowed_packet      = 100M
+
+[mysqladmin]
+user=zabbix
+password=1qaz@WSX
+host=127.0.0.1

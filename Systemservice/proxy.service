@@ -1,0 +1,19 @@
+[Unit]                                                                                                                                                                                      
+Description=RemoteCTL                                                                                                                                                                       
+After=systemd-logind.service                                                                                                                                                                
+#docker.service                                                                                                                                                                             
+Requires=systemd-logind.service                                                                                                                                                             
+#docker.service                                                                                                                                                                             
+                                                                                                                                                                                            
+[Service]                                                                                                                                                                                   
+#TimeoutStartSec=0                                                                                                                                                                          
+Restart=always                                                                                                                                                                              
+RestartSec=10s                                                                                                                                                                              
+#User=core                                                                                                                                                                                  
+#Type=simple                                                                                                                                                                                
+Type=forking                                                                                                                                                                                
+ExecStop=/root/scripts/killssh.sh                                                                                                                                                           
+ExecStart=/root/scripts/proxyssh.sh &                                                                                                                                                       
+                                                                                                                                                                                            
+[Install]                                                                                                                                                                                   
+WantedBy=multi-user.target

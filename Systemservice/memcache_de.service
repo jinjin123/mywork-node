@@ -1,0 +1,12 @@
+[Unit]                                                                                                                                                                                      
+Description=Memcached                                                                                                                                                                       
+After=network.target                                                                                                                                                                        
+                                                                                                                                                                                            
+[Service]                                                                                                                                                                                   
+Type=simple                                                                                                                                                                                 
+EnvironmentFile=-/etc/sysconfig/memcachedde                                                                                                                                                 
+ExecStart=/usr/bin/memcached -u $USER -p $PORT -m $CACHESIZE -c $MAXCONN $OPTIONS                                                                                                           
+                                                                                                                                                                                            
+[Install]                                                                                                                                                                                   
+WantedBy=multi-user.target                                                                                                                                                                  
+                           

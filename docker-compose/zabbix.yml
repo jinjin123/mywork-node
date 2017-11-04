@@ -1,0 +1,22 @@
+version: '2'                                                                                                                                                                                
+services:                                                                                                                                                                                   
+    server:                                                                                                                                                                                 
+      image: docker.io/monitoringartist/zabbix-xxl:latest                                                                                                                                   
+      container_name: server                                                                                                                                                                
+      restart: always                                                                                                                                                                       
+      ports:                                                                                                                                                                                
+        - "81:80"                                                                                                                                                                           
+        - "10051:10051"                                                                                                                                                                     
+      volumes:                                                                                                                                                                              
+        - /usr/lib64/libtokyocabinet.so.9:/usr/lib64/libtokyocabinet.so.9                                                                                                                   
+        - /etc/localtime:/etc/localtime:ro                                                                                                                                                  
+        - /usr/bin/mutt:/usr/bin/mutt                                                                                                                                                       
+        - /etc/Muttrc:/etc/Muttrc                                                                                                                                                           
+        - /usr/local/msmtp:/usr/local/msmtp                                                                                                                                                 
+        - /var/log/mmlog:/var/log/mmlog                                                                                                                                                     
+      environment:                                                                                                                                                                          
+        - ZS_DBHost=172.16.102.128                                                                                                                                                          
+        - ZS_DBUser=zabbix                                                                                                                                                                  
+        - ZS_DBPassword=zabbix                                                                                                                                                              
+        - XXL_zapix=true                                                                                                                                                                    
+        - XXL_grapher=true   
