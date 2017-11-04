@@ -1,0 +1,8 @@
+---
+- hosts: sparkpad_production_web_cdmp
+  tasks:
+    - name: git pull for DE 
+      command: "git pull chdir=/etc/nginx"
+
+    - name: nginx reload 
+      command: "nginx -s reload"

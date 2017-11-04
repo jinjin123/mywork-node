@@ -1,0 +1,8 @@
+- hosts: [sparkpad_production_web_erp]
+  tasks:
+    - name: drush cc all
+      command: "drush cc all -v chdir=/app/web/erp/sites/default/"
+- hosts: [sparkpad_production_web_erp_1]
+  tasks:
+    - name: drush cc all
+      command: "drush cc all -v chdir=/app/code/erp/sites/default/"

@@ -1,0 +1,8 @@
+---
+- hosts: sparkpad_production_web_fe 
+  tasks:
+    - name: Git pull nginx 
+      command: "git pull chdir=/etc/nginx"
+
+    - name: reload nginx config
+      command: "nginx -s reload"
