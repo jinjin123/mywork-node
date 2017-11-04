@@ -1,0 +1,16 @@
+[Unit]
+Description=Txprinter
+After=docker.service
+Requires=docker.service
+
+[Service]
+ExecStop=/bin/docker stop -t 2 txprinter
+ExecStopPost=/bin/docker rm -f txprinter
+ExecStartPre=-/bin/docker stop -t 2 txprinter
+ExecStartPre=-/bin/docker rm -f txprinter
+#ExecStartPre=/bin/docker pull txprinter
+ExecStart=/bin/docker run --device=/dev/bus/usb/003/014 --name txprinter txprinter
+
+[Install]
+WantedBy=multi-user.target
+
