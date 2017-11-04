@@ -1,0 +1,57 @@
+#cloud-config
+
+hostname: localhost
+
+coreos:
+  units:
+    - name: setup.service
+      command: start
+      content: |
+           [Unit]
+           Description=setup service
+           After=systed-resolved.service
+           Requires=systemd-resolved.service
+           [Service]
+           Type=simple
+           TimeoutStartSec=0
+           ExecStart=/bin/sh -c "echo 'started'>>/tmp/test.log;curl -sL http://192.168.1.4/config/setup.sh | sudo bash -;echo 'end' >> /tmp/test.log"
+           #ExecStart=/bin/sh -c "echo 'started'>>/tmp/test.log;echo '???' >> /tmp/test.log ;echo 'end' >> /tmp/test.log"
+    - name: "update-engine.service"
+      command: stop
+    - name: etcd.service
+      command: start
+    - name: fleet.service
+      command: start
+    - name: docker.service
+      command: start
+
+coreos:
+  units:
+    - name: static.network.bak
+      content: |
+        [Match]
+        Name=enp2s0
+
+        [Network]
+        Address=172.19.130.121/24
+        Gateway=172.19.130.49
+        DNS=172.17.103.2
+
+coreos:
+  units:
+    - name: docker.service
+      drop-ins:
+        - name: 10-docker0.conf
+          content: |
+            [Service]
+            Environment="DOCKER_OPTS=--fixed-cidr=192.168.99.0/24 --bip=192.168.99.1/24"
+      command: start
+
+users:
+  - name: core
+    passwd: "$6$rounds=4096$2kYWF5hQj$hTvqZnShznZY.TMIRmCwuaO4v/KQCpl0WqsMPVrqLuMrPg3XPXya9lOSosNFt4bViwwAruH5c99Gnl1EdzoPZ1"
+    ssh-authorized-keys:
+     - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDH03meBQ/5agSoWJWtppr1133xBjvR4VYS1eyGDyQBohtdPc9UGpTcHNUiQDTQb6no/x7WicxhQbGTWO9t/vwBS8iiPKJs+u4Ket9RCBQGErP6uFRfZxuXbXLazfiRsOIl22OBw4PY1UQcYiAydssVBDrHlISBsj5mOO/AvY9qqGf8EM2DS2tgGJasS0/NGEwjOXZj0Axf7/WsPu1hMcTbt2XQpJ3RbPqw1d8EXwV84fAhPZ8XQLeFJy+dvQhkzorFn+qOMlJaSHGa1gWDFjHSVKXG1UsTvLOAt7Mp8hkkEaByLe6mOnNhu65tIGrRVolTwghT94rOVzF1QotifmnZ core@localhost
+  - groups:
+     - sudo
+     - docker
