@@ -1,0 +1,17 @@
+version: '2'
+services:
+  php7-fpm:
+    container_name: "php7-fpm"
+    image: "zterry95/docker-php7:7.1-oci8"
+    volumes:
+      - /app/web:/app/web
+      - ./etc/php:/usr/local/etc/php
+      - ./etc/php-fpm:/usr/local/etc
+    #depends_on:
+      #- memcached
+    #links:
+      #- memcached:memcached
+    ports:
+      - "9007:9007"
+    restart: "always"
+    network_mode: "host"
