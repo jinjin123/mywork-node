@@ -1,13 +1,14 @@
-FROM centos:7
-RUN yum install -y openssh-server
-RUN yum install -y openssh-*
-RUN yum install -y openssl
-ADD run.sh /run.sh
-RUN chmod 777 /run.sh
-RUN mkdir /data
-ADD ssh_host_rsa_key /etc/ssh/ssh_host_rsa_key
-RUN chmod 600 /etc/ssh/ssh_host_rsa_key
-RUN echo "root:zxc!@#^" |chpasswd
+version: '2'
+services:
+    liukec2-4g:
+       image: marketimage:latest
+       hostname: liukec2-4g
+       container_name: liukec2-4g
+       volumes:
+         - /root/client/liuke:/data
+       mem_limit: 4G
+       cpuset: 0
+       restart: always
+       ports:
+         - "11111:22"
 
-WORKDIR  /
-CMD ["./run.sh"]
