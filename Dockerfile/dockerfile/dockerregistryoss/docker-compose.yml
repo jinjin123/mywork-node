@@ -1,0 +1,23 @@
+version: "2"
+services:
+  registry:
+    restart: always
+    image: "registry:2.4.1"
+    ports:
+      - 5000:5000
+    environment:
+      - REGISTRY_AUTH=htpasswd
+      - REGISTRY_AUTH_HTPASSWD_REALM=Registry Realm
+      - REGISTRY_AUTH_HTPASSWD_PATH=/auth/htpasswd
+      - REGISTRY_STORAGE=oss
+      - REGISTRY_STORAGE_OSS_ACCESSKEYID=LTAIaSOj1vHSeDz9
+      - REGISTRY_STORAGE_OSS_ACCESSKEYSECRET=aaadhTbGBgV8W4VdyaOEygh8wcyTTX
+      - REGISTRY_STORAGE_OSS_REGION=oss-cn-qingdao
+      - REGISTRY_STORAGE_OSS_BUCKET=jindocker
+      ####inaternal  https://docs.docker.com/registry/storage-drivers/oss/#parameters
+      - REGISTRY_STORAGE_OSS_INTERNAL=false
+      - REGISTRY_STORAGE_OSS_SECURE=false
+    volumes:
+      - /root/auth:/auth
+      - /root/auth/config.yml:/etc/docker/registry/config.yml
+    network_mode: host

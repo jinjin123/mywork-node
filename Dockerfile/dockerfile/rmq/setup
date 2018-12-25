@@ -1,0 +1,12 @@
+#!/bin/sh
+#/docker-entrypoint.sh "$@"
+rabbitmqctl list_users | grep yedian
+if [ $? -ne 0 ]
+then
+        rabbitmqctl add_user admin admin
+        rabbitmqctl set_user_tags admin administrator
+        rabbitmqctl add_user yedian yedian123outfox
+        rabbitmqctl set_user_tags yedian administrator
+        rabbitmqctl set_permissions -p / admin ".*" ".*" ".*"
+        rabbitmqctl set_permissions -p / yedian ".*" ".*" ".*"
+fi

@@ -1,0 +1,164 @@
+# Define Nginx MicroCache
+fastcgi_cache_path /dev/shm/microcache levels=1:2 keys_zone=MYAPP:5M max_size=1512M inactive=2h;
+
+map $http_cookie $cache_uid {
+    default nil; # hommage to Lisp :)
+    ~SESS[[:alnum:]]+=(?<session_id>[[:alnum:]]+) $session_id;
+}
+
+map $request_method $no_cache {
+    default 0;
+    POST 1;
+    HEAD 1;
+    GET 1;
+}
+
+server {
+	#listen 9527;
+    server_name _;
+#    server_name 210.5.25.83;
+#    server_name specp-m.zkungfu.com; ## 电子餐牌项目服务器端域名指向解析
+#    server_name specp-c.zkungfu.com; ## 子餐牌项目 CDN 端资源获取域名指向解析
+#    server_name sparkpad-02.chinacloudapp.cn; ## 子餐牌项目 CDN 端资源获取域名指向解析
+    access_log off;
+
+    location /request_uri {
+         add_header Content-Type text/plain;
+         return 200 $host;
+    }
+
+    root /var/www/html;
+    index index.php index.html index.htm;
+
+    location / {
+      try_files $uri $uri/ =404;
+      if (!-e $request_filename) {
+	rewrite ^/(.*)$ /index.php?q=$1 last;
+      }
+    }
+
+  # Only cache /app path
+  location ~ ^/app/resources_play_list {
+    set $no_cache 0;
+    if (!-e $request_filename) {
+        rewrite ^/(.*)$ /index.php?q=$1 last;
+    }
+  }
+
+#  location ~ ^/app/(install_device|device_update) {
+#    set $no_cache 1;
+#    if (!-e $request_filename) {
+#        rewrite ^/(.*)$ /index.php?q=$1 last;
+#    }
+#  }
+
+  location /app {
+     access_log off;
+      set $no_cache 1;
+      if (!-e $request_filename) {
+     	  access_log off;
+          rewrite ^/(.*)$ /index.php?q=$1 last;
+      }
+  }
+
+  if ($http_user_agent ~* (baiduspider|googlebot|soso|bing|sogou|yahoo|sohu-search|yodao|YoudaoBot|robozilla|msnbot|MJ12bot|NHN|Twiceler)) {
+     return 403;
+  }
+
+  location ~ .+/.*\.php$ {
+     return 403;
+  }
+
+  location ~ ^/sites/.*/private/ {
+     access_log off;
+     deny all;
+  }
+
+  # location ~ ^/sites/default/files/ {
+  #   #access_log /var/log/nginx/access.files.log;
+  #   error_log /var/log/nginx/error.files.log;
+  # }
+
+  #error_page 404 /404.html;
+
+  # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+  location ~ \.php$ {
+    access_log off;
+    fastcgi_split_path_info ^(.+\.php)(/.+)$;
+    fastcgi_pass unix:/var/run/php-fpm-www.sock;
+    fastcgi_index  index.php;
+    fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+    include        fastcgi_params;
+    #limit_rate_after 100m;
+    #limit_rate 50m;
+    fastcgi_read_timeout 1200;
+    fastcgi_send_timeout 1200;
+
+        fastcgi_cache MYAPP;
+        fastcgi_cache_valid 200 301 2m;
+        fastcgi_cache_bypass $no_cache;
+        fastcgi_no_cache $no_cache;
+        fastcgi_ignore_headers Cache-Control Expires Set-Cookie;
+        fastcgi_cache_key $uri$arg_did;
+
+        fastcgi_cache_valid 302     1m;
+        fastcgi_cache_valid 404     1s;
+        fastcgi_cache_min_uses 1;
+        fastcgi_cache_use_stale error timeout invalid_header updating http_500;
+
+        add_header Access-Control-Allow-Origin *;
+        if ( $no_cache = 0) {
+          add_header X-Micro-Cache $upstream_cache_status;
+        }
+        fastcgi_cache_lock on;
+  }
+
+  location ~ /\.ht {
+    deny all;
+  }
+
+  location = /robots.txt  { access_log off; log_not_found off; }
+  location = /favicon.ico { access_log off; log_not_found off; }
+  location ~ /\.          { access_log off; log_not_found off; deny all; }
+  location ~ ~$           { access_log off; log_not_found off; deny all; }
+
+	location ~* ^(?:.+\.(?:htaccess|make|config|engine|inc|info|install|module|profile|po|pot|sh|.*sql|test|theme|tpl(?:\.php)?|xtmpl)|code-style\.pl|/Entries.*|/Repository|/Root|/Tag|/Template)$ {
+		return 404;
+	}
+  location ^~ ^/README.txt {
+    deny all;
+  }
+
+  location @rewrite {
+	access_log off;
+    rewrite ^/([^/]*)/(.*)(/?)$ /$1/index.php?q=$2&$args;
+  }
+  #For drupal image styles.
+  location ^~ ^/sites/default/files/styles/ {
+
+    try_files $uri @rewrite;
+  }
+
+
+   location ~* \.(js|css|png|jpg|jpeg|gif|ico)$ {
+     expires max;
+     log_not_found off;
+   }
+
+  location ~* ^.+\.(?:css|js|html|xml|png|jpg|jpeg|gif|ico|swf|htm)$ {
+       #access_log        /var/log/nginx/access.files.log;
+       expires           30d;
+       tcp_nodelay off;
+       open_file_cache max=3000 inactive=120s;
+       open_file_cache_valid 45s;
+       open_file_cache_min_uses 2;
+       open_file_cache_errors off;
+       ## ETag support. This requires an Nginx version >= 1.3.3.
+       etag on;
+       try_files $uri @rewrite;
+}
+
+	# location ^~ /sites/default/files {
+		#allow all;
+	# }
+}

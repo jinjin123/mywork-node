@@ -1,0 +1,40 @@
+ mysql:
+    image: daocloud.io/library/mysql:latest
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: Spark123!
+    volumes:
+      - /root/scripts/my.cnf:/etc/mysql/my.cnf
+      - /mnt/resource/mysql:/var/lib/mysql
+    mem_limit: 14032385536
+    ports:
+      - "3306:3306"
+
+  nginxphp:
+    image: dockerpriv.sparkpos.cn/admin/drupalnginxphp7shanghai:7.1.4_v4
+    container_name: nginx-php
+    environment:
+      NEWRELICKEY: 'b01487901593e2c9d5691180152c46dd59682599'
+      NEWRELICAPPNAME: 'azuretv'
+    mem_limit: 10032385536
+    volumes:
+      - /data/files:/data/files
+      - /root/scripts/nginx.conf:/usr/local/nginx/conf/nginx.conf
+      - /root/scripts/mime.types:/usr/local/nginx/conf/mime.types
+      - /root/scripts/default:/usr/local/nginx/conf/vhost/default
+      - /root/scripts/php-fpm.conf:/usr/local/php/etc/php-fpm.conf
+      - /root/scripts/php.ini:/usr/local/php/etc/php.ini
+      - /root/scripts/www.conf:/usr/local/php/etc/php-fpm.d/www.conf
+      - /var/www/html:/var/www/html
+    links:
+      - memcached
+      - mysql
+    ports:
+      - "80:80"
+
+  memcached:
+    image: memcached:latest
+    mem_limit: 2032385536
+    container_name: memcached
+    ports:
+      - "11211:11211"
