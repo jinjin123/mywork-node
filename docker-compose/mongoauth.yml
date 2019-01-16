@@ -1,0 +1,18 @@
+//docker run --name mongo -p 27017:27017 -v /data/database/mongotest:/data -d mongo:3.2.14 --auth
+// command：启动是的命令行参数，添加认证auth
+//此时show dbs无法执行，需要认证。
+//切换到admin并创建root用户：
+//use admin
+//db.createUser({ user: 'root', pwd: 'root', roles: [ { role: "userAdminAnyDatabase", db: "admin" } ] })
+
+version: '2'
+services:
+  mongodb:
+    image: mongo
+    ports:
+        - 27017:27017
+    volumes:
+        - "./data/configdb:/data/configdb"
+        - "./data/db:/data/db"
+    command: mongod --auth 
+    tty: true
