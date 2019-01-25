@@ -1,0 +1,23 @@
+Basic Drush commands
+Before running drush command, u need to "docker exec -it zkf_mkt bash" to login into docker
+
+1. After pull code, Run clear cache
+drush cc all -v
+2. Changing cache server
+a. Redis
+in settings.php, comment out all redis related configs
+drush dis redis -y
+drush cc all -v
+then, to enable
+drush en redis -y
+adding redis config back in settings.php
+b. memcache
+# Disable
+drush dis memcache -y;drush cc all -v
+# Adding config
+adding/modifying the memcache config, like IP and port
+# Enable
+drush en memcache -y;drush cc all -v
+3. Checking watchdog
+drush watchdog-list 
+drush watchdog-show
