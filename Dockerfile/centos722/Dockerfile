@@ -1,4 +1,8 @@
 FROM centos:7
+RUN yum install kde-l10n-Chinese -y
+RUN yum install glibc-common -y
+RUN localedef -c -f UTF-8 -i zh_CN zh_CN.utf8
+ENV LC_ALL zh_CN.UTF-8
 
 ENV NGINX_VERSION 1.12.2
 RUN yum install -y openssh-server
@@ -56,7 +60,7 @@ RUN set -x && \
 ADD nginx.conf /usr/local/nginx/conf/
 
 ADD requirements.txt /etc/
-RUN pip install -r < requirements.txt
+RUN pip install -r  /etc/requirements.txt
 
 ## insert conf file
 ADD supervisord.conf /etc/

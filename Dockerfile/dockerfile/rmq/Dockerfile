@@ -1,4 +1,4 @@
-FROM  hub.c.163.com/zhexuezhenhanzi/rabbitmq:latest
+FROM  hub.c.163.com/zhexuezhenhanzi/rmq:latest
 
 ADD setup  /setup
 ADD rabbitmq.config /etc/rabbitmq/rabbitmq.config
