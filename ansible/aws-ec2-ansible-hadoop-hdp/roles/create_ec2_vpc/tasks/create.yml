@@ -194,7 +194,7 @@
       image: "{{ image_name }}"
       volumes:
         - device_name: /dev/sda1
-          volume_type: gp2
+          volume_type: standard
           volume_size: "{{ public_volume_size }}"
           delete_on_termination: true
           snapshot: no
@@ -246,7 +246,7 @@
       image: "{{ image_name }}"
       volumes:
         - device_name: /dev/sda1
-          volume_type: gp2
+          volume_type: standard
           volume_size: "{{ private_volume_size }}"
           delete_on_termination: true
           snapshot: no
@@ -274,7 +274,7 @@
       image: "{{ image_name }}"
       volumes:
         - device_name: /dev/sda1
-          volume_type: gp2
+          volume_type: standard
           volume_size: "{{ private_volume_size }}"
           delete_on_termination: true
           snapshot: no
@@ -300,7 +300,7 @@
       image: "{{ image_name }}"
       volumes:
         - device_name: /dev/sda1
-          volume_type: gp2
+          volume_type: standard
           volume_size: "{{ private_volume_size }}"
           delete_on_termination: true
           snapshot: no
@@ -330,7 +330,7 @@
       image: "{{ image_name }}"
       volumes:
         - device_name: /dev/sda1
-          volume_type: gp2
+          volume_type: standard
           volume_size: "{{ private_volume_size }}"
           delete_on_termination: true
           snapshot: no
@@ -358,7 +358,7 @@
       image: "{{ image_name }}"
       volumes:
         - device_name: /dev/sda1
-          volume_type: gp2
+          volume_type: standard
           volume_size: "{{ private_volume_size }}"
           delete_on_termination: true
           snapshot: no
@@ -384,7 +384,7 @@
       image: "{{ image_name }}"
       volumes:
         - device_name: /dev/sda1
-          volume_type: gp2
+          volume_type: standard
           volume_size: "{{ private_volume_size }}"
           delete_on_termination: true
           snapshot: no
