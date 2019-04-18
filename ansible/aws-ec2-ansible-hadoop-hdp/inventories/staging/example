@@ -1,0 +1,13 @@
+[all:vars]
+ansible_ssh_common_args=' -o ProxyCommand="ssh -i ~/Work/keys/ts-ali-product.pem -W %h:%p centos@149.129.213.160"'
+
+[ambariserver]
+ip-172-31-19-3.us-west-1.compute.internal ansible_ssh_host=52.53.233.194
+
+[datanodes]
+ip-172-31-19-3.us-west-1.compute.internal ansible_ssh_host=52.53.233.194
+
+[masternodes]
+ip-172-31-25-180.us-west-1.compute.internal ansible_ssh_host=13.56.14.242
+ip-172-31-27-85.us-west-1.compute.internal ansible_ssh_host=13.57.236.163
+ip-172-31-21-184.us-west-1.compute.internal ansible_ssh_host=52.53.188.74
