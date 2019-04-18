@@ -1,7 +1,7 @@
 - This Ansible Playbook will help you create a `AWS EC2 Infrastructure` and setup `Hadoop Cluster` use [HDP](https://hortonworks.com/products/data-platforms/hdp/)
 - The AWS EC2 must be Centos distro 
 
-###Note
+### Note
 aws nat gateway has issue when handle private instance yum install package, you can put them on public group with public IP
 
 # 1. Create a AWS Infrastructure
