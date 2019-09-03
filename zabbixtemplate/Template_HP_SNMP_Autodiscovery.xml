@@ -1,0 +1,2902 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>3.2</version>
+    <date>2018-12-29T02:40:19Z</date>
+    <groups>
+        <group>
+            <name>Templates</name>
+        </group>
+        <group>
+            <name>Templates SNMP Devices</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <template>Template_HP_SNMP_Autodiscovery</template>
+            <name>Template_HP_SNMP_Autodiscovery</name>
+            <description/>
+            <groups>
+                <group>
+                    <name>Templates</name>
+                </group>
+                <group>
+                    <name>Templates SNMP Devices</name>
+                </group>
+            </groups>
+            <applications>
+                <application>
+                    <name>HP Drive Array</name>
+                </application>
+                <application>
+                    <name>HP Health</name>
+                </application>
+                <application>
+                    <name>HP System Info</name>
+                </application>
+                <application>
+                    <name>Memory Modules</name>
+                </application>
+            </applications>
+            <items>
+                <item>
+                    <name>HP ASR Condition</name>
+                    <type>4</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <multiplier>0</multiplier>
+                    <snmp_oid>.1.3.6.1.4.1.232.6.2.5.17.0</snmp_oid>
+                    <key>cpqHeAsrCondition</key>
+                    <delay>300</delay>
+                    <history>7</history>
+                    <trends>365</trends>
+                    <status>1</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>CPQHLTH-MIB::&#13;
+    cpqHeAsrCondition OBJECT-TYPE&#13;
+        SYNTAX  INTEGER {&#13;
+            other(1),&#13;
+            ok(2),&#13;
+            degraded(3),&#13;
+            failed(4)&#13;
+            }&#13;
+        ACCESS  read-only&#13;
+        STATUS  mandatory&#13;
+        DESCRIPTION&#13;
+            &quot;This value specifies the overall condition of the ASR feature.&quot;&#13;
+        ::= { cpqHeAsr 17 }</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>HP Health</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>cpqCondition</name>
+                    </valuemap>
+                    <logtimefmt/>
+                </item>
+                <item>
+                    <name>HP Event Log Condition</name>
+                    <type>4</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <multiplier>0</multiplier>
+                    <snmp_oid>.1.3.6.1.4.1.232.6.2.11.2.0</snmp_oid>
+                    <key>cpqHeEventLogCondition</key>
+                    <delay>600</delay>
+                    <history>7</history>
+                    <trends>30</trends>
+                    <status>1</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>This event log item shows an error when there are IML log items which have not been marked as &quot;repaired&quot; in the System Management Homepage.  Because we monitor the individual subsystems, this item is redundant and we don't need to alert on it.&#13;
+&#13;
+CPQHLTH-MIB::&#13;
+    cpqHeEventLogCondition OBJECT-TYPE&#13;
+        SYNTAX  INTEGER {&#13;
+            other(1),&#13;
+            ok(2),&#13;
+            degraded(3),&#13;
+            failed(4)&#13;
+            }&#13;
+        ACCESS  read-only&#13;
+        STATUS  mandatory&#13;
+        DESCRIPTION&#13;
+            &quot;This value specifies the overall condition of the Integrated&#13;
+            Management Log feature.&quot;&#13;
+        ::= { cpqHeEventLog 2 }</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>HP Health</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>cpqCondition</name>
+                    </valuemap>
+                    <logtimefmt/>
+                </item>
+                <item>
+                    <name>HP Fault Tolerant Power Supply Condition</name>
+                    <type>4</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <multiplier>0</multiplier>
+                    <snmp_oid>.1.3.6.1.4.1.232.6.2.9.1.0</snmp_oid>
+                    <key>cpqHeFltTolPwrSupplyCondition</key>
+                    <delay>300</delay>
+                    <history>7</history>
+                    <trends>30</trends>
+                    <status>1</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>Overall condition of power supplies.  Because we monitor the individual subsystems, this item is redundant and we don't need to alert on it.&#13;
+&#13;
+CPQHLTH-MIB::&#13;
+    cpqHeFltTolPwrSupplyCondition OBJECT-TYPE&#13;
+        SYNTAX  INTEGER {&#13;
+            other(1),&#13;
+            ok(2),&#13;
+            degraded(3),&#13;
+            failed(4)&#13;
+            }&#13;
+        ACCESS  read-only&#13;
+        STATUS  mandatory&#13;
+        DESCRIPTION&#13;
+            &quot;This value specifies the overall condition of the fault tolerant&#13;
+             power supply sub-system.&quot;&#13;
+        ::= { cpqHeFltTolPwrSupply 1 }</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>HP Health</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>cpqCondition</name>
+                    </valuemap>
+                    <logtimefmt/>
+                </item>
+                <item>
+                    <name>HP Health MIB Condition</name>
+                    <type>4</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <multiplier>0</multiplier>
+                    <snmp_oid>1.3.6.1.4.1.232.6.1.3.0</snmp_oid>
+                    <key>cpqHeMibCondition</key>
+                    <delay>600</delay>
+                    <history>7</history>
+                    <trends>30</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>This item shows an error when any underlying subsystem is not OK.  Because we monitor the individual subsystems, this item is redundant and we don't need to alert on it.&#13;
+&#13;
+CPQHLTH-MIB::&#13;
+    cpqHeEventLogCondition OBJECT-TYPE&#13;
+        SYNTAX  INTEGER {&#13;
+            other(1),&#13;
+            ok(2),&#13;
+            degraded(3),&#13;
+            failed(4)&#13;
+            }&#13;
+        ACCESS  read-only&#13;
+        STATUS  mandatory&#13;
+        DESCRIPTION&#13;
+            &quot;This value specifies the overall condition of the Integrated&#13;
+            Management Log feature.&quot;&#13;
+        ::= { cpqHeEventLog 2 }</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>HP Health</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>cpqCondition</name>
+                    </valuemap>
+                    <logtimefmt/>
+                </item>
+                <item>
+                    <name>HP Resilient Memory Condition</name>
+                    <type>4</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <multiplier>0</multiplier>
+                    <snmp_oid>.1.3.6.1.4.1.232.6.2.14.4.0</snmp_oid>
+                    <key>cpqHeResilientMemCondition</key>
+                    <delay>300</delay>
+                    <history>7</history>
+                    <trends>365</trends>
+                    <status>1</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>Overall status of memory system.  If we monitor the individual modules via discovery rule &quot;Memory Modules&quot;, then this item is redundant and we don't need to alert on it.&#13;
+&#13;
+CPQHLTH-MIB::&#13;
+    cpqHeResilientMemCondition OBJECT-TYPE&#13;
+        SYNTAX  INTEGER {&#13;
+            other(1),&#13;
+            ok(2),&#13;
+            degraded(3)&#13;
+            }&#13;
+        ACCESS  read-only&#13;
+        STATUS  mandatory&#13;
+        DESCRIPTION&#13;
+            &quot;This value specifies the current condition of the Advanced&#13;
+            Memory Protection subsystem.&#13;
+&#13;
+            The following states are supported:&#13;
+&#13;
+            other(1)&#13;
+              The system does not support fault tolerant memory or the&#13;
+              state cannot be determined by the Management Agent.&#13;
+&#13;
+            ok(2)&#13;
+              This system is operating normally.&#13;
+&#13;
+            degraded(3)&#13;
+              The system is running in a degraded state because the&#13;
+              Advanced Memory Protection subsystem has been engaged.&quot;&#13;
+        ::= { cpqHeResilientMemory 4 }</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>HP Health</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>cpqCondition</name>
+                    </valuemap>
+                    <logtimefmt/>
+                </item>
+                <item>
+                    <name>HP Thermal Condition</name>
+                    <type>4</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <multiplier>0</multiplier>
+                    <snmp_oid>.1.3.6.1.4.1.232.6.2.6.1.0</snmp_oid>
+                    <key>cpqHeThermalCondition</key>
+                    <delay>300</delay>
+                    <history>7</history>
+                    <trends>30</trends>
+                    <status>1</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>This item is a combined status of all temperature and fan items present.  By monitoring this item, it's not necessary to monitor each individual fan and temperature item.&#13;
+&#13;
+CPQHLTH-MIB::&#13;
+    cpqHeThermalCondition OBJECT-TYPE&#13;
+        SYNTAX  INTEGER {&#13;
+            other(1),&#13;
+            ok(2),&#13;
+            degraded(3),&#13;
+            failed(4)&#13;
+            }&#13;
+        ACCESS  read-only&#13;
+        STATUS  mandatory&#13;
+        DESCRIPTION&#13;
+            &quot;This value specifies the overall condition of the system's&#13;
+            thermal environment.&quot;&#13;
+        ::= { cpqHeThermal 1 }</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>HP Health</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>cpqCondition</name>
+                    </valuemap>
+                    <logtimefmt/>
+                </item>
+                <item>
+                    <name>HP Product Name</name>
+                    <type>4</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <multiplier>0</multiplier>
+                    <snmp_oid>1.3.6.1.4.1.232.2.2.4.2.0</snmp_oid>
+                    <key>cpqSiProductName</key>
+                    <delay>28800</delay>
+                    <history>1</history>
+                    <trends>0</trends>
+                    <status>1</status>
+                    <value_type>4</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>CPQSINFO-MIB::&#13;
+cpqSiProductName OBJECT-TYPE&#13;
+        SYNTAX  DisplayString (SIZE (0..255))&#13;
+        ACCESS  read-only&#13;
+        STATUS  mandatory&#13;
+        DESCRIPTION&#13;
+            &quot;The machine product name.&#13;
+&#13;
+            The name of the machine used in this system.&quot;&#13;
+        ::= { cpqSiSystemBoard 2 }</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>HP System Info</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                </item>
+                <item>
+                    <name>HP System Product ID</name>
+                    <type>4</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <multiplier>0</multiplier>
+                    <snmp_oid>.1.3.6.1.4.1.232.2.2.2.6.0</snmp_oid>
+                    <key>cpqSiSysProductId</key>
+                    <delay>28800</delay>
+                    <history>1</history>
+                    <trends>0</trends>
+                    <status>1</status>
+                    <value_type>4</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>CPQSINFO-MIB::&#13;
+cpqSiSysProductId OBJECT-TYPE&#13;
+        SYNTAX  DisplayString (SIZE (0..255))&#13;
+        DESCRIPTION&#13;
+            &quot;The product id string of the system unit.&#13;
+            The string will be empty if the system does not report the&#13;
+            product id.&quot;&#13;
+        ::= { cpqSiAsset 6 }</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>HP System Info</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                </item>
+                <item>
+                    <name>HP System Serial Number</name>
+                    <type>4</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <multiplier>0</multiplier>
+                    <snmp_oid>.1.3.6.1.4.1.232.2.2.2.1.0</snmp_oid>
+                    <key>cpqSiSysSerialNum</key>
+                    <delay>28800</delay>
+                    <history>1</history>
+                    <trends>0</trends>
+                    <status>1</status>
+                    <value_type>4</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>CPQSINFO-MIB::&#13;
+cpqSiSysSerialNum OBJECT-TYPE&#13;
+        SYNTAX  DisplayString (SIZE (0..255))&#13;
+        DESCRIPTION&#13;
+            &quot;The serial number of the physical system unit.&#13;
+            The string will be empty if the system does not report the&#13;
+            serial number function.&quot;&#13;
+        ::= { cpqSiAsset 1 }</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>HP System Info</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                </item>
+            </items>
+            <discovery_rules>
+                <discovery_rule>
+                    <name>Drive Array Accelerators</name>
+                    <type>4</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>discovery[{#SNMPVALUE},.1.3.6.1.4.1.232.3.2.2.2.1.1]</snmp_oid>
+                    <key>snmp.discovery[DaAccelerators]</key>
+                    <delay>3600</delay>
+                    <status>1</status>
+                    <allowed_hosts/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <filter>
+                        <evaltype>0</evaltype>
+                        <formula/>
+                        <conditions/>
+                    </filter>
+                    <lifetime>0</lifetime>
+                    <description>Walk the cpqDaCntlrHwLocation table to get contoller locations:&#13;
+&#13;
+CPQIDA-MIB::&#13;
+     cpqDaAccelCntlrIndex OBJECT-TYPE&#13;
+        SYNTAX  INTEGER&#13;
+        ACCESS  read-only&#13;
+        STATUS  mandatory&#13;
+        DESCRIPTION&#13;
+            &quot;Array Accelerator Board Controller Index.&#13;
+&#13;
+            This value is a logical number whose meaning is OS dependent.&#13;
+            The value has a direct mapping to the controller table index&#13;
+            such that controller 'i' has accelerator table entry 'i'.&quot;&#13;
+        ::= { cpqDaAccelEntry 1 }</description>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>HP Drive Array Accelerator Backup Power Source {#SNMPINDEX}</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                            <multiplier>0</multiplier>
+                            <snmp_oid>1.3.6.1.4.1.232.3.2.2.2.1.16.{#SNMPINDEX}</snmp_oid>
+                            <key>cpqDaAccelBackupPowerSource[{#SNMPINDEX}]</key>
+                            <delay>28800</delay>
+                            <history>1</history>
+                            <trends>1</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description>CPQIDA-MIB::&#13;
+      cpqDaAccelBackupPowerSource OBJECT-TYPE&#13;
+        SYNTAX  INTEGER&#13;
+        {&#13;
+            other(1),&#13;
+            battery(2),&#13;
+            capacitor(3)&#13;
+        }&#13;
+        ACCESS  read-only&#13;
+        STATUS  mandatory&#13;
+        DESCRIPTION&#13;
+            &quot;Array Accelerator Board Backup Power Source.&#13;
+&#13;
+            This describes the backup power source being used by the Array&#13;
+            Accelerator board.&#13;
+&#13;
+            The status can be:&#13;
+&#13;
+            Other (1)&#13;
+              Indicates that the instrument agent does not recognize the backup&#13;
+              power source used by the Array Accelerator board.  You may need &#13;
+              to upgrade the instrument agent.&#13;
+&#13;
+            Battery (2)&#13;
+              Indicates that a battery is the backup power source for the Array&#13;
+              Accelerator board. &#13;
+             &#13;
+            Capacitor (3)&#13;
+              Indicates that a capacitor is the backup power source for the &#13;
+              Array Accelerator board.&quot;&#13;
+        ::= { cpqDaAccelEntry 16 }</description>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>HP Drive Array</name>
+                                </application>
+                            </applications>
+                            <valuemap>
+                                <name>cpqDaAccelBackupPowerSource</name>
+                            </valuemap>
+                            <logtimefmt/>
+                            <application_prototypes/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>HP Drive Array Accelerator Battery Status {#SNMPINDEX}</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                            <multiplier>0</multiplier>
+                            <snmp_oid>1.3.6.1.4.1.232.3.2.2.2.1.6.{#SNMPINDEX}</snmp_oid>
+                            <key>cpqDaAccelBattery[{#SNMPINDEX}]</key>
+                            <delay>600</delay>
+                            <history>7</history>
+                            <trends>90</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description>CPQIDA-MIB::&#13;
+     cpqDaAccelBattery OBJECT-TYPE&#13;
+        SYNTAX  INTEGER&#13;
+        {&#13;
+            other(1),&#13;
+            ok(2),&#13;
+            recharging(3),&#13;
+            failed(4),&#13;
+            degraded(5),&#13;
+            notPresent(6),&#13;
+            capacitorFailed(7)&#13;
+        }&#13;
+        ACCESS  read-only&#13;
+        STATUS  mandatory&#13;
+        DESCRIPTION&#13;
+            &quot;Array Accelerator Board Backup Power Status.&#13;
+&#13;
+            This monitors the status of each backup power source on the board.  &#13;
+            The backup power source can only recharge when the system has &#13;
+            power applied. The type of backup power source used is indicated &#13;
+            by cpqDaAccelBackupPowerSource.&#13;
+&#13;
+            The following values are valid:&#13;
+&#13;
+            Other (1)&#13;
+              Indicates that the instrument agent does not recognize&#13;
+              battery status.  You may need to update your software.&#13;
+&#13;
+            Ok (2)&#13;
+              Indicates that a particular battery pack is fully charged.&#13;
+&#13;
+            Charging (3)&#13;
+              The battery power is less than 75%.  The Drive Array&#13;
+              Controller is attempting to recharge the battery.  A&#13;
+              battery can take as long as 36 hours to fully recharge.&#13;
+              After 36 hours, if the battery has not recharged, it is&#13;
+              considered failed.&#13;
+&#13;
+            Failed (4)&#13;
+              The battery pack is below the sufficient voltage level and&#13;
+              has not recharged in 36 hours.  Your Array Accelerator board&#13;
+              needs to be serviced.&#13;
+&#13;
+            Degraded (5)&#13;
+              The battery is still operating, however, one of the batteries&#13;
+              in the pack has failed to recharge properly.  Your Array&#13;
+              Accelerator board should be serviced as soon as possible.&#13;
+&#13;
+            NotPresent (6)&#13;
+              There are no batteries associated with this controller.&#13;
+              &#13;
+            Capacitor Failed (7)&#13;
+              The capacitor is below the sufficient voltage level and&#13;
+              has not recharged in 10 minutes.  Your Array Accelerator board&#13;
+              needs to be serviced.&quot;&#13;
+        ::= { cpqDaAccelEntry 6 }</description>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>HP Drive Array</name>
+                                </application>
+                            </applications>
+                            <valuemap>
+                                <name>cpqDaAccelBatteryStatus</name>
+                            </valuemap>
+                            <logtimefmt/>
+                            <application_prototypes/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>HP Drive Array Accelerator Condition {#SNMPINDEX}</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                            <multiplier>0</multiplier>
+                            <snmp_oid>1.3.6.1.4.1.232.3.2.2.2.1.9.{#SNMPINDEX}</snmp_oid>
+                            <key>cpqDaAccelCondition[{#SNMPINDEX}]</key>
+                            <delay>600</delay>
+                            <history>7</history>
+                            <trends>90</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description>CPQIDA-MIB::&#13;
+     cpqDaAccelCondition OBJECT-TYPE&#13;
+        SYNTAX  INTEGER&#13;
+        {&#13;
+            other(1),&#13;
+            ok(2),&#13;
+            degraded(3),&#13;
+            failed(4)&#13;
+        }&#13;
+        ACCESS  read-only&#13;
+        STATUS  mandatory&#13;
+        DESCRIPTION&#13;
+            &quot;The condition of the device.  This value represents the overall&#13;
+            condition of this array accelerator.&quot;&#13;
+        ::= { cpqDaAccelEntry 9 }</description>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>HP Drive Array</name>
+                                </application>
+                            </applications>
+                            <valuemap>
+                                <name>cpqCondition</name>
+                            </valuemap>
+                            <logtimefmt/>
+                            <application_prototypes/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>HP Drive Array Accelerator Status {#SNMPINDEX}</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                            <multiplier>0</multiplier>
+                            <snmp_oid>1.3.6.1.4.1.232.3.2.2.2.1.2.{#SNMPINDEX}</snmp_oid>
+                            <key>cpqDaAccelStatus[{#SNMPINDEX}]</key>
+                            <delay>600</delay>
+                            <history>7</history>
+                            <trends>90</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description>CPQIDA-MIB::&#13;
+     cpqDaAccelStatus OBJECT-TYPE&#13;
+        SYNTAX  INTEGER&#13;
+        {&#13;
+            other(1),&#13;
+            invalid(2),&#13;
+            enabled(3),&#13;
+            tmpDisabled(4),&#13;
+            permDisabled(5)&#13;
+        }&#13;
+        ACCESS  read-only&#13;
+        STATUS  mandatory&#13;
+        DESCRIPTION&#13;
+            &quot;Array Accelerator Board Status.&#13;
+&#13;
+            This describes the status of the accelerator write cache.&#13;
+&#13;
+            The status can be:&#13;
+&#13;
+            Other (1)&#13;
+              Indicates that the instrument agent does not recognize the&#13;
+              status of the Array Accelerator.  You may need to upgrade&#13;
+              the instrument agent.&#13;
+&#13;
+            Invalid (2)&#13;
+              Indicates that an Array Accelerator board has not been&#13;
+              installed in this system or is present but not configured.&#13;
+&#13;
+            Enabled (3)&#13;
+              Indicates that write cache operations are currently configured&#13;
+              and enabled for at least one logical drive.&#13;
+&#13;
+            Temporarily Disabled (4)&#13;
+              Indicates that write cache operations have been temporarily&#13;
+              disabled. View the Array Accelerator Board Error Code object&#13;
+              to determine why the write cache operations have been&#13;
+              temporarily disabled.&#13;
+&#13;
+            Permanently Disabled (5)&#13;
+              Indicates that write cache operations have been permanently&#13;
+              disabled.  View the Array Accelerator Board Error Code object&#13;
+              to determine why the write cache operations have been disabled.&quot;&#13;
+        ::= { cpqDaAccelEntry 2 }</description>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>HP Drive Array</name>
+                                </application>
+                            </applications>
+                            <valuemap>
+                                <name>cpqDaAccelStatus</name>
+                            </valuemap>
+                            <logtimefmt/>
+                            <application_prototypes/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>HP Drive Array Accelerator Write Cache % {#SNMPINDEX}</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                            <multiplier>0</multiplier>
+                            <snmp_oid>1.3.6.1.4.1.232.3.2.2.2.1.14.{#SNMPINDEX}</snmp_oid>
+                            <key>cpqDaAccelWriteCachePercent[{#SNMPINDEX}]</key>
+                            <delay>28800</delay>
+                            <history>1</history>
+                            <trends>1</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units>%</units>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description>CPQIDA-MIB::&#13;
+     cpqDaAccelWriteCachePercent OBJECT-TYPE&#13;
+        SYNTAX  Gauge&#13;
+        ACCESS  read-only&#13;
+        STATUS  mandatory&#13;
+        DESCRIPTION&#13;
+            &quot;Write Cache Percent.&#13;
+&#13;
+            This shows the percent of cache memory allocated for posted&#13;
+            write caching.  If the data cannot be determined or is not&#13;
+            applicable, the value is set to 4,294,967,295.&quot;&#13;
+        ::= { cpqDaAccelEntry 14 }</description>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>HP Drive Array</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                            <logtimefmt/>
+                            <application_prototypes/>
+                        </item_prototype>
+                    </item_prototypes>
+                    <trigger_prototypes>
+                        <trigger_prototype>
+                            <expression>{Template_HP_SNMP_Autodiscovery:cpqDaAccelBattery[{#SNMPINDEX}].max(86400)}=4</expression>
+                            <recovery_mode>0</recovery_mode>
+                            <recovery_expression/>
+                            <name>{HOST.NAME}: Drive Array Accelerator {#SNMPINDEX} battery has failed</name>
+                            <correlation_mode>0</correlation_mode>
+                            <correlation_tag/>
+                            <url/>
+                            <status>1</status>
+                            <priority>2</priority>
+                            <description>The battery provides backup power for the cache memory, to prevent data loss in the event of a power failure.  This battery has failed, so the Drive Array Controller will disable that cache, and disk performance will be bad until the battery is replaced.  The battery needs to be replaced.  Suggested actions are to write a ticket to replace the battery, then acknowledge the alert, writing the ticket number in the notes.  This will prevent a stream of continuing alerts.&#13;
+&#13;
+When the battery is on the edge of failing, it can move in and out of the failed state. This can have the effect of restarting an alert which has already been acknowledged.  To prevent this, this trigger is held until there has been no failure reported in the last 24 hours.&#13;
+&#13;
+HP System Management Homepage (may require starting service hpsmhd):&#13;
+https://{HOST.CONN}:2381</description>
+                            <type>0</type>
+                            <manual_close>0</manual_close>
+                            <dependencies/>
+                            <tags/>
+                        </trigger_prototype>
+                        <trigger_prototype>
+                            <expression>{Template_HP_SNMP_Autodiscovery:cpqDaAccelStatus[{#SNMPINDEX}].last()}=2</expression>
+                            <recovery_mode>0</recovery_mode>
+                            <recovery_expression/>
+                            <name>{HOST.NAME}: Drive Array Accelerator {#SNMPINDEX} is missing or not configured</name>
+                            <correlation_mode>0</correlation_mode>
+                            <correlation_tag/>
+                            <url/>
+                            <status>1</status>
+                            <priority>2</priority>
+                            <description>The Drive Array Accelerator is the cache memory board for the Drive Array Controller; if it is missing, disk performance will be bad.  A Drive Array Accelerator (cache memory board) should be ordered and installed.&#13;
+&#13;
+Suggested actions are to write a ticket to order and install the HP Drive Array Accelerator (cache memory board).  Then acknowledge the alert, writing the ticket number in the notes.&#13;
+&#13;
+HP System Management Homepage (may require starting service hpsmhd):&#13;
+https://{HOST.CONN}:2381</description>
+                            <type>0</type>
+                            <manual_close>0</manual_close>
+                            <dependencies/>
+                            <tags/>
+                        </trigger_prototype>
+                    </trigger_prototypes>
+                    <graph_prototypes>
+                        <graph_prototype>
+                            <name>HP Drive Array Accelerator Battery Status {#SNMPINDEX}</name>
+                            <width>900</width>
+                            <height>200</height>
+                            <yaxismin>0.0000</yaxismin>
+                            <yaxismax>100.0000</yaxismax>
+                            <show_work_period>1</show_work_period>
+                            <show_triggers>1</show_triggers>
+                            <type>0</type>
+                            <show_legend>1</show_legend>
+                            <show_3d>0</show_3d>
+                            <percent_left>0.0000</percent_left>
+                            <percent_right>0.0000</percent_right>
+                            <ymin_type_1>1</ymin_type_1>
+                            <ymax_type_1>0</ymax_type_1>
+                            <ymin_item_1>0</ymin_item_1>
+                            <ymax_item_1>0</ymax_item_1>
+                            <graph_items>
+                                <graph_item>
+                                    <sortorder>0</sortorder>
+                                    <drawtype>0</drawtype>
+                                    <color>1A7C11</color>
+                                    <yaxisside>0</yaxisside>
+                                    <calc_fnc>2</calc_fnc>
+                                    <type>0</type>
+                                    <item>
+                                        <host>Template_HP_SNMP_Autodiscovery</host>
+                                        <key>cpqDaAccelBattery[{#SNMPINDEX}]</key>
+                                    </item>
+                                </graph_item>
+                            </graph_items>
+                        </graph_prototype>
+                        <graph_prototype>
+                            <name>HP Drive Array Accelerator Status {#SNMPINDEX}</name>
+                            <width>900</width>
+                            <height>200</height>
+                            <yaxismin>0.0000</yaxismin>
+                            <yaxismax>100.0000</yaxismax>
+                            <show_work_period>1</show_work_period>
+                            <show_triggers>1</show_triggers>
+                            <type>0</type>
+                            <show_legend>1</show_legend>
+                            <show_3d>0</show_3d>
+                            <percent_left>0.0000</percent_left>
+                            <percent_right>0.0000</percent_right>
+                            <ymin_type_1>1</ymin_type_1>
+                            <ymax_type_1>0</ymax_type_1>
+                            <ymin_item_1>0</ymin_item_1>
+                            <ymax_item_1>0</ymax_item_1>
+                            <graph_items>
+                                <graph_item>
+                                    <sortorder>0</sortorder>
+                                    <drawtype>0</drawtype>
+                                    <color>1A7C11</color>
+                                    <yaxisside>0</yaxisside>
+                                    <calc_fnc>2</calc_fnc>
+                                    <type>0</type>
+                                    <item>
+                                        <host>Template_HP_SNMP_Autodiscovery</host>
+                                        <key>cpqDaAccelStatus[{#SNMPINDEX}]</key>
+                                    </item>
+                                </graph_item>
+                            </graph_items>
+                        </graph_prototype>
+                    </graph_prototypes>
+                    <host_prototypes/>
+                </discovery_rule>
+                <discovery_rule>
+                    <name>Drive Array Controller Performance Monitors</name>
+                    <type>4</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>discovery[{#SNMPVALUE},.1.3.6.1.4.1.232.3.2.7.1.1.1]</snmp_oid>
+                    <key>snmp.discovery[DaControllerPerf]</key>
+                    <delay>28800</delay>
+                    <status>1</status>
+                    <allowed_hosts/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <filter>
+                        <evaltype>0</evaltype>
+                        <formula/>
+                        <conditions/>
+                    </filter>
+                    <lifetime>0</lifetime>
+                    <description>Walk the cpqDaCntlrPerfCntlrIndex table to find contoller performance monitor instances:&#13;
+&#13;
+CPQIDA-MIB::&#13;
+     cpqDaCntlrPerfCntlrIndex OBJECT-TYPE&#13;
+        SYNTAX  INTEGER&#13;
+        ACCESS  read-only&#13;
+        STATUS  mandatory&#13;
+        DESCRIPTION&#13;
+            &quot;Drive Array Controller Performance Monitor Controller Index.&#13;
+&#13;
+            This maps the performance monitor information into their&#13;
+            respective controllers which support performance data.&quot;&#13;
+        ::= { cpqDaCntlrPerfEntry 1 }</description>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>HP Drive Array Controller Latency {#SNMPINDEX}</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                            <multiplier>1</multiplier>
+                            <snmp_oid>1.3.6.1.4.1.232.3.2.7.1.1.7.{#SNMPINDEX}</snmp_oid>
+                            <key>cpqDaCntlrPerfAvgLatency[{#SNMPINDEX}]</key>
+                            <delay>3600</delay>
+                            <history>90</history>
+                            <trends>365</trends>
+                            <status>0</status>
+                            <value_type>0</value_type>
+                            <allowed_hosts/>
+                            <units>ms</units>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>.01</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description>CPQIDA-MIB::&#13;
+     cpqDaCntlrPerfAvgLatency OBJECT-TYPE&#13;
+        SYNTAX  INTEGER&#13;
+        ACCESS  read-only&#13;
+        STATUS  mandatory&#13;
+        DESCRIPTION&#13;
+            &quot;Array Controller Performance Monitor Average&#13;
+            Command Latency.&#13;
+&#13;
+            This value shows the average command latency for this sample&#13;
+            in 1/100,000 second units.&quot;&#13;
+        ::= { cpqDaCntlrPerfEntry 7 }</description>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>HP Drive Array</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                            <logtimefmt/>
+                            <application_prototypes/>
+                        </item_prototype>
+                    </item_prototypes>
+                    <trigger_prototypes/>
+                    <graph_prototypes/>
+                    <host_prototypes/>
+                </discovery_rule>
+                <discovery_rule>
+                    <name>Drive Array Controllers</name>
+                    <type>4</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>discovery[{#SNMPVALUE},.1.3.6.1.4.1.232.3.2.2.1.1.20]</snmp_oid>
+                    <key>snmp.discovery[DaControllers]</key>
+                    <delay>3600</delay>
+                    <status>0</status>
+                    <allowed_hosts/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <filter>
+                        <evaltype>0</evaltype>
+                        <formula/>
+                        <conditions/>
+                    </filter>
+                    <lifetime>0</lifetime>
+                    <description>Walk the cpqDaCntlrHwLocation table to get contoller locations:&#13;
+&#13;
+CPQIDA-MIB::&#13;
+     cpqDaCntlrHwLocation OBJECT-TYPE&#13;
+        SYNTAX  DisplayString (SIZE (0..255))&#13;
+        ACCESS  read-only&#13;
+        STATUS  mandatory&#13;
+        DESCRIPTION&#13;
+            &quot;A text description of the hardware location of the controller.&#13;
+             A NULL string indicates that the hardware location could not&#13;
+             be determined or is irrelevant.&quot;&#13;
+        ::= { cpqDaCntlrEntry 20  }</description>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>HP Drive Array Controller Board Condition {#SNMPINDEX}</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                            <multiplier>0</multiplier>
+                            <snmp_oid>1.3.6.1.4.1.232.3.2.2.1.1.12.{#SNMPINDEX}</snmp_oid>
+                            <key>cpqDaCntlrBoardCondition[{#SNMPINDEX}]</key>
+                            <delay>600</delay>
+                            <history>7</history>
+                            <trends>30</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description>CPQIDA-MIB::     &#13;
+     cpqDaCntlrBoardCondition OBJECT-TYPE&#13;
+        SYNTAX  INTEGER&#13;
+        {&#13;
+            other(1),&#13;
+            ok(2),&#13;
+            degraded(3),&#13;
+            failed(4)&#13;
+        }&#13;
+        ACCESS  read-only&#13;
+        STATUS  mandatory&#13;
+        DESCRIPTION&#13;
+            &quot;The condition of the device.  This value represents the&#13;
+            condition of the controller and any associated array&#13;
+            accelerators.&quot;&#13;
+        ::= { cpqDaCntlrEntry 12 }</description>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>HP Drive Array</name>
+                                </application>
+                            </applications>
+                            <valuemap>
+                                <name>cpqCondition</name>
+                            </valuemap>
+                            <logtimefmt/>
+                            <application_prototypes/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>HP Drive Array Controller Condition {#SNMPINDEX}</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                            <multiplier>0</multiplier>
+                            <snmp_oid>1.3.6.1.4.1.232.3.2.2.1.1.6.{#SNMPINDEX}</snmp_oid>
+                            <key>cpqDaCntlrCondition[{#SNMPINDEX}]</key>
+                            <delay>600</delay>
+                            <history>7</history>
+                            <trends>30</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description>CPQIDA-MIB::     &#13;
+     cpqDaCntlrCondition OBJECT-TYPE&#13;
+        SYNTAX  INTEGER&#13;
+        {&#13;
+            other(1),&#13;
+            ok(2),&#13;
+            degraded(3),&#13;
+            failed(4)&#13;
+        }&#13;
+        ACCESS  read-only&#13;
+        STATUS  mandatory&#13;
+        DESCRIPTION&#13;
+            &quot;The condition of the device.  This value represents the overall&#13;
+            condition of this controller, and any associated logical drives,&#13;
+            physical drives, and array accelerators.&quot;&#13;
+        ::= { cpqDaCntlrEntry 6 }</description>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>HP Drive Array</name>
+                                </application>
+                            </applications>
+                            <valuemap>
+                                <name>cpqCondition</name>
+                            </valuemap>
+                            <logtimefmt/>
+                            <application_prototypes/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>HP Drive Array Controller Drive Write Cache State {#SNMPINDEX}</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                            <multiplier>0</multiplier>
+                            <snmp_oid>1.3.6.1.4.1.232.3.2.2.1.1.27.{#SNMPINDEX}</snmp_oid>
+                            <key>cpqDaCntlrDriveWriteCacheState[{#SNMPINDEX}]</key>
+                            <delay>28800</delay>
+                            <history>1</history>
+                            <trends>1</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description>CPQIDA-MIB::     &#13;
+     cpqDaCntlrDriveWriteCacheState OBJECT-TYPE&#13;
+        SYNTAX  INTEGER&#13;
+        {&#13;
+            other(1),&#13;
+            disabled(2),&#13;
+            enabled(3)&#13;
+        }&#13;
+        ACCESS  read-only&#13;
+        STATUS  mandatory&#13;
+        DESCRIPTION&#13;
+            &quot;Array Controller Drive Write Cache State.&#13;
+&#13;
+            This is the controller's drive write cache setting.  The&#13;
+            following values are valid:&#13;
+&#13;
+            other (1)&#13;
+              Indicates that the instrument agent does not recognize the&#13;
+              value.  You may need to upgrade the instrument agent.&#13;
+&#13;
+            disabled (2)&#13;
+              The controller will disable drive write cache for all drives.&#13;
+&#13;
+            enabled (3)&#13;
+              The controller will enable drive write cache for all drives.&quot;&#13;
+        ::= { cpqDaCntlrEntry 27 }</description>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>HP Drive Array</name>
+                                </application>
+                            </applications>
+                            <valuemap>
+                                <name>cpqDaCntlrDriveWriteCacheState</name>
+                            </valuemap>
+                            <logtimefmt/>
+                            <application_prototypes/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>HP Drive Array Controller Firmware Revision {#SNMPINDEX}</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                            <multiplier>0</multiplier>
+                            <snmp_oid>1.3.6.1.4.1.232.3.2.2.1.1.3.{#SNMPINDEX}</snmp_oid>
+                            <key>cpqDaCntlrFWRev[{#SNMPINDEX}]</key>
+                            <delay>28800</delay>
+                            <history>1</history>
+                            <trends>0</trends>
+                            <status>0</status>
+                            <value_type>4</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description>CPQIDA-MIB::     &#13;
+     cpqDaCntlrFWRev OBJECT-TYPE&#13;
+        SYNTAX  DisplayString (SIZE (0..5))&#13;
+        ACCESS  read-only&#13;
+        STATUS  mandatory&#13;
+        DESCRIPTION&#13;
+            &quot;Array Controller Firmware Revision.&#13;
+&#13;
+            The firmware revision of the drive array controller. This&#13;
+            value can be used to help identify a particular revision&#13;
+            of the controller.&quot;&#13;
+        ::= { cpqDaCntlrEntry 3 }</description>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>HP Drive Array</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                            <logtimefmt/>
+                            <application_prototypes/>
+                        </item_prototype>
+                    </item_prototypes>
+                    <trigger_prototypes>
+                        <trigger_prototype>
+                            <expression>{Template_HP_SNMP_Autodiscovery:cpqDaCntlrBoardCondition[{#SNMPINDEX}].last()}&gt;2</expression>
+                            <recovery_mode>0</recovery_mode>
+                            <recovery_expression/>
+                            <name>{HOST.NAME}: HP Drive Array Controller Board {#SNMPINDEX} is degraded or failed</name>
+                            <correlation_mode>0</correlation_mode>
+                            <correlation_tag/>
+                            <url/>
+                            <status>0</status>
+                            <priority>3</priority>
+                            <description>This HP Drive Array Controller Controller Board is reporting a degraded or failed condition.  Check the iLO or preferably the HP System Management Homepage for more information.  This may require first starting the Array Configuration Utility from the command line (&quot;/opt/compaq/cpqacuxe/bld/cpqacuxe -R&quot;)&#13;
+&#13;
+HP System Management Homepage (may require starting service hpsmhd):&#13;
+https://{HOST.CONN}:2381</description>
+                            <type>0</type>
+                            <manual_close>0</manual_close>
+                            <dependencies/>
+                            <tags/>
+                        </trigger_prototype>
+                    </trigger_prototypes>
+                    <graph_prototypes>
+                        <graph_prototype>
+                            <name>HP Drive Array Controller Board Condition {#SNMPINDEX}</name>
+                            <width>900</width>
+                            <height>200</height>
+                            <yaxismin>0.0000</yaxismin>
+                            <yaxismax>100.0000</yaxismax>
+                            <show_work_period>1</show_work_period>
+                            <show_triggers>1</show_triggers>
+                            <type>0</type>
+                            <show_legend>1</show_legend>
+                            <show_3d>0</show_3d>
+                            <percent_left>0.0000</percent_left>
+                            <percent_right>0.0000</percent_right>
+                            <ymin_type_1>1</ymin_type_1>
+                            <ymax_type_1>0</ymax_type_1>
+                            <ymin_item_1>0</ymin_item_1>
+                            <ymax_item_1>0</ymax_item_1>
+                            <graph_items>
+                                <graph_item>
+                                    <sortorder>0</sortorder>
+                                    <drawtype>0</drawtype>
+                                    <color>1A7C11</color>
+                                    <yaxisside>0</yaxisside>
+                                    <calc_fnc>2</calc_fnc>
+                                    <type>0</type>
+                                    <item>
+                                        <host>Template_HP_SNMP_Autodiscovery</host>
+                                        <key>cpqDaCntlrBoardCondition[{#SNMPINDEX}]</key>
+                                    </item>
+                                </graph_item>
+                            </graph_items>
+                        </graph_prototype>
+                    </graph_prototypes>
+                    <host_prototypes/>
+                </discovery_rule>
+                <discovery_rule>
+                    <name>Firmware</name>
+                    <type>4</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>discovery[{#SNMPVALUE},.1.3.6.1.4.1.232.11.2.14.1.1.4]</snmp_oid>
+                    <key>snmp.discovery[firmware]</key>
+                    <delay>28800</delay>
+                    <status>1</status>
+                    <allowed_hosts/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <filter>
+                        <evaltype>0</evaltype>
+                        <formula/>
+                        <conditions>
+                            <condition>
+                                <macro>{#SNMPVALUE}</macro>
+                                <value>(Lights.Out|iLO|System.ROM)</value>
+                                <operator>8</operator>
+                                <formulaid>A</formulaid>
+                            </condition>
+                        </conditions>
+                    </filter>
+                    <lifetime>0</lifetime>
+                    <description>Walk the cpqHoFwVerDisplayName table, filter for &quot;Lights Out&quot;, &quot;iLO&quot; and &quot;System ROM&quot;&#13;
+&#13;
+CPQHLTH-MIB::&#13;
+    cpqHoFwVerDisplayName OBJECT-TYPE&#13;
+        SYNTAX  DisplayString (SIZE (0..127))&#13;
+        ACCESS  read-only&#13;
+        STATUS  mandatory&#13;
+        DESCRIPTION&#13;
+            &quot;Firmware Version Device Display Name.&#13;
+&#13;
+            This is the display name of the device containing the firmware.&quot;&#13;
+        ::= { cpqHoFwVerEntry 4 }</description>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>HP Firmware Version {#SNMPINDEX} - {#SNMPVALUE}</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                            <multiplier>0</multiplier>
+                            <snmp_oid>.1.3.6.1.4.1.232.11.2.14.1.1.5.{#SNMPINDEX}</snmp_oid>
+                            <key>cpqHoFwVerVersion[{#SNMPINDEX}]</key>
+                            <delay>28800</delay>
+                            <history>7</history>
+                            <trends>0</trends>
+                            <status>0</status>
+                            <value_type>1</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description>CPQHOST-MIB::&#13;
+    cpqHoFwVerVersion OBJECT-TYPE&#13;
+        SYNTAX  DisplayString (SIZE (0..31))&#13;
+        ACCESS read-only&#13;
+        STATUS mandatory&#13;
+        DESCRIPTION&#13;
+            &quot;Firmware Version.&#13;
+&#13;
+            This is the version of the device firmware.&quot;&#13;
+        ::= { cpqHoFwVerEntry 5 }</description>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>HP System Info</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                            <logtimefmt/>
+                            <application_prototypes/>
+                        </item_prototype>
+                    </item_prototypes>
+                    <trigger_prototypes/>
+                    <graph_prototypes/>
+                    <host_prototypes/>
+                </discovery_rule>
+                <discovery_rule>
+                    <name>Logical Drives</name>
+                    <type>4</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>discovery[{#SNMPVALUE},.1.3.6.1.4.1.232.3.2.3.1.1.14]</snmp_oid>
+                    <key>snmp.discovery[logicalDrives]</key>
+                    <delay>3600</delay>
+                    <status>0</status>
+                    <allowed_hosts/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <filter>
+                        <evaltype>0</evaltype>
+                        <formula/>
+                        <conditions/>
+                    </filter>
+                    <lifetime>0</lifetime>
+                    <description>Walk the cpqDaLogDrvOsName table to get logical drive OS names:&#13;
+&#13;
+CPQIDA-MIB::&#13;
+     cpqDaLogDrvOsName OBJECT-TYPE&#13;
+        SYNTAX  DisplayString (SIZE (0..255))&#13;
+        ACCESS  read-only&#13;
+        STATUS  mandatory&#13;
+        DESCRIPTION&#13;
+            &quot;Logical Drive OS Name.&#13;
+&#13;
+            The OS name for this array logical drive.  This field will be&#13;
+            a null (size 0) string if the agent does not support OS name.&quot;&#13;
+        ::= { cpqDaLogDrvEntry 14 }</description>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>HP Logical Drive Condition {#SNMPINDEX} [{#SNMPVALUE}]</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                            <multiplier>0</multiplier>
+                            <snmp_oid>.1.3.6.1.4.1.232.3.2.3.1.1.11.{#SNMPINDEX}</snmp_oid>
+                            <key>cpqDaLogDrvCondition[{#SNMPINDEX}]</key>
+                            <delay>300</delay>
+                            <history>7</history>
+                            <trends>90</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description>CPQIDA-MIB::&#13;
+     cpqDaLogDrvCondition OBJECT-TYPE&#13;
+        SYNTAX  INTEGER&#13;
+        {&#13;
+            other(1),&#13;
+            ok(2),&#13;
+            degraded(3),&#13;
+            failed(4)&#13;
+        }&#13;
+        ACCESS  read-only&#13;
+        STATUS  mandatory&#13;
+        DESCRIPTION&#13;
+            &quot;The Logical Drive condition.&#13;
+&#13;
+            This value represents the overall condition of this logical drive and&#13;
+            any associated physical drives.&quot;&#13;
+        ::= { cpqDaLogDrvEntry 11 }</description>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>HP Drive Array</name>
+                                </application>
+                            </applications>
+                            <valuemap>
+                                <name>cpqCondition</name>
+                            </valuemap>
+                            <logtimefmt/>
+                            <application_prototypes/>
+                        </item_prototype>
+                    </item_prototypes>
+                    <trigger_prototypes>
+                        <trigger_prototype>
+                            <expression>{Template_HP_SNMP_Autodiscovery:cpqDaLogDrvCondition[{#SNMPINDEX}].last()}=4</expression>
+                            <recovery_mode>0</recovery_mode>
+                            <recovery_expression/>
+                            <name>{HOST.NAME}: Logical Drive {#SNMPINDEX} [{#SNMPVALUE}] has failed</name>
+                            <correlation_mode>0</correlation_mode>
+                            <correlation_tag/>
+                            <url/>
+                            <status>0</status>
+                            <priority>4</priority>
+                            <description>This logical drive drive (volume) has failed.  For more information, go to the system management homepage, then check the array configuration utility (may need to be started from the command line first).  This alert is very serious (data has been lost) because failure of a logical drive (in RAID configuration with redundancy) is normally caused by multiple physical drive failures.&#13;
+&#13;
+HP System Management Homepage (may require starting service hpsmhd):&#13;
+https://{HOST.CONN}:2381</description>
+                            <type>0</type>
+                            <manual_close>0</manual_close>
+                            <dependencies/>
+                            <tags/>
+                        </trigger_prototype>
+                        <trigger_prototype>
+                            <expression>{Template_HP_SNMP_Autodiscovery:cpqDaLogDrvCondition[{#SNMPINDEX}].last()}=3</expression>
+                            <recovery_mode>0</recovery_mode>
+                            <recovery_expression/>
+                            <name>{HOST.NAME}: Logical Drive {#SNMPINDEX} [{#SNMPVALUE}] is degraded</name>
+                            <correlation_mode>0</correlation_mode>
+                            <correlation_tag/>
+                            <url/>
+                            <status>0</status>
+                            <priority>2</priority>
+                            <description>This logical drive drive (volume) is degraded.  For more information, go to the system management homepage, then check the array configuration utility (may need to be started from the command line first).&#13;
+&#13;
+This alert normally is normally means that redundancy has been lost because an underlying physical drive has failed.  This means that now a single drive failure could cause data loss.  This alert is normally accompanied by an alert from the physical drive which has failed.   Suggested actions are to write a ticket to replace the failed physical drive, then acknowledge the physical and logical drive alerts, writing the ticket number in the notes.&#13;
+&#13;
+HP System Management Homepage (may require starting service hpsmhd):&#13;
+https://{HOST.CONN}:2381</description>
+                            <type>0</type>
+                            <manual_close>0</manual_close>
+                            <dependencies/>
+                            <tags/>
+                        </trigger_prototype>
+                    </trigger_prototypes>
+                    <graph_prototypes>
+                        <graph_prototype>
+                            <name>HP Logical Drive Condition {#SNMPINDEX} [{#SNMPVALUE}]</name>
+                            <width>900</width>
+                            <height>200</height>
+                            <yaxismin>0.0000</yaxismin>
+                            <yaxismax>100.0000</yaxismax>
+                            <show_work_period>1</show_work_period>
+                            <show_triggers>1</show_triggers>
+                            <type>0</type>
+                            <show_legend>1</show_legend>
+                            <show_3d>0</show_3d>
+                            <percent_left>0.0000</percent_left>
+                            <percent_right>0.0000</percent_right>
+                            <ymin_type_1>1</ymin_type_1>
+                            <ymax_type_1>0</ymax_type_1>
+                            <ymin_item_1>0</ymin_item_1>
+                            <ymax_item_1>0</ymax_item_1>
+                            <graph_items>
+                                <graph_item>
+                                    <sortorder>0</sortorder>
+                                    <drawtype>0</drawtype>
+                                    <color>1A7C11</color>
+                                    <yaxisside>0</yaxisside>
+                                    <calc_fnc>2</calc_fnc>
+                                    <type>0</type>
+                                    <item>
+                                        <host>Template_HP_SNMP_Autodiscovery</host>
+                                        <key>cpqDaLogDrvCondition[{#SNMPINDEX}]</key>
+                                    </item>
+                                </graph_item>
+                            </graph_items>
+                        </graph_prototype>
+                    </graph_prototypes>
+                    <host_prototypes/>
+                </discovery_rule>
+                <discovery_rule>
+                    <name>Memory Modules</name>
+                    <type>4</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>discovery[{#SNMPVALUE},.1.3.6.1.4.1.232.6.2.14.13.1.19]</snmp_oid>
+                    <key>snmp.discovery[memoryModules]</key>
+                    <delay>3600</delay>
+                    <status>1</status>
+                    <allowed_hosts/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <filter>
+                        <evaltype>0</evaltype>
+                        <formula/>
+                        <conditions>
+                            <condition>
+                                <macro>{#SNMPVALUE}</macro>
+                                <value>^[^2]</value>
+                                <operator>8</operator>
+                                <formulaid>A</formulaid>
+                            </condition>
+                        </conditions>
+                    </filter>
+                    <lifetime>0</lifetime>
+                    <description>Enable this discovery rule to monitor each memory module (i.e. to show which modules are installed in which sockets).  If this rule is enabled, disable the top-level item &quot;HP Resilient Memory Condition&quot; so you don''t get 2 alerts in the event of a memory failure.&#13;
+&#13;
+If you don't need monitoring of individual memory modules, leave this disabled, and leave the top-level item &quot;HP Resilient Memory Condition&quot; enabled.&#13;
+&#13;
+&#13;
+Walk the cpqHeResMem2ModuleStatus, filter out any modules which are &quot;notPresent(2)&quot;&#13;
+&#13;
+CPQHLTH-MIB::&#13;
+    cpqHeResMem2ModuleStatus OBJECT-TYPE&#13;
+        SYNTAX  INTEGER {&#13;
+            other(1),&#13;
+            notPresent(2),&#13;
+            present(3),&#13;
+            good(4),&#13;
+            add(5),&#13;
+            upgrade(6),&#13;
+            missing(7),&#13;
+            doesNotMatch(8),&#13;
+            notSupported(9),&#13;
+            badConfig(10),&#13;
+            degraded(11)</description>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>HP Memory Module CPU Number [{#SNMPINDEX}]</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                            <multiplier>0</multiplier>
+                            <snmp_oid>.1.3.6.1.4.1.232.6.2.14.13.1.3.{#SNMPINDEX}</snmp_oid>
+                            <key>cpqHeResMem2CpuNum[{#SNMPINDEX}]</key>
+                            <delay>28800</delay>
+                            <history>1</history>
+                            <trends>1</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description>CPQHLTH-MIB::&#13;
+    cpqHeResMem2CpuNum OBJECT-TYPE&#13;
+        SYNTAX  INTEGER&#13;
+        ACCESS  read-only&#13;
+        STATUS  mandatory&#13;
+        DESCRIPTION&#13;
+            &quot;The memory module CPU number. Value 0 means memory is not Processor based.&quot;&#13;
+        ::= { cpqHeResMem2ModuleEntry 3 }</description>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>Memory Modules</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                            <logtimefmt/>
+                            <application_prototypes/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>HP Memory Module Condition [{#SNMPINDEX}]</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                            <multiplier>0</multiplier>
+                            <snmp_oid>.1.3.6.1.4.1.232.6.2.14.13.1.20.{#SNMPINDEX}</snmp_oid>
+                            <key>cpqHeResMem2ModuleCondition[{#SNMPINDEX}]</key>
+                            <delay>300</delay>
+                            <history>7</history>
+                            <trends>30</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description>CPQHLTH-MIB::&#13;
+    cpqHeResMem2ModuleCondition OBJECT-TYPE&#13;
+        SYNTAX  INTEGER {&#13;
+            other(1),&#13;
+            ok(2),&#13;
+            degraded(3),&#13;
+            degradedModuleIndexUnknown(4)&#13;
+        }&#13;
+        ACCESS  read-only&#13;
+        STATUS  mandatory&#13;
+        DESCRIPTION&#13;
+             &quot;This provides the current status of the correctable memory&#13;
+              errors for this memory module.&#13;
+&#13;
+              The following status values are supported:&#13;
+&#13;
+                 other(1):&#13;
+                   ECC is not supported on this memory module or the&#13;
+                   condition could not be determined.&#13;
+&#13;
+                 ok(2):&#13;
+                   The memory module is operating normally.&#13;
+&#13;
+                 degraded(3):&#13;
+                   The memory module is correctable error count has exceeded&#13;
+                   threshold or a configuration error has been detected.&#13;
+&#13;
+                 degradedModuleIndexUnknown(4):&#13;
+                   The correctable error count has exceeded threshold.&#13;
+                   The module number not available.&quot;&#13;
+        ::= { cpqHeResMem2ModuleEntry 20 }</description>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>Memory Modules</name>
+                                </application>
+                            </applications>
+                            <valuemap>
+                                <name>cpqCondition</name>
+                            </valuemap>
+                            <logtimefmt/>
+                            <application_prototypes/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>HP Memory Module Number [{#SNMPINDEX}]</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                            <multiplier>0</multiplier>
+                            <snmp_oid>.1.3.6.1.4.1.232.6.2.14.13.1.5.{#SNMPINDEX}</snmp_oid>
+                            <key>cpqHeResMem2ModuleNum[{#SNMPINDEX}]</key>
+                            <delay>28800</delay>
+                            <history>1</history>
+                            <trends>1</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description>CPQHLTH-MIB::&#13;
+    cpqHeResMem2ModuleNum OBJECT-TYPE&#13;
+        SYNTAX  INTEGER&#13;
+        ACCESS  read-only&#13;
+        STATUS  mandatory&#13;
+        DESCRIPTION&#13;
+            &quot;The memory module number.&quot;&#13;
+        ::= { cpqHeResMem2ModuleEntry 5 }</description>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>Memory Modules</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                            <logtimefmt/>
+                            <application_prototypes/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>HP Memory Module Size [{#SNMPINDEX}]</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                            <multiplier>1</multiplier>
+                            <snmp_oid>.1.3.6.1.4.1.232.6.2.14.13.1.6.{#SNMPINDEX}</snmp_oid>
+                            <key>cpqHeResMem2ModuleSize[{#SNMPINDEX}]</key>
+                            <delay>28800</delay>
+                            <history>1</history>
+                            <trends>1</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units>B</units>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1024</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description>CPQHLTH-MIB::&#13;
+    cpqHeResMem2ModuleSize OBJECT-TYPE&#13;
+        SYNTAX  INTEGER (0..2147483647)&#13;
+        ACCESS  read-only&#13;
+        STATUS  mandatory&#13;
+        DESCRIPTION&#13;
+            &quot;Module memory size in kilobytes.  A kilobyte of memory is&#13;
+            defined as 1024 bytes.&#13;
+&#13;
+            A size of 0 indicates the module is not present.&quot;&#13;
+        ::= { cpqHeResMem2ModuleEntry 6 }</description>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>Memory Modules</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                            <logtimefmt/>
+                            <application_prototypes/>
+                        </item_prototype>
+                    </item_prototypes>
+                    <trigger_prototypes>
+                        <trigger_prototype>
+                            <expression>{Template_HP_SNMP_Autodiscovery:cpqHeResMem2ModuleCondition[{#SNMPINDEX}].last()}&gt;2 and {Template_HP_SNMP_Autodiscovery:cpqHeResMem2ModuleNum[{#SNMPINDEX}].last()}&lt;&gt;99 and {Template_HP_SNMP_Autodiscovery:cpqHeResMem2CpuNum[{#SNMPINDEX}].last()}&lt;&gt;99</expression>
+                            <recovery_mode>0</recovery_mode>
+                            <recovery_expression/>
+                            <name>{HOST.NAME}: Memory Module {#SNMPINDEX} is degraded</name>
+                            <correlation_mode>0</correlation_mode>
+                            <correlation_tag/>
+                            <url/>
+                            <status>0</status>
+                            <priority>3</priority>
+                            <description>The correctable error count for this memory module has been exceeded.  It needs to be replaced.  Suggested actions are to write a ticket to replace the module, then acknowledge the alert, writing the ticket number in the notes.&#13;
+&#13;
+HP System Management Homepage (may require starting service hpsmhd):&#13;
+https://{HOST.CONN}:2381</description>
+                            <type>0</type>
+                            <manual_close>0</manual_close>
+                            <dependencies/>
+                            <tags/>
+                        </trigger_prototype>
+                    </trigger_prototypes>
+                    <graph_prototypes/>
+                    <host_prototypes/>
+                </discovery_rule>
+                <discovery_rule>
+                    <name>Physical Drives</name>
+                    <type>4</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>discovery[{#SNMPVALUE},.1.3.6.1.4.1.232.3.2.5.1.1.64]</snmp_oid>
+                    <key>snmp.discovery[physicalDrives]</key>
+                    <delay>3600</delay>
+                    <status>0</status>
+                    <allowed_hosts/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <filter>
+                        <evaltype>0</evaltype>
+                        <formula/>
+                        <conditions/>
+                    </filter>
+                    <lifetime>0</lifetime>
+                    <description>Walk the cpqDaPhyDrvLocationString table to get drive locations:&#13;
+&#13;
+CPQIDA-MIB::&#13;
+     cpqDaPhyDrvLocationString OBJECT-TYPE&#13;
+        SYNTAX  DisplayString (SIZE (0..255))&#13;
+        ACCESS  read-only&#13;
+        STATUS  mandatory&#13;
+        DESCRIPTION&#13;
+           &quot;Physical Drive Location String.&#13;
+&#13;
+            This string describes the location of the drive in relation to&#13;
+            the controller.  If the location string cannot be determined,&#13;
+            the agent will return a NULL string.&quot;&#13;
+        ::= { cpqDaPhyDrvEntry 64 }</description>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>HP Physical Drive Condition {#SNMPINDEX}</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                            <multiplier>0</multiplier>
+                            <snmp_oid>.1.3.6.1.4.1.232.3.2.5.1.1.37.{#SNMPINDEX}</snmp_oid>
+                            <key>cpqDaPhyDrvCondition[{#SNMPINDEX}]</key>
+                            <delay>300</delay>
+                            <history>7</history>
+                            <trends>90</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description>CPQIDA-MIB::&#13;
+     cpqDaPhyDrvCondition OBJECT-TYPE&#13;
+        SYNTAX  INTEGER&#13;
+        {&#13;
+            other(1),&#13;
+            ok(2),&#13;
+            degraded(3),&#13;
+            failed(4)&#13;
+        }&#13;
+        ACCESS  read-only&#13;
+        STATUS  mandatory&#13;
+        DESCRIPTION&#13;
+            &quot;The condition of the device.&#13;
+             This value represents the overall condition of this physical&#13;
+             drive.&quot;&#13;
+        ::= { cpqDaPhyDrvEntry 37 }</description>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>HP Drive Array</name>
+                                </application>
+                            </applications>
+                            <valuemap>
+                                <name>cpqCondition</name>
+                            </valuemap>
+                            <logtimefmt/>
+                            <application_prototypes/>
+                        </item_prototype>
+                    </item_prototypes>
+                    <trigger_prototypes>
+                        <trigger_prototype>
+                            <expression>{Template_HP_SNMP_Autodiscovery:cpqDaPhyDrvCondition[{#SNMPINDEX}].last()}=4</expression>
+                            <recovery_mode>0</recovery_mode>
+                            <recovery_expression/>
+                            <name>{HOST.NAME}: Drive {#SNMPINDEX} has failed [{#SNMPVALUE}]</name>
+                            <correlation_mode>0</correlation_mode>
+                            <correlation_tag/>
+                            <url/>
+                            <status>0</status>
+                            <priority>3</priority>
+                            <description>This drive has failed.  It needs to be replaced.  This alert will normally be accompanied by an alert from a logical drive which has now lost redundancy. This means that now a single drive failure can cause data loss.  Suggested actions are to write a ticket to replace the failed physical drive, then acknowledge the physical and logical drive alerts, writing the ticket number in the notes.&#13;
+&#13;
+HP System Management Homepage (may require starting service hpsmhd):&#13;
+https://{HOST.CONN}:2381</description>
+                            <type>0</type>
+                            <manual_close>0</manual_close>
+                            <dependencies/>
+                            <tags/>
+                        </trigger_prototype>
+                        <trigger_prototype>
+                            <expression>{Template_HP_SNMP_Autodiscovery:cpqDaPhyDrvCondition[{#SNMPINDEX}].last()}=3</expression>
+                            <recovery_mode>0</recovery_mode>
+                            <recovery_expression/>
+                            <name>{HOST.NAME}: Drive {#SNMPINDEX} is degraded [{#SNMPVALUE}]</name>
+                            <correlation_mode>0</correlation_mode>
+                            <correlation_tag/>
+                            <url/>
+                            <status>0</status>
+                            <priority>2</priority>
+                            <description>This drive is degraded (may mean predictive failure).  It should be replaced.  Suggested actions are to write a ticket to replace the drive, then acknowledge the alert, writing the ticket number in the notes.&#13;
+&#13;
+HP System Management Homepage (may require starting service hpsmhd):&#13;
+https://{HOST.CONN}:2381</description>
+                            <type>0</type>
+                            <manual_close>0</manual_close>
+                            <dependencies/>
+                            <tags/>
+                        </trigger_prototype>
+                    </trigger_prototypes>
+                    <graph_prototypes>
+                        <graph_prototype>
+                            <name>HP Physical Drive Condition {#SNMPINDEX}</name>
+                            <width>900</width>
+                            <height>200</height>
+                            <yaxismin>0.0000</yaxismin>
+                            <yaxismax>100.0000</yaxismax>
+                            <show_work_period>1</show_work_period>
+                            <show_triggers>1</show_triggers>
+                            <type>0</type>
+                            <show_legend>1</show_legend>
+                            <show_3d>0</show_3d>
+                            <percent_left>0.0000</percent_left>
+                            <percent_right>0.0000</percent_right>
+                            <ymin_type_1>1</ymin_type_1>
+                            <ymax_type_1>0</ymax_type_1>
+                            <ymin_item_1>0</ymin_item_1>
+                            <ymax_item_1>0</ymax_item_1>
+                            <graph_items>
+                                <graph_item>
+                                    <sortorder>0</sortorder>
+                                    <drawtype>0</drawtype>
+                                    <color>1A7C11</color>
+                                    <yaxisside>0</yaxisside>
+                                    <calc_fnc>2</calc_fnc>
+                                    <type>0</type>
+                                    <item>
+                                        <host>Template_HP_SNMP_Autodiscovery</host>
+                                        <key>cpqDaPhyDrvCondition[{#SNMPINDEX}]</key>
+                                    </item>
+                                </graph_item>
+                            </graph_items>
+                        </graph_prototype>
+                    </graph_prototypes>
+                    <host_prototypes/>
+                </discovery_rule>
+                <discovery_rule>
+                    <name>Power Supplies</name>
+                    <type>4</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>discovery[{#SNMPVALUE},.1.3.6.1.4.1.232.6.2.9.3.1.3]</snmp_oid>
+                    <key>snmp.discovery[powerSupplies]</key>
+                    <delay>3600</delay>
+                    <status>1</status>
+                    <allowed_hosts/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <filter>
+                        <evaltype>0</evaltype>
+                        <formula/>
+                        <conditions>
+                            <condition>
+                                <macro>{#SNMPVALUE}</macro>
+                                <value>^[^2]</value>
+                                <operator>8</operator>
+                                <formulaid>A</formulaid>
+                            </condition>
+                        </conditions>
+                    </filter>
+                    <lifetime>0</lifetime>
+                    <description>Walk the cpqHeFltTolPowerSupplyPresent table, filter out any modules which are &quot;absent(2)&quot;&#13;
+&#13;
+CPQHLTH-MIB::&#13;
+    cpqHeFltTolPowerSupplyPresent OBJECT-TYPE&#13;
+        SYNTAX  INTEGER {&#13;
+            other(1),&#13;
+            absent(2),&#13;
+            present(3)&#13;
+            }&#13;
+        ACCESS  read-only&#13;
+        STATUS  mandatory&#13;
+        DESCRIPTION&#13;
+            &quot;Indicates whether the power supply is present in the chassis.&quot;&#13;
+        ::= { cpqHeFltTolPowerSupplyEntry 3 }</description>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>HP Power Supply Condition {#SNMPINDEX}</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                            <multiplier>0</multiplier>
+                            <snmp_oid>.1.3.6.1.4.1.232.6.2.9.3.1.4.{#SNMPINDEX}</snmp_oid>
+                            <key>cpqHeFltTolPowerSupplyCondition[{#SNMPINDEX}]</key>
+                            <delay>300</delay>
+                            <history>7</history>
+                            <trends>30</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description>CPQHLTH-MIB::&#13;
+    cpqHeFltTolPowerSupplyCondition OBJECT-TYPE&#13;
+        SYNTAX  INTEGER {&#13;
+            other(1),&#13;
+            ok(2),&#13;
+            degraded(3),&#13;
+            failed(4)&#13;
+            }&#13;
+        ACCESS  read-only&#13;
+        STATUS  mandatory&#13;
+        DESCRIPTION&#13;
+            &quot;The condition of the power supply.&#13;
+&#13;
+            This value will be one of the following:&#13;
+&#13;
+            other(1)&#13;
+              The status could not be determined or not present.&#13;
+&#13;
+            ok(2)&#13;
+              The power supply is operating normally.&#13;
+&#13;
+            degraded(3)&#13;
+              A temperature sensor, fan or other power supply component is&#13;
+              outside of normal operating range.&#13;
+&#13;
+            failed(4)&#13;
+              A power supply component detects a condition that could&#13;
+              permanently damage the system.&quot;&#13;
+        ::= { cpqHeFltTolPowerSupplyEntry 4 }</description>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>HP Health</name>
+                                </application>
+                            </applications>
+                            <valuemap>
+                                <name>cpqCondition</name>
+                            </valuemap>
+                            <logtimefmt/>
+                            <application_prototypes/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>HP Power Supply Redundant {#SNMPINDEX}</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                            <multiplier>0</multiplier>
+                            <snmp_oid>.1.3.6.1.4.1.232.6.2.9.3.1.9.{#SNMPINDEX}</snmp_oid>
+                            <key>cpqHeFltTolPowerSupplyRedundant[{#SNMPINDEX}]</key>
+                            <delay>3600</delay>
+                            <history>7</history>
+                            <trends>30</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description>CPQHLTH-MIB::&#13;
+    cpqHeFltTolPowerSupplyRedundant OBJECT-TYPE&#13;
+        SYNTAX  INTEGER {&#13;
+            other(1),&#13;
+            notRedundant(2),&#13;
+            redundant(3)&#13;
+            }&#13;
+        ACCESS  read-only&#13;
+        STATUS  mandatory&#13;
+        DESCRIPTION&#13;
+            &quot;The redundancy state of the power supply.&#13;
+&#13;
+            This value will be one of the following:&#13;
+            other(1)&#13;
+              The redundancy state could not be determined.&#13;
+&#13;
+            notRedundant(2)&#13;
+              The power supply is not operating in a redundant state.&#13;
+&#13;
+            redundant(3)&#13;
+              The power supply is operating in a redundant state.&quot;&#13;
+        ::= { cpqHeFltTolPowerSupplyEntry 9 }</description>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>HP Health</name>
+                                </application>
+                            </applications>
+                            <valuemap>
+                                <name>cpqRedundant</name>
+                            </valuemap>
+                            <logtimefmt/>
+                            <application_prototypes/>
+                        </item_prototype>
+                    </item_prototypes>
+                    <trigger_prototypes>
+                        <trigger_prototype>
+                            <expression>{Template_HP_SNMP_Autodiscovery:cpqHeFltTolPowerSupplyCondition[{#SNMPINDEX}].last()}=4</expression>
+                            <recovery_mode>0</recovery_mode>
+                            <recovery_expression/>
+                            <name>{HOST.NAME}: Power Supply {#SNMPINDEX} has failed</name>
+                            <correlation_mode>0</correlation_mode>
+                            <correlation_tag/>
+                            <url/>
+                            <status>0</status>
+                            <priority>3</priority>
+                            <description>This power supply is reporting that it has failed.  This could mean that the supply has failed and needs replacement, or it could also mean that there is no input power due to a cabling problem.  Check to make sure that there is power going to this supply, if so it has failed and needs to be replaced.&#13;
+&#13;
+HP System Management Homepage (may require starting service hpsmhd):&#13;
+https://{HOST.CONN}:2381</description>
+                            <type>0</type>
+                            <manual_close>0</manual_close>
+                            <dependencies/>
+                            <tags/>
+                        </trigger_prototype>
+                        <trigger_prototype>
+                            <expression>{Template_HP_SNMP_Autodiscovery:cpqHeFltTolPowerSupplyCondition[{#SNMPINDEX}].last()}=3</expression>
+                            <recovery_mode>0</recovery_mode>
+                            <recovery_expression/>
+                            <name>{HOST.NAME}: Power Supply {#SNMPINDEX} is degraded</name>
+                            <correlation_mode>0</correlation_mode>
+                            <correlation_tag/>
+                            <url/>
+                            <status>0</status>
+                            <priority>2</priority>
+                            <description>This power supply is reporting a degraded condition.  This could mean that a fan has failed, or a termperature reading is too high.  Check the iLO or system management homepage for more information. If a fan has failed, it needs to be replaced.&#13;
+&#13;
+HP System Management Homepage (may require starting service hpsmhd):&#13;
+https://{HOST.CONN}:2381</description>
+                            <type>0</type>
+                            <manual_close>0</manual_close>
+                            <dependencies/>
+                            <tags/>
+                        </trigger_prototype>
+                    </trigger_prototypes>
+                    <graph_prototypes/>
+                    <host_prototypes/>
+                </discovery_rule>
+            </discovery_rules>
+            <httptests/>
+            <macros>
+                <macro>
+                    <macro>{$SNMP_COMMUNITY}</macro>
+                    <value>public</value>
+                </macro>
+            </macros>
+            <templates/>
+            <screens/>
+        </template>
+    </templates>
+    <triggers>
+        <trigger>
+            <expression>{Template_HP_SNMP_Autodiscovery:cpqHeResilientMemCondition.last()}=3</expression>
+            <recovery_mode>0</recovery_mode>
+            <recovery_expression/>
+            <name>{HOST.NAME}: HP Resilient Memory condition is degraded</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url/>
+            <status>1</status>
+            <priority>3</priority>
+            <description>The Advanced Memory Protection, probably because of correctable memory errors.  The DIMM which had the errors should be replaced.  Check the iLO or system management homepage for more detail, and to find out which DIMM.&#13;
+&#13;
+HP System Management Homepage (may require starting service hpsmhd):&#13;
+https://{HOST.CONN}:2381</description>
+            <type>0</type>
+            <manual_close>0</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{Template_HP_SNMP_Autodiscovery:cpqHeResilientMemCondition.last()}=1</expression>
+            <recovery_mode>0</recovery_mode>
+            <recovery_expression/>
+            <name>{HOST.NAME}: HP Resilient Memory condition is unknown</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url/>
+            <status>1</status>
+            <priority>2</priority>
+            <description>The condition of the resilient memory system cannot be determined (condition reported is &quot;other&quot;).  Try, in this order:&#13;
+1) resetting the iLO from the iLO screen &#13;
+2) restarting the HP SNMP agents:&#13;
+/sbin/service hp-snmp-agents restart&#13;
+3) restarting snmpd:&#13;
+/sbin/service snmpd restart&#13;
+&#13;
+HP System Management Homepage (may require starting service hpsmhd):&#13;
+https://{HOST.CONN}:2381</description>
+            <type>0</type>
+            <manual_close>0</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{Template_HP_SNMP_Autodiscovery:cpqHeMibCondition.nodata(3600)}=1</expression>
+            <recovery_mode>0</recovery_mode>
+            <recovery_expression/>
+            <name>{HOST.NAME}: HP SNMP Agents are not responding</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url/>
+            <status>0</status>
+            <priority>2</priority>
+            <description>The HP SNMP Agents for this host have not responded to SNMP queries for more than 1 hour.  If the host is otherwise operating properly, it can mean that the HP SNMP agents are not working properl, or that the SNMP service has stopped.  A less likely cause is a network issue - SNMP uses UDP port 161,&#13;
+&#13;
+To restart, as root:&#13;
+/sbin/service hp-snmp-agents restart&#13;
+/sbin/service snmpd restart</description>
+            <type>0</type>
+            <manual_close>0</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{Template_HP_SNMP_Autodiscovery:cpqHeThermalCondition.last()}&gt;2</expression>
+            <recovery_mode>0</recovery_mode>
+            <recovery_expression/>
+            <name>{HOST.NAME}: HP Thermal Condition is Degraded</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url/>
+            <status>1</status>
+            <priority>4</priority>
+            <description>Something is wrong with this server's cooling system.  Either a non-required fan is not operating properly, or a temp sensor is outside of normal operating range.&#13;
+&#13;
+The server will automatically shutdown if a required fan is not operating properly, or if a temp sensor detects a condition that could permanently damage the system.&#13;
+&#13;
+Check server's iLO or or System Management Homepage for more detail.&#13;
+&#13;
+HP System Management Homepage (may require starting service hpsmhd):&#13;
+https://{HOST.CONN}:2381</description>
+            <type>0</type>
+            <manual_close>0</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{Template_HP_SNMP_Autodiscovery:cpqHeAsrCondition.last()}&gt;2</expression>
+            <recovery_mode>0</recovery_mode>
+            <recovery_expression/>
+            <name>{HOST.NAME}: Server was restarted by ASR (HP Automatic Server Recovery)</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url/>
+            <status>1</status>
+            <priority>4</priority>
+            <description>HP Automatic Server Recovery (ASR) is reporting a &quot;degraded&quot; or &quot;failed&quot; state.  ASR is a watchdog timer which automatically restarts a server if the server hangs or crashes.&#13;
+&#13;
+When a server is restarted by ASR, a flag is set, and an alert is triggered until the flag is reset.&#13;
+&#13;
+To reset the ASR flag and clear this alert, go to the server's System Management Homepage, then select &quot;Autorecovery&quot; in the &quot;Recovery&quot; section.  There you can clear the ASR condition.&#13;
+&#13;
+HP System Management Homepage (may require starting service hpsmhd):&#13;
+https://{HOST.CONN}:2381</description>
+            <type>0</type>
+            <manual_close>0</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+    </triggers>
+    <graphs>
+        <graph>
+            <name>HP Health MIB Condition</name>
+            <width>900</width>
+            <height>200</height>
+            <yaxismin>0.0000</yaxismin>
+            <yaxismax>100.0000</yaxismax>
+            <show_work_period>1</show_work_period>
+            <show_triggers>1</show_triggers>
+            <type>0</type>
+            <show_legend>1</show_legend>
+            <show_3d>0</show_3d>
+            <percent_left>0.0000</percent_left>
+            <percent_right>0.0000</percent_right>
+            <ymin_type_1>1</ymin_type_1>
+            <ymax_type_1>0</ymax_type_1>
+            <ymin_item_1>0</ymin_item_1>
+            <ymax_item_1>0</ymax_item_1>
+            <graph_items>
+                <graph_item>
+                    <sortorder>0</sortorder>
+                    <drawtype>0</drawtype>
+                    <color>1A7C11</color>
+                    <yaxisside>0</yaxisside>
+                    <calc_fnc>2</calc_fnc>
+                    <type>0</type>
+                    <item>
+                        <host>Template_HP_SNMP_Autodiscovery</host>
+                        <key>cpqHeMibCondition</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+    </graphs>
+    <value_maps>
+        <value_map>
+            <name>cpqCondition</name>
+            <mappings>
+                <mapping>
+                    <value>1</value>
+                    <newvalue>other</newvalue>
+                </mapping>
+                <mapping>
+                    <value>2</value>
+                    <newvalue>OK</newvalue>
+                </mapping>
+                <mapping>
+                    <value>3</value>
+                    <newvalue>degraded</newvalue>
+                </mapping>
+                <mapping>
+                    <value>4</value>
+                    <newvalue>failed</newvalue>
+                </mapping>
+            </mappings>
+        </value_map>
+        <value_map>
+            <name>cpqDaAccelBackupPowerSource</name>
+            <mappings>
+                <mapping>
+                    <value>1</value>
+                    <newvalue>other</newvalue>
+                </mapping>
+                <mapping>
+                    <value>2</value>
+                    <newvalue>battery</newvalue>
+                </mapping>
+                <mapping>
+                    <value>3</value>
+                    <newvalue>capacitor</newvalue>
+                </mapping>
+                <mapping>
+                    <value>4</value>
+                    <newvalue>Flash-Backed Write Cache</newvalue>
+                </mapping>
+            </mappings>
+        </value_map>
+        <value_map>
+            <name>cpqDaAccelBatteryStatus</name>
+            <mappings>
+                <mapping>
+                    <value>1</value>
+                    <newvalue>other</newvalue>
+                </mapping>
+                <mapping>
+                    <value>2</value>
+                    <newvalue>ok</newvalue>
+                </mapping>
+                <mapping>
+                    <value>3</value>
+                    <newvalue>recharging</newvalue>
+                </mapping>
+                <mapping>
+                    <value>4</value>
+                    <newvalue>failed</newvalue>
+                </mapping>
+                <mapping>
+                    <value>5</value>
+                    <newvalue>degraded</newvalue>
+                </mapping>
+                <mapping>
+                    <value>6</value>
+                    <newvalue>notPresent</newvalue>
+                </mapping>
+                <mapping>
+                    <value>7</value>
+                    <newvalue>capacitorFailed</newvalue>
+                </mapping>
+            </mappings>
+        </value_map>
+        <value_map>
+            <name>cpqDaAccelStatus</name>
+            <mappings>
+                <mapping>
+                    <value>1</value>
+                    <newvalue>other</newvalue>
+                </mapping>
+                <mapping>
+                    <value>2</value>
+                    <newvalue>invalid</newvalue>
+                </mapping>
+                <mapping>
+                    <value>3</value>
+                    <newvalue>enabled</newvalue>
+                </mapping>
+                <mapping>
+                    <value>4</value>
+                    <newvalue>tmpDisabled</newvalue>
+                </mapping>
+                <mapping>
+                    <value>5</value>
+                    <newvalue>permDisabled</newvalue>
+                </mapping>
+                <mapping>
+                    <value>6</value>
+                    <newvalue>cacheModFlashMemNotAttached</newvalue>
+                </mapping>
+                <mapping>
+                    <value>7</value>
+                    <newvalue>cacheModDegradedFailsafeSpeed</newvalue>
+                </mapping>
+                <mapping>
+                    <value>8</value>
+                    <newvalue>cacheModCriticalFailure</newvalue>
+                </mapping>
+                <mapping>
+                    <value>9</value>
+                    <newvalue>cacheReadCacheNotMapped</newvalue>
+                </mapping>
+            </mappings>
+        </value_map>
+        <value_map>
+            <name>cpqDaCntlrDriveWriteCacheState</name>
+            <mappings>
+                <mapping>
+                    <value>1</value>
+                    <newvalue>other</newvalue>
+                </mapping>
+                <mapping>
+                    <value>2</value>
+                    <newvalue>disabled</newvalue>
+                </mapping>
+                <mapping>
+                    <value>3</value>
+                    <newvalue>enabled</newvalue>
+                </mapping>
+            </mappings>
+        </value_map>
+        <value_map>
+            <name>cpqRedundant</name>
+            <mappings>
+                <mapping>
+                    <value>1</value>
+                    <newvalue>other</newvalue>
+                </mapping>
+                <mapping>
+                    <value>2</value>
+                    <newvalue>notRedundant</newvalue>
+                </mapping>
+                <mapping>
+                    <value>3</value>
+                    <newvalue>redundant</newvalue>
+                </mapping>
+            </mappings>
+        </value_map>
+    </value_maps>
+</zabbix_export>
+
