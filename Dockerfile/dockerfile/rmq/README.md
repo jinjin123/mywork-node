@@ -28,3 +28,7 @@
           "domain": false
         },
 ```
+
+###add plugins
+
+add *.ez into /plugins, then rabbitmq-plugins enable   rabbitmq_delayed_message_exchange
