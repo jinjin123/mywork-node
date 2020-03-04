@@ -10,4 +10,4 @@ local res,err = ngx.location.capture("/as/oauth/service/login_url?accessToken=".
 local red = cjson.decode(res.body)
 local redirect = string.match(red.result, "/pages/oauth/.*")
 --local list = split(red.result,":8001")
-return ngx.redirect("http://jin.tmpdcx.cn:8002"..redirect,301)
+return ngx.redirect("http://xxxx:8002"..redirect,301)
