@@ -47,7 +47,7 @@ pytz==2017.2
 pyxattr==0.5.1
 pyzabbix==0.7.4
 redis==2.10.5
-requests==2.17.3
+requests==2.20.0
 six==1.11.0
 SQLAlchemy==1.1.15
 supervisor==3.3.2
