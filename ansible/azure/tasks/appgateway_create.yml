@@ -20,12 +20,12 @@
   roles:
     - azure.azure_preview_modules
   vars:
-    resource_group: "{{ resource_group_name }}"
-    location: eastus
-    vnet_name: ansiblevnetname
-    subnet_name: ansiblesubnetname
+#    resource_group: "{{ resource_group_name }}"
+#    location: eastus
+#    vnet_name: "{{ vnet_name }}"
+#    subnet_name: "{{ subnet_name }}"
     appgw_name: appgw{{ rpfx }}
-    azure_subscription_id: "{{ lookup('env','AZURE_SUBSCRIPTION_ID') }}"
+#    azure_subscription_id: "{{ lookup('env','AZURE_SUBSCRIPTION_ID') }}"
   tasks:
     - name: Create a resource group
       azure_rm_resourcegroup:

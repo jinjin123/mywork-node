@@ -8,17 +8,18 @@
 # This sample requires Ansible 2.6 
 
 - name: Create Azure Kubernetes Service
-  hosts: localhost
-  connection: local
-  vars:
-    ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCdL+hQnk3Dnc2Q63W45V6PyD6ooZWkJk+vljF3vHwGGSwb6n2LuzE4ic7ttg43NEIjoVBe9S/xqfxK8ayNQN2NfrINuqcd96O7KAaGKv9fbrg5CeRLwRph/uvAaTSdasJGTErbBMslDyELTs1Xszc8uVBumgTk9EGesKp7DbITEKWgPFOEtqk7N4lBUtusBcFYBJwpCiH4qJDpNefhk1QeMK8uVjDy0vstTS1bbNpkLN23nOU5TnqZU8hIJAdI3ovXKJdbFJXCjSZYmB4vlT/5OxGdmE551cQoxnL4MUoIZDMihKaXgVkg1uRhGjTo4qPfVjLrKcED7y1k0+zxKFD9
-    resource_group: "{{ resource_group_name }}"
-    location: eastus
-    aks_name: myAKSCluster
-    username: azureuser
-    client_id: "{{ lookup('env', 'AZURE_CLIENT_ID') }}"
-    client_secret: "{{ lookup('env', 'AZURE_CLIENT_SECRET') }}"
-    aks_version: "1.19.1"
+#  hosts: localhost
+  hosts: "{{ role_hosts }}"
+  connection:  "{{ role_position }}"
+#  vars:
+#    ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCdL+hQnk3Dnc2Q63W45V6PyD6ooZWkJk+vljF3vHwGGSwb6n2LuzE4ic7ttg43NEIjoVBe9S/xqfxK8ayNQN2NfrINuqcd96O7KAaGKv9fbrg5CeRLwRph/uvAaTSdasJGTErbBMslDyELTs1Xszc8uVBumgTk9EGesKp7DbITEKWgPFOEtqk7N4lBUtusBcFYBJwpCiH4qJDpNefhk1QeMK8uVjDy0vstTS1bbNpkLN23nOU5TnqZU8hIJAdI3ovXKJdbFJXCjSZYmB4vlT/5OxGdmE551cQoxnL4MUoIZDMihKaXgVkg1uRhGjTo4qPfVjLrKcED7y1k0+zxKFD9
+#    resource_group: "{{ resource_group_name }}"
+#    location: eastus
+#    aks_name: myAKSCluster
+#    username: azureuser
+#    client_id: "{{ lookup('env', 'AZURE_CLIENT_ID') }}"
+#    client_secret: "{{ lookup('env', 'AZURE_CLIENT_SECRET') }}"
+#    aks_version:  "{{ KUBE_APISERVER }}"
   tasks:
   - name: Create resource group
     azure_rm_resourcegroup:
