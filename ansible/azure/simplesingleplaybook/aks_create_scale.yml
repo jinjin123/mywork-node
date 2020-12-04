@@ -1,0 +1,68 @@
+# Description
+# ===========
+# This playbook first creates an Azure Kubernetes Service cluster of 2 nodes with provided username and ssh key and scales it to 3 nodes.
+# Change variables below to customize your AKS deployment.
+# It also requires a valid service principal to create AKS cluster, so fill:
+# - client_id
+# - client_secret
+# This sample requires Ansible 2.6 
+
+- name: Create Azure Kubernetes Service
+  hosts: localhost
+  connection: local
+  vars:
+    ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCdL+hQnk3Dnc2Q63W45V6PyD6ooZWkJk+vljF3vHwGGSwb6n2LuzE4ic7ttg43NEIjoVBe9S/xqfxK8ayNQN2NfrINuqcd96O7KAaGKv9fbrg5CeRLwRph/uvAaTSdasJGTErbBMslDyELTs1Xszc8uVBumgTk9EGesKp7DbITEKWgPFOEtqk7N4lBUtusBcFYBJwpCiH4qJDpNefhk1QeMK8uVjDy0vstTS1bbNpkLN23nOU5TnqZU8hIJAdI3ovXKJdbFJXCjSZYmB4vlT/5OxGdmE551cQoxnL4MUoIZDMihKaXgVkg1uRhGjTo4qPfVjLrKcED7y1k0+zxKFD9
+    resource_group: "{{ resource_group_name }}"
+    location: eastus
+    aks_name: myAKSCluster
+    username: azureuser
+    client_id: "{{ lookup('env', 'AZURE_CLIENT_ID') }}"
+    client_secret: "{{ lookup('env', 'AZURE_CLIENT_SECRET') }}"
+    aks_version: "1.19.1"
+  tasks:
+  - name: Create resource group
+    azure_rm_resourcegroup:
+      name: "{{ resource_group }}"
+      location: "{{ location }}"
+  - name: Create an AKS instance
+    azure_rm_aks:
+      name: "{{ aks_name }}"
+      kubernetes_version: "{{ aks_version }}"
+      location: "{{ location }}"
+      resource_group: "{{ resource_group }}"
+      dns_prefix: "{{ aks_name }}"
+      linux_profile:
+        admin_username: "{{ username }}"
+        ssh_key: "{{ ssh_key }}"
+      service_principal:
+        client_id: "{{ client_id }}"
+        client_secret: "{{ client_secret }}"
+      agent_pool_profiles:
+        - name: default
+          count: 1
+          vm_size: Standard_DS1_v2
+      tags:
+        Environment: Production
+  - name: Scale created Azure Container Services (AKS) cluster
+    azure_rm_aks:
+      name: "{{ aks_name }}"
+      location: "{{ location }}"
+      kubernetes_version: "{{ aks_version }}"
+      resource_group: "{{ resource_group }}"
+      dns_prefix: "{{ aks_name }}"
+      linux_profile:
+        admin_username: "{{ username }}"
+        ssh_key: "{{ ssh_key }}"
+      service_principal:
+        client_id: "{{ client_id }}"
+        client_secret: "{{ client_secret }}"
+      agent_pool_profiles:
+        - name: default
+          count: 2
+          vm_size: Standard_DS1_v2
+  - name: Remove a managed Azure Container Services (AKS) instance
+    azure_rm_aks:
+      name: "{{ aks_name }}"
+      resource_group: "{{ resource_group }}"
+      state: absent
+    tags: rm

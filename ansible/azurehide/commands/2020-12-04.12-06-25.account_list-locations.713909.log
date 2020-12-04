@@ -1,0 +1,2 @@
+CMD-LOG-LINE-BEGIN 713909 | 2020-12-04 12:06:25,223 | INFO | az_command_data_logger | command args: account list-locations -o {}
+CMD-LOG-LINE-BEGIN 713909 | 2020-12-04 12:06:32,753 | INFO | az_command_data_logger | exit code: 0
