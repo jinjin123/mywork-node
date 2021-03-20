@@ -23,7 +23,7 @@ greenlet==0.4.12
 gunicorn==19.7.1
 #idna==2.5
 #iniparse==0.4
-Jinja2==2.10
+Jinja2==2.11.3
 jupyter-echarts-pypkg==0.1.2
 kitchen==1.1.1
 kombu==3.0.37
