@@ -13,4 +13,6 @@ do
 	#echo  "elasticdump --input=http://localhost:9200/$x --output=$x.json --type=mapping --bulk=true" 
 	echo  "elasticdump --input=http://localhost:9200/$x --output=$x.json --type=data --bulk=true" 
 done
-
+#link
+https://www.jianshu.com/p/bcd17c7affab
+https://www.cnblogs.com/pilihaotian/p/5830754.html
