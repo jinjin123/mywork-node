@@ -2,3 +2,6 @@
 	path = v2raytrafficget
 	url = git@github.com:jinjin123/v2raytrafficget.git
 
+[submodule "selenium/v2raytrafficget"]
+	path = selenium/v2raytrafficget
+	url = git@github.com:jinjin123/v2raytrafficget.git
