@@ -1,0 +1,4 @@
+[submodule "v2raytrafficget"]
+	path = v2raytrafficget
+	url = git@github.com:jinjin123/v2raytrafficget.git
+
