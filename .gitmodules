@@ -5,3 +5,7 @@
 [submodule "selenium/v2raytrafficget"]
 	path = selenium/v2raytrafficget
 	url = git@github.com:jinjin123/v2raytrafficget.git
+
+[submodule "Dockerfile/dockerfile/postgres"]
+	path = Dockerfile/dockerfile/postgres
+	url = https://github.com/livingdocsIO/dockerfile-postgres.git
