@@ -1,0 +1,44 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: elastic
+  name: kibana
+spec:
+  selector:
+    matchLabels:
+      app: kibana
+  template:
+    metadata:
+      labels:
+        app: kibana
+    spec:
+      containers:
+      - name: kibana
+        image: kibana:7.8.0
+        resources:
+          limits:
+            memory: "2048Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 5601
+          name: kibanaweb
+        env:
+          - name: ELASTICSEARCH_HOSTS
+            value: "http://es-svc:9200"
+          - name: ELASTICSEARCH_USER
+            value: "elastic"
+          - name: ELASTICSEARCH_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                key: password
+                name: es-pw
+        volumeMounts:
+          - name: config
+            mountPath: /usr/share/kibana/config/kibana.yml
+            readOnly: true
+            subPath: kibana.yml
+      volumes:
+        - name: config
+          configMap:
+            name: kibana-config
