@@ -1,0 +1,14 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  namespace: elastic
+  name: kibana-svc
+  labels:
+    app: kibana 
+spec:
+  selector:
+    app: kibana
+  ports:
+  - name: web
+    port: 5601
