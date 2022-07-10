@@ -1,0 +1,14 @@
+[submodule "v2raytrafficget"]
+	path = v2raytrafficget
+	url = git@github.com:jinjin123/v2raytrafficget.git
+
+[submodule "selenium/v2raytrafficget"]
+	path = selenium/v2raytrafficget
+	url = git@github.com:jinjin123/v2raytrafficget.git
+
+[submodule "Dockerfile/dockerfile/postgres"]
+	path = Dockerfile/dockerfile/postgres
+	url = https://github.com/livingdocsIO/dockerfile-postgres.git
+[submodule "Dockerfile/dockerfile/postgres-debian"]
+	path = Dockerfile/dockerfile/postgres-debian
+	url = https://github.com/bitnami/bitnami-docker-postgresql.git

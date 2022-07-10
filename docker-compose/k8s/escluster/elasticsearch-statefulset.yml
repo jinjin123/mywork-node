@@ -1,0 +1,98 @@
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  namespace: elastic
+  name: elasticsearch
+  labels:
+    app: elasticsearch
+    role: es
+spec:
+  serviceName: "es-svc"
+  replicas: 3
+  selector:
+    matchLabels:
+      app: elasticsearch
+      role: es
+  template:
+    metadata:
+      labels:
+        app: elasticsearch
+        role: es
+    spec:
+      # pod反亲和策略，用于将具有role=es标签的pod打散
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                  - key: "role"
+                    operator: In
+                    values:
+                      - "es"
+              topologyKey: "kubernetes.io/hostname"
+      initContainers:
+      - name: init-vm-max-map
+        image: busybox
+        command: ["sysctl","-w","vm.max_map_count=262144"]
+        securityContext:
+          privileged: true
+      - name: init-fd-ulimit
+        image: busybox
+        command: ["sh","-c","ulimit -n 65535"]
+        securityContext:
+          privileged: true
+      containers:
+      - image: elasticsearch:7.8.0
+        imagePullPolicy: IfNotPresent
+        name:  elasticsearch
+        env:
+        - name: CLUSTER_NAME
+          value: elasticsearch-cluster
+        - name: PATH_DATA
+          value: /opt/es/data
+        - name: PATH_LOGS
+          value: /usr/share/elasticsearch/logs
+        - name: NODE_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: NODE_LIST
+          value: "elasticsearch-0.es-svc.elastic.svc.cluster.local,elasticsearch-1.es-svc.elastic.svc.cluster.local,elasticsearch-2.es-svc.elastic.svc.cluster.local"
+        - name: "ES_JAVA_OPTS"
+          value: "-Xms1024m -Xmx1024m"      
+        ports:
+        - containerPort: 9200
+          name: http
+        - containerPort: 9300
+          name: transport
+        volumeMounts:
+        - mountPath: /usr/share/elasticsearch/config/elasticsearch.yml
+          readOnly: true
+          subPath: elasticsearch.yml
+          name: config
+        - mountPath: /opt/es/data
+          name: es-data
+        - mountPath: /usr/share/elasticsearch/logs
+          name: es-logs
+      volumes:
+      - name: config
+        configMap:
+          name: es-config
+  volumeClaimTemplates:
+  - metadata:
+      name: es-data
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      storageClassName: nfs-client
+      resources:
+        requests:
+          storage: 10Gi 
+  - metadata:
+      name: es-logs
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      storageClassName: nfs-client
+      resources:
+        requests:
+          storage: 5Gi 

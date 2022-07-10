@@ -1,0 +1,38 @@
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: nginx-pv
+spec:
+  accessModes:
+    - ReadWriteMany
+  # 指定刚才创建的 storage-class 的 metadata.name
+  storageClassName: "nfs-client"
+  resources:
+    requests:
+      storage: 2Gi
+
+---
+kind: Pod
+apiVersion: v1
+metadata:
+  name: test-busybox
+spec:
+  containers:
+  - name: test-busybox
+    image: busybox:1.24
+    command:
+      - "/bin/sh"
+    args:
+      - "-c"
+      - "touch /mnt/SUCCESS && exit 0 || exit 1"
+    volumeMounts:
+      - name: nfs-pvc
+        mountPath: "/mnt"
+  restartPolicy: "Never"
+  volumes:
+    - name: nfs-pvc
+      persistentVolumeClaim:
+      # 和 pvc 的 metadata.name 一致
+        claimName: nginx-pv
+
