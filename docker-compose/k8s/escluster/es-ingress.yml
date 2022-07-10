@@ -1,0 +1,19 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  namespace: elastic
+  name: es-ingress
+spec:
+  ingressClassName: nginx # controller.yaml -name
+  rules:
+  - host: elastic.liheng.com
+    http: 
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: es-svc
+            port: 
+              number: 9200
