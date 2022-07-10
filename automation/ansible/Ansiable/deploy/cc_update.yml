@@ -1,0 +1,16 @@
+---
+- hosts: sparkpad_production_web_cc
+  tasks:
+    - name: git pull for CC
+      command: "git pull origin master chdir=/app/web/www/sites/default/"
+#      command: "git log -3 chdir=/app/web/www/sites/default/"
+
+#    - name: up db 
+#      command: "drush updb -y chdir=/app/web/www/sites/default/"
+#      environment:
+#        PATH: /app/php/bin:/app/memcached/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/app/php/bin:/app/mysql/bin:/home/spark/.local/bin:/home/spark/bin:/app/php/bin
+#
+#    - name: drush cc all
+#      command: "drush cc all -v chdir=/app/web/www/sites/default/"
+#      environment:
+#        PATH: /app/php/bin:/app/memcached/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/app/php/bin:/app/mysql/bin:/home/spark/.local/bin:/home/spark/bin:/app/php/bin

@@ -1,0 +1,18 @@
+---
+- name: write the registered cluster hosts to file
+  template: src=hostmap.json.j2 dest=/tmp/hostmap.json
+
+- name: Copy blueprints with single namenode
+  copy: src=simple_hadoop_cluster.json dest=/tmp/ha_namenode_yarn_blueprints.json
+  when: ha == 'no'
+
+- name: Copy blueprints with namenode high available
+  copy: src=ha_namenode_yarn_blueprints.json dest=/tmp/ha_namenode_yarn_blueprints.json
+  when: ha == 'yes'
+
+- name: post blueprint
+  command: curl -X POST -u {{ var_ambari_user }}:{{ var_ambari_password }} -swo -i /dev/null -w "%{http_code}" http://{{ var_ambari_server }}:8080/api/v1/blueprints/messi655 -d @/tmp/ha_namenode_yarn_blueprints.json
+
+- name: Create cluster
+  command: curl -X POST -u {{ var_ambari_user }}:{{ var_ambari_password }} -swo -i /dev/null -w "%{http_code}" http://{{ var_ambari_server }}:8080/api/v1/clusters/messi655 -d @/tmp/hostmap.json
+  

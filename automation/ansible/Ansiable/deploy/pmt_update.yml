@@ -1,0 +1,27 @@
+---
+- hosts: 172.16.102.111:172.16.102.109
+  tasks:
+#    - name: Git checkout master
+#      command: "git checkout master chdir=/app/web/pmt/sites/default/"
+#
+    - name: git pull for PMT 
+      command: "git pull chdir=/app/web/pmt/"
+
+#    - name: up db 
+#      command: "drush updb -y chdir=/app/web/pmt/sites/default/"
+#      environment:
+#        PATH: /app/php/bin:/app/memcached/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/app/php/bin:/app/mysql/bin:/home/spark/.local/bin:/home/spark/bin:/app/php/bin
+
+#    - name: drush cc all
+#      command: "drush cc all -v chdir=/app/web/pmt/sites/default/"
+#      environment:
+#        PATH: /app/php/bin:/app/memcached/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/app/php/bin:/app/mysql/bin:/home/spark/.local/bin:/home/spark/bin:/app/php/bin
+
+- hosts: 172.16.102.107
+  tasks:
+    - name: git pull for PMT
+      command: "git pull chdir=/app/code/pmt/"
+#    - name: drush cc all
+#      command: "drush cc all -v chdir=/app/code/pmt/sites/default/"
+#      environment:
+#       PATH: /app/php/bin:/app/memcached/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/app/php/bin:/app/mysql/bin:/home/spark/.local/bin:/home/spark/bin:/app/php/bin

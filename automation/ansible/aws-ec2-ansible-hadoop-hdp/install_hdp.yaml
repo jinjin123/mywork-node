@@ -1,0 +1,35 @@
+---
+- hosts: all
+  remote_user: centos
+  gather_facts: False
+  sudo: yes
+  roles:
+    - {role: common}
+
+- hosts: ambariserver
+  remote_user: centos
+  sudo: yes
+  gather_facts: False
+  roles:
+    - {role: utils}
+
+- hosts: datanodes
+  remote_user: centos
+  gather_facts: False
+  sudo: yes
+  roles:
+    - {role: datanode}
+
+- hosts: masternodes 
+  remote_user: centos
+  gather_facts: False
+  sudo: yes
+  roles:
+    - {role: masternode}
+
+- hosts: ambariserver
+  remote_user: centos
+  sudo: yes
+  gather_facts: False
+  roles:
+    - {role: deploy_cluster, ha: "yes"}

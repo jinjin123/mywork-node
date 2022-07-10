@@ -1,0 +1,16 @@
+ 
+[ambariserver]
+master1.ansible.local ansible_ssh_host=172.30.128.17
+
+[masternodes]
+master1.ansible.local ansible_ssh_host=172.30.128.17
+master3.ansible.local ansible_ssh_host=172.30.128.224
+master2.ansible.local ansible_ssh_host=172.30.128.111
+
+[datanodes]
+datanode1.ansible.local ansible_ssh_host=172.30.128.36
+
+[test]
+test2 ansible_ssh_host=47.95.233.176
+
+

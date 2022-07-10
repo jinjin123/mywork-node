@@ -1,0 +1,12 @@
+---
+- hosts: sparkpad_production_git
+  tasks:
+    - name: Test date
+      command: "git remote update chdir=~/repo/{{ item }}.git"
+      with_items:
+         - fe
+#         - cc
+#         - crm
+#         - de
+#         - pmt
+#         - mkt 

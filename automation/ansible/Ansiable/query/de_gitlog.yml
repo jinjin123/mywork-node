@@ -1,0 +1,18 @@
+---
+- hosts: sparkpad_production_web_cdmp
+  tasks:
+    - name: git pull for DE 
+      command: "git log chdir=/app/web/de/sites/default/"
+
+#    - name: git fallback
+#      command: "git checkout fdbdbc141a0c760f1b97dcc6f66ec392c0e012d3 chdir=/app/web/de/sites/default/"
+#
+#    - name: up db 
+#      command: "drush updb -y chdir=/app/web/de/sites/default/"
+#      environment:
+#        PATH: /app/php/bin:/app/memcached/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/app/php/bin:/app/mysql/bin:/home/spark/.local/bin:/home/spark/bin:/app/php/bin
+#
+#    - name: drush cc all
+#      command: "drush cc all -v chdir=/app/web/de/sites/default/"
+#      environment:
+#        PATH: /app/php/bin:/app/memcached/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/app/php/bin:/app/mysql/bin:/home/spark/.local/bin:/home/spark/bin:/app/php/bin

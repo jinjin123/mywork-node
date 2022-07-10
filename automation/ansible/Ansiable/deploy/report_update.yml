@@ -1,0 +1,11 @@
+- hosts: [sparkpad_report_web]
+  tasks:
+    - name: git pull for datacache
+      command: "git pull origin master chdir=/app/www/html/"
+    - name: change_html
+      command: "chown -R nginx:nginx /app/www/html/"
+
+- hosts: 172.16.103.133
+  tasks:
+    - name: mrestart
+      command: /root/scripts/restart-mq.sh

@@ -1,0 +1,72 @@
+---
+- hosts: sparkpad_bootdev_tv
+  tasks:
+    - name: install prerequisite 
+      #command: "pwd chdir=/app/web/www" 
+      shell: "yum install git automake autoconf bison flex gcc gcc-c++ kernel-devel make dmidecode m4 mysql pcre-devel zlib zlib-devel libevent libevent-devel -y"
+      args:
+        executable: /bin/bash
+      ignore_errors: yes
+
+    - name: install epel-release
+      shell: "yum install epel-release -y"
+      args:
+        executable: /bin/bash
+      ignore_errors: yes
+ 
+# Begin installation of running packages
+ 
+    - name: install nginx
+      shell: "yum install nginx -y"
+      args:
+        executable: /bin/bash
+      ignore_errors: yes 
+
+    - name: Enable nginx autostart
+      shell: "systemctl enable nginx"
+      args:
+        executable: /bin/bash
+      ignore_errors: yes 
+
+    - name: Start Nginx
+      shell: "systemctl start nginx"
+      args:
+        executable: /bin/bash
+      ignore_errors: yes 
+
+#    - name: Install Database
+#      shell: "yum install mariadb-server mariadb"
+#      args:
+#        executable: /bin/bash
+#      ignore_errors: yes
+#
+#    - name: Start Database
+#      shell: "systemctl start mariadb"
+#      args:
+#        executable: /bin/bash
+#      ignore_errors: yes
+
+#    - name: Install repo for php56w
+#      shell: "yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm"
+#      args:
+#        executable: /bin/bash
+#      ignore_errors: yes
+
+    - name: Install repo for php56w
+      shell: "rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm"
+      args:
+        executable: /bin/bash
+      ignore_errors: yes
+
+    - name: Install repo for php56w
+      shell: "rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm"
+      args:
+        executable: /bin/bash
+      ignore_errors: yes
+
+    - name: Install php and fpm
+      shell: "yum install php56w php56w-cli php56w-common php56w-devel php56w-gd php56w-mbstring php56w-mysqlnd php56w-opcache php56w-pdo php56w-process php56w-pecl-memcached php56w-xml php56w-xmlrpc php56w-fpm -y"
+      args:
+        executable: /bin/bash
+      ignore_errors: yes
+

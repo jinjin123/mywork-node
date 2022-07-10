@@ -1,0 +1,51 @@
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+
+172.16.104.205 test.zkf.vpn fe.zkungfu.vpn
+172.16.104.204 dev.zkf.vpn git.staging.vpn
+172.16.104.207 prod.zkf.vpn
+172.16.104.121 dboc.zkf.vpn mysql-oc.zkf.vpn
+172.16.104.122 dbcrm.zkf.vpn mysql-crm.zkf.vpn mysql
+172.16.104.123 mq.zkf.vpn mq-rabbitmq.zkf.vpn mq
+172.16.104.124 oc.zkf.vpn oc
+172.16.104.125 fe.zkf.vpn
+172.16.104.126 de.zkf.vpn crm.zkf.vpn gfs.4006927927.com 
+
+172.16.102.119  nfs1.zkf.vpn
+172.16.102.120  nfs2.zkf.vpn  git.prod.vpn
+172.16.102.118  nfsv.zkf.vpn
+172.16.102.103  fcd.zkf.vpn
+172.16.102.101  fe1.zkf.vpn
+172.16.102.102  fe2.zkf.vpn
+172.16.102.100  fev.zkf.vpn
+172.16.102.104  cc1.zkf.vpn
+172.16.102.105  cc2.zkf.vpn
+172.16.102.106  ccv.zkf.vpn
+172.16.102.109  cdmp1.zkf.vpn
+172.16.102.111  cdmp2.zkf.vpn
+172.16.102.108  cdmpv.zkf.vpn
+172.16.102.113  cdmpd.zkf.vpn
+172.16.102.114  oc1.zkf.vpn
+172.16.102.115  oc2.zkf.vpn
+172.16.102.116  ocv.zkf.vpn
+172.16.102.117  ocd.zkf.vpn
+172.16.102.121  mq1.zkf.vpn gfs3-docker-mq-01
+172.16.102.123  mq2.zkf.vpn gfs3-docker-mq-02
+172.16.102.122  mqv.zkf.vpn
+172.16.103.185  ocdb1.zkf.vpn
+172.16.103.187  ocdb2.zkf.vpn
+172.16.103.186  ocdbv.zkf.vpn
+172.16.103.189  cdmpdb1.zkf.vpn
+172.16.103.190  cdmpdb2.zkf.vpn
+172.16.103.188  cdmpdbv.zkf.vpn
+
+172.16.102.101 fe1.zkf.vpn
+172.16.102.102 fe2.zkf.vpn
+172.16.102.120 git.prod.vpn
+
+172.16.102.108 de.zkungfu.com
+172.16.102.108 crm.zkungfu.com
+172.16.102.108 pmt.zkungfu.com
+172.16.102.108 mkt.zkungfu.com
+
+220.181.112.9 api.baidu.com

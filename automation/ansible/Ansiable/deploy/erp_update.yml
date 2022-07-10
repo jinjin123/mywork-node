@@ -1,0 +1,16 @@
+---
+- hosts: [sparkpad_production_web_erp]
+  tasks:
+    - name: git pull for ERP
+      command: "git pull chdir=/app/web/erp/sites/default/"
+
+- hosts: [sparkpad_production_web_erp_1]
+  tasks:
+    - name: git pull for ERP
+      command: "git pull chdir=/app/code/erp/"
+
+    #- name: drush cc all
+      #command: "docker-compose -f /home/spark/docker/php7-fpm/docker-compose.yml exec php7-fpm drush -r /app/web/erp cc all"
+      #command: "drush -r /app/web/erp cc all"
+      #environment:
+        #PATH: /app/php/bin:/app/memcached/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/app/php/bin:/app/mysql/bin:/home/spark/.local/bin:/home/spark/bin:/app/php/bin

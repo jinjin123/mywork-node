@@ -1,0 +1,5 @@
+---
+- hosts: sparkpad_production
+  tasks:
+    - name: mv old host table back
+      command: "mv /etc/hosts.20160721 /etc/hosts"

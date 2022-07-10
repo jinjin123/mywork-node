@@ -1,9 +1,0 @@
----
-- hosts: sparkpad_production
-  tasks:
-#    - name: mv old host table to backup
-#      command: "mv /etc/hosts /etc/hosts.20160721"
-    - name: Copy updated host table to all hosts
-      copy: src=hosts_production.txt dest=/etc/hosts owner=root group=root mode=0644
-#    - name: Find diff between current and old
-#      command: "diff /etc/hosts /etc/hosts.20160721"

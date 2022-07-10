@@ -1,0 +1,9 @@
+---
+- hosts: sparkpad_production_web_fe
+  tasks:
+    - name: git pull for FE
+      command: "git pull origin master chdir=/app/web/www/"
+
+    - name: quantao
+      #command: "rm -rf * chdir=/app/web/www/app/cache/"
+      command: /home/spark/bin/quantao

@@ -1,3 +1,6 @@
 **/.git
 *.tar.gz
 *.zip
+*.tar
+*.rdb
+*.aof

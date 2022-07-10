@@ -1,0 +1,5 @@
+---
+- hosts: sparkpad
+  tasks:
+    - name: Copy updated host table to all hosts
+      copy: src=hosts.txt dest=/etc/hosts owner=root group=root mode=0644

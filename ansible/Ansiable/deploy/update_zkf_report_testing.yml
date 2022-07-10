@@ -1,8 +1,0 @@
----
-- hosts: sparkpad_report_testing
-  tasks:
-    - name: make sure branch is test
-      command: "git checkout test chdir=/var/www/html"
-
-    - name: git pull for DE 
-      command: "git pull origin test chdir=/var/www/html/"

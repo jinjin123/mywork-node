@@ -1,0 +1,32 @@
+---
+- hosts: sparkpad_production_web_cdmp
+  tasks:
+    ### pmt
+    - name: Set pmt sites default permission
+      command: "chmod 755 /app/web/pmt/sites/default"
+
+    - copy: src=src/pmt.settings.php dest=/app/web/pmt/sites/default/settings.php owner=spark group=spark mode=0644
+
+    ### de
+    - name: Set de sites default permission
+      command: "chmod 755 /app/web/de/sites/default"
+
+    - copy: src=src/de.settings.php dest=/app/web/de/sites/default/settings.php owner=spark group=spark mode=0644
+
+    ### mkt
+    - name: Set mkt sites default permission
+      command: "chmod 755 /app/web/mkt/sites/default"
+
+    - copy: src=src/mkt.settings.php dest=/app/web/mkt/sites/default/settings.php owner=spark group=spark mode=0644
+
+    ### crm
+    - name: Set crm sites default permission
+      command: "chmod 755 /app/web/crm/sites/default"
+
+    - copy: src=src/crm.settings.php dest=/app/web/crm/sites/default/settings.php owner=spark group=spark mode=0644
+
+    ### erp
+    - name: Set erp sites default permission
+      command: "chmod 755 /app/web/erp/sites/default"
+
+    - copy: src=src/erp.settings.php dest=/app/web/erp/sites/default/settings.php owner=spark group=spark mode=0644
