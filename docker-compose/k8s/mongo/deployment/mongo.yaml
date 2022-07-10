@@ -1,0 +1,201 @@
+apiVersion: v1 
+data: 
+  mongodb-keyfile: mluamluMTIzLj8+PA==
+kind: Secret 
+metadata: 
+  name: mongo-key 
+  namespace: mongo-db 
+type: Opaque 
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mongo-0-disk
+  namespace: mongo-db
+spec:
+  storageClassName: "rook-ceph-block"
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mongo-1-disk
+  namespace: mongo-db
+spec:
+  storageClassName: "rook-ceph-block"
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mongo-2-disk
+  namespace: mongo-db
+spec:
+  storageClassName: "rook-ceph-block"
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+
+---
+apiVersion: apps/v1 
+kind: Deployment 
+metadata: 
+  namespace: mongo-db 
+  name: mongodb0 
+spec: 
+  replicas: 1 
+  selector: 
+    matchLabels: 
+      app: mongo-0 
+  template: 
+    metadata: 
+      labels: 
+        app: mongo-0 
+    spec: 
+      terminationGracePeriodSeconds: 10 
+      containers: 
+        - name: mongo 
+          image: containerregistry.azurecr.io/mongodb:5.0.6 
+          env: 
+            - name: MONGODB_USERNAME 
+              value: admin 
+            - name: MONGODB_PASSWORD 
+              value: password 
+            - name: MONGODB_DBNAME 
+              value: admin 
+            - name: MONGODB_ROLE 
+              value: root 
+            - name: REPLICA_ID 
+              value: mongoRS 
+            - name: HOST 
+              value: mongodb0 
+          ports: 
+            - containerPort: 27017 
+          volumeMounts: 
+            - name: mongo-key 
+              mountPath: "/etc/secrets-volume" 
+              readOnly: true 
+            - name: mongo-persistent-storage 
+              mountPath: /data 
+      volumes: 
+      - name: mongo-key 
+        secret: 
+          defaultMode: 0400 
+          secretName: mongo-key 
+      - name: mongo-persistent-storage 
+        persistentVolumeClaim: 
+          claimName: mongo-0-disk 
+--- 
+apiVersion: apps/v1 
+kind: Deployment 
+metadata: 
+  namespace: mongo-db 
+  name: mongodb1 
+spec: 
+  replicas: 1 
+  selector: 
+    matchLabels: 
+      app: mongo-1 
+  template: 
+    metadata: 
+      labels: 
+        app: mongo-1 
+    spec: 
+      terminationGracePeriodSeconds: 10 
+      containers: 
+        - name: mongo 
+          image: containerregistry.azurecr.io/mongodb:5.0.6 
+          env: 
+            - name: MONGODB_USERNAME 
+              value: admin 
+            - name: MONGODB_PASSWORD 
+              value: password 
+            - name: MONGODB_DBNAME 
+              value: admin 
+            - name: MONGODB_ROLE 
+              value: root 
+            - name: REPLICA_ID 
+              value: mongoRS 
+            - name: HOST 
+              value: mongodb0 
+          ports: 
+            - containerPort: 27017 
+          volumeMounts: 
+            - name: mongo-key 
+              mountPath: "/etc/secrets-volume" 
+              readOnly: true 
+            - name: mongo-persistent-storage 
+              mountPath: /data 
+      volumes: 
+      - name: mongo-key 
+        secret: 
+          defaultMode: 0400 
+          secretName: mongo-key 
+      - name: mongo-persistent-storage 
+        persistentVolumeClaim: 
+          claimName: mongo-1-disk 
+--- 
+apiVersion: apps/v1 
+kind: Deployment 
+metadata: 
+  namespace: mongo-db 
+  name: mongodb2 
+spec: 
+  replicas: 1 
+  selector: 
+    matchLabels: 
+      app: mongo-2 
+  template: 
+    metadata: 
+      labels: 
+        app: mongo-2 
+    spec: 
+      terminationGracePeriodSeconds: 10 
+      containers: 
+        - name: mongo 
+          image: containerregistry.azurecr.io/mongodb:5.0.6 
+          env: 
+            - name: MONGODB_USERNAME 
+              value: admin 
+            - name: MONGODB_PASSWORD 
+              value: password 
+            - name: MONGODB_DBNAME 
+              value: admin 
+            - name: MONGODB_ROLE 
+              value: root 
+            - name: REPLICA_ID 
+              value: mongoRS 
+            - name: HOST 
+              value: mongodb0 
+          ports: 
+            - containerPort: 27017 
+          volumeMounts: 
+            - name: mongo-key 
+              mountPath: "/etc/secrets-volume" 
+              readOnly: true 
+            - name: mongo-persistent-storage 
+              mountPath: /data 
+      volumes: 
+      - name: mongo-key 
+        secret: 
+          defaultMode: 0400 
+          secretName: mongo-key 
+      - name: mongo-persistent-storage 
+        persistentVolumeClaim: 
+          claimName: mongo-2-disk 
+ 
+ 
