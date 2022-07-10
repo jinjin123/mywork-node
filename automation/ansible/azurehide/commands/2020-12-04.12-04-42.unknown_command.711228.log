@@ -1,0 +1,2 @@
+CMD-LOG-LINE-BEGIN 711228 | 2020-12-04 12:04:42,084 | INFO | az_command_data_logger | command args: --help
+CMD-LOG-LINE-BEGIN 711228 | 2020-12-04 12:04:42,270 | INFO | az_command_data_logger | exit code: 0

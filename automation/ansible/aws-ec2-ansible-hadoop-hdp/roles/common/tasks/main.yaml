@@ -1,0 +1,72 @@
+---
+
+- name: Set hostname for individual host
+  template: src=hostname.j2 dest=/etc/hostname
+
+- name: ensure that the new hostname is preserved between restarts/reboots
+  command: "echo preserve_hostname: true >> /etc/cloud/cloud.cfg"
+
+- name: Update hostname without reboot server
+  shell: 'sudo hostname -F /etc/hostname'
+
+- name: Add hostname fqdn
+  template: src=hosts.j2 dest=/etc/hosts
+
+- name: install dependency packages (RedHat)
+  when: ansible_os_family == 'RedHat'
+  yum: name={{ item }} state=latest
+  with_items:
+    - zip
+    - unzip
+    - wget
+    - sysstat
+    - ntp
+    - openssl
+    - telnet
+    
+- name: fetch java rpm (Redhat)
+  when: ansible_os_family == 'RedHat'
+  #command: 'wget http://download.oracle.com/otn-pub/java/jdk/{{ var_java_ver }}-{{ var_java_build }}/512cd62ec5174c3487ac17c61aaa89e8/jdk-{{ var_java_ver }}-linux-x64.rpm'
+  #command: 'yum install java-1.8.0-openjdk.x86_64 -y'
+  #command: 'wget http://mirror.centos.org/centos/7/updates/x86_64/Packages/java-1.8.0-openjdk-1.8.0.201.b09-2.el7_6.x86_64.rpm'
+  #command: 'wget http://111.231.82.173/file/jdk-8u211-linux-x64.tar.gz'
+  copy: 
+    src: ../files/jdk-8u211-linux-x64.tar.gz
+    dest: /home/centos/
+    owner: root
+    group: root
+    mode: 0644
+
+- name: install java runtime environment (RedHat)
+  when: ansible_os_family == 'RedHat'
+  #yum: name=jdk-{{ var_java_ver }}-linux-x64.rpm state=present
+  #yum: name=java-1.8.0-openjdk-1.8.0.201.b09-2.el7_6.x86_64.rpm state=present
+  shell: |
+    sudo mkdir -p /usr/java/
+    sudo tar xzvf jdk-8u211-linux-x64.tar.gz -C /usr/java/
+    sudo mv /usr/java/jdk1.8.0_211 /usr/java/default
+
+- name: Set java environment
+  template: src=java.sh.j2 dest=/etc/profile.d/java.sh mode=0755
+
+#- name: clean up
+  #command: 'rm -f jdk-{{ var_java_ver }}-linux-x64.rpm'
+  #command: 'rm -f java-1.8.0-openjdk-1.8.0.201.b09-2.el7_6.x86_64.rpm'
+
+- name: Create java folder
+  shell: 'sudo mkdir -p /usr/share/java/'
+
+- name: Download MySQL JDBC Connector
+  get_url:
+    url: "{{ mysql_connector_java_url }}"
+    dest: "/tmp/{{ mysql_connector_java_archive }}"
+
+- name: Unarchive MySQL JDBC Connector package
+  shell: |
+    TMP_DIR=`mktemp -d`
+    tar zxvf /tmp/{{ mysql_connector_java_archive }} -C $TMP_DIR --strip-components=1
+    sudo cp $TMP_DIR/mysql-connector-java-*-bin.jar /usr/share/java/mysql-connector-java.jar
+    sudo chmod 755 /usr/share/java/mysql-connector-java.jar
+   
+
+    

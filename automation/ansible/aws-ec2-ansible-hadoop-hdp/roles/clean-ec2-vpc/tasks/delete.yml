@@ -1,0 +1,158 @@
+---
+
+  - name: Get VPC information {{ vpc_name }}
+    ec2_vpc_net_facts:
+      region: "{{ region }}"
+      filters:
+        "tag:Name": "{{ vpc_name }}"
+    register: facts
+
+  #- name: Print VPC facts
+  #  debug:
+  #    var: facts
+  
+  - name: Facts public EC2 instance
+    ec2_instance_facts:
+      region: "{{ region }}"
+      filters:
+        "tag:Role": bastion
+        instance-state-name: running
+    register: public_ec2_facts
+
+
+  - name: Facts private EC2 instance
+    ec2_instance_facts:
+      region: "{{ region }}"
+      filters:
+        "tag:Role": datanode
+        instance-state-name: running
+    register: datanode_private_ec2_facts
+
+  - name: Facts private EC2 instance
+    ec2_instance_facts:
+      region: "{{ region }}"
+      filters:
+        "tag:Role": master
+        instance-state-name: running
+    register: master_private_ec2_facts
+
+  - name: remove nat eip
+    ec2_eip:
+      release_on_disassociation: true
+      region: "{{ region }}"
+      device_id: "{{ item.instance_id }}"
+      in_vpc: true
+    with_items: "{{ public_ec2_facts.instances }}"
+
+  - name: remove instance eip
+    ec2_eip:
+      state: absent
+      release_on_disassociation: true
+      region: "{{ region }}"
+      device_id: "{{ item.instance_id }}"
+      in_vpc: true
+    with_items: "{{ public_ec2_facts.instances }}"
+
+  - name: Stop public instances
+    ec2:
+      region: "{{ region }}"
+      image: "{{ image_name }}"
+      wait: yes
+      exact_count: 0
+      count_tag:
+        Scope: public
+
+  - name: Stop private instances
+    ec2:
+      region: "{{ region }}"
+      image: "{{ image_name }}"
+      wait: yes
+      exact_count: 0
+      count_tag:
+        Scope: private
+
+  - name: Get nat gateways with specific filter
+    ec2_vpc_nat_gateway_facts:
+      region: "{{ region }}"
+      filters:
+        vpc-id: "{{ facts.vpcs[0].id }}"
+    register: natgateway
+
+  - name: remove nat gw
+    ec2_vpc_nat_gateway:
+      region: "{{ region }}"
+      wait: true
+      state: absent
+      release_eip: true
+      nat_gateway_id: "{{ item.nat_gateway_id }}"
+    with_items: "{{ natgateway.result }}"
+
+  - name: rm igw
+    ec2_vpc_igw:
+      region: "{{ region }}"
+      vpc_id: "{{ facts.vpcs[0].id }}"
+      state: absent
+
+  - name: Print VPC ID
+    debug:
+      msg: "{{ facts.vpcs[0].id }}"
+
+
+  - name: Remove subnet of this vpc
+    ec2_vpc_subnet:
+      state: absent
+      vpc_id: "{{ facts.vpcs[0].id }}"
+      cidr: 172.30.16.0/20
+      az: "{{ az_1 }}"
+    #with_items:
+    #  - "{{ cidr_pub_1 }}"
+    #  - "{{ cidr_pub_2 }}"
+    #  - "{{ cidr_pri_1 }}"
+    #  - "{{ cidr_pri_2 }}"
+  
+  - name: Get facts of security group
+    ec2_group_facts:
+      region: "{{ region }}"
+      filters:
+        vpc-id: "{{ facts.vpcs[0].id }}"
+    register: sec_facts
+
+  #- name: Print security group
+  #  debug:
+  #    var: item.group_id
+  #  with_items: "{{ sec_facts.security_groups }}"
+
+  - name: Delete security group by its id
+    ec2_group:
+      vpc_id: "{{ facts.vpcs[0].id }}"
+      region: "{{ region }}"
+      group_id: "{{ item.group_id }}"
+      state: absent
+    when: item.group_name != "default"
+    with_items: "{{ sec_facts.security_groups }}"
+
+  - name: route table facts
+    ec2_vpc_route_table_facts:
+      region: "{{ region }}"
+      filters:
+        route.destination-cidr-block: "{{ cidr_block }}"
+    register: route_table_facts
+
+  - name: remove route tables
+    ec2_vpc_route_table:
+      region: "{{ region }}"
+      state: absent
+      route_table_id: item.id
+      vpc_id: "{{ route_table_facts.route_tables[0].vpc_id }}"
+    with_items: "{{ route_table_facts.route_tables }}"
+
+  - name: Delete VPC
+    ec2_vpc_net:
+      state: absent
+      cidr_block: "{{ cidr_block }}"
+      resource_tags: { "Name": "{{ vpc_name }}", "Environment":"Production" }
+      name: "{{ vpc_name }}"
+      region: "{{ region }}"
+
+  - debug:
+      msg: "========= Finished ============="

@@ -1,0 +1,19 @@
+version: '3'
+services: 
+  postgres: 
+    image: livingdocs/postgres:14.4
+      #restart: always
+    container_name:  postgres-1
+    ports:
+      - 5432:5432
+    volumes:
+      - /mnt/raid0/data/postgres-1:/var/lib/postgresql
+    environment:
+      TZ: Asia/Shanghai    
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: jinjin123
+      POSTGRES_DB: test123
+      
+    networks: 
+      - sonar-network
+

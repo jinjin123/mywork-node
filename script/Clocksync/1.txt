@@ -1,0 +1,1 @@
+0 1 * * * /usr/sbin/ntpdate 172.16.103.110;/sbin/hwclock -w 

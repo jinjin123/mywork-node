@@ -1,0 +1,404 @@
+---
+  
+  - name: Create VPC
+    ec2_vpc_net:
+      name: "{{ vpc_name }}"
+      state: present
+      cidr_block: "{{ cidr_block }}"
+      resource_tags: { "Name": "{{ vpc_name }}", "Environment":"Production" }
+      region: "{{ region }}"
+    register: vpc
+
+  - name: VPC public subnet 1
+    ec2_vpc_subnet:
+      region: "{{ region }}"
+      state: present
+      vpc_id: "{{ vpc.vpc.id }}"
+      cidr: "{{ cidr_pub_1 }}"
+      az: "{{ az_1 }}"
+      resource_tags:
+        Name: Public 1
+    register: public_network_1
+
+  - name: VPC private subnet 1
+    ec2_vpc_subnet:
+      region: "{{ region }}"
+      state: present
+      vpc_id: "{{ vpc.vpc.id }}"
+      cidr: "{{ cidr_pri_1 }}"
+      az: "{{ az_1 }}"
+      resource_tags:
+        Name: Private 1
+    register: private_network_1
+
+  - name: VPC public subnet 2
+    ec2_vpc_subnet:
+      region: "{{ region }}"
+      state: present
+      vpc_id: "{{ vpc.vpc.id }}"
+      cidr: "{{ cidr_pub_2 }}"
+      az: "{{ az_2 }}"
+      resource_tags:
+        Name: Public 2
+    register: public_network_2
+    when: mutiAZ == "yes"
+
+  - name: VPC private subnet 2
+    ec2_vpc_subnet:
+      region: "{{ region }}"
+      state: present
+      vpc_id: "{{ vpc.vpc.id }}"
+      cidr: "{{ cidr_pri_2 }}"
+      az: "{{ az_2 }}"
+      resource_tags:
+        Name: Private 2
+    register: private_network_2
+    when: mutiAZ == "yes"
+
+################
+  
+  - name: Assign internet gateway to VPC 
+    ec2_vpc_igw:
+      vpc_id: "{{ vpc.vpc.id }}"
+      region: "{{ region }}"
+      state: present
+      tags:
+        Name: "{{ vpc_name }}"
+    register: igw
+
+  - name: VPC nat gw 1
+    ec2_vpc_nat_gateway:
+      region: "{{ region }}"
+      wait: yes
+      if_exist_do_not_create: true
+      state: present
+      subnet_id: "{{ public_network_1.subnet.id }}"
+    register: nat_gw_1
+
+  #- name: VPC nat gw 2
+  #  ec2_vpc_nat_gateway:
+  #    region: "{{ region }}"
+  #    wait: yes
+  #    if_exist_do_not_create: true
+  #    state: present
+  #    subnet_id: "{{ public_network_2.subnet.id }}"
+  #  register: nat_gw_2
+  #  when: mutiAZ == "yes"
+
+  - name: Public VMs security group
+    ec2_group:
+      name: public
+      description: public internet machines
+      region: "{{ region }}"
+      vpc_id: "{{ vpc.vpc.id }}"
+      rules:
+        - proto: tcp
+          ports:
+            - 22
+          cidr_ip: 0.0.0.0/0
+        - proto: tcp
+          ports:
+            - 0-65535
+          cidr_ip: "{{ cidr_block }}"
+    register: public_group
+
+  - name: Private VMs security group
+    ec2_group:
+      name: private
+      description: private internet machines
+      region: "{{ region }}"
+      vpc_id: "{{ vpc.vpc.id }}"
+      rules:
+        - proto: tcp
+          ports:
+            - 0-65535
+          cidr_ip: "{{ cidr_block }}"
+    register: private_group
+
+  - name: Public route table 1
+    ec2_vpc_route_table:
+      vpc_id: "{{ vpc.vpc.id }}"
+      region: "{{ region }}"
+      tags:
+        Name: Public 1
+      subnets:
+        - "{{ public_network_1.subnet.id }}"
+      routes:
+        - dest: 0.0.0.0/0
+          gateway_id: "{{ igw.gateway_id }}"
+        - dest: "{{ cidr_block }}"
+          gateway_id: local
+
+  - name: Private route table 1
+    ec2_vpc_route_table:
+      vpc_id: "{{ vpc.vpc.id }}"
+      region: "{{ region }}"
+      tags:
+        Name: Private 1
+      subnets:
+        - "{{ private_network_1.subnet.id }}"
+      routes:
+        - dest: 0.0.0.0/0
+          gateway_id: "{{ nat_gw_1.nat_gateway_id }}"
+        - dest: "{{ cidr_block }}"
+          gateway_id: local
+
+  ###########
+
+  - name: Public route table 2
+    ec2_vpc_route_table:
+      vpc_id: "{{ vpc.vpc.id }}"
+      region: "{{ region }}"
+      tags:
+        Name: Default
+      subnets:
+        - "{{ public_network_2.subnet.id }}"
+      routes:
+        - dest: 0.0.0.0/0
+          gateway_id: "{{ igw.gateway_id }}"
+        - dest: "{{ cidr_block }}"
+          gateway_id: local
+    when: mutiAZ == "yes"
+
+  - name: Private route table 2
+    ec2_vpc_route_table:
+      vpc_id: "{{ vpc.vpc.id }}"
+      region: "{{ region }}"
+      tags:
+        Name: Private
+      subnets:
+        - "{{ private_network_2.subnet.id }}"
+      routes:
+        - dest: 0.0.0.0/0
+          gateway_id: "{{ nat_gw_1.nat_gateway_id }}"
+        - dest: "{{ cidr_block }}"
+          gateway_id: local
+    when: mutiAZ == "yes"
+
+######## Create ssh key for Instance
+
+  - name: Upload public key and use this for EC2 Instance
+    ec2_key:
+      region: "{{ region }}"
+      name: "{{ key_name }}"
+      key_material: "{{ lookup('file', '../files/aws.pub') }}"
+
+############ Public Instance Without AZ
+  
+  - name: Setup public instances 
+    ec2:
+      key_name: "{{ key_name }}"
+      region: "{{ region }}"
+      group_id: "{{ public_group.group_id }}"
+      instance_type: "{{ public_instance_type }}"
+      image: "{{ image_name }}"
+      volumes:
+        - device_name: /dev/sda1
+          volume_type: standard
+          volume_size: "{{ public_volume_size }}"
+          delete_on_termination: true
+          snapshot: no
+      exact_count: 1
+      wait: true
+      count_tag:
+        Host: "bastion.{{ dns_zone }}"
+      instance_tags:
+        Name: "bastion.{{ dns_zone }}"
+        Host: "bastion.{{ dns_zone }}"
+        Scope: public
+        Role: bastion
+      vpc_subnet_id: "{{ public_network_1.subnet.id }}"
+    with_sequence: count=1
+    register: public_instances_1
+    
+  - name: Facts public EC2 instance
+    ec2_instance_facts:
+      region: "{{ region }}"
+      filters:
+        "tag:Role": bastion
+        instance-state-name: running
+    register: public_ec2_facts
+
+#- name: Print value fact ec2 instance
+  #  debug:
+  #    var: item.instance_id 
+  #  with_items: "{{ public_ec2_facts.instances }}"
+
+  - name: allocate a new elastic IP and associate it with an instance
+    ec2_eip:
+      release_on_disassociation: true
+      reuse_existing_ip_allowed: true
+      region: "{{ region }}"
+      device_id: "{{ item.instance_id }}"
+      in_vpc: true
+    with_items: "{{ public_ec2_facts.instances }}"
+    register: bastion_node
+
+
+########### Private instance without AZ 
+
+  - name: Setup private instances without AZ 
+    ec2:
+      key_name: "{{ key_name }}"
+      region: "{{ region }}"
+      group_id: "{{ private_group.group_id }}"
+      instance_type: "{{ private_instance_type }}"
+      image: "{{ image_name }}"
+      volumes:
+        - device_name: /dev/sda1
+          volume_type: standard
+          volume_size: "{{ private_volume_size }}"
+          delete_on_termination: true
+          snapshot: no
+      exact_count: 1
+      count_tag:
+        Host: "datanode{{ item }}.{{ dns_zone }}"
+      instance_tags:
+        Name: "datanode{{ item }}.{{ dns_zone }}"
+        Host: "datanode{{ item }}.{{ dns_zone }}"
+        Scope: private
+        Role: datanode
+      vpc_subnet_id: "{{ private_network_1.subnet.id }}"
+    with_sequence: count={{ number_datanodes }}
+    register: private_instances_1
+    when: mutiAZ == "no"
+
+############ Private instance with AZ 
+
+  - name: Setup private instances with AZ_1
+    ec2:
+      key_name: "{{ key_name }}"
+      region: "{{ region }}"
+      group_id: "{{ private_group.group_id }}"
+      instance_type: "{{ private_instance_type }}"
+      image: "{{ image_name }}"
+      volumes:
+        - device_name: /dev/sda1
+          volume_type: standard
+          volume_size: "{{ private_volume_size }}"
+          delete_on_termination: true
+          snapshot: no
+      exact_count: 1
+      count_tag:
+        Host: "{{az_1}}-datanode{{ item }}.{{ dns_zone }}"
+      instance_tags:
+        Name: "{{az_1}}-datanode{{ item }}.{{ dns_zone }}"
+        Host: "{{az_1}}-datanode{{ item }}.{{ dns_zone }}"
+        Scope: private
+        Role: datanode
+      vpc_subnet_id: "{{ private_network_1.subnet.id }}"
+    with_sequence: count={{ number_datanodes_az_1 }}
+    register: private_instances_1
+    when: mutiAZ == "yes"
+
+  - name: Setup private instances with AZ_2
+    ec2:
+      key_name: "{{ key_name }}"
+      region: "{{ region }}"
+      group_id: "{{ private_group.group_id }}"
+      instance_type: "{{ private_instance_type }}"
+      image: "{{ image_name }}"
+      volumes:
+        - device_name: /dev/sda1
+          volume_type: standard
+          volume_size: "{{ private_volume_size }}"
+          delete_on_termination: true
+          snapshot: no
+      exact_count: 1
+      count_tag:
+        Host: "{{az_2}}-datanode{{ item }}.{{ dns_zone }}"
+      instance_tags:
+        Name: "{{az_2}}-datanode{{ item }}.{{ dns_zone }}"
+        Host: "{{az_2}}-datanode{{ item }}.{{ dns_zone }}"
+        Scope: private
+        Role: datanode
+      vpc_subnet_id: "{{ private_network_2.subnet.id }}"
+    with_sequence: count={{ number_datanodes_az_2 }}
+    register: private_instances_2
+    when: mutiAZ == "yes"
+
+######### Private Instance for Master node ==================
+
+########### Private instance without AZ 
+
+  - name: Setup private instances without AZ 
+    ec2:
+      key_name: "{{ key_name }}"
+      region: "{{ region }}"
+      group_id: "{{ private_group.group_id }}"
+      instance_type: "{{ private_instance_type }}"
+      image: "{{ image_name }}"
+      volumes:
+        - device_name: /dev/sda1
+          volume_type: standard
+          volume_size: "{{ private_volume_size }}"
+          delete_on_termination: true
+          snapshot: no
+      exact_count: 1
+      count_tag:
+        Host: "master{{ item }}.{{ dns_zone }}"
+      instance_tags:
+        Name: "master{{ item }}.{{ dns_zone }}"
+        Host: "master{{ item }}.{{ dns_zone }}"
+        Scope: private
+        Role: master
+      vpc_subnet_id: "{{ private_network_1.subnet.id }}"
+    with_sequence: count={{ number_masters }}
+    register: master_private_instances_1
+    when: mutiAZ == "no"
+
+############ Private instance with AZ 
+
+  - name: Setup private instances with AZ_1
+    ec2:
+      key_name: "{{ key_name }}"
+      region: "{{ region }}"
+      group_id: "{{ private_group.group_id }}"
+      instance_type: "{{ private_instance_type }}"
+      image: "{{ image_name }}"
+      volumes:
+        - device_name: /dev/sda1
+          volume_type: standard
+          volume_size: "{{ private_volume_size }}"
+          delete_on_termination: true
+          snapshot: no
+      exact_count: 1
+      count_tag:
+        Host: "{{az_1}}-master{{ item }}.{{ dns_zone }}"
+      instance_tags:
+        Name: "{{az_1}}-master{{ item }}.{{ dns_zone }}"
+        Host: "{{az_1}}-master{{ item }}.{{ dns_zone }}"
+        Scope: private
+        Role: master
+      vpc_subnet_id: "{{ private_network_1.subnet.id }}"
+    with_sequence: count={{ number_masters_az_1 }}
+    register: master_private_instances_1
+    when: mutiAZ == "yes"
+
+  - name: Setup private instances with AZ_2
+    ec2:
+      key_name: "{{ key_name }}"
+      region: "{{ region }}"
+      group_id: "{{ private_group.group_id }}"
+      instance_type: "{{ private_instance_type }}"
+      image: "{{ image_name }}"
+      volumes:
+        - device_name: /dev/sda1
+          volume_type: standard
+          volume_size: "{{ private_volume_size }}"
+          delete_on_termination: true
+          snapshot: no
+      exact_count: 1
+      count_tag:
+        Host: "{{az_2}}-master{{ item }}.{{ dns_zone }}"
+      instance_tags:
+        Name: "{{az_2}}-master{{ item }}.{{ dns_zone }}"
+        Host: "{{az_2}}-master{{ item }}.{{ dns_zone }}"
+        Scope: private
+        Role: master
+      vpc_subnet_id: "{{ private_network_2.subnet.id }}"
+    with_sequence: count={{ number_masters_az_2 }}
+    register: master_private_instances_2
+    when: mutiAZ == "yes"
+
+

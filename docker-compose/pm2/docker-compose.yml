@@ -1,0 +1,11 @@
+version: '2'
+services:
+  pm2:
+    image: "keymetrics/pm2-docker-alpine"
+    container_name: "pm2"
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./couch2oc:/app
+    #command: CMD ["pm2-docker", "start", "--auto-exit", "--env", "production", "pm2.json"]
+    network_mode: "host"

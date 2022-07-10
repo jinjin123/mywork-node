@@ -1,8 +1,0 @@
----
-- hosts: sparkpad_production_web_fe
-  tasks:
-    - name: Clear DB Cache 
-      command: "/app/mysql/bin/mysql -h 172.16.102.100 -ufe -p5kZqWHdul6Ab fe -e 'truncate dbcache;'"
-
-    - name: remove cache
-      command: "rm -rf * chdir=/app/web/www/app/cache/"

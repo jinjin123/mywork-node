@@ -1,0 +1,20 @@
+main_collective = mcollective
+collectives = mcollective
+libdir = <%= @mcollective_path %>\plugins;C:\Program Files\Puppet Labs\Puppet\puppet\lib;C:\Program Files\Puppet Labs\Puppet\facter\lib
+logfile = <%= @mcollective_path %>\mcollective.log
+loglevel = info
+daemonize = 1
+securityprovider = ssl
+plugin.ssl_client_cert_dir = <%= @mcollective_path %>\etc\ssl\clients
+plugin.ssl_server_private = <%= @mcollective_path %>\etc\ssl\server_private.pem
+plugin.ssl_server_public = <%= @mcollective_path %>\etc\ssl\server_public.pem
+connector = activemq
+plugin.activemq.pool.size = 1
+plugin.activemq.pool.1.host = <%= @activemq_server %>
+plugin.activemq.pool.1.port = 61613
+plugin.activemq.pool.1.user = mcollective
+plugin.activemq.pool.1.password = <%= @mcollective_password %>
+plugin.puppet.command = "C:\Program Files\Puppet Labs\Puppet\bin\puppet.bat" agent
+plugin.puppet.config = C:\ProgramData\PuppetLabs\puppet\etc\puppet.conf
+factsource = yaml
+plugin.yaml = <%= @mcollective_path %>\etc\facts.yaml

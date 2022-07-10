@@ -1,0 +1,12 @@
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+
+172.16.104.205 test.zkf.vpn fe.zkungfu.vpn
+172.16.104.204 dev.zkf.vpn git.staging.vpn
+172.16.104.207 prod.zkf.vpn
+172.16.104.121 dboc.zkf.vpn mysql-oc.zkf.vpn
+172.16.104.122 dbcrm.zkf.vpn mysql-crm.zkf.vpn mysql
+172.16.104.123 mq.zkf.vpn mq-rabbitmq.zkf.vpn mq
+172.16.104.124 oc.zkf.vpn oc
+172.16.104.125 fe.zkf.vpn
+172.16.104.126 de.zkf.vpn crm.zkf.vpn gfs.4006927927.com

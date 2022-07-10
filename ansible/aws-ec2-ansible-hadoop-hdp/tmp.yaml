@@ -1,6 +1,0 @@
----
-- hosts: test
-  remote_user: root
-  gather_facts: False
-  roles:
-    - {role: tmp}
