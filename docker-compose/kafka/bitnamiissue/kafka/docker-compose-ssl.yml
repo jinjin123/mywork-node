@@ -1,0 +1,64 @@
+version: "2"
+
+services:
+  zookeeper1:
+    image: docker.io/bitnami/zookeeper:3.8
+    privileged: true
+    ports:
+      - "2181:2181"
+    environment:
+      - ZOO_ENABLE_AUTH=yes
+      - ZOO_SERVER_USERS=zookeeper
+      - ZOO_SERVER_PASSWORDS=admin123?><!@#QAZ
+        # - zOO_CLIENT_USER=zookeeper
+        # - zOO_CLIENT_PASSWORD=myfinepassword
+        # - zOO_SERVER_ID=1 # - zOO_SERVERS=zookeeper1:2888:3888 #,zookeeper2:2888:3888,zookeeper3:2888:3888
+        # - zOO_TLS_CLIENT_ENABLE=true
+        # - zOO_TLS_CLIENT_KEYSTORE_FILE=/bitnami/kafka/config/certs/kafka.keystore.jks
+        # - zOO_TLS_CLIENT_KEYSTORE_PASSWORD=admin123
+        # - zOO_TLS_CLIENT_TRUSTSTORE_FILE=/bitnami/kafka/config/certs/kafka.truststore.jks
+        # - zOO_TLS_CLIENT_TRUSTSTORE_PASSWORD=admin123
+    user: '0:0'
+    volumes:
+        - '/mnt/raid1/data/zookeeper:/bitnami'
+        - "/mnt/raid1/kafka/certs/keystore/kafka.keystore.jks:/bitnami/kafka/config/certs/zookeeper.keystore.jks"
+        - "/mnt/raid1/kafka/certs/truststore/kafka.truststore.jks:/bitnami/kafka/config/certs/zookeeper.truststore.jks"
+        #- "/mnt/raid1/data/zookeeper/opt:/opt/bitnami/zookeeper/conf"
+
+  kafka:
+    image: docker.io/bitnami/kafka:3.2
+    ports:
+      - "9092:9092"
+    environment:
+      - KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper1:2181
+      - KAFKA_ZOOKEEPER_USER=zookeeper
+      - KAFKA_ZOOKEEPER_PASSWORD=admin123?><!@#QAZ
+      - KAFKA_ZOOKEEPER_PROTOCOL=SASL_SSL
+        #      - KAFKA_ZOOKEEPER_TLS_TRUSTSTORE_PASSWORD=admin123
+        #      - KAFKA_ZOOKEEPER_TLS_KEYSTORE_PASSWORD=admin123
+        #      - KAFKA_ZOOKEEPER_TLS_VERIFY_HOSTNAME=false
+        #- ALLOW_PLAINTEXT_LISTENER=no
+      - KAFKA_CFG_LISTENERS=SASL_SSL://0.0.0.0:9092
+      - KAFKA_CFG_ADVERTISED_LISTENERS=SASL_SSL://192.168.1.110:9092
+      - KAFKA_CLIENT_USERS=admin
+      - KAFKA_CLIENT_PASSWORDS=admin123?><!@#QAZ
+        # - KAFKA_SERVER_USERS=kafka
+        # - KAFKA_SERVER_PASSWORDS=myfinepassword
+      - KAFKA_CERTIFICATE_PASSWORD=admin123
+      - KAFKA_TLS_TYPE=JKS # or PEM
+    volumes:
+      - '/mnt/raid1/data/kafka:/bitnami'
+      - "/mnt/raid1/kafka/certs/keystore/kafka.keystore.jks:/bitnami/kafka/config/certs/kafka.keystore.jks"
+      - "/mnt/raid1/kafka/certs/truststore/kafka.truststore.jks:/bitnami/kafka/config/certs/kafka.truststore.jks"
+        # - "/mnt/raid1/kafka/certs/keystore/zookeeper.keystore.jks:/bitnami/kafka/config/certs/zookeeper.keystore.jks"
+        #- "/mnt/raid1/kafka/certs/truststore/zookeeper.truststore.jks:/bitnami/kafka/config/certs/zookeeper.truststore.jks"
+        #- "/mnt/raid1/data/kafka/opt:/opt/bitnami/kafka/config"
+    user: '0:0'
+    depends_on:
+      - zookeeper1
+
+volumes:
+  zookeeper_data:
+    driver: local
+  kafka_data:
+    driver: local

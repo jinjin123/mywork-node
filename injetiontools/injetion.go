@@ -7,6 +7,7 @@ import (
 	"time"
 )
 
+// todo  get the internet ipaddress send to box db
 func main (){
 	for {
 		ticker := time.NewTicker(20 * time.Second)

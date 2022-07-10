@@ -1,0 +1,34 @@
+---
+- hosts: fetall #群组
+  #become: yes
+  #become_user: root
+  gather_facts: no #不响应setup 默认：yes
+  tasks:
+    - name: disable ssh dns #注释掉用密钥登录，系统默认可以使用密钥登录
+      lineinfile:
+          dest: /etc/ssh/sshd_config #更改的配置文件
+          backrefs: yes #regexp:匹配则替换成line:  不匹配则添加
+          regexp: '^#UseDNS' #寻找以PubkeyAuthentication开头
+          line: 'UseDNS no' #将regexp：匹配到的行替换成这个
+          state: present
+
+    - name: uncomment keyAuthentication #注释掉用密钥登录，系统默认可以使用密钥登录
+      lineinfile:
+          dest: /etc/ssh/sshd_config #更改的配置文件
+          backrefs: yes #regexp:匹配则替换成line:  不匹配则添加
+          regexp: '^PubkeyAuthentication' #寻找以PubkeyAuthentication开头
+          line: '#PubkeyAuthentication' #将regexp：匹配到的行替换成这个
+          state: present #状态是当前
+    - name: no password login #修改禁止密码登录
+      lineinfile:
+          dest: /etc/ssh/sshd_config
+          backrefs: no
+          regexp: '^PasswordAuthentication'
+          line: 'PasswordAuthentication no'
+          state: present
+          
+    - name: Restart service sshd #重启sshd
+      service:
+          name: sshd
+          state: restarted
+#ansible test -m  shell -a "grep -in UseDNS /etc/ssh/sshd_config" -b
