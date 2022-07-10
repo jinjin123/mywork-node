@@ -1,0 +1,15 @@
+cluster.name: es
+node.name: node-1
+node.master: true
+node.data: true
+network.bind_host: 0.0.0.0
+network.publish_host: 1
+http.port: 9200
+http.host: 0.0.0.0
+discovery.zen.minimum_master_nodes: 1
+#discovery.zen.ping.unicast.hosts: ["1:9300","2:9300"]
+discovery.zen.ping_timeout: 10s #设置集群中自动发现其他节点时ping连接的超时时间
+discovery.seed_hosts: ["1:9300","2:9300"]
+cluster.initial_master_nodes: ["1","2"] #新集群初始时的候选主节点，es7的新增配置
+transport.tcp.port: 9300
+transport.tcp.compress: true

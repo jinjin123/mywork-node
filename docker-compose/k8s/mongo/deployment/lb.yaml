@@ -1,0 +1,41 @@
+apiVersion: v1 
+kind: Service 
+metadata: 
+  namespace: mongo-db 
+  name: mongo-lb-0 
+spec: 
+  type: LoadBalancer 
+  ports: 
+  - protocol: TCP 
+    port: 27017 
+    targetPort: 27017 
+  selector: 
+    app: mongo-0 
+--- 
+apiVersion: v1 
+kind: Service 
+metadata: 
+  namespace: mongo-db 
+  name: mongo-lb-1 
+spec: 
+  type: LoadBalancer 
+  ports: 
+  - protocol: TCP 
+    port: 27017 
+    targetPort: 27017 
+  selector: 
+    app: mongo-1 
+--- 
+apiVersion: v1 
+kind: Service 
+metadata: 
+  namespace: mongo-db 
+  name: mongo-lb-2 
+spec: 
+  type: LoadBalancer 
+  ports: 
+  - protocol: TCP 
+    port: 27017 
+    targetPort: 27017 
+  selector: 
+    app: mongo-2 

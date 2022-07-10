@@ -1,9 +1,0 @@
----
-- hosts: sparkpad_production_web_fe
-  tasks:
-    - name: Create config files directory
-      command: "mkdir -p /etc/nginx/app_config"
-
-    - name: Copying config file 1
-      command: "cp /app/web/www/app/config/parameter.yml /etc/nginx/app_config"
-

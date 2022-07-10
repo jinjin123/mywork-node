@@ -1,0 +1,28 @@
+---
+#- hosts: sparkpad_production_web_cc
+#  tasks:
+#    - name: git pull for CC
+#      command: "pwd chdir=/app/web/www" 
+
+#- hosts: sparkpad_production_web_fe
+#  tasks:
+#    - name: git pull for FE
+#      command: "pwd chdir=/app/web/www" 
+#    - name: remove cache
+#      shell: "/usr/bin/ls -lrt /app/vagrant/app/src/ZKF3.0-Front/app/cache/*"
+#      args:
+#        executable: /bin/bash
+#      ignore_errors: yes
+#
+- hosts: sparkpad_production_web_cdmp
+  tasks:
+    - name: git pull for CRM
+      command: "drush fl chdir=/app/web/crm/sites/default/"
+      environment:
+        PATH: /app/php/bi:/app/memcached/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/app/php/bin:/app/mysql/bin:/home/spark/.local/bin:/home/spark/bin:/app/php/bin
+    - name: git pull for DE
+      command: "pwd chdir=/app/web/de/sites/default/"
+    - name: git pull for PMT
+      command: "pwd chdir=/app/web/pmt/sites/default/"
+    - name: git pull for mkt
+      command: "pwd chdir=/app/web/mkt/sites/default/"  

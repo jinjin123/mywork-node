@@ -1,0 +1,22 @@
+---
+- name: install the MySQL community repository (RedHat)
+  when: ansible_os_family == 'RedHat'
+  yum: name=http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm state=present
+- name: fetch the Ambari yum repo (RedHat)
+  when: ansible_os_family == 'RedHat'
+  command: 'wget -nv {{ var_ambari_version }} -O /etc/yum.repos.d/ambari.repo'
+- name: install the ambari agent (RedHat)
+  when: ansible_os_family == 'RedHat'
+  yum: name=ambari-agent state=latest
+- name: configure the ambari agent
+  command: 'sed -i s/hostname=.*/hostname={{ var_ambari_server }}/ /etc/ambari-agent/conf/ambari-agent.ini'
+- name: check if services is exists
+  command: /etc/init.d/ambari-agent status
+  ignore_errors: yes
+  register: service_status_agent
+- name: Stop Ambari agent
+  command: /etc/init.d/ambari-agent stop
+  when: "service_status_agent.rc == 0"
+- name: start the ambari agent
+  command: 'ambari-agent start'
+  

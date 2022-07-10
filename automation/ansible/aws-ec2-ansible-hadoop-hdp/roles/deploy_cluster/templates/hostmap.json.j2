@@ -1,0 +1,36 @@
+{
+  "blueprint" : "messi655",
+  "default_password" : "{{ var_ambari_password }}",
+  "host_groups" :[
+    { 
+      "name":"client_host_group",
+      "hosts":[
+      	{% for host in groups['datanodes'] %}
+      	  {% if loop.index < loop.length %}
+      	  {"fqdn":"{{ host }}"},
+		      {% elif loop.index == loop.length %}
+		      {"fqdn":"{{ host }}"}
+        {% endif %}
+		    {% endfor %}
+		]
+    },
+    {% for master in groups['masternodes'] %}
+    {% if loop.index == loop.length -1 %}
+    {
+      "name":"rm_host_group",
+      "hosts":[{"fqdn":"{{ master }}"}]
+    },
+    {% elif loop.index == loop.length -2 %}
+    {
+      "name":"hive_host_group",
+      "hosts":[{"fqdn":"{{ master }}"}]
+    },
+    {% elif loop.index == loop.length %}
+    {
+      "name":"nn_host_group",
+      "hosts":[{"fqdn":"{{ master }}"}]
+    }
+    {% endif %}
+    {% endfor %}
+  ]
+}

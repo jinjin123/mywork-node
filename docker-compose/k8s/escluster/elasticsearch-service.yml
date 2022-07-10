@@ -1,0 +1,19 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  namespace: elastic
+  name: es-svc
+  labels:
+    app: elasticsearch
+    role: es
+spec:
+  selector:
+    app: elasticsearch
+    role: es
+  clusterIP: None
+  ports:
+  - name: http
+    port: 9200
+  - name: transport
+    port: 9300

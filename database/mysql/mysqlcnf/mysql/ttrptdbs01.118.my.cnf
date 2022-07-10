@@ -1,0 +1,76 @@
+# For advice on how to change settings please see
+# http://dev.mysql.com/doc/refman/5.7/en/server-configuration-defaults.html
+
+[mysqld]
+#
+# Remove leading # and set to the amount of RAM for the most important data
+# cache in MySQL. Start at 70% of total RAM for dedicated server, else 10%.
+# innodb_buffer_pool_size = 128M
+#
+# Remove leading # to turn on a very important data integrity option: logging
+# changes to the binary log between backups.
+# log_bin
+#
+# Remove leading # to set options mainly useful for reporting servers.
+# The server defaults are faster for transactions and fast SELECTs.
+# Adjust sizes as needed, experiment to find the optimal values.
+# join_buffer_size = 128M
+# sort_buffer_size = 2M
+# read_rnd_buffer_size = 2M
+#sql_mode=STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+datadir=/app/mysql
+socket=/var/lib/mysql/mysql.sock
+character_set_server=utf8
+default-storage-engine=innodb
+init_connect='SET NAMES utf8'
+port=3306
+tmp_table_size          = 67108860
+tmpdir                  = /tmp
+#innodb_force_recovery=1
+sql_mode="ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION"
+# Disabling symbolic-links is recommended to prevent assorted security risks
+symbolic-links=0
+innodb_force_recovery = 0
+
+# Memory related settings
+innodb_buffer_pool_size = 1G
+innodb_buffer_pool_instances = 4
+
+# To avoid timeout
+max_allowed_packet=16777216
+wait_timeout=115200
+interactive_timeout=115200
+net_read_timeout=120
+connect_timeout=30
+
+log-error=/var/log/mysqld.log
+pid-file=/var/run/mysqld/mysqld.pid
+server-id=108
+binlog-do-db=de
+binlog-do-db=crm
+binlog-do-db=erp
+binlog-do-db=marketing
+binlog-do-db=payment
+binlog-do-db=oc
+binlog-do-db=datacache
+binlog-ignore-db=mysql
+binlog-ignore-db=information_schema
+binlog-ignore-db=performance_schema
+replicate-do-db=datacache
+replicate-do-db=de
+replicate-do-db=erp
+replicate-do-db=payment
+replicate-do-db=crm
+replicate-do-db=marketing
+replicate-do-db=ocrp
+replicate-do-db=oc
+replicate-ignore-db=mysql
+replicate-ignore-db=information_schema
+replicate-ignore-db=performance_schema
+binlog-ignore-db=mysql
+binlog_cache_size = 1M
+expire_logs_days=3
+innodb_flush_log_at_trx_commit=2
+relay_log_info_repository=table
+master_info_repository=table
+slave-skip-errors=1032,1062,1050,1146

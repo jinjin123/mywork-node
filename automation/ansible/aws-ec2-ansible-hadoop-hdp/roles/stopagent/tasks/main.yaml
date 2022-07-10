@@ -1,0 +1,29 @@
+---
+# stop all the ambari agents
+- hosts: datanodes
+  vars:
+   var_remote_user: centos
+   var_sudo: yes
+  remote_user: "{{ var_remote_user }}"
+  sudo: "{{ var_sudo }}"
+  tasks:
+  - name: stop the ambari agent (datanodes)
+    command: ambari-agent stop
+- hosts: masternodes
+  vars:
+   var_remote_user: centos
+   var_sudo: yes
+  remote_user: "{{ var_remote_user }}"
+  sudo: "{{ var_sudo }}"
+  tasks:
+  - name: stop the ambari agent (masternodes)
+    command: ambari-agent stop
+- hosts: ambariserver
+  vars:
+   var_remote_user: centos
+   var_sudo: yes
+  remote_user: "{{ var_remote_user }}"
+  sudo: "{{ var_sudo }}"
+  tasks:
+  - name: stop the ambari server (ambariserver)
+    command: ambari-server stop

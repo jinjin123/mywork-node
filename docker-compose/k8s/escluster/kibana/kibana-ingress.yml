@@ -1,0 +1,19 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  namespace: elastic
+  name: kibana-ingress
+spec:
+  ingressClassName: nginx # controller.yaml -name 
+  rules:
+  - host: kibana.liheng.com
+    http: 
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: kibana-svc
+            port: 
+              number: 5601
