@@ -33,7 +33,7 @@ MarkupSafe==1.1.1
 meld3==1.0.2
 mongoengine==0.16.2
 Pillow==8.3.2
-paramiko==2.3.3
+paramiko==2.10.1
 pyasn1==0.3.7
 pycparser==2.18
 pycurl==7.19.0
