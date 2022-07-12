@@ -49,7 +49,7 @@ pyzabbix==0.7.4
 redis==2.10.5
 requests==2.20.0
 six==1.11.0
-SQLAlchemy==1.1.15
+SQLAlchemy==1.3.0
 supervisor==3.3.2
 tzlocal==1.5.1
 urlgrabber==3.10
