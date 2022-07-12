@@ -2,7 +2,7 @@ amqp==1.4.9
 bcrypt==3.1.4
 BeautifulSoup==3.2.1
 billiard==3.3.0.23
-celery==3.1.25
+celery==5.2.2
 certifi==2017.4.17
 cffi==1.11.2
 chardet==3.0.4
