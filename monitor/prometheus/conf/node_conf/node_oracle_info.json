@@ -1,0 +1,13 @@
+[
+    {   
+        "labels": { 
+            "desc": "yiqing_oracle_10.147.2.49:1521",
+            "group": "fangyi",
+            "oracle_addr": "10.147.2.49:1521",
+            "role": "yiqing_oracle"
+        },
+        "targets": [
+            "localhost:18000"
+        ]
+    }
+]

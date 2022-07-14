@@ -1,0 +1,1993 @@
+[
+    {
+        "labels": {
+            "desc": "backup1-19.104.40.32",
+            "group": "guoxin",
+            "host_ip": "19.104.40.32",
+            "hostname": "guoxin_backup1"
+        },
+        "targets": [
+            "19.104.40.32:9100"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "shujuzhili2-19.104.50.160",
+            "group": "guoxin",
+            "host_ip": "19.104.50.160",
+            "hostname": "guoxin_shujuzhili2"
+        },
+        "targets": [
+            "19.104.50.160:9092"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "shujuzhili1-19.104.50.72",
+            "group": "guoxin",
+            "host_ip": "19.104.50.72",
+            "hostname": "guoxin_shujuzhili1"
+        },
+        "targets": [
+            "19.104.50.72:9092"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "rancher_node3-19.104.53.64",
+            "group": "dalingshan",
+            "host_ip": "19.104.53.64",
+            "hostname": "dalingshan_rancher_node3"
+        },
+        "targets": [
+            "19.104.53.64:9092"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "rancher_node2-19.104.53.63",
+            "group": "dalingshan",
+            "host_ip": "19.104.53.63",
+            "hostname": "dalingshan_rancher_node2"
+        },
+        "targets": [
+            "19.104.53.63:9092"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "rancher_master3_node1-19.104.53.62",
+            "group": "dalingshan",
+            "host_ip": "19.104.53.62",
+            "hostname": "dalingshan_rancher_master3_node1"
+        },
+        "targets": [
+            "19.104.53.62:9092"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "rancher_master2-19.104.53.61",
+            "group": "dalingshan",
+            "host_ip": "19.104.53.61",
+            "hostname": "dalingshan_rancher_master2"
+        },
+        "targets": [
+            "19.104.53.61:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "rancher_master1-19.104.53.60",
+            "group": "dalingshan",
+            "host_ip": "19.104.53.60",
+            "hostname": "dalingshan_rancher_master1"
+        },
+        "targets": [
+            "19.104.53.60:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "redis-19.104.53.59",
+            "group": "dalingshan",
+            "host_ip": "19.104.53.59",
+            "hostname": "dalingshan_redis"
+        },
+        "targets": [
+            "19.104.53.59:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "nginx-19.104.53.58",
+            "group": "dalingshan",
+            "host_ip": "19.104.53.58",
+            "hostname": "dalingshan_nginx"
+        },
+        "targets": [
+            "19.104.53.58:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "minio_vsftp-19.104.53.57",
+            "group": "dalingshan",
+            "host_ip": "19.104.53.57",
+            "hostname": "dalingshan_minio_vsftp"
+        },
+        "targets": [
+            "19.104.53.57:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "unified_framework-19.104.53.56",
+            "group": "dalingshan",
+            "host_ip": "19.104.53.56",
+            "hostname": "dalingshan_unified_framework"
+        },
+        "targets": [
+            "19.104.53.56:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "kadb_slave-19.104.53.55",
+            "group": "dalingshan",
+            "host_ip": "19.104.53.55",
+            "hostname": "dalingshan_kadb_slave"
+        },
+        "targets": [
+            "19.104.53.55:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "kadb_master-19.104.53.54",
+            "group": "dalingshan",
+            "host_ip": "19.104.53.54",
+            "hostname": "dalingshan_kadb_master"
+        },
+        "targets": [
+            "19.104.53.54:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "unified_credit3-19.104.40.40",
+            "group": "yingshangdashuju",
+            "host_ip": "19.104.40.40",
+            "hostname": "yingshangdashuju_unified_credit3"
+        },
+        "targets": [
+            "19.104.40.40:9100"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "intelligent_analysis_19.104.40.46",
+            "group": "shehuizhili",
+            "host_ip": "19.104.40.46",
+            "hostname": "shehuizhili_intelligent_analysis"
+        },
+        "targets": [
+            "19.104.40.46:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "visual_analysis_19.104.40.37",
+            "group": "shehuizhili",
+            "host_ip": "19.104.40.37",
+            "hostname": "shehuizhili_visual_analysis"
+        },
+        "targets": [
+            "19.104.40.37:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "visual_analysis_standby_19.104.50.210",
+            "group": "shehuizhili",
+            "host_ip": "19.104.50.210",
+            "hostname": "shehuizhili_visual_analysis_standby"
+        },
+        "targets": [
+            "19.104.50.210:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "nginx_redis_19.104.53.122",
+            "group": "shujuhuiju",
+            "host_ip": "19.104.53.122",
+            "hostname": "shujuhuiju_nginx_redis"
+        },
+        "targets": [
+            "19.104.53.122:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "master_19.104.53.123",
+            "group": "shujuhuiju",
+            "host_ip": "19.104.53.123",
+            "hostname": "shujuhuiju_master"
+        },
+        "targets": [
+            "19.104.53.123:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "worker1_19.104.53.124",
+            "group": "shujuhuiju",
+            "host_ip": "19.104.53.124",
+            "hostname": "shujuhuiju_worker1"
+        },
+        "targets": [
+            "19.104.53.124:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "worker2_19.104.53.126",
+            "group": "shujuhuiju",
+            "host_ip": "19.104.53.126",
+            "hostname": "shujuhuiju_worker2"
+        },
+        "targets": [
+            "19.104.53.126:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "worker5_19.104.53.129",
+            "group": "shujuhuiju",
+            "host_ip": "19.104.53.129",
+            "hostname": "shujuhuiju_worker5"
+        },
+        "targets": [
+            "19.104.53.129:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "db_19.104.53.130",
+            "group": "shujuhuiju",
+            "host_ip": "19.104.53.130",
+            "hostname": "shujuhuiju_db"
+        },
+        "targets": [
+            "19.104.53.130:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "integration_19.104.53.131",
+            "group": "shujuzhili_ceshi",
+            "host_ip": "19.104.53.131",
+            "hostname": "shujuzhili_ceshi_integration"
+        },
+        "targets": [
+            "19.104.53.131:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "publish_19.104.53.132",
+            "group": "shujuzhili_ceshi",
+            "host_ip": "19.104.53.132",
+            "hostname": "shujuzhili_ceshi_publish"
+        },
+        "targets": [
+            "19.104.53.132:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "uaa1_19.104.53.133",
+            "group": "shujuzhili_ceshi",
+            "host_ip": "19.104.53.133",
+            "hostname": "shujuzhili_ceshi_uaa1"
+        },
+        "targets": [
+            "19.104.53.133:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "uaa2_19.104.53.134",
+            "group": "shujuzhili_ceshi",
+            "host_ip": "19.104.53.134",
+            "hostname": "shujuzhili_ceshi_uaa2"
+        },
+        "targets": [
+            "19.104.53.134:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "operation_area_19.104.53.135",
+            "group": "shujuzhili",
+            "host_ip": "19.104.53.135",
+            "hostname": "shujuzhili_operation_area"
+        },
+        "targets": [
+            "19.104.53.135:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "middleware_19.104.53.136",
+            "group": "shujuzhili",
+            "host_ip": "19.104.53.136",
+            "hostname": "shujuzhili_middleware"
+        },
+        "targets": [
+            "19.104.53.136:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "data_analysis1_19.104.53.137",
+            "group": "shujuzhili",
+            "host_ip": "19.104.53.137",
+            "hostname": "shujuzhili_data_analysis1"
+        },
+        "targets": [
+            "19.104.53.137:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "data_analysis2_19.104.53.138",
+            "group": "shujuzhili",
+            "host_ip": "19.104.53.138",
+            "hostname": "shujuzhili_data_analysis2"
+        },
+        "targets": [
+            "19.104.53.138:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "master_19.104.44.105",
+            "group": "shujuzhili",
+            "host_ip": "19.104.44.105",
+            "hostname": "shujuzhili_master"
+        },
+        "targets": [
+            "19.104.44.105:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "worker1_19.104.44.106",
+            "group": "shujuzhili",
+            "host_ip": "19.104.44.106",
+            "hostname": "shujuzhili_work1"
+        },
+        "targets": [
+            "19.104.44.106:9100"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "worker2_19.104.44.107",
+            "group": "shujuzhili",
+            "host_ip": "19.104.44.107",
+            "hostname": "shujuzhili_work2"
+        },
+        "targets": [
+            "19.104.44.107:9100"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "worker3_19.104.44.108",
+            "group": "shujuzhili",
+            "host_ip": "19.104.44.108",
+            "hostname": "shujuzhili_work3"
+        },
+        "targets": [
+            "19.104.44.108:9100"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "worker4_19.104.44.109",
+            "group": "shujuzhili",
+            "host_ip": "19.104.44.109",
+            "hostname": "shujuzhili_work4"
+        },
+        "targets": [
+            "19.104.44.109:9100"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "app_portal2_19.104.48.33",
+            "group": "shujuzhili",
+            "host_ip": "19.104.48.33",
+            "hostname": "shujuzhili_app_portal2"
+        },
+        "targets": [
+            "19.104.48.33:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "db1_19.104.48.30",
+            "group": "shujuzhili",
+            "host_ip": "19.104.48.30",
+            "hostname": "shujuzhili_db1"
+        },
+        "targets": [
+            "19.104.48.30:9100"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "db2_19.104.48.31",
+            "group": "shujuzhili",
+            "host_ip": "19.104.48.31",
+            "hostname": "shujuzhili_db3"
+        },
+        "targets": [
+            "19.104.48.31:9100"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "db2_19.104.48.32",
+            "group": "shujuzhili",
+            "host_ip": "19.104.48.32",
+            "hostname": "shujuzhili_db2"
+        },
+        "targets": [
+            "19.104.48.32:9100"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "fi_hd1_19.104.59.1",
+            "group": "shujuhu_ceshi",
+            "host_ip": "19.104.59.1",
+            "hostname": "shujuhu_ceshi_fi_hd1"
+        },
+        "targets": [
+            "19.104.59.1:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "fi_hd2_19.104.59.2",
+            "group": "shujuhu_ceshi",
+            "host_ip": "19.104.59.2",
+            "hostname": "shujuhu_ceshi_fi_hd2"
+        },
+        "targets": [
+            "19.104.59.2:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "fi_hd3_19.104.59.3",
+            "group": "shujuhu_ceshi",
+            "host_ip": "19.104.59.3",
+            "hostname": "shujuhu_ceshi_fi_hd3"
+        },
+        "targets": [
+            "19.104.59.3:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "gaussdb1_10.147.1.128",
+            "group": "shujuhu_ceshi",
+            "host_ip": "10.147.1.128",
+            "hostname": "shujuhu_ceshi_gaussdb1"
+        },
+        "targets": [
+            "10.147.1.128:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "gaussdb2_10.147.1.129",
+            "group": "shujuhu_ceshi",
+            "host_ip": "10.147.1.129",
+            "hostname": "shujuhu_ceshi_gaussdb2"
+        },
+        "targets": [
+            "10.147.1.129:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "gaussdb3_10.147.1.130",
+            "group": "shujuhu_ceshi",
+            "host_ip": "10.147.1.130",
+            "hostname": "shujuhu_ceshi_gaussdb3"
+        },
+        "targets": [
+            "10.147.1.130:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "openshift_master_19.104.40.34",
+            "group": "shujuhu_ceshi",
+            "host_ip": "19.104.40.34",
+            "hostname": "shujuhu_ceshi_openshift_master"
+        },
+        "targets": [
+            "19.104.40.34:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "openshift_node1_19.104.40.35",
+            "group": "shujuhu_ceshi",
+            "host_ip": "19.104.40.35",
+            "hostname": "shujuhu_ceshi_openshift_node1"
+        },
+        "targets": [
+            "19.104.40.35:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "openshift_node2_19.104.40.36",
+            "group": "shujuhu_ceshi",
+            "host_ip": "19.104.40.36",
+            "hostname": "shujuhu_ceshi_openshift_node2"
+        },
+        "targets": [
+            "19.104.40.36:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "openshift_node3_19.104.40.29",
+            "group": "shujuhu_ceshi",
+            "host_ip": "19.104.40.29",
+            "hostname": "shujuhu_ceshi_openshift_node3"
+        },
+        "targets": [
+            "19.104.40.29:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "mpp_kafka_zk_19.104.50.188",
+            "group": "shujuhu_ceshi",
+            "host_ip": "19.104.50.188",
+            "hostname": "shujuhu_ceshi_mpp_kafka_zk"
+        },
+        "targets": [
+            "19.104.50.188:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "mpp_master1_19.104.44.70",
+            "group": "caizhengju",
+            "host_ip": "19.104.44.70",
+            "hostname": "caizhengju_mpp_master1"
+        },
+        "targets": [
+            "19.104.44.70:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "mpp_segment1_19.104.44.71",
+            "group": "caizhengju",
+            "host_ip": "19.104.44.71",
+            "hostname": "caizhengju_mpp_segment1"
+        },
+        "targets": [
+            "19.104.44.71:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "mpp_segment2_19.104.44.72",
+            "group": "caizhengju",
+            "host_ip": "19.104.44.72",
+            "hostname": "caizhengju_mpp_segment2"
+        },
+        "targets": [
+            "19.104.44.72:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "minio_19.104.44.73",
+            "group": "caizhengju",
+            "host_ip": "19.104.44.73",
+            "hostname": "caizhengju_mpp_minio"
+        },
+        "targets": [
+            "19.104.44.73:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "openshift_master1_19.104.44.74",
+            "group": "caizhengju",
+            "host_ip": "19.104.44.74",
+            "hostname": "caizhengju_openshift_master1"
+        },
+        "targets": [
+            "19.104.44.74:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "openshift_node1_19.104.44.75",
+            "group": "caizhengju",
+            "host_ip": "19.104.44.75",
+            "hostname": "caizhengju_openshift_node1"
+        },
+        "targets": [
+            "19.104.44.75:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "openshift_node2_19.104.44.76",
+            "group": "caizhengju",
+            "host_ip": "19.104.44.76",
+            "hostname": "caizhengju_openshift_node2"
+        },
+        "targets": [
+            "19.104.44.76:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "api_getway_19.104.44.77",
+            "group": "caizhengju",
+            "host_ip": "19.104.44.77",
+            "hostname": "caizhengju_api_getway"
+        },
+        "targets": [
+            "19.104.44.77:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "openshift_node3_19.104.44.78",
+            "group": "caizhengju",
+            "host_ip": "19.104.44.78",
+            "hostname": "caizhengju_openshift_node3"
+        },
+        "targets": [
+            "19.104.44.78:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "oracle_19.104.44.79",
+            "group": "caizhengju",
+            "host_ip": "19.104.44.79",
+            "hostname": "caizhengju_oracle"
+        },
+        "targets": [
+            "19.104.44.79:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "unified_framework_19.104.44.80",
+            "group": "caizhengju",
+            "host_ip": "19.104.44.80",
+            "hostname": "caizhengju_unified_framework"
+        },
+        "targets": [
+            "19.104.44.80:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "mpp_master1_19.104.52.66",
+            "group": "yingjiju",
+            "host_ip": "19.104.52.66",
+            "hostname": "yingjiju_mpp_master1"
+        },
+        "targets": [
+            "19.104.52.66:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "mpp_segment1_19.104.52.67",
+            "group": "yingjiju",
+            "host_ip": "19.104.52.67",
+            "hostname": "yingjiju_mpp_segment1"
+        },
+        "targets": [
+            "19.104.52.67:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "mpp_segment2_19.104.52.68",
+            "group": "yingjiju",
+            "host_ip": "19.104.52.68",
+            "hostname": "yingjiju_mpp_segment2"
+        },
+        "targets": [
+            "19.104.52.68:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "minio_19.104.52.69",
+            "group": "yingjiju",
+            "host_ip": "19.104.52.69",
+            "hostname": "yingjiju_minio"
+        },
+        "targets": [
+            "19.104.52.69:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "openshift_master1_19.104.52.70",
+            "group": "yingjiju",
+            "host_ip": "19.104.52.70",
+            "hostname": "yingjiju_openshift_master1"
+        },
+        "targets": [
+            "19.104.52.70:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "openshift_node1_19.104.52.71",
+            "group": "yingjiju",
+            "host_ip": "19.104.52.71",
+            "hostname": "yingjiju_openshift_node1"
+        },
+        "targets": [
+            "19.104.52.71:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "openshift_node2_19.104.52.72",
+            "group": "yingjiju",
+            "host_ip": "19.104.52.72",
+            "hostname": "yingjiju_openshift_node2"
+        },
+        "targets": [
+            "19.104.52.72:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "api_getway_19.104.52.73",
+            "group": "yingjiju",
+            "host_ip": "19.104.52.73",
+            "hostname": "yingjiju_api_getway"
+        },
+        "targets": [
+            "19.104.52.73:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "openshift_node3_19.104.52.74",
+            "group": "yingjiju",
+            "host_ip": "19.104.52.74",
+            "hostname": "yingjiju_openshift_node3"
+        },
+        "targets": [
+            "19.104.52.74:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "oracle_19.104.52.75",
+            "group": "yingjiju",
+            "host_ip": "19.104.52.75",
+            "hostname": "yingjiju_oracle"
+        },
+        "targets": [
+            "19.104.52.75:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "unified_framework_19.104.52.76",
+            "group": "yingjiju",
+            "host_ip": "19.104.52.76",
+            "hostname": "yingjiju_unified_framework"
+        },
+        "targets": [
+            "19.104.52.76:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "mpp_master1_19.104.40.71",
+            "group": "chengguanju",
+            "host_ip": "19.104.40.71",
+            "hostname": "chengguanju_mpp_master1"
+        },
+        "targets": [
+            "19.104.40.71:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "mpp_segment1_19.104.40.72",
+            "group": "chengguanju",
+            "host_ip": "19.104.40.72",
+            "hostname": "chengguanju_mpp_segment1"
+        },
+        "targets": [
+            "19.104.40.72:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "mpp_segment2_19.104.40.73",
+            "group": "chengguanju",
+            "host_ip": "19.104.40.73",
+            "hostname": "chengguanju_mpp_segment2"
+        },
+        "targets": [
+            "19.104.40.73:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "mpp_segment3_19.104.40.74",
+            "group": "chengguanju",
+            "host_ip": "19.104.40.74",
+            "hostname": "chengguanju_mpp_segment3"
+        },
+        "targets": [
+            "19.104.40.74:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "mpp_segment4_19.104.40.75",
+            "group": "chengguanju",
+            "host_ip": "19.104.40.75",
+            "hostname": "chengguanju_mpp_segment4"
+        },
+        "targets": [
+            "19.104.40.75:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "minio_19.104.40.81",
+            "group": "chengguanju",
+            "host_ip": "19.104.40.81",
+            "hostname": "chengguanju_mpp_minio"
+        },
+        "targets": [
+            "19.104.40.81:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "openshift_master1_19.104.40.76",
+            "group": "chengguanju",
+            "host_ip": "19.104.40.76",
+            "hostname": "chengguanju_openshift_master1"
+        },
+        "targets": [
+            "19.104.40.76:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "openshift_node1_19.104.40.77",
+            "group": "chengguanju",
+            "host_ip": "19.104.40.77",
+            "hostname": "chengguanju_openshift_node1"
+        },
+        "targets": [
+            "19.104.40.77:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "openshift_node2_19.104.40.79",
+            "group": "chengguanju",
+            "host_ip": "19.104.40.79",
+            "hostname": "chengguanju_openshift_node2"
+        },
+        "targets": [
+            "19.104.40.79:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "api_getway_19.104.40.78",
+            "group": "chengguanju",
+            "host_ip": "19.104.40.78",
+            "hostname": "chengguanju_api_getway"
+        },
+        "targets": [
+            "19.104.40.78:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "visualization_19.104.40.84",
+            "group": "chengguanju",
+            "host_ip": "19.104.40.84",
+            "hostname": "chengguanju_visualization"
+        },
+        "targets": [
+            "19.104.40.84:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "openshift_master1_19.104.48.11",
+            "group": "shengtaiju",
+            "host_ip": "19.104.48.11",
+            "hostname": "shengtaiju_openshift_master1"
+        },
+        "targets": [
+            "19.104.48.11:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "openshift_node1_19.104.48.12",
+            "group": "shengtaiju",
+            "host_ip": "19.104.48.12",
+            "hostname": "shengtaiju_openshift_node1"
+        },
+        "targets": [
+            "19.104.48.12:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "openshift_node2_19.104.48.13",
+            "group": "shengtaiju",
+            "host_ip": "19.104.48.13",
+            "hostname": "shengtaiju_openshift_node2"
+        },
+        "targets": [
+            "19.104.48.13:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "api_getway_19.104.48.14",
+            "group": "shengtaiju",
+            "host_ip": "19.104.48.14",
+            "hostname": "shengtaiju_api_getway"
+        },
+        "targets": [
+            "19.104.48.14:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "unified_framework_soft_19.104.48.15",
+            "group": "shengtaiju",
+            "host_ip": "19.104.48.15",
+            "hostname": "shengtaiju_unified_framework_soft"
+        },
+        "targets": [
+            "19.104.48.15:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "mpp_master1_19.104.48.16",
+            "group": "shengtaiju",
+            "host_ip": "19.104.48.16",
+            "hostname": "shengtaiju_mpp_master1"
+        },
+        "targets": [
+            "19.104.48.16:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "mpp_segment1_19.104.40.65",
+            "group": "shengtaiju",
+            "host_ip": "19.104.40.65",
+            "hostname": "shengtaiju_mpp_segment1"
+        },
+        "targets": [
+            "19.104.40.65:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "mpp_segment2_19.104.40.66",
+            "group": "shengtaiju",
+            "host_ip": "19.104.40.66",
+            "hostname": "shengtaiju_mpp_segment2"
+        },
+        "targets": [
+            "19.104.40.66:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "mpp_segment3_19.104.40.67",
+            "group": "shengtaiju",
+            "host_ip": "19.104.40.67",
+            "hostname": "shengtaiju_mpp_segment3"
+        },
+        "targets": [
+            "19.104.40.67:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "minio_19.104.43.196",
+            "group": "shengtaiju",
+            "host_ip": "19.104.43.196",
+            "hostname": "shengtaiju_minio"
+        },
+        "targets": [
+            "19.104.43.196:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "oracle_19.104.43.197",
+            "group": "shengtaiju",
+            "host_ip": "19.104.43.197",
+            "hostname": "shengtaiju_oracle"
+        },
+        "targets": [
+            "19.104.43.197:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "sqlserver_19.104.43.198",
+            "group": "shengtaiju",
+            "host_ip": "19.104.43.198",
+            "hostname": "shengtaiju_sqlserver"
+        },
+        "targets": [
+            "19.104.43.198:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "mpp_master1_19.104.44.88",
+            "group": "yibaoju",
+            "host_ip": "19.104.44.88",
+            "hostname": "yibaoju_mpp_master1"
+        },
+        "targets": [
+            "19.104.44.88:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "mpp_segment1_19.104.44.89",
+            "group": "yibaoju",
+            "host_ip": "19.104.44.89",
+            "hostname": "yibaoju_mpp_segment1"
+        },
+        "targets": [
+            "19.104.44.89:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "mpp_segment2_19.104.44.90",
+            "group": "yibaoju",
+            "host_ip": "19.104.44.90",
+            "hostname": "yibaoju_mpp_segment2"
+        },
+        "targets": [
+            "19.104.44.90:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "minio_19.104.44.91",
+            "group": "yibaoju",
+            "host_ip": "19.104.44.91",
+            "hostname": "yibaoju_minio"
+        },
+        "targets": [
+            "19.104.44.91:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "openshift_master1_19.104.44.92",
+            "group": "yibaoju",
+            "host_ip": "19.104.44.92",
+            "hostname": "yibaoju_openshift_master1"
+        },
+        "targets": [
+            "19.104.44.92:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "openshift_node1_19.104.44.93",
+            "group": "yibaoju",
+            "host_ip": "19.104.44.93",
+            "hostname": "yibaoju_openshift_node1"
+        },
+        "targets": [
+            "19.104.44.93:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "openshift_node2_19.104.44.94",
+            "group": "yibaoju",
+            "host_ip": "19.104.44.94",
+            "hostname": "yibaoju_openshift_node2"
+        },
+        "targets": [
+            "19.104.44.94:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "api_getway_19.104.44.95",
+            "group": "yibaoju",
+            "host_ip": "19.104.44.95",
+            "hostname": "yibaoju_api_getway"
+        },
+        "targets": [
+            "19.104.44.95:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "unified_framework_19.104.44.96",
+            "group": "yibaoju",
+            "host_ip": "19.104.44.96",
+            "hostname": "yibaoju_unified_framework"
+        },
+        "targets": [
+            "19.104.44.96:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "oracle_19.104.44.97",
+            "group": "yibaoju",
+            "host_ip": "19.104.44.97",
+            "hostname": "yibaoju_oracle"
+        },
+        "targets": [
+            "19.104.44.97:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "mpp_master1_19.104.51.68",
+            "group": "shijianju",
+            "host_ip": "19.104.51.68",
+            "hostname": "shijianju_mpp_master1"
+        },
+        "targets": [
+            "19.104.51.68:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "mpp_segment1_19.104.51.69",
+            "group": "shijianju",
+            "host_ip": "19.104.51.69",
+            "hostname": "shijianju_mpp_segment1"
+        },
+        "targets": [
+            "19.104.51.69:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "mpp_segment2_19.104.51.70",
+            "group": "shijianju",
+            "host_ip": "19.104.51.70",
+            "hostname": "shijianju_mpp_segment2"
+        },
+        "targets": [
+            "19.104.51.70:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "mpp_segment3_19.104.51.81",
+            "group": "shijianju",
+            "host_ip": "19.104.51.81",
+            "hostname": "shijianju_mpp_segment3"
+        },
+        "targets": [
+            "19.104.51.81:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "minio_19.104.51.71",
+            "group": "shijianju",
+            "host_ip": "19.104.51.71",
+            "hostname": "shijianju_minio"
+        },
+        "targets": [
+            "19.104.51.71:9100"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "openshift_master1_19.104.51.72",
+            "group": "shijianju",
+            "host_ip": "19.104.51.72",
+            "hostname": "shijianju_openshift_master1"
+        },
+        "targets": [
+            "19.104.51.72:9100"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "openshift_node1_19.104.51.73",
+            "group": "shijianju",
+            "host_ip": "19.104.51.73",
+            "hostname": "shijianju_openshift_node1"
+        },
+        "targets": [
+            "19.104.51.73:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "openshift_node2_19.104.51.74",
+            "group": "shijianju",
+            "host_ip": "19.104.51.74",
+            "hostname": "shijianju_openshift_node2"
+        },
+        "targets": [
+            "19.104.51.74:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "oracle_19.104.51.75",
+            "group": "shijianju",
+            "host_ip": "19.104.51.75",
+            "hostname": "shijianju_oracle"
+        },
+        "targets": [
+            "19.104.51.75:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "api_getway_19.104.51.76",
+            "group": "shijianju",
+            "host_ip": "19.104.51.76",
+            "hostname": "shijianju_api_getway"
+        },
+        "targets": [
+            "19.104.51.76:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "unified_framework_19.104.51.77",
+            "group": "shijianju",
+            "host_ip": "19.104.51.77",
+            "hostname": "shijianju_unified_framework"
+        },
+        "targets": [
+            "19.104.51.77:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "sqlserver_19.104.51.78",
+            "group": "shijianju",
+            "host_ip": "19.104.51.78",
+            "hostname": "shijianju_sqlserver"
+        },
+        "targets": [
+            "19.104.51.78:9100"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "kafka_19.104.50.123",
+            "group": "shujuhu",
+            "host_ip": "19.104.50.123",
+            "hostname": "shujuhu_kafka"
+        },
+        "targets": [
+            "19.104.50.123:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "nginx_19.104.50.204",
+            "group": "shujuhu",
+            "host_ip": "19.104.50.204",
+            "hostname": "shujuhu_nginx"
+        },
+        "targets": [
+            "19.104.50.204:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "rancher_master1_19.104.51.125",
+            "group": "shujuhu",
+            "host_ip": "19.104.51.125",
+            "hostname": "shujuhu_rancher_master1"
+        },
+        "targets": [
+            "19.104.51.125:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "rancher_master2_19.104.51.126",
+            "group": "shujuhu",
+            "host_ip": "19.104.51.126",
+            "hostname": "shujuhu_rancher_master2"
+        },
+        "targets": [
+            "19.104.51.126:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "rancher_master3_19.104.51.127",
+            "group": "shujuhu",
+            "host_ip": "19.104.51.127",
+            "hostname": "shujuhu_rancher_master3"
+        },
+        "targets": [
+            "19.104.51.127:9092"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "rancher_node1_19.104.50.125",
+            "group": "shujuhu",
+            "host_ip": "19.104.50.125",
+            "hostname": "shujuhu_rancher_node1"
+        },
+        "targets": [
+            "19.104.50.125:9092"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "rancher_node2_19.104.51.128",
+            "group": "shujuhu",
+            "host_ip": "19.104.51.128",
+            "hostname": "shujuhu_rancher_node2"
+        },
+        "targets": [
+            "19.104.51.128:9092"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "rancher_node3_19.104.51.129",
+            "group": "shujuhu",
+            "host_ip": "19.104.51.129",
+            "hostname": "shujuhu_rancher_node3"
+        },
+        "targets": [
+            "19.104.51.129:9092"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "rancher_node4_19.104.50.131",
+            "group": "shujuhu",
+            "host_ip": "19.104.50.131",
+            "hostname": "shujuhu_rancher_node4"
+        },
+        "targets": [
+            "19.104.50.131:9092"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "rancher_node5_19.104.50.118",
+            "group": "shujuhu",
+            "host_ip": "19.104.50.118",
+            "hostname": "shujuhu_rancher_node5"
+        },
+        "targets": [
+            "19.104.50.118:9092"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "openshift_19.104.50.139",
+            "group": "shujuhu",
+            "host_ip": "19.104.50.139",
+            "hostname": "shujuhu_openshift"
+        },
+        "targets": [
+            "19.104.50.139:9092"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "oracle_19.104.40.24",
+            "group": "shujuhu",
+            "host_ip": "19.104.40.24",
+            "hostname": "shujuhu_oralce"
+        },
+        "targets": [
+            "19.104.40.24:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "statistical_resources_directory_19.104.51.149",
+            "group": "shujuzu",
+            "host_ip": "19.104.51.149",
+            "hostname": "statistical_resources_directory"
+        },
+        "targets": [
+            "19.104.51.149:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "kadb1_backup_19.104.40.16",
+            "group": "backup",
+            "host_ip": "19.104.40.16",
+            "hostname": "kadb1_backup"
+        },
+        "targets": [
+            "19.104.40.16:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "kadb2_backup_19.104.40.17",
+            "group": "backup",
+            "host_ip": "19.104.40.17",
+            "hostname": "kadb2_backup"
+        },
+        "targets": [
+            "19.104.40.17:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "kadb3_backup_19.104.40.18",
+            "group": "backup",
+            "host_ip": "19.104.40.18",
+            "hostname": "kadb3_backup"
+        },
+        "targets": [
+            "19.104.40.18:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "kadb4_backup_19.104.46.67",
+            "group": "backup",
+            "host_ip": "19.104.46.67",
+            "hostname": "kadb4_backup"
+        },
+        "targets": [
+            "19.104.46.67:9100"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "kadb5_backup_19.104.46.68",
+            "group": "backup",
+            "host_ip": "19.104.46.68",
+            "hostname": "kadb5_backup"
+        },
+        "targets": [
+            "19.104.46.68:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "kadb1-1_19.104.49.142",
+            "group": "shujuhu",
+            "host_ip": "19.104.49.142",
+            "hostname": "kadb1-1"
+        },
+        "targets": [
+            "19.104.49.142:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "kadb2-1_19.104.49.143",
+            "group": "shujuhu",
+            "host_ip": "19.104.49.143",
+            "hostname": "kadb2-1"
+        },
+        "targets": [
+            "19.104.49.143:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "kadb3-1_19.104.49.144",
+            "group": "shujuhu",
+            "host_ip": "19.104.49.144",
+            "hostname": "kadb3-1"
+        },
+        "targets": [
+            "19.104.49.144:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "kadb4-1_19.104.49.145",
+            "group": "shujuhu",
+            "host_ip": "19.104.49.145",
+            "hostname": "kadb4-1"
+        },
+        "targets": [
+            "19.104.49.145:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "kadb5-1_19.104.49.146",
+            "group": "shujuhu",
+            "host_ip": "19.104.49.146",
+            "hostname": "kadb5-1"
+        },
+        "targets": [
+            "19.104.49.146:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "kadb1-2_19.104.49.147",
+            "group": "shujuhu",
+            "host_ip": "19.104.49.147",
+            "hostname": "kadb1-2"
+        },
+        "targets": [
+            "19.104.49.147:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "kadb2-2_19.104.49.148",
+            "group": "shujuhu",
+            "host_ip": "19.104.49.148",
+            "hostname": "kadb2-2"
+        },
+        "targets": [
+            "19.104.49.148:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "kadb3-2_19.104.49.149",
+            "group": "shujuhu",
+            "host_ip": "19.104.49.149",
+            "hostname": "kadb3-2"
+        },
+        "targets": [
+            "19.104.49.149:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "kadb4-2_19.104.49.150",
+            "group": "shujuhu",
+            "host_ip": "19.104.49.150",
+            "hostname": "kadb4-2"
+        },
+        "targets": [
+            "19.104.49.150:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "kadb5-2_19.104.49.151",
+            "group": "shujuhu",
+            "host_ip": "19.104.49.151",
+            "hostname": "kadb5-2"
+        },
+        "targets": [
+            "19.104.49.151:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "mq_ceph1_19.104.53.216",
+            "group": "shujuhu",
+            "host_ip": "19.104.53.216",
+            "hostname": "mq_ceph1"
+        },
+        "targets": [
+            "19.104.53.216:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "mq_ceph2_19.104.53.217",
+            "group": "shujuhu",
+            "host_ip": "19.104.53.217",
+            "hostname": "mq_ceph2"
+        },
+        "targets": [
+            "19.104.53.217:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "mq_ceph3_19.104.53.219",
+            "group": "shujuhu",
+            "host_ip": "19.104.53.219",
+            "hostname": "mq_ceph3"
+        },
+        "targets": [
+            "19.104.53.219:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "nginx1_19.104.50.155",
+            "group": "shujuhu",
+            "host_ip": "19.104.50.155",
+            "hostname": "nginx1"
+        },
+        "targets": [
+            "19.104.50.155:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "nginx2_19.104.50.124",
+            "group": "shujuhu",
+            "host_ip": "19.104.50.124",
+            "hostname": "nginx2"
+        },
+        "targets": [
+            "19.104.50.124:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "backup_dianxin_19.104.40.28",
+            "group": "backup",
+            "host_ip": "19.104.40.28",
+            "hostname": "backup_dianxin"
+        },
+        "targets": [
+            "19.104.40.28:9100"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "backup_yidong_19.104.50.128",
+            "group": "backup",
+            "host_ip": "19.104.50.128",
+            "hostname": "backup_yidong"
+        },
+        "targets": [
+            "19.104.50.128:9089"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "rancher_node1_10.147.3.87",
+            "group": "fangyi_test",
+            "host_ip": "10.147.3.87",
+            "hostname": "fangyi_test_rancher_node1"
+        },
+        "targets": [
+            "10.147.3.87:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "rancher_master_10.147.3.88",
+            "group": "fangyi_test",
+            "host_ip": "10.147.3.88",
+            "hostname": "fangyi_test_rancher_master"
+        },
+        "targets": [
+            "10.147.3.88:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "yiqing_redis1_10.147.5.226",
+            "group": "fangyi",
+            "host_ip": "10.147.5.226",
+            "hostname": "yiqing_redis1"
+        },
+        "targets": [
+            "10.147.5.226:9092"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "yiqing_redis2_10.147.5.227",
+            "group": "fangyi",
+            "host_ip": "10.147.5.227",
+            "hostname": "yiqing_redis2"
+        },
+        "targets": [
+            "10.147.5.227:9092"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "yiqing_redis3_10.147.5.228",
+            "group": "fangyi",
+            "host_ip": "10.147.5.228",
+            "hostname": "yiqing_redis3"
+        },
+        "targets": [
+            "10.147.5.228:9092"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "rancher_node2_19.104.53.53",
+            "group": "fangyi",
+            "host_ip": "19.104.53.53",
+            "hostname": "fangyi_rancher_node2"
+        },
+        "targets": [
+            "19.104.53.53:9092"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "rancher_node1_19.104.53.48",
+            "group": "fangyi",
+            "host_ip": "19.104.53.48",
+            "hostname": "fangyi_rancher_node1"
+        },
+        "targets": [
+            "19.104.53.48:9010"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "rancher_master_node1_10.147.4.247",
+            "group": "fangyi",
+            "host_ip": "10.147.4.247",
+            "hostname": "fangyi_rancher_master_node1"
+        },
+        "targets": [
+            "10.147.4.247:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "rancher_master_node2_10.147.4.248",
+            "group": "fangyi",
+            "host_ip": "10.147.4.248",
+            "hostname": "fangyi_rancher_master_node2"
+        },
+        "targets": [
+            "10.147.4.248:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "rancher_master_node3_10.147.4.249",
+            "group": "fangyi",
+            "host_ip": "10.147.4.249",
+            "hostname": "fangyi_rancher_master_node3"
+        },
+        "targets": [
+            "10.147.4.249:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "openshift_master_10.147.2.51",
+            "group": "fangyi",
+            "host_ip": "10.147.2.51",
+            "hostname": "fangyi_openshift_master"
+        },
+        "targets": [
+            "10.147.2.51:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "openshift_node2_10.147.2.52",
+            "group": "fangyi",
+            "host_ip": "10.147.2.52",
+            "hostname": "fangyi_openshift_node2"
+        },
+        "targets": [
+            "10.147.2.52:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "openshift_node4_10.147.2.59",
+            "group": "fangyi",
+            "host_ip": "10.147.2.59",
+            "hostname": "fangyi_openshift_node4"
+        },
+        "targets": [
+            "10.147.2.59:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "oracle_master_10.147.2.49",
+            "group": "fangyi",
+            "host_ip": "10.147.2.49",
+            "hostname": "fangyi_oracle_master"
+        },
+        "targets": [
+            "10.147.2.49:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "oracle_backup_10.146.0.53",
+            "group": "fangyi",
+            "host_ip": "10.146.0.53",
+            "hostname": "fangyi_oracle_backup"
+        },
+        "targets": [
+            "10.146.0.53:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "gateway3_linux_10.145.188.134",
+            "group": "dawei",
+            "host_ip": "10.145.188.134",
+            "hostname": "dawei_gateway3_linux"
+        },
+        "targets": [
+            "10.145.188.134:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "gateway4_linux_10.145.188.135",
+            "group": "dawei",
+            "host_ip": "10.145.188.135",
+            "hostname": "dawei_gateway4_linux"
+        },
+        "targets": [
+            "10.145.188.135:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "mpp_master_10.147.3.62",
+            "group": "ligongxueyuan",
+            "host_ip": "10.147.3.62",
+            "hostname": "ligongxueyuan_mpp_master"
+        },
+        "targets": [
+            "10.147.3.62:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "mpp_segment1_10.147.3.61",
+            "group": "ligongxueyuan",
+            "host_ip": "10.147.3.61",
+            "hostname": "ligongxueyuan_mpp_segment1"
+        },
+        "targets": [
+            "10.147.3.61:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "mpp_segment2_10.147.3.67",
+            "group": "ligongxueyuan",
+            "host_ip": "10.147.3.67",
+            "hostname": "ligongxueyuan_mpp_segment2"
+        },
+        "targets": [
+            "10.147.3.67:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "mysql_redis_minio_10.147.3.66",
+            "group": "ligongxueyuan",
+            "host_ip": "10.147.3.66",
+            "hostname": "ligongxueyuan_mysql_redis_minio"
+        },
+        "targets": [
+            "10.147.3.66:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "nginx_vsftp_10.147.3.65",
+            "group": "ligongxueyuan",
+            "host_ip": "10.147.3.65",
+            "hostname": "ligongxueyuan_nginx_vsftp"
+        },
+        "targets": [
+            "10.147.3.65:9091"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "oracle_10.147.3.64",
+            "group": "ligongxueyuan",
+            "host_ip": "10.147.3.64",
+            "hostname": "ligongxueyuan_oracle"
+        },
+        "targets": [
+            "10.147.3.64:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "rancher_master_10.147.3.60",
+            "group": "ligongxueyuan",
+            "host_ip": "10.147.3.60",
+            "hostname": "ligongxueyuan_rancher_master"
+        },
+        "targets": [
+            "10.147.3.60:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "rancher_node1_10.147.3.63",
+            "group": "ligongxueyuan",
+            "host_ip": "10.147.3.63",
+            "hostname": "ligongxueyuan_rancher_node1"
+        },
+        "targets": [
+            "10.147.3.63:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "rancher_node2_10.147.3.68",
+            "group": "ligongxueyuan",
+            "host_ip": "10.147.3.68",
+            "hostname": "ligongxueyuan_rancher_node2"
+        },
+        "targets": [
+            "10.147.3.68:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "guoxin_10.147.3.246",
+            "group": "ligongxueyuan",
+            "host_ip": "10.147.3.246",
+            "hostname": "ligongxueyuan_guoxin"
+        },
+        "targets": [
+            "10.147.3.246:9090"
+        ]
+    }
+]

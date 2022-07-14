@@ -1,0 +1,222 @@
+[
+    {   
+        "labels": { 
+            "desc": "yiqing_kingbase_mysql_10.147.4.241:54325",
+            "project": "yiqing",
+            "kingbase_addr": "10.147.4.241:54325",
+            "role": "yiqing_kingbase_mysql"
+        },
+        "targets": [
+            "19.104.50.128:31843"
+        ]
+    },
+    {   
+        "labels": { 
+            "desc": "yiqing_kingbase_oracle_19.104.52.238:54321",
+            "project": "yiqing",
+            "kingbase_addr": "19.104.52.238:54321",
+            "role": "yiqing_kingbase_oracle"
+        },
+        "targets": [
+            "19.104.50.128:31840"
+        ]
+    },
+    {   
+        "labels": { 
+            "desc": "yingjiju_kingbase_mysql_19.104.52.156:54321",
+            "project": "yingjiju",
+            "kingbase_addr": "19.104.52.156:54321",
+            "role": "yingjiju_kingbase_mysql"
+        },
+        "targets": [
+            "19.104.50.128:31837"
+        ]
+    },
+    {   
+        "labels": { 
+            "desc": "yingjiju_kingbase_oralce_19.104.52.152:54321",
+            "project": "yingjiju",
+            "kingbase_addr": "19.104.52.152:54321",
+            "role": "yingjiju_kingbase_oracle"
+        },
+        "targets": [
+            "19.104.50.128:31838"
+        ]
+    },
+    {   
+        "labels": { 
+            "desc": "yibaoju_kingbase_mysql_19.104.52.218:54321",
+            "project": "yibaoju",
+            "kingbase_addr": "19.104.52.218:54321",
+            "role": "yibaoju_kingbase_mysql"
+        },
+        "targets": [
+            "19.104.50.128:31835"
+        ]
+    },
+    {   
+        "labels": { 
+            "desc": "yibaoju_kingbase_oralce_19.104.52.214:54321",
+            "project": "yibaoju",
+            "kingbase_addr": "19.104.52.214:54321",
+            "role": "yibaoju_kingbase_oracle"
+        },
+        "targets": [
+            "19.104.50.128:31836"
+        ]
+    },
+    {   
+        "labels": { 
+            "desc": "shijianju_kingbase_mysql_19.104.52.210:54321",
+            "project": "shijianju",
+            "kingbase_addr": "19.104.52.210:54321",
+            "role": "shijianju_kingbase_mysql"
+        },
+        "targets": [
+            "19.104.50.128:31829"
+        ]
+    },
+    {   
+        "labels": { 
+            "desc": "shijianju_kingbase_oralce_19.104.52.148:54321",
+            "project": "shijianju",
+            "kingbase_addr": "19.104.52.148:54321",
+            "role": "shijianju_kingbase_oracle"
+        },
+        "targets": [
+            "19.104.50.128:31830"
+        ]
+    },
+    {   
+        "labels": { 
+            "desc": "shengtaiju_kingbase_mysql_19.104.52.226:54321",
+            "project": "shengtaiju",
+            "kingbase_addr": "19.104.52.266:54321",
+            "role": "shengtaiju_kingbase_mysql"
+        },
+        "targets": [
+            "19.104.50.128:31827"
+        ]
+    },
+    {   
+        "labels": { 
+            "desc": "shengtaiju_kingbase_oralce_19.104.52.222:54321",
+            "project": "shengtaiju",
+            "kingbase_addr": "19.104.52.222:54321",
+            "role": "shengtaiju_kingbase_oralce"
+        },
+        "targets": [
+            "19.104.50.128:31828"
+        ]
+    },
+    {   
+        "labels": { 
+            "desc": "chengguanju_kingbase_mysql_19.104.52.144:54321",
+            "project": "chengguanju",
+            "kingbase_addr": "19.104.52.144:54321",
+            "role": "chengguanju_kingbase_mysql"
+        },
+        "targets": [
+            "19.104.50.128:31825"
+        ]
+    },
+    {   
+        "labels": { 
+            "desc": "chengguanju_kingbase_oracle_19.104.52.140:54321",
+            "project": "chengguanju",
+            "kingbase_addr": "19.104.52.140:54321",
+            "role": "chengguanju_kingbase_oracle"
+        },
+        "targets": [
+            "19.104.50.128:31826"
+        ]
+    },
+    {   
+        "labels": { 
+            "desc": "caizhengju_kingbase_mysql_19.104.52.164:54321",
+            "project": "caizhengju",
+            "kingbase_addr": "19.104.52.164:54321",
+            "role": "caizhengju_kingbase_mysql"
+        },
+        "targets": [
+            "19.104.50.128:31823"
+        ]
+    },
+    {   
+        "labels": { 
+            "desc": "caizhengju_kingbase_oralce_19.104.52.160:54321",
+            "project": "caizhengju",
+            "kingbase_addr": "19.104.52.160:54321",
+            "role": "caizhengju_kingbase_oracle"
+        },
+        "targets": [
+            "19.104.50.128:31824"
+        ]
+    },
+    {   
+        "labels": { 
+            "desc": "zuhu_kingbase_mysql_19.104.52.132:54321",
+            "project": "zuhu",
+            "kingbase_addr": "19.104.52.132:54321",
+            "role": "zuhu_kingbase_mysql"
+        },
+        "targets": [
+            "19.104.50.128:31831"
+        ]
+    },
+    {   
+        "labels": { 
+            "desc": "zuhu_kingbase_oracle_19.104.52.124:54321",
+            "project": "zuhu",
+            "kingbase_addr": "19.104.52.124:54321",
+            "role": "zuhu_kingbase_oralce"
+        },
+        "targets": [
+            "19.104.50.128:31833"
+        ]
+    },
+    {   
+        "labels": { 
+            "desc": "shujuhu_kingbase_mysql_19.104.52.136:54321",
+            "project": "shujuhu",
+            "kingbase_addr": "19.104.52.136:54321",
+            "role": "shujuhu_kingbase_mysql"
+        },
+        "targets": [
+            "19.104.50.128:31832"
+        ]
+    },
+    {   
+        "labels": { 
+            "desc": "shujuhu_kingbase_oracle_19.104.52.128:54321",
+            "project": "shujuhu",
+            "kingbase_addr": "19.104.52.128:54321",
+            "role": "shujuhu_kingbase_oralce"
+        },
+        "targets": [
+            "19.104.50.128:31834"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "xiangguan_kingbase_oracle_19.104.45.168:54321",
+            "project": "xiangguan",
+            "kingbase_addr": "19.104.45.168:54321",
+            "role": "xiangguan_kingbase_oralce"
+        },
+        "targets": [
+            "19.104.50.128:30121"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "stj_tongyirenzheng_kingbase_oracle_19.105.196.111:80",
+            "project": "shujuhu",
+            "kingbase_addr": "19.105.196.2:54321",
+            "role": "stj_tongyirenzheng_kingbase_oralce"
+        },
+        "targets": [
+            "19.104.50.128:31934"
+        ]
+    }
+]

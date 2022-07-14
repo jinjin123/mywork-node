@@ -1,0 +1,123 @@
+[
+    {
+        "labels": {
+            "desc": "dalingshan_redis_19.104.53.59",
+            "project": "dalingshan",
+            "host_ip": "19.104.53.59",
+            "hostname": "dalingshan_redis"
+        },
+        "targets": [
+            "localhost:17014"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "yiqing_redis1_10.147.5.226",
+            "project": "fangyi",
+            "host_ip": "10.147.5.226",
+            "hostname": "yiqing_redis1"
+        },
+        "targets": [
+            "localhost:17011"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "yiqing_redis2_10.147.5.227",
+            "project": "fangyi",
+            "host_ip": "10.147.5.227",
+            "hostname": "yiqing_redis2"
+        },
+        "targets": [
+            "localhost:17012"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "yiqing_redis3_10.147.5.228",
+            "project": "fangyi",
+            "host_ip": "10.147.5.228",
+            "hostname": "yiqing_redis3"
+        },
+        "targets": [
+            "localhost:17013"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "shujuhu_redis_19.104.50.204",
+            "project": "shujuhu",
+            "host_ip": "19.104.50.204",
+            "hostname": "shujuhu_redis"
+        },
+        "targets": [
+            "localhost:17006"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "yingjiju_redis_19.104.52.73",
+            "project": "yingjiju",
+            "host_ip": "19.104.52.73",
+            "hostname": "yingjiju_redis"
+        },
+        "targets": [
+            "localhost:17005"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "yibaoju_redis_19.104.44.95",
+            "project": "yibaoju",
+            "host_ip": "19.104.44.95",
+            "hostname": "yibaoju_redis"
+        },
+        "targets": [
+            "localhost:17004"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "caizhengju_redis_19.104.44.77",
+            "project": "caizhengju",
+            "host_ip": "19.104.44.77",
+            "hostname": "caizhengju_redis"
+        },
+        "targets": [
+            "localhost:17003"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "shengtaiju_redis_19.104.48.14",
+            "project": "shengtaiju",
+            "host_ip": "19.104.48.14",
+            "hostname": "shengtaiju_redis"
+        },
+        "targets": [
+            "localhost:17002"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "chengguanju_redis_19.104.40.78",
+            "project": "chengguanju",
+            "host_ip": "19.104.40.78",
+            "hostname": "chengguanju_redis"
+        },
+        "targets": [
+            "localhost:17001"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "shijianju_redis_19.104.51.76",
+            "project": "shijianju",
+            "host_ip": "19.104.51.76",
+            "hostname": "shijianju_redis"
+        },
+        "targets": [
+            "localhost:17000"
+        ]
+    }
+]

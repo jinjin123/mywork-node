@@ -1,0 +1,65 @@
+[
+    {
+        "targets": ["https://fangyqgk.dg.cn/fytbweb"],
+        "labels": {
+          "name": "疫情",
+          "group": "web"
+        }
+    },
+    {
+        "targets": ["https://egovcloud.dg.cn"],
+        "labels": {
+          "name": "云管",
+          "group": "web"
+        }
+    },
+    {
+        "targets": ["https://egpm.dg.cn"],
+        "labels": {
+          "name": "项管",
+          "group": "web"
+        }
+    },
+    {
+        "targets": ["https://passport.dg.cn"],
+        "labels": {
+          "name": "市统一认证",
+          "group": "web"
+        }
+    },
+    {
+        "targets": ["https://dc-gateway.gdgov.cn"],
+        "labels": {
+          "name": "疫情省接口",
+          "group": "api"
+        }
+    },
+    {
+        "targets": ["https://docker-registry-default.apps.alltosea.com"],
+        "labels": {
+          "name": "docker-registry-default.apps.alltosea.com",
+          "group": "web"
+        }
+    },
+    {
+        "targets": ["https://nexus.alltosea.com"],
+        "labels": {
+          "name": "nexus.alltosea.com",
+          "group": "web"
+        }
+    },
+    {
+        "targets": ["https://ioc-paas.dg.cn/ioc/login"],
+        "labels": {
+          "name": "数据湖",
+          "group": "web"
+        }
+    },
+    {
+        "targets": ["https://jumpserver.alltosea.com"],
+        "labels": {
+          "name": "jumpserver",
+          "group": "web"
+        }
+    }
+]

@@ -1,0 +1,58 @@
+[
+    {   
+        "labels": { 
+            "desc": "shujuhu_nginx_19.104.50.204:9913",
+            "project": "shujuhu",
+            "nginx_addr": "19.104.50.204:9913",
+            "role": "shujuhu_nginx_kong-api-new"
+        },
+        "targets": [
+            "19.104.50.204:9913"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "yiqing_rancher_nginx_10.147.2.59:9091",
+            "project": "yiqing",
+            "nginx_addr": "10.147.2.59:9091",
+            "role": "yiqing_rancher_nginx"
+        },
+        "targets": [
+            "10.147.2.59:9091"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "shujuhu_rancher_nginx2_19.104.50.124:9913",
+            "project": "shujuhu",
+            "nginx_addr": "19.104.50.124:9913",
+            "role": "shujuhu_rancher_nginx2_kong-api"
+        },
+        "targets": [
+            "19.104.50.124:9913"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "feiyan_uos_rancher_nginx1_10.147.5.248",
+            "project": "yiqing",
+            "nginx_addr": "10.147.5.248:9090",
+            "role": "feiyan_rancher_uos_nginx1_kong-api"
+        },
+        "targets": [
+            "10.147.5.248:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "feiyan_uos_rancher_nginx2_10.147.5.249",
+            "project": "yiqing",
+            "nginx_addr": "10.147.5.249:9090",
+            "role": "feiyan_rancher_uos_nginx2_kong-api"
+        },
+        "targets": [
+            "10.147.5.249:9090"
+        ]
+    }
+
+]

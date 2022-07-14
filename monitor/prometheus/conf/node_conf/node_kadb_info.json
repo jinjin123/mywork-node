@@ -1,0 +1,142 @@
+[
+    {   
+        "labels": { 
+            "desc": "kadb1_1-19.104.49.142",
+            "project": "数字政府",
+            "system": "租户",
+            "host_ip": "19.104.49.142",
+            "hostname": "kadb1_1",
+            "cluster": "kadb_cluster_142",
+            "service": "node_exporter"
+        },
+        "targets": [
+            "19.104.49.142:9090"
+        ]
+    },
+    {   
+        "labels": { 
+            "desc": "kadb1_2-19.104.49.147",
+            "project": "数字政府",
+            "system": "租户",
+            "host_ip": "19.104.49.147",
+            "hostname": "kadb1_2",
+            "cluster": "kadb_cluster_142",
+            "service": "node_exporter"
+        },
+        "targets": [
+            "19.104.49.147:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "kadb2_1-19.104.49.143",
+            "project": "数字政府",
+            "system": "租户",
+            "host_ip": "19.104.49.143",
+            "hostname": "kadb2_1",
+            "cluster": "kadb_cluster_143",
+            "service": "node_exporter"
+        },
+        "targets": [
+            "19.104.49.143:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "kadb2_1-19.104.49.148",
+            "project": "数字政府",
+            "system": "租户",
+            "host_ip": "19.104.49.148",
+            "hostname": "kadb2_2",
+            "cluster": "kadb_cluster_143",
+            "service": "node_exporter"
+        },
+        "targets": [
+            "19.104.49.148:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "kadb3_1-19.104.49.144",
+            "project": "数字政府",
+            "system": "租户",
+            "host_ip": "19.104.49.144",
+            "hostname": "kadb3_1",
+            "cluster": "kadb_cluster_144",
+            "service": "node_exporter"
+        },
+        "targets": [
+            "19.104.49.144:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "kadb3_2-19.104.49.149",
+            "project": "数字政府",
+            "system": "租户",
+            "host_ip": "19.104.49.149",
+            "hostname": "kadb3_2",
+            "cluster": "kadb_cluster_144",
+            "service": "node_exporter"
+        },
+        "targets": [
+            "19.104.49.149:9090"
+        ]
+    },
+    {
+       "labels": {
+            "desc": "kadb4_1-19.104.49.145",
+            "project": "数字政府",
+            "system": "租户",
+            "host_ip": "19.104.49.145",
+            "hostname": "kadb4_1",
+            "cluster": "kadb_cluster_145",
+            "service": "node_exporter"
+        },
+        "targets": [
+            "19.104.49.145:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "kadb4_2-19.104.49.150",
+            "project": "数字政府",
+            "system": "租户",
+            "host_ip": "19.104.49.150",
+            "hostname": "kadb4_2",
+            "cluster": "kadb_cluster_145",
+            "service": "node_exporter"
+        },
+        "targets": [
+            "19.104.49.150:9090"
+        ]
+    },
+    {
+       "labels": {
+            "desc": "kadb5_1-19.104.49.146",
+            "project": "数字政府",
+            "system": "租户",
+            "host_ip": "19.104.49.146",
+            "hostname": "kadb5_1",
+            "cluster": "kadb_cluster_146",
+            "service": "node_exporter"
+        },
+        "targets": [
+            "19.104.49.146:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "kadb5_2-19.104.49.151",
+            "project": "数字政府",
+            "system": "租户",
+            "host_ip": "19.104.49.151",
+            "hostname": "kadb5_2",
+            "cluster": "kadb_cluster_146",
+            "service": "node_exporter"
+        },
+        "targets": [
+            "19.104.49.151:9090"
+        ]
+    }
+]

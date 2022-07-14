@@ -1,0 +1,178 @@
+groups:
+  - name: host_alert
+    rules:
+### 硬盘 ###
+# 默认系统盘告警策略
+    - alert: 主机系统盘85%
+      expr: floor(100-((node_filesystem_avail_bytes{device!="rootfs", mountpoint="/"}*100)/(node_filesystem_size_bytes{device!="rootfs", mountpoint="/"}*0.95))) >= 85
+      for: 3m
+      labels:
+        severity: warning
+      annotations:
+        description: "[{{ $labels.desc }}],告警值为:[{{ $value }}%],告警初始时长为3分钟."
+
+# 默认100g数据盘告警策略
+    - alert: 主机数据盘可用空间不足20G
+      expr: (floor(node_filesystem_avail_bytes{device!="rootfs", mountpoint=~"/data|/data01|/u01|/mpp"}/1024/1024/1024) <= 20) and (node_filesystem_size_bytes{device!="rootfs", mountpoint=~"/data|/data01|/u01|/mpp"}/1024/1024/1024 <= 100)
+      for: 3m
+      labels:
+        severity: warning
+      annotations:
+        description: "[{{ $labels.desc }}],告警值为:[{{ $value }}G],告警初始时长为3分钟."
+
+# 默认200g数据盘告警策略
+    - alert: 主机数据盘可用空间不足40G
+      expr: (floor(node_filesystem_avail_bytes{device!="rootfs", mountpoint=~"/data|/data01|/u01|/mpp"}/1024/1024/1024) <= 40) and (node_filesystem_size_bytes{device!="rootfs", mountpoint=~"/data|/data01|/u01|/mpp"}/1024/1024/1024 <= 200) and (node_filesystem_size_bytes{device!="rootfs", mountpoint=~"/data|/data01|/u01|/mpp"}/1024/1024/1024 > 100)
+      for: 3m
+      labels:
+        severity: warning
+      annotations:
+        description: "[{{ $labels.desc }}],告警值为:[{{ $value }}G],告警初始时长为3分钟."
+
+# 默认300g-500G数据盘告警策略
+    - alert: 主机数据盘可用空间不足50G
+      expr: (floor(node_filesystem_avail_bytes{device!="rootfs", mountpoint=~"/data|/data01|/u01|/mpp"}/1024/1024/1024) <= 50) and (node_filesystem_size_bytes{device!="rootfs", mountpoint=~"/data|/data01|/u01|/mpp"}/1024/1024/1024 <= 500) and (node_filesystem_size_bytes{device!="rootfs", mountpoint=~"/data|/data01|/u01|/mpp"}/1024/1024/1024 > 200)
+      for: 3m
+      labels:
+        severity: warning
+      annotations:
+        description: "[{{ $labels.desc }}],告警值为:[{{ $value }}G],告警初始时长为3分钟."
+
+# 默认500g-1T数据盘告警策略
+    - alert: 主机数据盘可用空间不足80G
+      expr: (floor(node_filesystem_avail_bytes{device!="rootfs", mountpoint=~"/data|/data01|/u01|/mpp"}/1024/1024/1024) <= 80) and (node_filesystem_size_bytes{device!="rootfs", mountpoint=~"/data|/data01|/u01|/mpp"}/1024/1024/1024 <= 1000) and (node_filesystem_size_bytes{device!="rootfs", mountpoint=~"/data|/data01|/u01|/mpp"}/1024/1024/1024 > 500)
+      for: 3m
+      labels:
+        severity: warning
+      annotations:
+        description: "[{{ $labels.desc }}],告警值为:[{{ $value }}G],告警初始时长为3分钟."
+
+# 默认1T-2T数据盘告警策略
+    - alert: 主机数据盘可用空间不足90G
+      expr: (floor(node_filesystem_avail_bytes{device!="rootfs", mountpoint=~"/data|/data01|/u01|/mpp"}/1024/1024/1024) <= 90) and (node_filesystem_size_bytes{device!="rootfs", mountpoint=~"/data|/data01|/u01|/mpp"}/1024/1024/1024 <= 2000) and (node_filesystem_size_bytes{device!="rootfs", mountpoint=~"/data|/data01|/u01|/mpp"}/1024/1024/1024 > 1000)
+      for: 3m
+      labels:
+        severity: warning
+      annotations:
+        description: "[{{ $labels.desc }}],告警值为:[{{ $value }}G],告警初始时长为3分钟."
+
+# 默认2-5T数据盘告警策略
+    - alert: 主机数据盘可用空间不足200G
+      expr: (floor(node_filesystem_avail_bytes{device!="rootfs", mountpoint=~"/data|/data01|/u01|/mpp"}/1024/1024/1024) <= 200) and (node_filesystem_size_bytes{device!="rootfs", mountpoint=~"/data|/data01|/u01|/mpp"}/1024/1024/1024 <= 5000) and (node_filesystem_size_bytes{device!="rootfs", mountpoint=~"/data|/data01|/u01|/mpp"}/1024/1024/1024 > 2000)
+      for: 3m
+      labels:
+        severity: warning
+      annotations:
+        description: "[{{ $labels.desc }}],告警值为:[{{ $value }}G],告警初始时长为3分钟."
+
+# 默认5T以上数据盘告警策略
+    - alert: 主机数据盘可用空间不足300G
+      expr: (floor(node_filesystem_avail_bytes{device!="rootfs", mountpoint=~"/data|/data01|/u01|/mpp"}/1024/1024/1024) <= 300) and (node_filesystem_size_bytes{device!="rootfs", mountpoint=~"/data|/data01|/u01|/mpp"}/1024/1024/1024 > 5000)
+      for: 3m
+      labels:
+        severity: warning
+      annotations:
+        description: "[{{ $labels.desc }}],告警值为:[{{ $value }}G],告警初始时长为3分钟."
+
+### CPU ###
+# 默认CPU使用率告警策略
+    - alert: 主机CPU100%
+      expr: floor(100 - ( avg ( irate(node_cpu_seconds_total{mode='idle'}[5m]) ) by (job, instance, hostname, desc) * 100 )) >= 100
+      for: 6m
+      labels:
+        severity: warning
+      annotations:
+        description: "[{{ $labels.desc }}],告警值为:[{{ $value }}%],告警初始时长为6分钟."
+
+
+### 内存 ###
+# 小于30G内存使用率告警策略
+#    - alert: 主机内存90%
+#      expr: floor((node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / node_memory_MemTotal_bytes * 100) >= 90 and (node_memory_MemTotal_bytes <= 30000000000)
+#      for: 3m
+#      labels:
+#        severity: warning
+#      annotations:
+#        description: "[{{ $labels.desc }}],告警值为:[{{ $value }}%],告警初始时长为3分钟."
+
+# 大于30G内存使用率告警策略
+#    - alert: 主机内存96%
+#      expr: floor((node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / node_memory_MemTotal_bytes * 100) >= 96 and (node_memory_MemTotal_bytes > 30000000000)
+#      for: 3m
+#      labels:
+#        severity: warning
+#      annotations:
+#        description: "[{{ $labels.desc }}],告警值为:[{{ $value }}%],告警初始时长为3分钟."
+
+# 内存使用率告警策略
+    - alert: 主机内存95%
+      expr: floor((node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / node_memory_MemTotal_bytes * 100) >= 95
+      for: 3m
+      labels:
+        severity: warning
+      annotations:
+        description: "[{{ $labels.desc }}],告警值为:[{{ $value }}%],告警初始时长为3分钟."
+
+### 负载 ###
+# 默认负载过高告警策略
+    - alert: 主机负载过高
+      expr: floor(node_load1{hostname!~"DGSMZX.*|shujuhu_test_fi.*|kadb.*|guoxin_shujuzhili.*|fi_hd.*|fangyi_oracle_master|chengguanju_mpp.*| kadb.*|shengtaiju_mpp.*|ioc_gongong_db.*|backup_monitor.*"}) >= 20
+      for: 3m
+      labels:
+        severity: warning
+      annotations:
+        description: "[{{ $labels.desc }}],告警值为:[{{ $value }}],告警初始时长为3分钟."
+
+# 高配置负载过高告警策略
+    - alert: 主机负载过高
+      expr: floor(node_load1{hostname=~"shujuhu_test_fi.*|fi_hd.*|fangyi_oracle_master|guoxin_shujuzhili.*|ioc_gongong_db.*|backup_monitor.*"}) >= 40
+      for: 3m
+      labels:
+        severity: warning
+      annotations:
+        description: "[{{ $labels.desc }}],告警值为:[{{ $value }}],告警初始时长为3分钟."
+
+# 城管mpp负载过高告警策略
+    - alert: 主机负载过高
+      expr: floor(node_load1{hostname=~"chengguanju_mpp.*"}) >= 24
+      for: 3m
+      labels:
+        severity: warning
+      annotations:
+        description: "[{{ $labels.desc }}],告警值为:[{{ $value }}],告警初始时长为3分钟."
+
+# FI负载过高告警策略
+    - alert: 主机负载过高
+      expr: floor(node_load1{hostname=~"DGSMZX.*"}) >= 120
+      for: 30m
+      labels:
+        severity: warning
+      annotations:
+        description: "[{{ $labels.desc }}],告警值为:[{{ $value }}],告警初始时长为30分钟."
+
+# kadb负载过高告警策略
+    - alert: 主机负载过高
+      expr: floor(node_load1{hostname=~"kadb.*"}) >= 256
+      for: 3m
+      labels:
+        severity: warning
+      annotations:
+        description: "[{{ $labels.desc }}],告警值为:[{{ $value }}],告警初始时长为3分钟."
+
+# shengtai_mpp负载过高告警策略
+    - alert: 主机负载过高
+      expr: floor(node_load1{hostname=~"shengtaiju_mpp.*"}) >= 40
+      for: 6m
+      labels:
+        severity: warning
+      annotations:
+        description: "[{{ $labels.desc }}],告警值为:[{{ $value }}],告警初始时长为6分钟."
+
+#主机连接
+    - alert: 主机连接异常
+      expr: floor(up{job="node_resources"}) != 1
+      for: 1m
+      labels:
+        severity: warning
+      annotations:
+        description: "[{{ $labels.desc }}],主机连接异常,告警初始时长为1分钟."

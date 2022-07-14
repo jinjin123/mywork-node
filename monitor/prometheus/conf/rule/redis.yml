@@ -1,0 +1,18 @@
+groups:
+  - name: redis_alert
+    rules:
+    - alert: redis数据库异常
+      expr: floor(redis_up{job="redis_resources"}) != 1
+      for: 1m
+      labels:
+        severity: warning
+      annotations:
+        description: "[{{ $labels.desc }}],redis数据库连接异常,告警初始时长为1分钟."
+
+    - alert: 内存使用率超过85%
+      expr: floor((redis_memory_used_rss_bytes{group=~"fangyi"} / redis_memory_max_bytes{group=~"fangyi"}) * 100) >= 85
+      for: 3m
+      labels:
+        severity: warning
+      annotations:
+        description: "[{{ $labels.desc }}],告警值为:[{{ $value }}],告警初始时长为3分钟."

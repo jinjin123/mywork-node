@@ -1,0 +1,11 @@
+groups:
+  - name: mysql_alert
+    rules:
+    - alert: mysql数据库连接异常
+      expr: floor(mysql_up{job="mysql_global_status"}) != 1
+      for: 1m
+      labels:
+        severity: warning
+      annotations:
+        description: "[{{ $labels.desc }}],mysql数据库连接异常,告警初始时长为1分钟."
+

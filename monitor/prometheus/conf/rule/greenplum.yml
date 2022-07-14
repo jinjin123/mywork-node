@@ -1,0 +1,11 @@
+groups:
+  - name: greenplum_alert
+    rules:
+    - alert: greenplum数据库连接异常
+      expr: floor(greenplum_up{job="mpp_resources"}) != 1
+      for: 1m
+      labels:
+        severity: warning
+      annotations:
+        description: "[{{ $labels.desc }}],greenplum数据库连接异常,告警初始时长为1分钟."
+

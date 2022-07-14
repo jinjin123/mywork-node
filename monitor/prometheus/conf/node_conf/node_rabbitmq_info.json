@@ -1,0 +1,14 @@
+[
+    {
+        "labels": {
+            "desc": "shujuhu_rabbitmq01_19.104.53.216",
+            "project": "shujuhu",
+            "project": "政务数据大脑",
+            "host_ip": "19.104.53.216",
+            "hostname": "shujuhu_rabbitmq01"
+        },
+        "targets": [
+            "19.104.53.216:9419"
+        ]
+    }
+]

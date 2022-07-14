@@ -1,0 +1,12 @@
+[
+    {
+        "labels": {
+            "desc": "shujuhu_rancher_coredns",
+            "project": "shujuhu",
+            "service_name": "CoreDns"
+        },
+        "targets": [
+            "19.104.51.129:32719"
+        ]
+    }
+]

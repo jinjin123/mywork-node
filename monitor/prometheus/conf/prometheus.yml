@@ -1,0 +1,269 @@
+# my global config
+global:
+  scrape_interval:     60s # Set the scrape interval to every 15 seconds. Default is every 1 minute.
+  evaluation_interval: 60s # Evaluate rules every 15 seconds. The default is every 1 minute.
+  # scrape_timeout is set to the global default (10s).
+  scrape_timeout: 20s
+  external_labels:
+    receive_cluster: 128-prome-9090
+
+
+# Load rules once and periodically evaluate them according to the global 'evaluation_interval'.
+rule_files:
+  - /data/monitor/prometheus/conf/rule/*.yml
+  # - "first_rules.yml"
+  # - "second_rules.yml"
+
+# A scrape configuration containing exactly one endpoint to scrape:
+# Here it's Prometheus itself.
+scrape_configs:
+  # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
+  - job_name: 'prometheus'
+    scrape_interval: 15s
+    # metrics_path defaults to '/metrics'
+    # scheme defaults to 'http'.
+
+    static_configs:
+    - targets: ['19.104.50.128:9090']
+
+# 监控指定主机
+  - job_name: 'node_resources'
+    scrape_interval: 1m
+    static_configs:
+    file_sd_configs:
+      - files:
+        - /data/monitor/prometheus/conf/node_conf/node_host_info.json
+    honor_labels: true
+
+# 监控指定MPP
+  - job_name: 'mpp_resources'
+    scrape_interval: 1m
+    static_configs:
+    file_sd_configs:
+      - files:
+        - /data/monitor/prometheus/conf/node_conf/greenplum_exporter_info.json
+    honor_labels: true
+
+# mysql采集器
+  - job_name: 'mysql_global_status'
+    scrape_interval: 60s
+    static_configs:
+    file_sd_configs:
+      - files:
+        - /data/monitor/prometheus/conf/node_conf/node_mysql_info.json
+
+# kong采集器
+  - job_name: 'kong_global_status'
+    metrics_path: /kong/metrics
+    scrape_interval: 60s
+    static_configs:
+    file_sd_configs:
+      - files:
+        - /data/monitor/prometheus/conf/node_conf/node_kong_info.json
+
+# oracle采集器
+#  - job_name: 'oracle-global_status'
+#    scrape_interval: 5s
+#    metrics_path: /metrics
+#    file_sd_configs:
+#      - files:
+#        - /data/monitor/prometheus/conf/node_conf/oracle_exporter_info.json
+
+
+#监控服务器网络
+  - job_name: 'ping_global_status'
+    scrape_interval: 5s
+    metrics_path: /probe
+    params:
+      module: [icmp]  #ping
+    static_configs:
+      - targets: ['19.106.74.1']
+        labels:
+          group: '市民服务中心网关'
+      - targets: ['19.106.94.1']
+        labels:
+          group: 'IOC网关'
+     # - targets: ['19.104.50.204']
+     #   labels:
+     #     group: '数据湖入口'
+      - targets: ['19.104.40.21']
+        labels:
+          group: '电信政务云堡垒机'
+    relabel_configs:
+      - source_labels: [__address__]
+        regex: (.*)(:80)?
+        target_label: __param_target
+        replacement: ${1}
+      - source_labels: [__param_target]
+        regex: (.*)
+        target_label: ping
+        replacement: ${1}
+      - source_labels: []
+        regex: .*
+        target_label: __address__
+        replacement: 19.104.50.204:9092
+
+#  - job_name: web_global_status
+#    metrics_path: /probe
+#    params:
+#      module: [http_2xx]
+#    static_configs:
+#      - targets: ['http://19.104.50.204/ioc/login']
+#        labels:
+#          name: ioc_data_lake
+#          group: web
+#      - targets: ['https://docker-registry-default.apps.alltosea.com']
+#        labels:
+#          name: docker_ssl
+#          group: cert
+#      - targets: ['https://jumpserver.alltosea.com']
+#        labels:
+#          name: jumpserver_ssl
+#          group: cert
+#    relabel_configs:
+#      - source_labels: [__address__]
+#        target_label: __param_target
+#      - source_labels: [__param_target]
+#        target_label: instance
+#      - target_label: __address__
+#        replacement: 127.0.0.1:9092
+
+# http状态检测
+  - job_name: 'http_site'
+    scrape_interval: 60s
+    metrics_path: /probe
+    params:
+      module: [http_2xx]
+    static_configs:
+    file_sd_configs:
+      - files:
+        - /data/monitor/prometheus/conf/node_conf/http_site.json
+    relabel_configs:
+      - source_labels: [__address__]
+        regex: (.*)(:80)?
+        target_label: __param_target
+        replacement: ${1}
+      - source_labels: [__param_target]
+        regex: (.*)
+        target_label: ping
+        replacement: ${1}
+      - source_labels: []
+        regex: .*
+        target_label: __address__
+        replacement: 127.0.0.1:9092
+
+# redis采集器
+  - job_name: 'redis_resources'
+    scrape_interval: 60s
+    static_configs:
+    file_sd_configs:
+      - files:
+        - /data/monitor/prometheus/conf/node_conf/node_redis_info.json
+
+# api接口采集器
+  - job_name: 'api_resources'
+    scrape_interval: 60s
+    static_configs:
+    file_sd_configs:
+      - files:
+        - /data/monitor/prometheus/conf/node_conf/api_info.json
+
+# prometheus联邦
+#  - job_name: 'federate'
+#    scrape_interval: 15s
+#    honor_labels: true
+#    metrics_path: '/federate'
+#    params:
+#      'match[]':
+#        - '{__name__=~".*"}'
+  
+#    static_configs:
+#      - targets:
+#        - '19.104.51.129:31274'
+
+# kafka采集器
+  - job_name: 'kafka_resources'
+    scrape_interval: 60s
+    static_configs:
+    file_sd_configs:
+      - files:
+        - /data/monitor/prometheus/conf/node_conf/node_kafka_info.json
+
+# coredns采集器
+  - job_name: 'coredns_resources'
+    scrape_interval: 10s
+    static_configs:
+    file_sd_configs:
+      - files:
+        - /data/monitor/prometheus/conf/node_conf/coredns_info.json
+
+# nginx采集器
+  - job_name: 'nginx_resources'
+    scrape_interval: 60s
+    static_configs:
+    file_sd_configs:
+      - files:
+        - /data/monitor/prometheus/conf/node_conf/node_nginx_info.json
+
+# kingbase采集器
+  - job_name: 'kingbase_resources'
+    scrape_interval: 60s
+    static_configs:
+    file_sd_configs:
+      - files:
+        - /data/monitor/prometheus/conf/node_conf/node_kingbase_info.json
+
+  - job_name: 'kadb_resources'
+    static_configs:
+      - targets: ['19.104.50.128:10001']		#kadb_exporter
+        labels:
+          cluster: 'kadb_cluster_142'
+          service: 'kadb_exporter'
+          kadburl: 'http://19.104.50.128:10001'
+      - targets: ['19.104.50.128:10002']             #kadb_exporter
+        labels:
+          cluster: 'kadb_cluster_143'
+          service: 'kadb_exporter'
+          kadburl: 'http://19.104.50.128:10002'
+      - targets: ['19.104.50.128:10003']             #kadb_exporter
+        labels:
+          cluster: 'kadb_cluster_144'
+          service: 'kadb_exporter'
+          kadburl: 'http://19.104.50.128:10003'
+      - targets: ['19.104.50.128:10004']             #kadb_exporter
+        labels:
+          cluster: 'kadb_cluster_145'
+          service: 'kadb_exporter'
+          kadburl: 'http://19.104.50.128:10004'
+      - targets: ['19.104.50.128:10005']             #kadb_exporter
+        labels:
+          cluster: 'kadb_cluster_146'
+          service: 'kadb_exporter'
+          kadburl: 'http://19.104.50.128:10005'
+    file_sd_configs:
+      - files:
+        - /data/monitor/prometheus/conf/node_conf/node_kadb_info.json
+#        labels:
+#          cluster: 'kadb_cluster'
+#          service: 'node_exporter'
+
+# rabbitmq采集器
+  - job_name: 'rabbitmq_resources'
+    scrape_interval: 60s
+    static_configs:
+    file_sd_configs:
+      - files:
+        - /data/monitor/prometheus/conf/node_conf/node_rabbitmq_info.json
+
+  - job_name: 'tongyirenzheng_resources'
+    scrape_interval: 60s
+    static_configs:
+    - targets: ['19.105.196.111:9091']
+
+# ceph采集器
+  - job_name: 'ceph_resources'
+    scrape_interval: 60s
+    static_configs:
+    file_sd_configs:
+      - files:
+        - /data/monitor/prometheus/conf/node_conf/ceph_info.json

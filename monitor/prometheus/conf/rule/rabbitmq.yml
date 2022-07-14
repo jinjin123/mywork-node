@@ -1,0 +1,23 @@
+groups:
+- name: Rabbitmq
+  rules:
+  - alert: Rabbitmq-down
+    expr: rabbitmq_up{job='rabbitmq_resources'} != 1
+    labels:
+      status: High
+      team: Rabbitmq_monitor
+    annotations:
+      description: "Instance: {{ $labels.instance }} is Down ! ! !"
+      value: '{{ $value }}'
+      summary:  "The host node is down"
+- name: Rabbitmq disk free limit 
+  rules:
+  - alert: Rabbitmq disk free limit   status
+    expr: rabbitmq_node_disk_free{job="rabbitmq_resources"} / 1024 / 1024  <= rabbitmq_node_disk_free_limit{job="rabbitmq_resources"} / 1024 / 1024 + 200
+    labels:
+      status: High
+      team: Rabbitmq_monitor
+    annotations:
+      description: "Instance: {{ $labels.instance }} the rmq free disk is to low ! ! !"
+      value: '{{ $value }} MB'
+      summary:  "The rmq free disk too low"

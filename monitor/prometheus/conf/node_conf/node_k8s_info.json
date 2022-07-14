@@ -1,0 +1,13 @@
+[
+    {
+        "labels": {
+            "desc": "shujuhu_rancher_19.104.51.127",
+            "project": "shujuhu",
+            "host_ip": "19.104.51.127",
+            "hostname": "shujuhu_rancher"
+        },
+        "targets": [
+            "19.104.51.127:31263"
+        ]
+    }
+]

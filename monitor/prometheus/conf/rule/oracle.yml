@@ -1,0 +1,11 @@
+groups:
+  - name: oracle_alert
+    rules:
+    - alert: oracle数据库连接异常
+      expr: floor(oracledb_up{job="oracle_global_status"}) != 1
+      for: 1m
+      labels:
+        severity: warning
+      annotations:
+        description: "[{{ $labels.desc }}],oracle数据库连接异常,告警初始时长为1分钟."
+

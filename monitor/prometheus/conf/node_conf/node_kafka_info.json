@@ -1,0 +1,13 @@
+[
+    {   
+        "labels": { 
+            "desc": "ioc_19.104.51.127:30963",
+            "project": "shujuhu",
+            "kafka_addr": "19.104.51.127:30963",
+            "role": "ioc_kafka"
+        },
+        "targets": [
+            "19.104.51.127:30963"
+        ]
+    }
+]

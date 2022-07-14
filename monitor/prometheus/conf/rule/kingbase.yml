@@ -1,0 +1,10 @@
+groups:
+  - name: kingbase_alert
+    rules:
+    - alert: kingbase数据库连接异常
+      expr: floor(pg_up{job="kingbase_resources"}) != 1
+      for: 1m
+      labels:
+        severity: warning
+      annotations:
+        description: "[{{ $labels.desc }}],金仓数据库连接异常,告警初始时长为1分钟."

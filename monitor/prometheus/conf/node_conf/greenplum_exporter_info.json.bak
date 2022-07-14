@@ -1,0 +1,68 @@
+[
+    {   
+        "labels": { 
+            "desc": "chenggunaju_mpp:5432",
+            "group": "chengguanju",
+            "mpp_addr": "19.104.40.71:5432",
+            "role": "chenggunaju_mpp"
+        },
+        "targets": [
+            "19.104.40.71:9091"
+        ]
+    },
+    {   
+        "labels": { 
+            "desc": "yingjiju_mpp:5432",
+            "group": "yingjiju",
+            "mpp_addr": "19.104.52.66:5432",
+            "role": "yingjiju_mpp"
+        },
+        "targets": [
+            "19.104.52.66:9091"
+        ]
+    },
+    {   
+        "labels": { 
+            "desc": "yibaoju_mpp:5432",
+            "group": "yibaoju",
+            "mpp_addr": "19.104.44.88:5432",
+            "role": "yibaoju_mpp"
+        },
+        "targets": [
+            "19.104.44.88:9091"
+        ]
+    },
+    {   
+        "labels": { 
+            "desc": "caizhengju_mpp:5432",
+            "group": "caizhengju",
+            "mpp_addr": "19.104.44.70:5432",
+            "role": "caizhengju_mpp"
+        },
+        "targets": [
+            "19.104.44.70:9091"
+        ]
+    },
+    {   
+        "labels": { 
+            "desc": "shengtaiju_mpp:5432",
+            "group": "shengtaiju",
+            "mpp_addr": "19.104.48.16:5432",
+            "role": "shengtaiju_mpp"
+        },
+        "targets": [
+            "19.104.48.16:9091"
+        ]
+    },
+    {   
+        "labels": { 
+            "desc": "shijianju_mpp:5432",
+            "group": "shijianju",
+            "mpp_addr": "19.104.51.68:5432",
+            "role": "shijianju_mpp"
+        },
+        "targets": [
+            "19.104.51.68:9091"
+        ]
+    }
+]

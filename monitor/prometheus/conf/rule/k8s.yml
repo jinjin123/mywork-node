@@ -1,0 +1,24 @@
+groups:
+  - name: k8s_alert
+    rules:
+    - alert: pvc使用量满
+      expr: kubelet_volume_stats_available_bytes{exported_namespace !~ "efk|cattle-prometheus"}/kubelet_volume_stats_capacity_bytes{exported_namespace !~ "efk|cattle-prometheus"}*100 < 10 and predict_linear(kubelet_volume_stats_available_bytes{exported_namespace !~ "efk|cattle-prometheus"}[6h], 4 * 24 * 3600) < 0
+      for: 3m
+      labels:
+        severity: warning
+      annotations:
+        description: "[{{ $labels.persistentvolumeclaim }}],pvc可使用量<10%，同时预测接下来4天的磁盘可使用率小于0."
+    - alert: k8s节点不就绪
+      expr: kube_node_spec_unschedulable{} == 1
+      for: 1m
+      labels:
+        severity: warning
+      annotations:
+        description: "[{{ $labels.node }}],k8s节点不就绪,告警初始时长为1分钟."
+    - alert: Pod一直重启
+      expr: rate(kube_pod_container_status_restarts_total{}[5m]) * 60 * 3 >0
+      for: 1m
+      labels:
+        severity: warning
+      annotations:
+        description: "[{{ $labels.container }}],Pod重启时间，重启时间超过3m告警,告警初始时长为1分钟."

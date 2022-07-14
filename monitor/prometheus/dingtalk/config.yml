@@ -1,0 +1,42 @@
+## Request timeout
+# timeout: 5s
+
+## Customizable templates path
+templates:
+  - contrib/templates/template.tmpl
+
+## You can also override default template using `default_message`
+## The following example to use the 'legacy' template from v0.3.0
+# default_message:
+#   title: '{{ template "legacy.title" . }}'
+#   text: '{{ template "legacy.content" . }}'
+
+## Targets, previously was known as "profiles"
+targets:
+  webhook:
+    url: https://oapi.dingtalk.com/robot/send?access_token=0344448f5feece4bb22b2d43b7f2d3499bfa0e3b57f0b6f273c27dc109aba477
+    secret: SEC000000000000000000000 
+    message:
+      title: '{{ template "ding.link.title" . }}'
+      text: '{{ template "ding.link.content" . }}'
+  #webhook1:
+  #  url: https://oapi.dingtalk.com/robot/send?access_token=0344448f5feece4bb22b2d43b7f2d3499bfa0e3b57f0b6f273c27dc109aba477
+  #  # secret for signature
+  #  secret: SEC000000000000000000000
+ # webhook2:
+ #   url: https://oapi.dingtalk.com/robot/send?access_token=0344448f5feece4bb22b2d43b7f2d3499bfa0e3b57f0b6f273c27dc109aba477
+  #webhook_legacy:
+  #  url: https://oapi.dingtalk.com/robot/send?access_token=0344448f5feece4bb22b2d43b7f2d3499bfa0e3b57f0b6f273c27dc109aba477
+  #  # Customize template content
+  #  message:
+   #   # Use legacy template
+    #  title: '{{ template "legacy.title" . }}'
+     # text: '{{ template "legacy.content" . }}'
+ # webhook_mention_all:
+ #   url: https://oapi.dingtalk.com/robot/send?access_token=0344448f5feece4bb22b2d43b7f2d3499bfa0e3b57f0b6f273c27dc109aba477
+ #   mention:
+ #     all: true
+ # webhook_mention_users:
+ #   url: https://oapi.dingtalk.com/robot/send?access_token=0344448f5feece4bb22b2d43b7f2d3499bfa0e3b57f0b6f273c27dc109aba477
+ #   mention:
+  #    mobiles: ['15919761015']

@@ -1,0 +1,273 @@
+groups:
+
+  - name: mysql_alert
+
+    rules:
+
+### 慢查询 ###
+
+# 默认慢查询告警策略
+
+    - alert: mysql慢查询5分钟100条
+
+      expr: floor(delta(mysql_global_status_slow_queries{mysql_addr!~"10.8.6.44:3306|10.8.9.20:3306|10.8.12.212:3306"}[5m])) >= 100
+
+      for: 3m
+
+      labels:
+
+        severity: warning
+
+      annotations:
+
+        description: "[{{ $labels.group }}_{{ $labels.role }}],地址:[{{ $labels.mysql_addr }}],告警值为:[{{ $value }}条],告警初始时长为3分钟."
+
+
+
+### qps ###
+
+# 默认qps告警策略
+
+    - alert: mysql_qps大于8000
+
+      expr: floor(sum(irate(mysql_global_status_commands_total{group!~"product|product_backend"}[5m])) by (group, role, mysql_addr)) > 8000
+
+      for: 6m
+
+      labels:
+
+        severity: warning
+
+      annotations:
+
+        description: "[{{ $labels.group }}_{{ $labels.role }}],地址:[{{ $labels.mysql_addr }}],告警值为:[{{ $value }}],告警初始时长为6分钟."
+
+
+
+# 商品库等qps告警策略
+
+    - alert: mysql_qps大于25000
+
+      expr: floor(sum(irate(mysql_global_status_commands_total{group=~"product|product_backend"}[5m])) by (group, role, mysql_addr)) > 25000
+
+      for: 3m
+
+      labels:
+
+        severity: warning
+
+      annotations:
+
+        description: "[{{ $labels.group }}_{{ $labels.role }}],地址:[{{ $labels.mysql_addr }}],告警值为:[{{ $value }}],告警初始时长为3分钟."
+
+
+
+### 内存 ###
+
+# 默认内存告警策略
+
+    - alert: mysql内存99%
+
+      expr: mysql_mem_used_rate >= 99
+
+      for: 6m
+
+      labels:
+
+        severity: warning
+
+      annotations:
+
+        description: "[{{ $labels.group }}_{{ $labels.role }}],地址:[{{ $labels.mysql_addr }}],告警值为:[{{ $value }}%],告警初始时长为6分钟."
+
+
+
+### 磁盘 ###
+
+# 默认磁盘告警策略
+
+    - alert: mysql磁盘85%
+
+      expr: mysql_disk_used_rate{mysql_addr!~"10.8.161.53:3306|10.8.115.31:3306"} >= 85
+
+      for: 3m
+
+      labels:
+
+        severity: warning
+
+      annotations:
+
+        description: "[{{ $labels.group }}_{{ $labels.role }}],地址:[{{ $labels.mysql_addr }}],告警值为:[{{ $value }}%],告警初始时长为3分钟."
+
+
+
+# 磁盘95%告警策略
+
+    - alert: mysql磁盘95%
+
+      expr: mysql_disk_used_rate{mysql_addr=~"10.8.161.53:3306|10.8.115.31:3306"} >= 95
+
+      for: 3m
+
+      labels:
+
+        severity: warning
+
+      annotations:
+
+        description: "[{{ $labels.group }}_{{ $labels.role }}],地址:[{{ $labels.mysql_addr }}],告警值为:[{{ $value }}%],告警初始时长为3分钟."
+
+
+
+#### IO上限告警 ###
+
+## SSD盘IO上限告警策略
+
+#    - alert: mysqlSSD盘IO上限预警
+
+#      expr: (floor(mysql_ioops) >= mysql_disk_total_size * 50 * 0.9) and (mysql_ssd == 1) and on() hour() >= 0 < 16
+
+#      for: 6m
+
+#      labels:
+
+#        severity: warning
+
+#      annotations:
+
+#        description: "[{{ $labels.group }}_{{ $labels.role }}],地址:[{{ $labels.mysql_addr }}],告警值为:[{{ $value }}],告警初始时长为6分钟."
+
+#
+
+## 普通盘IO上限告警策略
+
+#    - alert: mysql普通盘IO上限预警
+
+#      expr: (floor(mysql_ioops) >= mysql_disk_total_size * 10 * 0.9) and (mysql_ssd == 0) and on() hour() >= 0 < 16
+
+#      for: 6m
+
+#      labels:
+
+#        severity: warning
+
+#      annotations:
+
+#        description: "[{{ $labels.group }}_{{ $labels.role }}],地址:[{{ $labels.mysql_addr }}],告警值为:[{{ $value }}],告警初始时长为6分钟."
+
+
+
+### 连接数 ###
+
+# 默认连接数告警策略
+
+    - alert: mysql连接数80%
+
+      expr: floor(mysql_global_status_threads_connected / mysql_global_variables_max_connections * 100) >= 80
+
+      for: 3m
+
+      labels:
+
+        severity: warning
+
+      annotations:
+
+        description: "[{{ $labels.group }}_{{ $labels.role }}],地址:[{{ $labels.mysql_addr }}],告警值为:[{{ $value }}%],告警初始时长为3分钟."
+
+
+
+### 运行进程数 ###
+
+# 默认运行进程数告警策略
+
+    - alert: mysql运行进程数5分钟增长>150
+
+      expr: floor(delta(mysql_global_status_threads_running{mysql_addr!~"10.8.136.10:3306|10.10.129.116:3306|10.8.67.153:3306"}[5m])) >= 150
+
+      for: 3m
+
+      labels:
+
+        severity: warning
+
+      annotations:
+
+        description: "[{{ $labels.group }}_{{ $labels.role }}],地址:[{{ $labels.mysql_addr }}],告警值为:[{{ $value }}],告警初始时长为3分钟."
+
+
+
+# 6分钟运行进程数告警策略
+
+    - alert: mysql运行进程数5分钟增长>150
+
+      expr: floor(delta(mysql_global_status_threads_runningi{mysql_addr=~"10.8.136.10:3306|10.10.129.116:3306|10.8.67.153:3306"}[5m])) >= 150
+
+      for: 6m
+
+      labels:
+
+        severity: warning
+
+      annotations:
+
+        description: "[{{ $labels.group }}_{{ $labels.role }}],地址:[{{ $labels.mysql_addr }}],告警值为:[{{ $value }}],告警初始时长为6分钟."
+
+
+
+### 主从同步异常 ###
+
+# 默认主从同步告警策略
+
+    - alert: mysql主从同步异常
+
+      expr: (mysql_slave_status_slave_io_running{role!="master"} == 0) or (mysql_slave_status_slave_sql_running{role!="master"} == 0)
+
+      for: 1m
+
+      labels:
+
+        severity: warning
+
+      annotations:
+
+        description: "[{{ $labels.group }}_{{ $labels.role }}],地址:[{{ $labels.mysql_addr }}],主从同步异常,告警初始时长为1分钟."
+
+
+
+### 主从同步延时 ###
+
+# 默认主从同步延时告警策略
+
+    - alert: mysql主从同步延时>30s
+
+      expr: floor(mysql_slave_status_seconds_behind_master{mysql_addr!~"10.8.137.173:3306|10.8.11.17:3306|10.8.2.17:3306|10.10.29.6:3306|10.8.61.153:3306"}) >= 30
+
+      for: 3m
+
+      labels:
+
+        severity: warning
+
+      annotations:
+
+        description: "[{{ $labels.group }}_{{ $labels.role }}],地址:[{{ $labels.mysql_addr }}],告警值为:[{{ $value }}s],告警初始时长为3分钟."
+
+
+
+# 主从同步延时较大告警策略
+
+    - alert: mysql主从同步延时>300s
+
+      expr: floor(mysql_slave_status_seconds_behind_master{mysql_addr=~"10.8.137.173:3306|10.8.11.17:3306|10.10.29.6:3306|10.8.61.153:3306"}) >= 300
+
+      for: 12m
+
+      labels:
+
+        severity: warning
+
+      annotations:
+
+        description: "[{{ $labels.group }}_{{ $labels.role }}],地址:[{{ $labels.mysql_addr }}],告警值为:[{{ $value }}s],告警初始时长为12分钟."

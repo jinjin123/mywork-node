@@ -1,0 +1,24 @@
+[
+    {
+        "labels": {
+            "desc": "yiqing_kong_rancher_10.147.2.59",
+            "project": "yiqing",
+            "host_ip": "10.147.2.59",
+            "hostname": "yiqing_kong_rancher"
+        },
+        "targets": [
+            "10.147.2.59"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "shujuhu_kong_19.104.50.204",
+            "project": "shujuhu",
+            "host_ip": "19.104.50.204",
+            "hostname": "shujuhu_kong_rancher"
+        },
+        "targets": [
+            "19.104.50.204:80"
+        ]
+    }
+]

@@ -1,0 +1,2096 @@
+[
+    {
+        "labels": {
+            "desc": "xiangguan_minio4-19.104.44.61",
+            "project": "项管",
+            "system": "项管",
+            "host_ip": "19.104.44.61",
+            "hostname": "xiangguan_minio4"
+        },
+        "targets": [
+            "19.104.44.61:9092"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "xiangguan_minio3-19.104.44.60",
+            "project": "项管",
+            "system": "项管",
+            "host_ip": "19.104.44.60",
+            "hostname": "xiangguan_minio3"
+        },
+        "targets": [
+            "19.104.44.60:9092"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "xiangguan_minio2-19.104.44.59",
+            "project": "项管",
+            "system": "项管",
+            "host_ip": "19.104.44.59",
+            "hostname": "xiangguan_minio2"
+        },
+        "targets": [
+            "19.104.44.59:9092"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "xiangguan_minio1-19.104.44.58",
+            "project": "项管",
+            "system": "项管",
+            "host_ip": "19.104.44.58",
+            "hostname": "xiangguan_minio1"
+        },
+        "targets": [
+            "19.104.44.58:9092"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "xiangguan_service3-19.104.44.57",
+            "project": "项管",
+            "system": "项管",
+            "host_ip": "19.104.44.57",
+            "hostname": "xiangguan_service3"
+        },
+        "targets": [
+            "19.104.44.57:9092"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "xiangguan_service2-19.104.44.56",
+            "project": "项管",
+            "system": "项管",
+            "host_ip": "19.104.44.56",
+            "hostname": "xiangguan_service2"
+        },
+        "targets": [
+            "19.104.44.56:9092"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "xiangguan_service1-19.104.44.55",
+            "project": "项管",
+            "system": "项管",
+            "host_ip": "19.104.44.55",
+            "hostname": "xiangguan_service1"
+        },
+        "targets": [
+            "19.104.44.55:9092"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "shujuzhili_backup1-19.104.40.32",
+            "project": "政务数据大脑",
+            "system": "大数据治理平台",
+            "host_ip": "19.104.40.32",
+            "hostname": "guoxin_shujuzhili_backup1"
+        },
+        "targets": [
+            "19.104.40.32:9100"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "shujuzhili_db2-19.104.50.160",
+            "project": "政务数据大脑",
+            "system": "大数据治理平台",
+            "host_ip": "19.104.50.160",
+            "hostname": "guoxin_shujuzhili_db2"
+        },
+        "targets": [
+            "19.104.50.160:9092"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "shujuzhili_db1-19.104.50.72",
+            "project": "政务数据大脑",
+            "system": "大数据治理平台",
+            "host_ip": "19.104.50.72",
+            "hostname": "guoxin_shujuzhili_db1"
+        },
+        "targets": [
+            "19.104.50.72:9092"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "rancher_node3-19.104.53.64",
+            "project": "dalingshan",
+            "host_ip": "19.104.53.64",
+            "hostname": "dalingshan_rancher_node3"
+        },
+        "targets": [
+            "19.104.53.64:9092"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "rancher_node2-19.104.53.63",
+            "project": "dalingshan",
+            "host_ip": "19.104.53.63",
+            "hostname": "dalingshan_rancher_node2"
+        },
+        "targets": [
+            "19.104.53.63:9092"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "rancher_master3_node1-19.104.53.62",
+            "project": "dalingshan",
+            "host_ip": "19.104.53.62",
+            "hostname": "dalingshan_rancher_master3_node1"
+        },
+        "targets": [
+            "19.104.53.62:9092"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "rancher_master2-19.104.53.61",
+            "project": "dalingshan",
+            "host_ip": "19.104.53.61",
+            "hostname": "dalingshan_rancher_master2"
+        },
+        "targets": [
+            "19.104.53.61:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "rancher_master1-19.104.53.60",
+            "project": "dalingshan",
+            "host_ip": "19.104.53.60",
+            "hostname": "dalingshan_rancher_master1"
+        },
+        "targets": [
+            "19.104.53.60:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "redis-19.104.53.59",
+            "project": "dalingshan",
+            "host_ip": "19.104.53.59",
+            "hostname": "dalingshan_redis"
+        },
+        "targets": [
+            "19.104.53.59:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "nginx-19.104.53.58",
+            "project": "dalingshan",
+            "host_ip": "19.104.53.58",
+            "hostname": "dalingshan_nginx"
+        },
+        "targets": [
+            "19.104.53.58:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "minio_vsftp-19.104.53.57",
+            "project": "dalingshan",
+            "host_ip": "19.104.53.57",
+            "hostname": "dalingshan_minio_vsftp"
+        },
+        "targets": [
+            "19.104.53.57:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "unified_framework-19.104.53.56",
+            "project": "dalingshan",
+            "host_ip": "19.104.53.56",
+            "hostname": "dalingshan_unified_framework"
+        },
+        "targets": [
+            "19.104.53.56:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "kadb_slave-19.104.53.55",
+            "project": "dalingshan",
+            "host_ip": "19.104.53.55",
+            "hostname": "dalingshan_kadb_slave"
+        },
+        "targets": [
+            "19.104.53.55:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "kadb_master-19.104.53.54",
+            "project": "dalingshan",
+            "host_ip": "19.104.53.54",
+            "hostname": "dalingshan_kadb_master"
+        },
+        "targets": [
+            "19.104.53.54:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "unified_credit3-19.104.40.40",
+            "project": "政务数据大脑",
+            "system": "营商大数据统一信用管理平台",
+            "host_ip": "19.104.40.40",
+            "hostname": "yingshangdashuju_unified_credit3"
+        },
+        "targets": [
+            "19.104.40.40:9100"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "intelligent_analysis_19.104.40.46",
+            "project": "政务数据大脑",
+            "system": "社会治理可视化分析展示平台",
+            "host_ip": "19.104.40.46",
+            "hostname": "shehuizhili_intelligent_analysis"
+        },
+        "targets": [
+            "19.104.40.46:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "visual_analysis_19.104.40.37",
+            "project": "政务数据大脑",
+            "system": "社会治理可视化分析展示平台",
+            "host_ip": "19.104.40.37",
+            "hostname": "shehuizhili_visual_analysis"
+        },
+        "targets": [
+            "19.104.40.37:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "visual_analysis_standby_19.104.50.210",
+            "project": "政务数据大脑",
+            "system": "社会治理可视化分析展示平台",
+            "host_ip": "19.104.50.210",
+            "hostname": "shehuizhili_visual_analysis_standby"
+        },
+        "targets": [
+            "19.104.50.210:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "nginx_redis_19.104.53.122",
+            "project": "shujuhuiju",
+            "host_ip": "19.104.53.122",
+            "hostname": "shujuhuiju_nginx_redis"
+        },
+        "targets": [
+            "19.104.53.122:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "master_19.104.53.123",
+            "project": "shujuhuiju",
+            "host_ip": "19.104.53.123",
+            "hostname": "shujuhuiju_master"
+        },
+        "targets": [
+            "19.104.53.123:9092"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "worker1_19.104.53.124",
+            "project": "shujuhuiju",
+            "host_ip": "19.104.53.124",
+            "hostname": "shujuhuiju_worker1"
+        },
+        "targets": [
+            "19.104.53.124:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "worker2_19.104.53.126",
+            "project": "shujuhuiju",
+            "host_ip": "19.104.53.126",
+            "hostname": "shujuhuiju_worker2"
+        },
+        "targets": [
+            "19.104.53.126:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "worker5_19.104.53.129",
+            "project": "shujuhuiju",
+            "host_ip": "19.104.53.129",
+            "hostname": "shujuhuiju_worker5"
+        },
+        "targets": [
+            "19.104.53.129:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "db_19.104.53.130",
+            "project": "shujuhuiju",
+            "host_ip": "19.104.53.130",
+            "hostname": "shujuhuiju_db"
+        },
+        "targets": [
+            "19.104.53.130:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "integration_19.104.53.131",
+            "project": "shujuzhili_ceshi",
+            "host_ip": "19.104.53.131",
+            "hostname": "shujuzhili_ceshi_integration"
+        },
+        "targets": [
+            "19.104.53.131:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "publish_19.104.53.132",
+            "project": "shujuzhili_ceshi",
+            "host_ip": "19.104.53.132",
+            "hostname": "shujuzhili_ceshi_publish"
+        },
+        "targets": [
+            "19.104.53.132:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "uaa1_19.104.53.133",
+            "project": "shujuzhili_ceshi",
+            "host_ip": "19.104.53.133",
+            "hostname": "shujuzhili_ceshi_uaa1"
+        },
+        "targets": [
+            "19.104.53.133:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "uaa2_19.104.53.134",
+            "project": "shujuzhili_ceshi",
+            "host_ip": "19.104.53.134",
+            "hostname": "shujuzhili_ceshi_uaa2"
+        },
+        "targets": [
+            "19.104.53.134:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "operation_area_19.104.53.135",
+            "project": "shujuzhili",
+            "host_ip": "19.104.53.135",
+            "hostname": "shujuzhili_operation_area"
+        },
+        "targets": [
+            "19.104.53.135:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "middleware_19.104.53.136",
+            "project": "shujuzhili",
+            "host_ip": "19.104.53.136",
+            "hostname": "shujuzhili_middleware"
+        },
+        "targets": [
+            "19.104.53.136:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "data_analysis1_19.104.53.137",
+            "project": "shujuzhili",
+            "host_ip": "19.104.53.137",
+            "hostname": "shujuzhili_data_analysis1"
+        },
+        "targets": [
+            "19.104.53.137:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "data_analysis2_19.104.53.138",
+            "project": "shujuzhili",
+            "host_ip": "19.104.53.138",
+            "hostname": "shujuzhili_data_analysis2"
+        },
+        "targets": [
+            "19.104.53.138:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "fi_hd1_test_19.104.59.1",
+            "project": "政务数据大脑",
+            "system": "大数据基础支撑平台_FI_HD",
+            "host_ip": "19.104.59.1",
+            "hostname": "shujuhu_test_fi_hd1"
+        },
+        "targets": [
+            "19.104.59.1:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "fi_hd2_test_19.104.59.2",
+            "project": "政务数据大脑",
+            "system": "大数据基础支撑平台_FI_HD",
+            "host_ip": "19.104.59.2",
+            "hostname": "shujuhu_test_fi_hd2"
+        },
+        "targets": [
+            "19.104.59.2:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "fi_hd3_test_19.104.59.3",
+            "project": "政务数据大脑",
+            "system": "大数据基础支撑平台_FI_HD",
+            "host_ip": "19.104.59.3",
+            "hostname": "shujuhu_test_fi_hd3"
+        },
+        "targets": [
+            "19.104.59.3:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "gaussdb1_test_10.147.1.128",
+            "project": "政务数据大脑",
+            "system": "大数据基础支撑平台_FI_MPP",
+            "host_ip": "10.147.1.128",
+            "hostname": "shujuhu_test_gaussdb1"
+        },
+        "targets": [
+            "10.147.1.128:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "gaussdb2_test_10.147.1.129",
+            "project": "政务数据大脑",
+            "system": "大数据基础支撑平台_FI_MPP",
+            "host_ip": "10.147.1.129",
+            "hostname": "shujuhu_test_gaussdb2"
+        },
+        "targets": [
+            "10.147.1.129:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "gaussdb3_test_10.147.1.130",
+            "project": "政务数据大脑",
+            "system": "大数据基础支撑平台_FI_MPP",
+            "host_ip": "10.147.1.130",
+            "hostname": "shujuhu_test_gaussdb3"
+        },
+        "targets": [
+            "10.147.1.130:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "openshift_master_19.104.40.34",
+            "project": "政务数据大脑",
+            "system": "大数据服务平台",
+            "host_ip": "19.104.40.34",
+            "hostname": "ceshi_openshift_master"
+        },
+        "targets": [
+            "19.104.40.34:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "openshift_node1_19.104.40.35",
+            "project": "政务数据大脑",
+            "system": "大数据服务平台",
+            "host_ip": "19.104.40.35",
+            "hostname": "ceshi_openshift_node1"
+        },
+        "targets": [
+            "19.104.40.35:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "openshift_node2_19.104.40.36",
+            "project": "政务数据大脑",
+            "system": "大数据服务平台",
+            "host_ip": "19.104.40.36",
+            "hostname": "ceshi_openshift_node2"
+        },
+        "targets": [
+            "19.104.40.36:9092"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "openshift_node3_19.104.40.29",
+            "project": "政务数据大脑",
+            "system": "大数据服务平台",
+            "host_ip": "19.104.40.29",
+            "hostname": "ceshi_openshift_node3"
+        },
+        "targets": [
+            "19.104.40.29:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "mpp_kafka_zk_19.104.50.188",
+            "project": "政务数据大脑",
+            "system": "大数据服务平台",
+            "host_ip": "19.104.50.188",
+            "hostname": "shujuhu_ceshi_mpp_kafka_zk"
+        },
+        "targets": [
+            "19.104.50.188:9092"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "nginx_19.104.50.204",
+            "project": "政务数据大脑",
+            "system": "数据湖",
+            "host_ip": "19.104.50.204",
+            "hostname": "shujuhu_nginx"
+        },
+        "targets": [
+            "19.104.50.204:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "rancher_master1_19.104.51.125",
+            "project": "政务数据大脑",
+            "system": "数据湖",
+            "host_ip": "19.104.51.125",
+            "hostname": "shujuhu_rancher_master1"
+        },
+        "targets": [
+            "19.104.51.125:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "rancher_master2_19.104.51.126",
+            "project": "政务数据大脑",
+            "system": "数据湖",
+            "host_ip": "19.104.51.126",
+            "hostname": "shujuhu_rancher_master2"
+        },
+        "targets": [
+            "19.104.51.126:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "rancher_master3_19.104.51.127",
+            "project": "政务数据大脑",
+            "system": "数据湖",
+            "host_ip": "19.104.51.127",
+            "hostname": "shujuhu_rancher_master3"
+        },
+        "targets": [
+            "19.104.51.127:9092"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "rancher_node1_19.104.50.125",
+            "project": "政务数据大脑",
+            "system": "数据湖",
+            "host_ip": "19.104.50.125",
+            "hostname": "shujuhu_rancher_node1"
+        },
+        "targets": [
+            "19.104.50.125:9092"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "rancher_node2_19.104.51.128",
+            "project": "政务数据大脑",
+            "system": "数据湖",
+            "host_ip": "19.104.51.128",
+            "hostname": "shujuhu_rancher_node2"
+        },
+        "targets": [
+            "19.104.51.128:9092"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "rancher_node3_19.104.51.129",
+            "project": "政务数据大脑",
+            "system": "数据湖",
+            "host_ip": "19.104.51.129",
+            "hostname": "shujuhu_rancher_node3"
+        },
+        "targets": [
+            "19.104.51.129:9092"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "rancher_node4_19.104.50.131",
+            "project": "政务数据大脑",
+            "system": "数据湖",
+            "host_ip": "19.104.50.131",
+            "hostname": "shujuhu_rancher_node4"
+        },
+        "targets": [
+            "19.104.50.131:9092"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "rancher_node5_19.104.50.118",
+            "project": "政务数据大脑",
+            "system": "数据湖",
+            "host_ip": "19.104.50.118",
+            "hostname": "shujuhu_rancher_node5"
+        },
+        "targets": [
+            "19.104.50.118:9092"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "openshift_19.104.50.139",
+            "project": "政务数据大脑",
+            "system": "数据湖",
+            "host_ip": "19.104.50.139",
+            "hostname": "shujuhu_openshift"
+        },
+        "targets": [
+            "19.104.50.139:9092"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "oracle_19.104.40.24",
+            "project": "政务数据大脑",
+            "system": "大数据服务平台",
+            "host_ip": "19.104.40.24",
+            "hostname": "shujuhu_oralce"
+        },
+        "targets": [
+            "19.104.40.24:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "test_harbor_release_19.104.40.27",
+            "project": "政务数据大脑",
+            "system": "辅助系统",
+            "host_ip": "19.104.40.27",
+            "hostname": "test_harbor_release"
+        },
+        "targets": [
+            "19.104.40.27:9100"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "statistical_resources_directory_19.104.51.149",
+            "project": "政务数据大脑",
+            "system": "辅助系统",
+            "host_ip": "19.104.51.149",
+            "hostname": "statistical_resources_directory"
+        },
+        "targets": [
+            "19.104.51.149:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "kadb1-1_19.104.49.142",
+            "project": "数字政府",
+            "system": "租户",
+            "host_ip": "19.104.49.142",
+            "hostname": "kadb1-1"
+        },
+        "targets": [
+            "19.104.49.142:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "kadb2-1_19.104.49.143",
+            "project": "数字政府",
+            "system": "租户",
+            "host_ip": "19.104.49.143",
+            "hostname": "kadb2-1"
+        },
+        "targets": [
+            "19.104.49.143:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "kadb3-1_19.104.49.144",
+            "project": "数字政府",
+            "system": "租户",
+            "host_ip": "19.104.49.144",
+            "hostname": "kadb3-1"
+        },
+        "targets": [
+            "19.104.49.144:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "kadb4-1_19.104.49.145",
+            "project": "数字政府",
+            "system": "租户",
+            "host_ip": "19.104.49.145",
+            "hostname": "kadb4-1"
+        },
+        "targets": [
+            "19.104.49.145:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "kadb5-1_19.104.49.146",
+            "project": "数字政府",
+            "system": "租户",
+            "host_ip": "19.104.49.146",
+            "hostname": "kadb5-1"
+        },
+        "targets": [
+            "19.104.49.146:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "kadb1-2_19.104.49.147",
+            "project": "数字政府",
+            "system": "租户",
+            "host_ip": "19.104.49.147",
+            "hostname": "kadb1-2"
+        },
+        "targets": [
+            "19.104.49.147:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "kadb2-2_19.104.49.148",
+            "project": "数字政府",
+            "system": "租户",
+            "host_ip": "19.104.49.148",
+            "hostname": "kadb2-2"
+        },
+        "targets": [
+            "19.104.49.148:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "kadb3-2_19.104.49.149",
+            "project": "数字政府",
+            "system": "租户",
+            "host_ip": "19.104.49.149",
+            "hostname": "kadb3-2"
+        },
+        "targets": [
+            "19.104.49.149:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "kadb4-2_19.104.49.150",
+            "project": "数字政府",
+            "system": "租户",
+            "host_ip": "19.104.49.150",
+            "hostname": "kadb4-2"
+        },
+        "targets": [
+            "19.104.49.150:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "kadb5-2_19.104.49.151",
+            "project": "数字政府",
+            "system": "租户",
+            "host_ip": "19.104.49.151",
+            "hostname": "kadb5-2"
+        },
+        "targets": [
+            "19.104.49.151:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "mq_ceph1_19.104.53.216",
+            "project": "政务数据大脑",
+            "system": "数据湖",
+            "host_ip": "19.104.53.216",
+            "hostname": "mq_ceph1"
+        },
+        "targets": [
+            "19.104.53.216:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "mq_ceph2_19.104.53.217",
+            "project": "政务数据大脑",
+            "system": "数据湖",
+            "host_ip": "19.104.53.217",
+            "hostname": "mq_ceph2"
+        },
+        "targets": [
+            "19.104.53.217:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "mq_ceph3_19.104.53.219",
+            "project": "政务数据大脑",
+            "system": "数据湖",
+            "host_ip": "19.104.53.219",
+            "hostname": "mq_ceph3"
+        },
+        "targets": [
+            "19.104.53.219:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "nginx1_19.104.50.155",
+            "project": "政务数据大脑",
+            "system": "数据湖",
+            "host_ip": "19.104.50.155",
+            "hostname": "shujuhu_nginx1"
+        },
+        "targets": [
+            "19.104.50.155:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "nginx2_19.104.50.124",
+            "project": "政务数据大脑",
+            "system": "数据湖",
+            "host_ip": "19.104.50.124",
+            "hostname": "shujuhu_nginx2"
+        },
+        "targets": [
+            "19.104.50.124:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "backup_monitor_19.104.50.128",
+            "project": "政务数据大脑",
+            "system": "辅助系统",
+            "host_ip": "19.104.50.128",
+            "hostname": "backup_monitor"
+        },
+        "targets": [
+            "19.104.50.128:9091"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "uos_rancher_master_node2_10.147.3.87",
+            "project": "fangyi",
+            "host_ip": "10.147.3.87",
+            "hostname": "fangyi_uos_rancher_master_node2"
+        },
+        "targets": [
+            "10.147.3.87:9092"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "uos_rancher_master_node3_10.147.3.88",
+            "project": "fangyi",
+            "host_ip": "10.147.3.88",
+            "hostname": "fangyi_uos_rancher_master_node3"
+        },
+        "targets": [
+            "10.147.3.88:9092"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "yiqing_redis1_10.147.5.226",
+            "project": "fangyi",
+            "host_ip": "10.147.5.226",
+            "hostname": "yiqing_redis1"
+        },
+        "targets": [
+            "10.147.5.226:9092"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "yiqing_redis2_10.147.5.227",
+            "project": "fangyi",
+            "host_ip": "10.147.5.227",
+            "hostname": "yiqing_redis2"
+        },
+        "targets": [
+            "10.147.5.227:9092"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "yiqing_redis3_10.147.5.228",
+            "project": "fangyi",
+            "host_ip": "10.147.5.228",
+            "hostname": "yiqing_redis3"
+        },
+        "targets": [
+            "10.147.5.228:9092"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "rancher_node2_19.104.53.53",
+            "project": "fangyi",
+            "host_ip": "19.104.53.53",
+            "hostname": "fangyi_rancher_node2"
+        },
+        "targets": [
+            "19.104.53.53:9796"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "rancher_node1_19.104.53.48",
+            "project": "fangyi",
+            "host_ip": "19.104.53.48",
+            "hostname": "fangyi_rancher_node1"
+        },
+        "targets": [
+            "19.104.53.48:9010"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "rancher_master_node1_10.147.4.247",
+            "project": "fangyi",
+            "host_ip": "10.147.4.247",
+            "hostname": "fangyi_rancher_master_node1"
+        },
+        "targets": [
+            "10.147.4.247:9100"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "rancher_master_node2_10.147.4.248",
+            "project": "fangyi",
+            "host_ip": "10.147.4.248",
+            "hostname": "fangyi_rancher_master_node2"
+        },
+        "targets": [
+            "10.147.4.248:9100"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "rancher_master_node3_10.147.4.249",
+            "project": "fangyi",
+            "host_ip": "10.147.4.249",
+            "hostname": "fangyi_rancher_master_node3"
+        },
+        "targets": [
+            "10.147.4.249:9100"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "yiqing1_10.147.2.50",
+            "project": "fangyi",
+            "host_ip": "10.147.2.50",
+            "hostname": "yiqing1"
+        },
+        "targets": [
+            "10.147.2.50:9092"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "uos_rancher_master_node1_10.147.2.51",
+            "project": "fangyi",
+            "host_ip": "10.147.2.51",
+            "hostname": "fangyi_uos_rancher_master_node1"
+        },
+        "targets": [
+            "10.147.2.51:9092"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "rancher_10.147.2.52",
+            "project": "fangyi",
+            "host_ip": "10.147.2.52",
+            "hostname": "fangyi_rancher"
+        },
+        "targets": [
+            "10.147.2.52:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "openshift_node4_10.147.2.59",
+            "project": "fangyi",
+            "host_ip": "10.147.2.59",
+            "hostname": "fangyi_openshift_node4"
+        },
+        "targets": [
+            "10.147.2.59:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "oracle_master_10.147.2.49",
+            "project": "fangyi",
+            "host_ip": "10.147.2.49",
+            "hostname": "fangyi_oracle_master"
+        },
+        "targets": [
+            "10.147.2.49:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "oracle_backup_10.146.0.53",
+            "project": "fangyi",
+            "host_ip": "10.146.0.53",
+            "hostname": "fangyi_oracle_backup"
+        },
+        "targets": [
+            "10.146.0.53:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "mpp_master_10.147.3.62",
+            "project": "ligongxueyuan",
+            "host_ip": "10.147.3.62",
+            "hostname": "ligongxueyuan_mpp_master"
+        },
+        "targets": [
+            "10.147.3.62:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "mpp_segment1_10.147.3.61",
+            "project": "ligongxueyuan",
+            "host_ip": "10.147.3.61",
+            "hostname": "ligongxueyuan_mpp_segment1"
+        },
+        "targets": [
+            "10.147.3.61:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "mpp_segment2_10.147.3.67",
+            "project": "ligongxueyuan",
+            "host_ip": "10.147.3.67",
+            "hostname": "ligongxueyuan_mpp_segment2"
+        },
+        "targets": [
+            "10.147.3.67:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "mysql_redis_minio_10.147.3.66",
+            "project": "ligongxueyuan",
+            "host_ip": "10.147.3.66",
+            "hostname": "ligongxueyuan_mysql_redis_minio"
+        },
+        "targets": [
+            "10.147.3.66:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "nginx_vsftp_10.147.3.65",
+            "project": "ligongxueyuan",
+            "host_ip": "10.147.3.65",
+            "hostname": "ligongxueyuan_nginx_vsftp"
+        },
+        "targets": [
+            "10.147.3.65:9091"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "oracle_10.147.3.64",
+            "project": "ligongxueyuan",
+            "host_ip": "10.147.3.64",
+            "hostname": "ligongxueyuan_oracle"
+        },
+        "targets": [
+            "10.147.3.64:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "rancher_master_10.147.3.60",
+            "project": "ligongxueyuan",
+            "host_ip": "10.147.3.60",
+            "hostname": "ligongxueyuan_rancher_master"
+        },
+        "targets": [
+            "10.147.3.60:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "rancher_node1_10.147.3.63",
+            "project": "ligongxueyuan",
+            "host_ip": "10.147.3.63",
+            "hostname": "ligongxueyuan_rancher_node1"
+        },
+        "targets": [
+            "10.147.3.63:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "rancher_node2_10.147.3.68",
+            "project": "ligongxueyuan",
+            "host_ip": "10.147.3.68",
+            "hostname": "ligongxueyuan_rancher_node2"
+        },
+        "targets": [
+            "10.147.3.68:9092"
+        ]
+    },
+        {
+        "labels": {
+            "desc": "esight1_19.104.50.181",
+            "project": "政务数据大脑",
+            "system": "统一IT运维管理系统",
+            "host_ip": "19.104.50.181",
+            "hostname": "ioc_esight1"
+        },
+        "targets": [
+            "19.104.50.181:9100"
+        ]
+        },{
+        "labels": {
+            "desc": "api_getway3_19.104.50.195",
+            "project": "政务数据大脑",
+            "system": "城市IOC应用",
+            "host_ip": "19.104.50.195",
+            "hostname": "guoxin_api_getway3"
+        },
+        "targets": [
+            "19.104.50.195:9100"
+        ]
+        },{
+        "labels": {
+            "desc": "api_getway1_19.104.50.219",
+            "project": "政务数据大脑",
+            "system": "城市IOC应用",
+            "host_ip": "19.104.50.219",
+            "hostname": "guoxin_api_getway1"
+        },
+        "targets": [
+            "19.104.50.219:9100"
+        ]
+        },{
+        "labels": {
+            "desc": "shujuzhili_daili2_19.104.50.227",
+            "project": "政务数据大脑",
+            "system": "大数据治理平台",
+            "host_ip": "19.104.50.227",
+            "hostname": "guoxin_shujuzhili_daili2"
+        },
+        "targets": [
+            "19.104.50.227:9100"
+        ]
+        },{
+        "labels": {
+            "desc": "yq_paicha_oracle_19.104.40.38",
+            "project": "政务数据大脑",
+            "system": "辅助系统",
+            "host_ip": "19.104.40.38",
+            "hostname": "ioc_0019.104.40.38"
+        },
+        "targets": [
+            "19.104.40.38:9100"
+        ]
+        },{
+        "labels": {
+            "desc": "azkaban_kylin_sms_19.104.50.1",
+            "project": "政务数据大脑",
+            "system": "辅助系统",
+            "host_ip": "19.104.50.1",
+            "hostname": "ioc_azkaban_kylin_sms"
+        },
+        "targets": [
+            "19.104.50.1:9100"
+        ]
+        },{
+        "labels": {
+            "desc": "gongong_db_19.104.50.43",
+            "project": "政务数据大脑",
+            "system": "辅助系统",
+            "host_ip": "19.104.50.43",
+            "hostname": "ioc_gongong_db"
+        },
+        "targets": [
+            "19.104.50.43:9100"
+        ]
+        },{
+        "labels": {
+            "desc": "keshihua2_19.104.50.60",
+            "project": "政务数据大脑",
+            "system": "城市IOC应用",
+            "host_ip": "19.104.50.60",
+            "hostname": "guoxin_keshihua2"
+        },
+        "targets": [
+            "19.104.50.60:9100"
+        ]
+        },{
+        "labels": {
+            "desc": "minio_node1_19.104.50.73",
+            "project": "政务数据大脑",
+            "system": "数据湖",
+            "host_ip": "19.104.50.73",
+            "hostname": "shujuhu_minio_node1"
+        },
+        "targets": [
+            "19.104.50.73:9100"
+        ]
+        },{
+        "labels": {
+            "desc": "minio_node2_19.104.50.74",
+            "project": "政务数据大脑",
+            "system": "数据湖",
+            "host_ip": "19.104.50.74",
+            "hostname": "shujuhu_minio_node2"
+        },
+        "targets": [
+            "19.104.50.74:9100"
+        ]
+        },{
+        "labels": {
+            "desc": "minio_node3_19.104.50.75",
+            "project": "政务数据大脑",
+            "system": "数据湖",
+            "host_ip": "19.104.50.75",
+            "hostname": "shujuhu_minio_node3"
+        },
+        "targets": [
+            "19.104.50.75:9100"
+        ]
+        },{
+        "labels": {
+            "desc": "minio_node4_19.104.50.76",
+            "project": "政务数据大脑",
+            "system": "数据湖",
+            "host_ip": "19.104.50.76",
+            "hostname": "shujuhu_minio_node4"
+        },
+        "targets": [
+            "19.104.50.76:9100"
+        ]
+        },{
+        "labels": {
+            "desc": "monio_nginx_19.104.50.77",
+            "project": "政务数据大脑",
+            "system": "数据湖",
+            "host_ip": "19.104.50.77",
+            "hostname": "shujuhu_minio_nginx"
+        },
+        "targets": [
+            "19.104.50.77:9100"
+        ]
+        },{
+        "labels": {
+            "desc": "api_getway2_19.104.50.86",
+            "project": "政务数据大脑",
+            "system": "城市IOC应用",
+            "host_ip": "19.104.50.86",
+            "hostname": "guoxin_api_getway2"
+        },
+        "targets": [
+            "19.104.50.86:9100"
+        ]
+        },{
+        "labels": {
+            "desc": "shujuzhili_daili1_19.104.50.109",
+            "project": "政务数据大脑",
+            "system": "大数据治理平台",
+            "host_ip": "19.104.50.109",
+            "hostname": "guoxin_shujuzhili_daili1"
+        },
+        "targets": [
+            "19.104.50.109:9100"
+        ]
+        },{
+        "labels": {
+            "desc": "shujuzhili4_19.104.50.116",
+            "project": "政务数据大脑",
+            "system": "大数据治理平台",
+            "host_ip": "19.104.50.116",
+            "hostname": "guoxin_shujuzhili4"
+        },
+        "targets": [
+            "19.104.50.116:9100"
+        ]
+        },{
+        "labels": {
+            "desc": "esight3_19.104.50.121",
+            "project": "政务数据大脑",
+            "system": "统一IT运维管理系统",
+            "host_ip": "19.104.50.121",
+            "hostname": "ioc_esight3"
+        },
+        "targets": [
+            "19.104.50.121:9100"
+        ]
+        },{
+        "labels": {
+            "desc": "shujuzhili5_19.104.50.126",
+            "project": "政务数据大脑",
+            "system": "大数据治理平台",
+            "host_ip": "19.104.50.126",
+            "hostname": "guoxin_shujuzhili5"
+        },
+        "targets": [
+            "19.104.50.126:9100"
+        ]
+        },{
+        "labels": {
+            "desc": "esight2_19.104.50.141",
+            "project": "政务数据大脑",
+            "system": "统一IT运维管理系统",
+            "host_ip": "19.104.50.141",
+            "hostname": "ioc_esight2"
+        },
+        "targets": [
+            "19.104.50.141:9100"
+        ]
+        },{
+        "labels": {
+            "desc": "backup_db_19.104.50.142",
+            "project": "政务数据大脑",
+            "system": "辅助系统",
+            "host_ip": "19.104.50.142",
+            "hostname": "backup_db"
+        },
+        "targets": [
+            "19.104.50.142:9100"
+        ]
+        },{
+        "labels": {
+            "desc": "gongong_db_wai_10.147.2.58",
+            "project": "政务数据大脑",
+            "system": "辅助系统",
+            "host_ip": "10.147.2.58",
+            "hostname": "gongong_db_wai"
+        },
+        "targets": [
+            "10.147.2.58:9100"
+        ]
+        },{
+        "labels": {
+            "desc": "shujuhuiju_19.104.40.14",
+            "project": "政务数据大脑",
+            "system": "大数据汇聚平台",
+            "host_ip": "19.104.40.14",
+            "hostname": "guoxin_shujuhuiju"
+        },
+        "targets": [
+            "19.104.40.14:9100"
+        ]
+        },{
+        "labels": {
+            "desc": "shujuhuiju_db_19.104.40.15",
+            "project": "政务数据大脑",
+            "system": "大数据汇聚平台",
+            "host_ip": "19.104.40.15",
+            "hostname": "guoxin_shujuhuiju_db"
+        },
+        "targets": [
+            "19.104.40.15:9100"
+        ]
+        },{
+        "labels": {
+            "desc": "gongong_db_19.104.40.19",
+            "project": "政务数据大脑",
+            "system": "辅助系统",
+            "host_ip": "19.104.40.19",
+            "hostname": "ioc_gongong_db"
+        },
+        "targets": [
+            "19.104.40.19:9100"
+        ]
+        },{
+        "labels": {
+            "desc": "jumpserver_19.104.40.21",
+            "project": "政务数据大脑",
+            "system": "辅助系统",
+            "host_ip": "19.104.40.21",
+            "hostname": "ioc_jumpserver"
+        },
+        "targets": [
+            "19.104.40.21:9092"
+        ]
+        },{
+        "labels": {
+            "desc": "yingshang_db1_19.104.40.23",
+            "project": "政务数据大脑",
+            "system": "营商大数据统一信用管理平台",
+            "host_ip": "19.104.40.23",
+            "hostname": "yingshang_db1"
+        },
+        "targets": [
+            "19.104.40.23:9100"
+        ]
+        },{
+        "labels": {
+            "desc": "zhuanti_19.104.40.30",
+            "project": "政务数据大脑",
+            "system": "城市IOC应用",
+            "host_ip": "19.104.40.30",
+            "hostname": "guoxi_zhuanti"
+        },
+        "targets": [
+            "19.104.40.30:9100"
+        ]
+        },{
+        "labels": {
+            "desc": "shujuzhili_test_19.104.40.31",
+            "project": "政务数据大脑",
+            "system": "大数据治理平台",
+            "host_ip": "19.104.40.31",
+            "hostname": "guoxi_shujuzhili_test"
+        },
+        "targets": [
+            "19.104.40.31:9100"
+        ]
+        },{
+        "labels": {
+            "desc": "shujuzhili1_19.104.40.33",
+            "project": "政务数据大脑",
+            "system": "大数据治理平台",
+            "host_ip": "19.104.40.33",
+            "hostname": "guoxi_shujuzhili1"
+        },
+        "targets": [
+            "19.104.40.33:9100"
+        ]
+        },{
+        "labels": {
+            "desc": "shujuzhili1_19.104.50.11",
+            "project": "政务数据大脑",
+            "system": "大数据治理平台",
+            "host_ip": "19.104.50.11",
+            "hostname": "guoxi_shujuzhili1"
+        },
+        "targets": [
+            "19.104.50.11:9100"
+        ]
+        },{
+        "labels": {
+            "desc": "shebao_db_19.104.50.12",
+            "project": "政务数据大脑",
+            "system": "辅助系统",
+            "host_ip": "19.104.50.12",
+            "hostname": "ioc_shebao_db"
+        },
+        "targets": [
+            "19.104.50.12:9100"
+        ]
+        },{
+        "labels": {
+            "desc": "shujuzhili3_19.104.50.55",
+            "project": "政务数据大脑",
+            "system": "大数据治理平台",
+            "host_ip": "19.104.50.55",
+            "hostname": "guoxin_shujuzhili3"
+        },
+        "targets": [
+            "19.104.50.55:9100"
+        ]
+        },{
+        "labels": {
+            "desc": "liandong_service1_19.104.40.8",
+            "project": "政务数据大脑",
+            "system": "事件管理与联动指挥系统",
+            "host_ip": "19.104.40.8",
+            "hostname": "ioc_0019.104.40.8"
+        },
+        "targets": [
+            "19.104.40.8:9100"
+        ]
+        },{
+        "labels": {
+            "desc": "liandong_api_19.104.40.9",
+            "project": "政务数据大脑",
+            "system": "事件管理与联动指挥系统",
+            "host_ip": "19.104.40.9",
+            "hostname": "ioc_0019.104.40.9"
+        },
+        "targets": [
+            "19.104.40.9:9100"
+        ]
+        },
+    {
+        "labels": {
+            "desc": "gateway3_linux_10.145.188.134",
+            "project": "政务数据大脑",
+            "system": "事件管理与联动指挥系统",
+            "host_ip": "10.145.188.134",
+            "hostname": "dawei_gateway3_linux"
+        },
+        "targets": [
+            "10.145.188.134:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "gateway4_linux_10.145.188.135",
+            "project": "政务数据大脑",
+            "system": "事件管理与联动指挥系统",
+            "host_ip": "10.145.188.135",
+            "hostname": "dawei_gateway4_linux"
+        },
+        "targets": [
+            "10.145.188.135:9090"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "DGSMZX_HD_MN1_19.106.85.2",
+            "project": "政务数据大脑",
+            "system": "大数据基础支撑平台_FI_HD",
+            "host_ip": "19.106.85.2",
+            "hostname": "DGSMZX_HD_MN1_19.106.85.2"
+        },
+        "targets": [
+            "19.106.85.2:9092"
+        ]
+        },{
+        "labels": {
+            "desc": "DGSMZX_HD_MN2_19.106.85.3",
+            "project": "政务数据大脑",
+            "system": "大数据基础支撑平台_FI_HD",
+            "host_ip": "19.106.85.3",
+            "hostname": "DGSMZX_HD_MN2_19.106.85.3"
+        },
+        "targets": [
+            "19.106.85.3:9092"
+        ]
+        },{
+        "labels": {
+            "desc": "DGSMZX_HD_CN1_19.106.85.4",
+            "project": "政务数据大脑",
+            "system": "大数据基础支撑平台_FI_HD",
+            "host_ip": "19.106.85.4",
+            "hostname": "DGSMZX_HD_CN1_19.106.85.4"
+        },
+        "targets": [
+            "19.106.85.4:9092"
+        ]
+        },{
+        "labels": {
+            "desc": "DGSMZX_HD_CN2_19.106.85.5",
+            "project": "政务数据大脑",
+            "system": "大数据基础支撑平台_FI_HD",
+            "host_ip": "19.106.85.5",
+            "hostname": "DGSMZX_HD_CN2_19.106.85.5"
+        },
+        "targets": [
+            "19.106.85.5:9092"
+        ]
+        },{
+        "labels": {
+            "desc": "DGSMZX_HD_CN3_19.106.85.6",
+            "project": "政务数据大脑",
+            "system": "大数据基础支撑平台_FI_HD",
+            "host_ip": "19.106.85.6",
+            "hostname": "DGSMZX_HD_CN3_19.106.85.6"
+        },
+        "targets": [
+            "19.106.85.6:9092"
+        ]
+        },{
+        "labels": {
+            "desc": "DGSMZX_HD_CN4_19.106.85.7",
+            "project": "政务数据大脑",
+            "system": "大数据基础支撑平台_FI_HD",
+            "host_ip": "19.106.85.7",
+            "hostname": "DGSMZX_HD_CN4_19.106.85.7"
+        },
+        "targets": [
+            "19.106.85.7:9092"
+        ]
+        },{
+        "labels": {
+            "desc": "DGSMZX_HD_Flume_19.106.85.8",
+            "project": "政务数据大脑",
+            "system": "大数据基础支撑平台_FI_HD",
+            "host_ip": "19.106.85.8",
+            "hostname": "DGSMZX_HD_Flume_19.106.85.8"
+        },
+        "targets": [
+            "19.106.85.8:9092"
+        ]
+        },{
+        "labels": {
+            "desc": "DGSMZX_HD_HDFS1_19.106.85.9",
+            "project": "政务数据大脑",
+            "system": "大数据基础支撑平台_FI_HD",
+            "host_ip": "19.106.85.9",
+            "hostname": "DGSMZX_HD_HDFS1_19.106.85.9"
+        },
+        "targets": [
+            "19.106.85.9:9092"
+        ]
+        },{
+        "labels": {
+            "desc": "DGSMZX_HD_HDFS2_19.106.85.10",
+            "project": "政务数据大脑",
+            "system": "大数据基础支撑平台_FI_HD",
+            "host_ip": "19.106.85.10",
+            "hostname": "DGSMZX_HD_HDFS2_19.106.85.10"
+        },
+        "targets": [
+            "19.106.85.10:9092"
+        ]
+        },{
+        "labels": {
+            "desc": "DGSMZX_HD_HDFS3_19.106.85.11",
+            "project": "政务数据大脑",
+            "system": "大数据基础支撑平台_FI_HD",
+            "host_ip": "19.106.85.11",
+            "hostname": "DGSMZX_HD_HDFS3_19.106.85.11"
+        },
+        "targets": [
+            "19.106.85.11:9092"
+        ]
+        },{
+        "labels": {
+            "desc": "DGSMZX_HD_HDFS4_19.106.85.12",
+            "project": "政务数据大脑",
+            "system": "大数据基础支撑平台_FI_HD",
+            "host_ip": "19.106.85.12",
+            "hostname": "DGSMZX_HD_HDFS4_19.106.85.12"
+        },
+        "targets": [
+            "19.106.85.12:9092"
+        ]
+        },{
+        "labels": {
+            "desc": "DGSMZX_HD_HDFS5_19.106.85.13",
+            "project": "政务数据大脑",
+            "system": "大数据基础支撑平台_FI_HD",
+            "host_ip": "19.106.85.13",
+            "hostname": "DGSMZX_HD_HDFS5_19.106.85.13"
+        },
+        "targets": [
+            "19.106.85.13:9092"
+        ]
+        },{
+        "labels": {
+            "desc": "DGSMZX_HD_HDFS6_19.106.85.14",
+            "project": "政务数据大脑",
+            "system": "大数据基础支撑平台_FI_HD",
+            "host_ip": "19.106.85.14",
+            "hostname": "DGSMZX_HD_HDFS6_19.106.85.14"
+        },
+        "targets": [
+            "19.106.85.14:9092"
+        ]
+        },{
+        "labels": {
+            "desc": "DGSMZX_HD_HDFS7_19.106.85.15",
+            "project": "政务数据大脑",
+            "system": "大数据基础支撑平台_FI_HD",
+            "host_ip": "19.106.85.15",
+            "hostname": "DGSMZX_HD_HDFS7_19.106.85.15"
+        },
+        "targets": [
+            "19.106.85.15:9092"
+        ]
+        },{
+        "labels": {
+            "desc": "DGSMZX_HD_HDFS8_19.106.85.16",
+            "project": "政务数据大脑",
+            "system": "大数据基础支撑平台_FI_HD",
+            "host_ip": "19.106.85.16",
+            "hostname": "DGSMZX_HD_HDFS8_19.106.85.16"
+        },
+        "targets": [
+            "19.106.85.16:9092"
+        ]
+        },{
+        "labels": {
+            "desc": "DGSMZX_HD_HDFS9_19.106.85.17",
+            "project": "政务数据大脑",
+            "system": "大数据基础支撑平台_FI_HD",
+            "host_ip": "19.106.85.17",
+            "hostname": "DGSMZX_HD_HDFS9_19.106.85.17"
+        },
+        "targets": [
+            "19.106.85.17:9092"
+        ]
+        },{
+        "labels": {
+            "desc": "DGSMZX_HD_HDFS10_19.106.85.18",
+            "project": "政务数据大脑",
+            "system": "大数据基础支撑平台_FI_HD",
+            "host_ip": "19.106.85.18",
+            "hostname": "DGSMZX_HD_HDFS10_19.106.85.18"
+        },
+        "targets": [
+            "19.106.85.18:9092"
+        ]
+        },{
+        "labels": {
+            "desc": "DGSMZX_HD_HDFS11_19.106.85.19",
+            "project": "政务数据大脑",
+            "system": "大数据基础支撑平台_FI_HD",
+            "host_ip": "19.106.85.19",
+            "hostname": "DGSMZX_HD_HDFS11_19.106.85.19"
+        },
+        "targets": [
+            "19.106.85.19:9092"
+        ]
+        },{
+        "labels": {
+            "desc": "DGSMZX_HD_HDFS12_19.106.85.20",
+            "project": "政务数据大脑",
+            "system": "大数据基础支撑平台_FI_HD",
+            "host_ip": "19.106.85.20",
+            "hostname": "DGSMZX_HD_HDFS12_19.106.85.20"
+        },
+        "targets": [
+            "19.106.85.20:9092"
+        ]
+        },{
+        "labels": {
+            "desc": "DGSMZX_HD_HDFS13_19.106.85.21",
+            "project": "政务数据大脑",
+            "system": "大数据基础支撑平台_FI_HD",
+            "host_ip": "19.106.85.21",
+            "hostname": "DGSMZX_HD_HDFS13_19.106.85.21"
+        },
+        "targets": [
+            "19.106.85.21:9092"
+        ]
+        },{
+        "labels": {
+            "desc": "DGSMZX_HD_HDFS14_19.106.85.22",
+            "project": "政务数据大脑",
+            "system": "大数据基础支撑平台_FI_HD",
+            "host_ip": "19.106.85.22",
+            "hostname": "DGSMZX_HD_HDFS14_19.106.85.22"
+        },
+        "targets": [
+            "19.106.85.22:9092"
+        ]
+        },{
+        "labels": {
+            "desc": "DGSMZX_HD_HDFS15_19.106.85.23",
+            "project": "政务数据大脑",
+            "system": "大数据基础支撑平台_FI_HD",
+            "host_ip": "19.106.85.23",
+            "hostname": "DGSMZX_HD_HDFS15_19.106.85.23"
+        },
+        "targets": [
+            "19.106.85.23:9092"
+        ]
+        },{
+        "labels": {
+            "desc": "DGSMZX_HD_HDFS16_19.106.85.24",
+            "project": "政务数据大脑",
+            "system": "大数据基础支撑平台_FI_HD",
+            "host_ip": "19.106.85.24",
+            "hostname": "DGSMZX_HD_HDFS16_19.106.85.24"
+        },
+        "targets": [
+            "19.106.85.24:9092"
+        ]
+        },{
+        "labels": {
+            "desc": "DGSMZX_HD_HDFS17_19.106.85.25",
+            "project": "政务数据大脑",
+            "system": "大数据基础支撑平台_FI_HD",
+            "host_ip": "19.106.85.25",
+            "hostname": "DGSMZX_HD_HDFS17_19.106.85.25"
+        },
+        "targets": [
+            "19.106.85.25:9092"
+        ]
+        },{
+        "labels": {
+            "desc": "DGSMZX_HD_HDFS18_19.106.85.26",
+            "project": "政务数据大脑",
+            "system": "大数据基础支撑平台_FI_HD",
+            "host_ip": "19.106.85.26",
+            "hostname": "DGSMZX_HD_HDFS18_19.106.85.26"
+        },
+        "targets": [
+            "19.106.85.26:9092"
+        ]
+        },{
+        "labels": {
+            "desc": "DGSMZX_HD_HDFS19_19.106.85.27",
+            "project": "政务数据大脑",
+            "system": "大数据基础支撑平台_FI_HD",
+            "host_ip": "19.106.85.27",
+            "hostname": "DGSMZX_HD_HDFS19_19.106.85.27"
+        },
+        "targets": [
+            "19.106.85.27:9092"
+        ]
+        },{
+        "labels": {
+            "desc": "DGSMZX_HD_HDFS20_19.106.85.28",
+            "project": "政务数据大脑",
+            "system": "大数据基础支撑平台_FI_HD",
+            "host_ip": "19.106.85.28",
+            "hostname": "DGSMZX_HD_HDFS20_19.106.85.28"
+        },
+        "targets": [
+            "19.106.85.28:9092"
+        ]
+        },{
+        "labels": {
+            "desc": "DGSMZX_HD_HDFS21_19.106.85.29",
+            "project": "政务数据大脑",
+            "system": "大数据基础支撑平台_FI_HD",
+            "host_ip": "19.106.85.29",
+            "hostname": "DGSMZX_HD_HDFS21_19.106.85.29"
+        },
+        "targets": [
+            "19.106.85.29:9092"
+        ]
+        },{
+        "labels": {
+            "desc": "DGSMZX_HD_Elasticsearch1_19.106.85.30",
+            "project": "政务数据大脑",
+            "system": "大数据基础支撑平台_FI_HD",
+            "host_ip": "19.106.85.30",
+            "hostname": "DGSMZX_HD_Elasticsearch1_19.106.85.30"
+        },
+        "targets": [
+            "19.106.85.30:9092"
+        ]
+        },{
+        "labels": {
+            "desc": "DGSMZX_HD_Elasticsearch2_19.106.85.31",
+            "project": "政务数据大脑",
+            "system": "大数据基础支撑平台_FI_HD",
+            "host_ip": "19.106.85.31",
+            "hostname": "DGSMZX_HD_Elasticsearch2_19.106.85.31"
+        },
+        "targets": [
+            "19.106.85.31:9092"
+        ]
+        },{
+        "labels": {
+            "desc": "DGSMZX_HD_Elasticsearch3_19.106.85.32",
+            "project": "政务数据大脑",
+            "system": "大数据基础支撑平台_FI_HD",
+            "host_ip": "19.106.85.32",
+            "hostname": "DGSMZX_HD_Elasticsearch3_19.106.85.32"
+        },
+        "targets": [
+            "19.106.85.32:9092"
+        ]
+        },{
+        "labels": {
+            "desc": "DGSMZX_HD_Redis1_19.106.85.33",
+            "project": "政务数据大脑",
+            "system": "大数据基础支撑平台_FI_HD",
+            "host_ip": "19.106.85.33",
+            "hostname": "DGSMZX_HD_Redis1_19.106.85.33"
+        },
+        "targets": [
+            "19.106.85.33:9092"
+        ]
+        },{
+        "labels": {
+            "desc": "DGSMZX_HD_Redis2_19.106.85.34",
+            "project": "政务数据大脑",
+            "system": "大数据基础支撑平台_FI_HD",
+            "host_ip": "19.106.85.34",
+            "hostname": "DGSMZX_HD_Redis2_19.106.85.34"
+        },
+        "targets": [
+            "19.106.85.34:9092"
+        ]
+        },{
+        "labels": {
+            "desc": "DGSMZX_HD_Redis3_19.106.85.35",
+            "project": "政务数据大脑",
+            "system": "大数据基础支撑平台_FI_HD",
+            "host_ip": "19.106.85.35",
+            "hostname": "DGSMZX_HD_Redis3_19.106.85.35"
+        },
+        "targets": [
+            "19.106.85.35:9092"
+        ]
+        },{
+        "labels": {
+            "desc": "DGSMZX_HD_Kafka1_19.106.85.36",
+            "project": "政务数据大脑",
+            "system": "大数据基础支撑平台_FI_HD",
+            "host_ip": "19.106.85.36",
+            "hostname": "DGSMZX_HD_Kafka1_19.106.85.36"
+        },
+        "targets": [
+            "19.106.85.36:9092"
+        ]
+        },{
+        "labels": {
+            "desc": "DGSMZX_HD_Kafka2_19.106.85.37",
+            "project": "政务数据大脑",
+            "system": "大数据基础支撑平台_FI_HD",
+            "host_ip": "19.106.85.37",
+            "hostname": "DGSMZX_HD_Kafka2_19.106.85.37"
+        },
+        "targets": [
+            "19.106.85.37:9092"
+        ]
+        },{
+        "labels": {
+            "desc": "DGSMZX_HD_Kafka3_19.106.85.38",
+            "project": "政务数据大脑",
+            "system": "大数据基础支撑平台_FI_HD",
+            "host_ip": "19.106.85.38",
+            "hostname": "DGSMZX_HD_Kafka3_19.106.85.38"
+        },
+        "targets": [
+            "19.106.85.38:9092"
+        ]
+        },{
+        "labels": {
+            "desc": "DGSMZX_MPPServer1_19.106.85.68",
+            "project": "政务数据大脑",
+            "system": "大数据基础支撑平台_FI_MPP",
+            "host_ip": "19.106.85.68",
+            "hostname": "DGSMZX_MPPServer1_19.106.85.68"
+        },
+        "targets": [
+            "19.106.85.68:9092"
+        ]
+        },{
+        "labels": {
+            "desc": "DGSMZX_MPPServer2_19.106.85.69",
+            "project": "政务数据大脑",
+            "system": "大数据基础支撑平台_FI_MPP",
+            "host_ip": "19.106.85.69",
+            "hostname": "DGSMZX_MPPServer2_19.106.85.69"
+        },
+        "targets": [
+            "19.106.85.69:9092"
+        ]
+        },{
+        "labels": {
+            "desc": "DGSMZX_MPPServer3_19.106.85.70",
+            "project": "政务数据大脑",
+            "system": "大数据基础支撑平台_FI_MPP",
+            "host_ip": "19.106.85.70",
+            "hostname": "DGSMZX_MPPServer3_19.106.85.70"
+        },
+        "targets": [
+            "19.106.85.70:9092"
+        ]
+        },{
+        "labels": {
+            "desc": "DGSMZX_MPPServer4_19.106.85.71",
+            "project": "政务数据大脑",
+            "system": "大数据基础支撑平台_FI_MPP",
+            "host_ip": "19.106.85.71",
+            "hostname": "DGSMZX_MPPServer4_19.106.85.71"
+        },
+        "targets": [
+            "19.106.85.71:9092"
+        ]
+        },{
+        "labels": {
+            "desc": "DGSMZX_MPPServer5_19.106.85.72",
+            "project": "政务数据大脑",
+            "system": "大数据基础支撑平台_FI_MPP",
+            "host_ip": "19.106.85.72",
+            "hostname": "DGSMZX_MPPServer5_19.106.85.72"
+        },
+        "targets": [
+            "19.106.85.72:9092"
+        ]
+        },{
+        "labels": {
+            "desc": "DGSMZX_MPPServer6_19.106.85.73",
+            "project": "政务数据大脑",
+            "system": "大数据基础支撑平台_FI_MPP",
+            "host_ip": "19.106.85.73",
+            "hostname": "DGSMZX_MPPServer6_19.106.85.73"
+        },
+        "targets": [
+            "19.106.85.73:9092"
+        ]
+        },{
+        "labels": {
+            "desc": "DGSMZX_MPPServer7_19.106.85.74",
+            "project": "政务数据大脑",
+            "system": "大数据基础支撑平台_FI_MPP",
+            "host_ip": "19.106.85.74",
+            "hostname": "DGSMZX_MPPServer7_19.106.85.74"
+        },
+        "targets": [
+            "19.106.85.74:9092"
+        ]
+        },{
+        "labels": {
+            "desc": "stj_tongyirenzheng_19.105.196.111",
+            "project": "统一认证",
+            "system": "生态局统一认证",
+            "host_ip": "19.105.196.111",
+            "hostname": "stj_tongyirenzheng_19.105.196.111"
+        },
+        "targets": [
+            "19.105.196.111:9100"
+        ]
+        }
+]
+

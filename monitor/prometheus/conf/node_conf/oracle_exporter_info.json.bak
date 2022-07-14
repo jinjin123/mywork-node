@@ -1,0 +1,35 @@
+[
+    {
+        "labels": {
+            "desc": "fangyi_oracledb_exporter_FYQGK_10.147.2.49",
+            "project": "fangyi",
+            "host_ip": "10.147.2.49",
+            "hostname": "fangyi_oracle"
+        },
+        "targets": [
+            "19.104.50.128:9161"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "fangyi_oracledb_exporter_DBSYS_10.147.2.49",
+            "project": "fangyi",
+            "host_ip": "10.147.2.49",
+            "hostname": "fangyi_oracle"
+        },
+        "targets": [
+            "19.104.50.128:9162"
+        ]
+    },
+    {
+        "labels": {
+            "desc": "fangyi_oracledb_exporter_DBSYS_10.146.0.53",
+            "project": "fangyi",
+            "host_ip": "10.146.0.53",
+            "hostname": "fangyi_oracle_backup"
+        },
+        "targets": [
+            "19.104.50.128:9163"
+        ]
+    },
+]

@@ -1,0 +1,98 @@
+groups:
+  - name: stj_tongyirenzheng_19.105.196.111_alert
+    rules:
+    - alert: AlltoseaAuth warning
+      expr: sum(namedprocess_namegroup_num_procs{groupname="map[:AlltoseaAuth.API.dll]"}) != 1
+      for: 1m
+      labels:
+        severity: warning
+      annotations:
+        description: "[{{ $labels.desc }}],生态局统一认证AlltoseaAuth异常,告警初始时长为1分钟."
+
+    - alert: AlltoseaMinio warning
+      expr: sum(namedprocess_namegroup_num_procs{groupname="map[:AlltoseaMinio.dll]"}) != 1
+      for: 1m
+      labels:
+        severity: warning
+      annotations:
+        description: "[{{ $labels.desc }}],生态局统一认证AlltoseaMinio异常,告警初始时长为1分钟."
+
+    - alert: AuthServer warning
+      expr: sum(namedprocess_namegroup_num_procs{groupname="map[:AuthServer.dll]"}) != 1
+      for: 1m
+      labels:
+        severity: warning
+      annotations:
+        description: "[{{ $labels.desc }}],生态局统一认证AuthServer异常,告警初始时长为1分钟."
+
+    - alert: AuthorizationAPI warning
+      expr: sum(namedprocess_namegroup_num_procs{groupname="map[:AuthorizationAPI.dll]"}) != 1
+      for: 1m
+      labels:
+        severity: warning
+      annotations:
+        description: "[{{ $labels.desc }}],生态局统一认证AuthorizationAPI异常,告警初始时长为1分钟."
+
+    - alert: SMSAPI warning
+      expr: sum(namedprocess_namegroup_num_procs{groupname="map[:SMSAPI.dll]"}) != 1
+      for: 1m
+      labels:
+        severity: warning
+      annotations:
+        description: "[{{ $labels.desc }}],生态局统一认证SMSAPI异常,告警初始时长为1分钟."
+
+    - alert: WFEngine warning
+      expr: sum(namedprocess_namegroup_num_procs{groupname="map[:WFEngine.dll]"}) != 1
+      for: 1m
+      labels:
+        severity: warning
+      annotations:
+        description: "[{{ $labels.desc }}],生态局统一认证WFEngine异常,告警初始时长为1分钟."
+
+    - alert: WFEngineApi warning
+      expr: sum(namedprocess_namegroup_num_procs{groupname="map[:WFEngineApi.dll]"}) != 1
+      for: 1m
+      labels:
+        severity: warning
+      annotations:
+        description: "[{{ $labels.desc }}],生态局统一认证WFEngineApi异常,告警初始时长为1分钟."
+
+    - alert: elasticsearch warning
+      expr: sum(namedprocess_namegroup_num_procs{groupname="map[:elasticsearch]"}) == 0
+      for: 1m
+      labels:
+        severity: warning
+      annotations:
+        description: "[{{ $labels.desc }}],生态局统一认证elasticsearch异常,告警初始时长为1分钟."
+
+    - alert: kibana warning
+      expr: sum(namedprocess_namegroup_num_procs{groupname="map[:kibana]"}) == 0
+      for: 1m
+      labels:
+        severity: warning
+      annotations:
+        description: "[{{ $labels.desc }}],生态局统一认证kibana异常,告警初始时长为1分钟."
+
+    - alert: minio warning
+      expr: sum(namedprocess_namegroup_num_procs{groupname="map[:minio]"}) == 0
+      for: 1m
+      labels:
+        severity: warning
+      annotations:
+        description: "[{{ $labels.desc }}],生态局统一认证minio异常,告警初始时长为1分钟."
+
+    - alert: redis-server warning
+      expr: sum(namedprocess_namegroup_num_procs{groupname="map[:redis-server]"}) == 0
+      for: 1m
+      labels:
+        severity: warning
+      annotations:
+        description: "[{{ $labels.desc }}],生态局统一认证redis-server异常,告警初始时长为1分钟."
+
+    - alert: zookeeper warning
+      expr: sum(namedprocess_namegroup_num_procs{groupname="map[:zookeeper]"}) == 0
+      for: 1m
+      labels:
+        severity: warning
+      annotations:
+        description: "[{{ $labels.desc }}],生态局统一认证zookeeper异常,告警初始时长为1分钟."

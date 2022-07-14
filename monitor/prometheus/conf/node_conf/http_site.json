@@ -1,0 +1,37 @@
+[
+    {
+        "targets": ["https://egovcloud.dg.cn"],
+        "labels": {
+          "project": "云管",
+          "group": "web"
+        }
+    },
+    {
+        "targets": ["https://egpm.dg.cn"],
+        "labels": {
+          "project": "项管",
+          "group": "web"
+        }
+    },
+    {
+        "targets": ["https://passport.dg.cn"],
+        "labels": {
+          "project": "市统一认证",
+          "group": "web"
+        }
+    },
+    {
+        "targets": ["https://dc-gateway.gdgov.cn"],
+        "labels": {
+          "project": "疫情省接口",
+          "group": "api"
+        }
+    },
+    {
+        "targets": ["https://ioc-paas.dg.cn/ioc/login"],
+        "labels": {
+          "project": "数据湖",
+          "group": "web"
+        }
+    }
+]

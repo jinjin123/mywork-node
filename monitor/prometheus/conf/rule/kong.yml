@@ -1,0 +1,18 @@
+groups:
+  - name: kong_alert
+    rules:
+    - alert: kong请求异常
+      expr: sum(rate(kong_http_status[2m])) == null
+      for: 3m
+      labels:
+        severity: warning
+      annotations:
+        description: "kong请求异常,告警初始时长为3分钟."
+    - alert: kong连接异常
+      expr: floor(up{job="kong_global_status"}) != 1
+      for: 1m
+      labels:
+        severity: warning
+      annotations:
+        description: "[{{ $labels.desc }}],kong连接异常,告警初始时长为1分钟."
+

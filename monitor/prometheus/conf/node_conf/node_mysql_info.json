@@ -1,0 +1,24 @@
+[
+    {   
+        "labels": { 
+            "desc": "yiqing_mysql_master_10.147.2.49:3306",
+            "project": "yiqing",
+            "mysql_addr": "10.147.2.49:3306",
+            "role": "master"
+        },
+        "targets": [
+            "localhost:15001"
+        ]
+    },
+    {   
+        "labels": { 
+            "desc": "yiqing_mysql_slave_10.146.0.53:3306",
+            "project": "yiqing",
+            "mysql_addr": "10.146.0.53:3306",
+            "role": "slave"
+        },
+        "targets": [
+            "localhost:15002"
+        ]
+    }
+]

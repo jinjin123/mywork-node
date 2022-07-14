@@ -1,0 +1,14 @@
+[
+    {   
+        "labels": { 
+            "desc": "shujuhu_ceph",
+            "project": "shujuhu",
+            "role": "cephfs",
+            "cluster": "shujuhu",
+            "namespace": "rook-ceph"
+        },
+        "targets": [
+            "19.104.50.118:30831"
+        ]
+    }
+]
