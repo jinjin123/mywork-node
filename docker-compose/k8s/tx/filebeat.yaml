@@ -1,0 +1,7 @@
+-type: log
+  #enable: GB2312
+  enabled: true
+  paths:
+   - /data/docker-log/application-name/service-name/*.log*
+  fields: {appname:"service-name"}
+  multiline.pattern: '^(\[?])'

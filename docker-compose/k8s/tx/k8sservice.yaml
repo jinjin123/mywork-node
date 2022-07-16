@@ -1,0 +1,25 @@
+piVersion: v1
+kind: Service
+metadata:
+  annotations:
+    description: {app_name}
+    service.cloud.tencent.com/direct-access: "false"
+    service.kubernetes.io/qcloud-loadbalancer-internal-subnetid: {subnet_id}
+  name: {app_name}
+  namespace: {name_space}
+  selfLink: /api/v1/namespaces/{name_space}/services/{app_name}
+spec:
+  ports:
+  - name: 18800-18800-tcp
+    port: 18800
+    protocol: TCP
+    targetPort: 18800
+  - name: 18811-18811-tcp
+    port: 18811
+    protocol: TCP
+    targetPort: 18811
+  selector:
+    k8s-app: {app_name}
+    qcloud-app: {app_name}
+  sessionAffinity: None
+  type: LoadBalancer

@@ -1,0 +1,106 @@
+piVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  annotations:
+    description: {app_name}
+  labels:
+    k8s-app: {app_name}
+    qcloud-app: {app_name}
+  name: {app_name}
+  namespace: {name_space}
+  selfLink: /apis/apps/v1beta2/namespaces/{name_space}/deployments/{app_name}
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 2
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      k8s-app: {app_name}
+      qcloud-app: {app_name}
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+      creationTimestamp: null
+      labels:
+        k8s-app: {app_name}
+        qcloud-app: {app_name}
+    spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: k8s-app
+                operator: In
+                values:
+                - {app_name}
+            topologyKey: kubernetes.io/hostname
+      containers:
+      - args:
+        - -Xms512m
+        - -Xmx4000m
+        - -Dloader.path=./lib/
+        - -Dserver.port=18800
+        - -jar
+        - {app_jar_name}.jar
+        - --spring.profiles.active=prod
+        - --spring.config.location=./conf/application.yml,./conf/application-prod.yml
+        command:
+        - java
+        env:
+        - name: PATH
+          value: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+        - name: LANG
+          value: en_US.UTF-8
+        image: {image_url}
+        imagePullPolicy: Always
+        name: {app_name}
+        lifecycle:
+          preStop:
+            exec:
+              command: ["/bin/sh","-c","sleep 10"]
+        readinessProbe:
+          failureThreshold: 20
+          initialDelaySeconds: 80
+          periodSeconds: 10
+          successThreshold: 1
+          tcpSocket:
+            port: 18800
+          timeoutSeconds: 5
+        resources:
+          limits:
+            cpu: "2"
+            memory: 4096Mi
+          requests:
+            cpu: 250m
+            memory: 256Mi
+        securityContext:
+          privileged: false
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /data/DATA_DIR
+          name: data
+        - mountPath: /data/docker-log
+          name: docker-log
+      dnsPolicy: ClusterFirst
+      imagePullSecrets:
+      - name: qcloudregistrykey
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - hostPath:
+          path: /data/DATA_DIR
+          type: DirectoryOrCreate
+        name: data
+      - hostPath:
+          path: /data/docker-log
+          type: DirectoryOrCreate
+        name: docker-log
