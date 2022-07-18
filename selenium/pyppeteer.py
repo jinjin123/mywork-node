@@ -20,7 +20,7 @@ async def run(numid: str, numpwd: str, level: int, school_id: int, school_name: 
     #     "/usr/bin/google-chrome-stable "
     #     "--remote-debugging-port=%d --no-first-run --no-default-browser-check --user-data-dir=./test-%d"%(remote_port,data_num))
     await asyncio.sleep(3)
-    debug_blank_page = requests.get("http://127.0.0.1:9222/json/version", headers={"Content-Type": "application/json"})
+    debug_blank_page = requests.get("http://127.0.0.1:%d/json/version", headers={"Content-Type": "application/json"})%(remote_port)
     wslink = (debug_blank_page.json())["webSocketDebuggerUrl"]
     browser = await pyppeteer.launcher.connect({'browserWSEndpoint': wslink})
 
