@@ -1,3 +1,7 @@
+# Note
+pypuppeteer script is a manual click machine of human with chrome is work well on remote debug method
+
+# below method most of not working
 ```
 
 #网上最常见的处理方式如下,原理就是在每次新页面加载之前执行JS通过Chrome Devtools-ProtocolAPI去删除window.navigator.webdriver属性.
@@ -37,3 +41,4 @@ options.add_argument("--disable-blink-features=AutomationControlled")
 driver = webdriver.Remote(command_executor="http://127.0.0.1:4444/wd/hub", options=options)
 driver.get('https://www.kagura.me')
 ```
+
