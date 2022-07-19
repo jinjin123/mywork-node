@@ -1,6 +1,7 @@
 # Note
 pypuppeteer script is a manual click machine of human with chrome is work well on remote debug method
 Remote debug not work on selenium/standalone-chrome conatiner, work well on local 
+reduce UI interactive to improved api submit speed
 
 
 # below method most of not working
