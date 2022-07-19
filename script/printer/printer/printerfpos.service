@@ -1,0 +1,16 @@
+[Unit]
+Description=Printerfpos
+After=docker.service
+Requires=docker.service
+
+[Service]
+ExecStop=/bin/docker stop -t 2 printerfpos
+ExecStopPost=/bin/docker rm -f printerfpos
+ExecStartPre=-/bin/docker stop -t 2 printerfpos
+ExecStartPre=-/bin/docker rm -f printerfpos
+#ExecStart=/bin/docker run --privileged -v /dev/bus/usb/001:/dev/bus/usb/001 -v /home/core/printerFPOS/printer.py:/usr/local/proxy/printer/printer.py -v /home/core/printerFPOS/tx.png:/usr/local/proxy/printer/tx.png  --name printerfpos txprinter
+ExecStart=/bin/docker run -v /home/core/printerFPOS/config.py:/usr/local/proxy/printer/config.py -v /home/core/printerFPOS/printer.py:/usr/local/proxy/printer/printer.py -v /home/core/printerFPOS/tx.png:/usr/local/proxy/printer/tx.png  --name printerfpos kitchen
+
+[Install]
+WantedBy=multi-user.target
+
