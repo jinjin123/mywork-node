@@ -21,3 +21,6 @@
 [submodule "script/coderecord"]
 	path = script/coderecord
 	url = https://github.com/jinjin123/coderecord.git
+[submodule "selenium/VirtualOpeation"]
+	path = selenium/VirtualOpeation
+	url = https://github.com/jinjin123/VirtualOpeation.git
