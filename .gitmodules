@@ -24,3 +24,6 @@
 [submodule "selenium/VirtualOpeation"]
 	path = selenium/VirtualOpeation
 	url = https://github.com/jinjin123/VirtualOpeation.git
+[submodule "script/ops_doc"]
+	path = script/ops_doc
+	url = https://github.com/jinjin123/ops_doc.git
