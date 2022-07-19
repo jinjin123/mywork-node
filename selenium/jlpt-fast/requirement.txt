@@ -1,0 +1,6 @@
+PyMySQL==1.0.2
+Jinja2==2.11.3
+aiofiles==0.8.0
+SQLAlchemy==1.4.39
+
+

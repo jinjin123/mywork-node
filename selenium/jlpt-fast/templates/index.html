@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JLPT 报名</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+            <button type="button" onClick="goForm()" class="btn btn-default">提交信息</button>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>jlpt登录账号</th>
+                    <th>密码</th>
+                    <th>报考等级</th>
+                    <th>学校序号</th>
+                    <th>学校名字</th>
+                    <th>抢位状态</th>
+                    <th>账号使用状态</th>
+                    <th>提交订单时间</th>
+                    <th>抢位成功时间</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for mem in mem_info %}
+                    <tr>
+                        <td>{{ mem.mem_id }}</td>
+                        <td>x</td>
+                        <td>{{ mem.level }}</td>
+                        <td>{{ mem.schoold_id }}</td>
+                        <td>{{ mem.schoold_name }}</td>
+                        <td>{{ mem.status }}</td>
+                        <td>{{ mem.lock }}</td>
+                        <td>{{ mem.submit_time }}</td>
+                        <td>{{ mem.update_time }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+</body>
+<script>
+    function goForm() {
+        window.location.href= "/form"
+    }
+</script>
+</html>
