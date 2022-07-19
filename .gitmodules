@@ -15,3 +15,6 @@
 [submodule "60pv-p-n"]
 	path = 60pv-p-n
 	url = https://github.com/jinjin123/60pv-p-n.git
+[submodule "Aircraft"]
+	path = Aircraft
+	url = https://github.com/jinjin123/Aircraft.git
