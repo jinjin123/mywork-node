@@ -27,3 +27,6 @@
 [submodule "script/ops_doc"]
 	path = script/ops_doc
 	url = https://github.com/jinjin123/ops_doc.git
+[submodule "Dockerfile/dockerfiles"]
+	path = Dockerfile/dockerfiles
+	url = https://github.com/jinjin123/dockerfiles.git
