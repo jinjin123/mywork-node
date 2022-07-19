@@ -12,3 +12,6 @@
 [submodule "Dockerfile/dockerfile/postgres-debian"]
 	path = Dockerfile/dockerfile/postgres-debian
 	url = https://github.com/bitnami/bitnami-docker-postgresql.git
+[submodule "60pv-p-n"]
+	path = 60pv-p-n
+	url = https://github.com/jinjin123/60pv-p-n.git
