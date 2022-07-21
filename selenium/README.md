@@ -45,3 +45,15 @@ driver = webdriver.Remote(command_executor="http://127.0.0.1:4444/wd/hub", optio
 driver.get('https://www.kagura.me')
 ```
 
+# simple ping code but low accuracy
+```
+import ddddocr
+
+ocr = ddddocr.DdddOcr()
+with open('/home/jin/图片/1.jpg', 'rb') as f:
+  img_bytes = f.read()
+  res = ocr.classification(img_bytes)
+
+print(res)
+
+```
