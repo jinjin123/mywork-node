@@ -33,3 +33,6 @@
 [submodule "script/groovy/jenkins"]
 	path = script/groovy/jenkins
 	url = git@github.com:Statemood/jenkins.git
+[submodule "security/LadonGo"]
+	path = security/LadonGo
+	url = git@github.com:k8gege/LadonGo.git
