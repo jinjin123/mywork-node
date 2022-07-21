@@ -30,3 +30,6 @@
 [submodule "Dockerfile/dockerfiles"]
 	path = Dockerfile/dockerfiles
 	url = https://github.com/jinjin123/dockerfiles.git
+[submodule "script/groovy/jenkins"]
+	path = script/groovy/jenkins
+	url = git@github.com:Statemood/jenkins.git
