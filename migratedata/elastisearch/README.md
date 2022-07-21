@@ -13,6 +13,14 @@ do
 	#echo  "elasticdump --input=http://localhost:9200/$x --output=$x.json --type=mapping --bulk=true" 
 	echo  "elasticdump --input=http://localhost:9200/$x --output=$x.json --type=data --bulk=true" 
 done
+
+elasticdump --input=http://localhost:9200/dgcn-applicationaccess-pro-2021 --output=apppro.json --type=mapping --bulk=true
+
+
+elasticdump  --input=/home/jin/下载/apppro.json  --output=http://localhost:9200/dgcn-applicationaccess-pro-2021 --type=mapping
+
 #link
 https://www.jianshu.com/p/bcd17c7affab
 https://www.cnblogs.com/pilihaotian/p/5830754.html
+
+
