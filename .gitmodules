@@ -36,3 +36,6 @@
 [submodule "security/LadonGo"]
 	path = security/LadonGo
 	url = git@github.com:k8gege/LadonGo.git
+[submodule "script/sellidle"]
+	path = script/sellidle
+	url = git@github.com:jinjin123/sellidle.git
