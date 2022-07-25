@@ -25,4 +25,4 @@ curl -X POST  localhost:9200/_ml/trained_models/elastic__distilbert-base-cased-f
 }'
 
 ```
-
+![demo](https://github.com/jinjin123/mywork-node/blob/3e0b30f770105b816a8fbfad3d66f0175a128454/docker-compose/escluster/mlescluster/mlescluster.png)
