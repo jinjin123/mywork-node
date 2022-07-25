@@ -23,6 +23,7 @@ You can set additional deployment options that affect the performance of the mod
 curl -X POST  localhost:9200/_ml/trained_models/elastic__distilbert-base-cased-finetuned-conll03-english/_infer  -H "Content-Type: application/json" -d '{
   "docs":[{"text_field": "Sasha bought 300 shares of Acme Corp in 2022."}]
 }'
+{"inference_results":[{"predicted_value":"[Sasha](PER&Sasha) bought 300 shares of [Acme Corp](ORG&Acme+Corp) in 2022.","entities":[{"entity":"Sasha","class_name":"PER","class_probability":0.9953193407987492,"start_pos":0,"end_pos":5},{"entity":"Acme Corp","class_name":"ORG","class_probability":0.9996392198381716,"start_pos":27,"end_pos":36}]}]}#
 
 ```
 ![demo](https://github.com/jinjin123/mywork-node/blob/3e0b30f770105b816a8fbfad3d66f0175a128454/docker-compose/escluster/mlescluster/mlescluster.png)
