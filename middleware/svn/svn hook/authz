@@ -1,0 +1,36 @@
+[groups]
+admin=svnad,ouyangshan,xuliang,zhangqingming,wuzhaohai
+cpadmin=
+jishubu=wupeijin,miaozhuang,fengsonglin,liyan,liuliangliang,ouchenghua,zhoupengpeng,limeiling,dengzhiming,moyihang,hupengfei,zhongguohua,caoyicheng,yangdongsheng,huanghaoming,luoyuefeng,wangqinv,qingbadala,daiweiping,liwenbang,jikun,zhouzuomin,wangfuwei,sunbo,wangbiao,liwen,chencaihua,zhangzhenglin,zhengxirong,liwen1,zhanghaipeng,linseqi,luochangdong,zhongzhifeng,yangdan,lufangjie,liying,liqinghong,lanming,lipengjun,qiumaojian,maoyaoping,houshen,liuhong,linmiaorun,zhangzebin,xiaqian,hujie,pengyu,fengyu,yanxiaobing,yangyang,mohuanzhao,yinxingyao,huangwangdong,leipeng,machao,zhangwujia,zhanyun
+jkcp=xieshiquan,luorui,chenzidian,huangqiumei,panhongzhe,chenzhenlin,yancanrong,zhanghaipeng,zhuling,zhongchunxiao,linweiming,suxiuzhen,huhuiyuan,xukaili,tangrenliang,zhanghaipeng,tanlihong,dingjianglei,zhouduhui,linbo,wuzhenyu,ranguihong,huangxing,fengxifeng,zhangqiuxia,liuxiaodan,yangzewei,wufengping,chenzheling,huangshuhong,zhuzhaoqi,luoxiaohong,zhangzhaowei,liuliangliang,yaokangji,zhouyuxiang,zhangrong,yangyang,zhonghuang,ouyuanyuan,huangxueling,huangxingjuan
+cpjk=qiumaojian,maoyaoping,zhongxinyi,zenglulu,wudongmin,linchaojie,wenlingling
+ywb=ouyangshan,xuliang,qiujiawei,linchongsen
+[danpin:/]
+@admin = rw
+@cpadmin = rw
+@jishubu = rw
+@jkcp = rw
+@cpjk = rw
+[jianke:/]
+@admin = rw
+@jishubu = rw
+@jkcp = rw
+@cpjk = rw
+[biting:/]
+@admin = rw
+@cpadmin = rw
+@jishubu = rw
+@jkcp = rw
+@cpjk = rw
+[jianfei:/]
+@admin = rw
+@cpadmin = rw
+@jishubu = rw
+@jkcp = rw
+@cpjk = rw
+[phoneapp:/]
+@admin = rw
+@jishubu = rw
+[yunwei:/]
+@admin = rw
+@ywb = rw

@@ -1,0 +1,4 @@
+/usr/local/svn/bin/svn co http://172.16.240.166:8080/svn/danpin/ /home/wwwroot/danpin/ --username "svnad" --password "e42icsgc"
+
+当上传文件看不到 但是检出看的到的时候需要这条修复
+不能提交数据钩子提示锁定
