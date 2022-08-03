@@ -1,0 +1,53 @@
+server {
+        listen       80;
+	#server_name XXXXX;
+        #include site/domain.txt;
+	#index index.html index.htm;
+        #root XXXXX;
+        access_log off;
+        location / 
+	{
+            proxy_ignore_headers "Cache-Control";
+            proxy_next_upstream http_502 http_504 error timeout invalid_header;
+            proxy_cache cache_one;
+            proxy_cache_valid  200 304 2h;
+            proxy_cache_key $host$uri$is_args$args;
+            proxy_set_header Host   $host;
+            proxy_set_header X-Forwarded-For  $remote_addr;
+            #proxy_pass http://XXXXX;
+            expires  2h;
+        }
+
+        location /usstatus {
+            check_status;
+
+            access_log   off;
+            allow all;
+            #deny all;
+        }
+
+        location /jiankestatus
+        {
+             allow  all;
+             stub_status on;
+             access_log  on;
+        }
+
+        location ~ /clear(/.*)
+        {
+            allow  all;
+            proxy_cache_purge  cache_one $host$1$is_args$args;
+        }
+
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   html;
+        }
+    }
+
+	
+  server {
+	listen 80;
+	rewrite ^/(.*)$ http://www.$Host/$1 permanent;
+   }
+

@@ -1,0 +1,52 @@
+server {
+       listen       80;
+       include sites/danpin.txt;
+       index index.html index.htm;
+       root  /usr/wwwroot/$host;
+       ssi on;  
+       ssi_silent_errors on;
+       location /
+       {        ssi on;
+                ssi_silent_errors on;
+                proxy_ignore_headers "Cache-Control";
+                proxy_next_upstream http_502 http_504 error timeout invalid_header;
+                proxy_cache cache_one;
+                proxy_cache_valid  200 304 2h;
+		proxy_redirect     off;
+                proxy_set_header   Host             $host;
+	        proxy_set_header   X-Real-IP        $remote_addr;
+	        proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+                expires  2h;                
+       }
+       location /purchase/ 
+	{
+             proxy_set_header Host $host;
+             proxy_set_header X-Forwarded-For $remote_addr;
+             proxy_pass http://172_16_2_89;
+        }
+
+	location /ask/
+	{
+		proxy_set_header Host ask.b-tmall.com;
+		proxy_set_header X-Forwarded-For $remote_addr;
+		proxy_pass http://172_16_2_87;
+	}
+
+        location /jiankestatus
+        {
+             allow  all;
+             stub_status on;
+             access_log  on;
+        }
+
+        location ~ /clear(/.*)
+        {
+            allow  all;
+            proxy_cache_purge  cache_one $host$1$is_args$args;
+        }
+
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   html;
+        }
+}

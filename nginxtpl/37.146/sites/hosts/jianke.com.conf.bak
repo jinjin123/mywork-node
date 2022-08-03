@@ -1,0 +1,803 @@
+
+server {
+   listen       80;
+   server_name aolisita.jianke.com;
+   root /var/jianke.com/www;        
+   access_log off;
+   if ($request_uri ~* /index\.html$)
+        {
+                rewrite (.*)/index\.html$  http://$host$1 redirect;
+        }
+   location /
+   {
+       proxy_ignore_headers "Cache-Control";
+       proxy_next_upstream http_502 http_504 error timeout invalid_header;
+       proxy_cache cache_one;
+
+       proxy_cache_valid  200 304 175m;        
+           
+       proxy_cache_valid 302 56s;
+       proxy_cache_key $host$uri$is_args$args;
+       proxy_set_header Host  $host;
+       proxy_set_header X-Forwarded-For  $remote_addr;
+       proxy_pass http://172_16_2_45;
+       expires 4h;
+   }
+
+   location ~ .*\.(aspx|ashx|cgi)?$
+   {
+       proxy_set_header Host  $host;
+       proxy_set_header X-Forwarded-For  $remote_addr;
+       proxy_pass http://172_16_2_45;
+   }
+
+   location ~ /clear(/.*)
+   {
+       allow  all;
+       proxy_cache_purge  cache_one $host$1$is_args$args;
+   }
+
+   location /bjprod
+   {
+      proxy_set_header Host search.jianke.com;
+      proxy_set_header X-Forwarded-For  $remote_addr;
+      proxy_pass http://172_16_2_49_39;
+   }
+
+   location /purchase/
+   {
+       proxy_set_header Host $host;
+       proxy_set_header X-Forwarded-For $remote_addr;
+       proxy_pass http://172_16_2_45;
+   }
+
+   location /orders/
+   {
+       proxy_set_header Host $host;
+       proxy_set_header X-Forwarded-For $remote_addr;
+       proxy_pass http://172_16_2_45;
+   }
+
+   location /ajax/
+   {
+       proxy_set_header Host $host;
+       proxy_set_header X-Forwarded-For $remote_addr;
+       proxy_pass http://172_16_2_45;
+   }
+
+   error_page   500 502 503 504  /50x.html;
+   location = /50x.html {
+       root   html;
+   }
+ }
+
+server {
+   listen       80;
+   server_name  baojian.jianke.com;
+   root /var/jianke.com/www;
+   access_log off;
+   if ($request_uri ~* /index\.html$)
+        {
+                rewrite (.*)/index\.html$  http://$host$1 redirect;
+        }
+   location /
+   {
+       proxy_ignore_headers "Cache-Control";
+       proxy_next_upstream http_502 http_504 error timeout invalid_header;
+       proxy_cache cache_one;
+
+       proxy_cache_valid  200 304 3h;
+
+       proxy_cache_valid 302 1m;
+       proxy_cache_key $host$uri$is_args$args;
+       proxy_set_header Host  $host;
+       proxy_set_header X-Forwarded-For  $remote_addr;
+       proxy_pass http://172_16_2_45;
+       expires 4h;
+   }
+
+   location ~ .*\.(aspx|ashx|cgi)?$
+   {
+       proxy_set_header Host  $host;
+       proxy_set_header X-Forwarded-For  $remote_addr;
+       proxy_pass http://172_16_2_45;
+   }
+   location ~ /homeseo/
+   {
+       add_header Cache-Control no-store;
+       proxy_set_header Host $host;
+       proxy_set_header X-Forwarded-For $remote_addr;
+       proxy_pass http://172_16_2_45;
+   }
+
+   location ~ /clear(/.*)
+   {
+       allow  all;
+       proxy_cache_purge  cache_one $host$1$is_args$args;
+   }
+
+   location /bjprod
+   {
+      proxy_set_header Host search.jianke.com;
+      proxy_set_header X-Forwarded-For  $remote_addr;
+      proxy_pass http://172_16_2_49_39;
+   }
+
+   location /purchase/
+   {
+       proxy_set_header Host $host;
+       proxy_set_header X-Forwarded-For $remote_addr;
+       proxy_pass http://172_16_2_45;
+   }
+
+   location /orders/
+   {
+       proxy_set_header Host $host;
+       proxy_set_header X-Forwarded-For $remote_addr;
+       proxy_pass http://172_16_2_45;
+   }
+
+   location /ajax/
+   {
+       proxy_set_header Host $host;
+       proxy_set_header X-Forwarded-For $remote_addr;
+       proxy_pass http://172_16_2_45;
+   }
+
+   location /ask/    
+   {
+       proxy_set_header Host askbaojian.jianke.com;
+       proxy_set_header X-Forwarded-For  $remote_addr;
+       proxy_pass http://172_16_2_44;
+   }
+
+   error_page   500 502 503 504  /50x.html;
+   location = /50x.html {
+       root   html;
+   }
+ }
+
+ server {
+    listen       80;
+    server_name  www.jianke.com;
+        root /var/jianke.com/www;
+        access_log  off; 
+        if ($request_uri ~* /index\.html$)
+        {
+                rewrite (.*)/index\.html$  http://www.jianke.com$1 redirect;
+        }
+        location /
+        {
+            proxy_ignore_headers "Cache-Control";
+            proxy_next_upstream http_502 http_504 error timeout invalid_header;
+            concat on;
+            concat_max_files 20;
+            proxy_cache cache_one;
+            proxy_cache_valid  200 304 63m;
+	    proxy_cache_valid  302 56s;
+            proxy_cache_key $host$uri$is_args$args;
+            proxy_set_header Host  $host;
+            proxy_set_header X-Forwarded-For  $remote_addr;
+            proxy_pass http://172_16_2_45;
+            expires 4h;
+        }
+
+	location /DownLoad/app/
+	{
+	        proxy_set_header Host $host;
+                proxy_set_header X-Forwarded-For $remote_addr;
+                proxy_pass http://172_16_2_45;
+	}
+
+	location /product/
+        {
+            proxy_ignore_headers "Cache-Control";
+            proxy_next_upstream http_502 http_504 error timeout invalid_header;
+            proxy_cache cache_one;
+            proxy_cache_valid  200 304 204m;
+            proxy_cache_valid  302 77s;
+            proxy_cache_key $host$uri$is_args$args;
+            proxy_set_header Host  $host;
+            proxy_set_header X-Forwarded-For  $remote_addr;
+            proxy_pass http://172_16_2_45;
+            expires 3h;
+        }
+
+        location /jiankestatus
+        {
+             allow  all;
+             stub_status on;
+             access_log  on;
+        }
+
+        location ~ /help/\w+\.aspx
+        {
+             rewrite ^/help/(\w+)\.aspx http://www.jianke.com/help/$1.html  permanent;
+        }
+
+        location ~ .*\.(aspx|ashx|cgi)?$
+        {
+             proxy_set_header Host  $host;
+             proxy_set_header X-Forwarded-For  $remote_addr;
+             proxy_pass http://172_16_2_45;
+        }
+
+         location /news/bjdx/
+        {
+            proxy_set_header X-Real-IP  $remote_addr;
+            proxy_set_header X-Forwarded-For  $remote_addr;
+            proxy_pass http://m.jianke.ufstone.net/news/bjdx/;
+        }
+
+        location /purchase/
+        {
+                proxy_set_header Host $host;
+                proxy_set_header X-Forwarded-For $remote_addr;
+                proxy_pass http://172_16_2_45;
+        }
+
+        location /orders/
+        {
+                proxy_set_header Host $host;
+                proxy_set_header X-Forwarded-For $remote_addr;
+                proxy_pass http://172_16_2_45;
+        }
+
+        location /simplereview/
+        {
+                proxy_set_header Host $host;
+                proxy_set_header X-Forwarded-For $remote_addr;
+                proxy_pass http://172_16_2_45;
+        }
+
+        location /onlinePay/
+        {
+                proxy_set_header Host $host;
+                proxy_set_header X-Forwarded-For $remote_addr;
+                proxy_pass http://172_16_2_45;
+        }
+
+	location /etao/
+	{
+		proxy_set_header Host $host;
+		proxy_set_header X-Forwarded-For $remote_addr;
+		proxy_pass http://172_16_2_45;
+	}
+
+	location /ajax/
+	{
+		proxy_set_header Host $host;
+		proxy_set_header X-Forwarded-For $remote_addr;
+		proxy_pass http://172_16_2_45;
+	}
+
+	location /qihu360/
+	{
+		proxy_set_header Host $host;
+		proxy_set_header X-Forwarded-For $remote_addr;
+		proxy_pass http://172_16_2_45;
+	}
+
+        location /cmssys/
+        {
+                proxy_set_header Host cms.jianke.com;
+                proxy_set_header X-Forwarded-For $remote_addr;
+                proxy_pass http://172_16_2_45;
+        } 
+
+        location /xunyiwenyao/
+        {
+                proxy_set_header Host $host;
+                proxy_set_header X-Forwarded-For $remote_addr;
+                proxy_pass http://172_16_2_45;
+        }
+
+        location /ask/
+        {
+            proxy_set_header Host ask.jianke.com;
+            proxy_set_header X-Forwarded-For  $remote_addr;
+            proxy_pass http://172_16_2_44_39;
+        }
+
+        location /tuan/
+        {
+                proxy_set_header Host yhs.jianke.com;
+                proxy_set_header X-Forwarded-For $remote_addr;
+                proxy_pass http://172_16_2_45;
+        }
+        
+       #location /jhy/
+       # {
+        #        proxy_set_header Host jhy.jianke.com;
+         #       proxy_set_header X-Forwarded-For $remote_addr;
+         #       proxy_pass http://172_16_2_45;
+        #}
+         location /tongyongming/
+         {
+             proxy_set_header Host jhy.jianke.com;
+             proxy_set_header  X-Forwarded-For $remote_addr;
+             proxy_pass http://172_16_2_45;
+         }
+
+        location /yqk/
+        {
+            proxy_set_header Host yqk.jianke.com;
+            proxy_set_header X-Forwarded-For  $remote_addr;
+            proxy_pass http://172_16_2_44;
+        }
+
+        location /yaoqi/
+        {
+            proxy_set_header Host yqk.jianke.com;
+            proxy_set_header X-Forwarded-For  $remote_addr;
+            proxy_pass http://172_16_2_44;
+        }
+
+        location /biting/
+        {
+            proxy_set_header Host jk.jiangting88.com;
+            proxy_set_header X-Forwarded-For  $remote_addr;
+            proxy_pass http://118_194_44_56;
+        }
+        
+        location ~ ^/(jibing|jiancha|zhengzhuang).*
+        {
+            proxy_ignore_headers "Cache-Control";
+            proxy_next_upstream http_502 http_504 error timeout invalid_header;
+            proxy_cache cache_one;
+
+            proxy_cache_valid  200 304 15h;
+            #proxy_cache_valid  302 1s;
+            proxy_cache_key $host$uri$is_args$args;
+            proxy_set_header Host  baike.jianke.com;
+            proxy_set_header X-Forwarded-For  $remote_addr;
+            proxy_pass http://172_16_2_44;
+            expires 4h;
+        }
+
+	location ~/bbs.*
+	{
+		proxy_set_header Host $host;
+		proxy_set_header X-Forwarded-For $remote_addr;
+		proxy_pass http://jkbbs;
+		expires 2h;
+	}
+
+
+        location ~ /Drug/DrugInfo-\d+.html
+        {
+             rewrite  ^/Drug/DrugInfo-(\d+)\.html  http://www.jianke.com/product/$1.html  permanent;
+        }
+
+        location ~* /product/\d+.htm$
+        {
+             rewrite ^/[pP]roduct/(\d+)\.htm http://www.jianke.com/product/$1.html  permanent;
+        }
+
+        location ~* /product-\d+.html
+        {
+             rewrite ^/[pP]roduct-(\d+)\.html http://www.jianke.com/product/$1.html  permanent;
+        }
+
+        location ~ /clear(/.*)
+        {
+            allow  all;
+            proxy_cache_purge  cache_one $host$1$is_args$args;
+        }
+	
+ 	location /status {
+		req_status_show;
+        }
+
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   html;
+        }
+	req_status server;
+  }
+   
+
+ server {
+        listen       80;
+        server_name ajax.jianke.com 
+		 b.jianke.com 
+		 bkmg.jianke.com  
+		 cms.jianke.com 
+		 cms1.jianke.com 
+		 cps.jianke.com
+		 cx.jianke.com  
+		 dyf.jianke.com 
+	         man.jianke.com
+                 mbaojian.jianke.com
+		 mpay.jianke.com
+	         hr.jianke.com
+                 nlbl.jianke.com  
+                 order.jianke.com 
+		 open.jianke.com 
+                 pay.jianke.com
+                 source.jianke.com 
+                 spread.jianke.com  
+                 singlewcf.jianke.com  
+	         top.jianke.com  
+   	         user.jianke.com
+                 muser.jianke.com
+		 wo.jianke.com 
+		 weixin.jianke.com
+		 app.jianke.com
+                 120ask.jianke.com
+                 yhs.jianke.com
+		 yqf.jianke.com ; 
+
+         root /var/jianke.com/www;
+
+         #access_log  logs/host.access.log  main;
+         access_log off; 
+         location /
+         {
+             proxy_set_header Host  $host;
+             proxy_set_header X-Forwarded-For  $remote_addr;
+             proxy_pass http://172_16_2_45;
+         }
+
+         location /jiankestatus
+         {
+             allow  all;
+             stub_status on;
+             access_log  on;
+        }
+}
+server  {
+   listen 80;
+   server_name traffic.jianke.com websitetotal.jianke.com askapi.jianke.com;
+
+   root /var/jianke.com/www;
+    
+   access_log off;
+#   rewrite ^/(.*)$ http://traffic.jianke.net/$1 permanent;
+   location /
+   {
+        proxy_set_header Host  $host;
+        proxy_set_header X-Forwarded-For  $remote_addr;
+        proxy_pass http://172_16_2_44;
+   }
+
+ location /jiankestatus
+         {
+             allow  all;
+             stub_status on;
+             access_log  on;
+        }
+}
+
+server {
+        listen       80;
+        server_name  askadmin.jianke.com  bkadmin.jianke.com;
+
+         root /var/jianke.com/www;
+         access_log off;
+         location /
+         {
+             proxy_set_header Host  $host;
+             proxy_set_header X-Forwarded-For  $remote_addr;
+             proxy_pass http://172_16_2_44;
+         }
+
+         location /jiankestatus
+         {
+             allow  all;
+             stub_status on;
+             access_log  on;
+        }
+
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   html;
+        }
+}
+
+
+
+server {
+	listen 80;
+	server_name m.jianke.com;
+	root /var/jianke.com/www;
+	access_log off;
+	location /
+	{
+		#proxy_ignore_headers "Cache-Control";
+		proxy_next_upstream http_502 http_504 error timeout invalid_header;
+		proxy_cache cache_one;
+
+		proxy_cache_valid 200 304 2h;
+		proxy_cache_key $host$uri$is_args$args;
+		proxy_set_header Host $host;
+		proxy_set_header X-Forwarded-For $remote_addr;
+		proxy_pass http://172_16_2_45;
+		expires 2h;
+	}
+	
+        location /jiankestatus
+        {
+             allow  all;
+             stub_status on;
+             access_log  on;
+        }
+	
+        location ~ /clear(/.*)
+	{
+		allow all;
+		proxy_cache_purge cache_one $host$1$is_args$args;
+	}
+
+	location /user/
+	{
+		proxy_set_header Host $host;
+		proxy_set_header X-Forwarded-For $remote_addr;
+		proxy_pass http://172_16_2_45;
+	}
+
+	location /purchase/
+	{
+		proxy_set_header Host $host;
+		proxy_set_header X-Forwarded-For $remote_addr;
+		proxy_pass http://172_16_2_45;
+	}
+
+	location /baike/
+        {
+                proxy_set_header Host mbaike.jianke.com;
+                proxy_set_header X-Forwarded-For $remote_addr;
+                proxy_pass http://172_16_2_44;
+        }
+
+	location /jibing/
+        {
+                proxy_set_header Host mbaike.jianke.com;
+                proxy_set_header X-Forwarded-For $remote_addr;
+                proxy_pass http://172_16_2_44;
+        }
+
+	location /zhengzhuang/
+        {
+                proxy_set_header Host mbaike.jianke.com;
+                proxy_set_header X-Forwarded-For $remote_addr;
+                proxy_pass http://172_16_2_44;
+        }
+
+	location /ask/
+	{
+		proxy_set_header Host mask.jianke.com;
+		proxy_set_header X-Forwarded-For $remote_addr;
+		proxy_pass http://172_16_2_44_39;
+	}
+        location /ask/doctor/
+        {
+                proxy_set_header Host mdoctor.jianke.com;
+                proxy_set_header X-Forwarded-For $remote_addr;
+                proxy_pass http://172_16_2_44_39;
+        }
+#	location ~/bbs.*
+#        {
+#                proxy_set_header Host www.jianke.com;
+#                proxy_set_header X-Forwarded-For $remote_addr;
+#                proxy_pass http://jkbbs;
+#        }
+
+	error_page 500 502 503 504 /50x.html;
+	location = /50x.html {
+		root html;
+	}
+
+ }
+
+server {
+        listen 80;
+        server_name wx.jianke.com;
+        root /var/jianke.com/www;
+        access_log off;
+        location /
+        {
+                #proxy_ignore_headers "Cache-Control";
+                proxy_next_upstream http_502 http_504 error timeout invalid_header;
+                proxy_cache cache_one;
+
+                proxy_cache_valid 200 304 2h;
+                proxy_cache_key $host$uri$is_args$args;
+                proxy_set_header Host $host;
+                proxy_set_header X-Forwarded-For $remote_addr;
+                proxy_pass http://172_16_2_45;
+                expires 2h;
+        }
+
+        location /jiankestatus
+        {
+             allow  all;
+             stub_status on;
+             access_log  on;
+        }
+
+        location ~ /clear(/.*)
+        {
+                allow all;
+                proxy_cache_purge cache_one $host$1$is_args$args;
+        }
+
+        location /user/
+        {
+                proxy_set_header Host $host;
+                proxy_set_header X-Forwarded-For $remote_addr;
+                proxy_pass http://172_16_2_45;
+        }
+
+        location /purchase/
+        {
+                proxy_set_header Host $host;
+                proxy_set_header X-Forwarded-For $remote_addr;
+                proxy_pass http://172_16_2_45;
+        }
+
+        location /baike/
+        {
+                proxy_set_header Host mbaike.jianke.com;
+                proxy_set_header X-Forwarded-For $remote_addr;
+                proxy_pass http://172_16_2_44;
+        }
+
+        location /jibing/
+        {
+                proxy_set_header Host mbaike.jianke.com;
+                proxy_set_header X-Forwarded-For $remote_addr;
+                proxy_pass http://172_16_2_44;
+        }
+
+        location /zhengzhuang/
+        {
+                proxy_set_header Host mbaike.jianke.com;
+                proxy_set_header X-Forwarded-For $remote_addr;
+                proxy_pass http://172_16_2_44;
+        }
+
+        location /ask/
+        {
+                proxy_set_header Host mask.jianke.com;
+                proxy_set_header X-Forwarded-For $remote_addr;
+                proxy_pass http://172_16_2_44_39;
+        }
+#       location ~/bbs.*
+#        {
+#                proxy_set_header Host www.jianke.com;
+#                proxy_set_header X-Forwarded-For $remote_addr;
+#                proxy_pass http://jkbbs;
+#        }
+
+        error_page 500 502 503 504 /50x.html;
+        location = /50x.html {
+                root html;
+        }
+
+ }
+
+
+server {
+        listen       80;
+        server_name  img.jianke.com
+                     js.jianke.com
+                     css.jianke.com
+                     image.jianke.com
+                     img.jianke.net
+                     img.sgz88.com
+                     img0.jianke.net
+                     img1.jianke.net
+                     img2.jianke.net
+                     img3.jianke.net
+                     img4.jianke.net;
+        root /var/jianke.com/www;        
+        access_log off;
+        location /
+        {
+            proxy_ignore_headers "Cache-Control";
+            proxy_next_upstream http_502 http_504 error timeout invalid_header;
+            proxy_cache cache_one;
+            proxy_cache_valid  200 304 3h;                   
+            proxy_cache_valid 302 1m;
+            proxy_cache_key $host$uri$is_args$args;
+            proxy_set_header Host  $host;
+            proxy_set_header X-Forwarded-For  $remote_addr;
+            proxy_pass http://172_16_2_47;
+            expires 4h;
+        }
+
+        location ~ /clear(/.*)
+        {
+            allow  all;
+            proxy_cache_purge  cache_one $host$1$is_args$args;
+        }
+
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   html;
+        }
+  }
+
+server  {
+   listen 80;
+   server_name ilife.jianke.com;
+
+   root /var/jianke.com/www;
+        access_log off;
+        location /
+        {
+            proxy_set_header Host  $host;
+            proxy_set_header X-Forwarded-For  $remote_addr;
+            proxy_pass http://172_16_2_45;
+        }
+
+	location /ask/
+	{
+		proxy_set_header Host askilife.jianke.com;
+		proxy_set_header X-Forwarded-For $remote_addr;
+		proxy_pass http://172_16_2_44;
+	}
+}
+
+server {
+        listen       80;
+        server_name  jianke.com  jianke.cn www.jianke.cn mall.jianke.com ;
+        rewrite  ^/(.*)$  http://www.jianke.com/$1  permanent;
+        access_log off;
+ }
+
+ server {
+        listen       80;
+        server_name  zt.jianke.com;
+        rewrite  ^/(.*)$  http://www.jianke.com/zhuanti/$1  permanent;
+        access_log off;
+ }
+
+server  {
+        listen 80;
+        server_name wap.jianke.com;
+        rewrite ^/(.*)$ http://m.jianke.com/$1 permanent;
+        root /var/jianke.com/www;
+        access_log off;
+        location /
+        {
+            proxy_set_header Host  $host;
+            proxy_set_header X-Forwarded-For  $remote_addr;
+            proxy_pass http://172.16.2.87;
+        }
+
+        location /ask/
+        {
+                proxy_set_header Host wapask.jianke.com;
+                proxy_set_header X-Forwarded-For $remote_addr;
+                proxy_pass http://172_16_2_44;
+        }
+}
+
+#server {
+#        listen   80;
+#        server_name zhaoyao.jianke.com;
+#        root /var/jianke.com/www;     
+#        access_log off;
+#        location /
+#        {
+#            proxy_set_header Host  $host;
+#            proxy_set_header X-Forwarded-For  $remote_addr;
+#            proxy_pass http://172_16_2_49;
+#        }     
+# }
+
+server {
+        listen   80;
+        server_name searchapi.jianke.com;
+        root /var/jianke.com/www;
+        access_log off;
+        location /
+        {
+            proxy_set_header Host  $host;
+            proxy_set_header X-Forwarded-For  $remote_addr;
+            proxy_pass http://172_16_2_46_39_8080;
+        }
+ }
+
