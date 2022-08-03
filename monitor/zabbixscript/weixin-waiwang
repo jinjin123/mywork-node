@@ -1,0 +1,1 @@
+/usr/bin/php /usr/local/zabbix/scripts/WeiXin/sendweixin-02.php "$1" "" "" "$3"
