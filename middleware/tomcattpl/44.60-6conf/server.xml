@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Server port="9005" shutdown="SHUTDOWN">
+
+  <Listener SSLEngine="on" className="org.apache.catalina.core.AprLifecycleListener"/>
+  <Listener className="org.apache.catalina.core.JasperListener"/>
+  <Listener className="org.apache.catalina.core.JreMemoryLeakPreventionListener"/>
+  <Listener className="org.apache.catalina.mbeans.ServerLifecycleListener"/>
+  <Listener className="org.apache.catalina.mbeans.GlobalResourcesLifecycleListener"/>
+  
+  <GlobalNamingResources>
+    <Resource auth="Container" description="User database that can be updated and saved" factory="org.apache.catalina.users.MemoryUserDatabaseFactory" name="UserDatabase" pathname="conf/tomcat-users.xml" type="org.apache.catalina.UserDatabase"/>
+  </GlobalNamingResources>
+  
+  <Service name="Catalina">
+    <Connector connectionTimeout="20000" port="9090" protocol="HTTP/1.1" redirectPort="9443" URIEncoding="UTF-8"/>
+    <Connector port="8009" protocol="AJP/1.3" redirectPort="9443" URIEncoding="UTF-8"/>
+	
+    <Engine defaultHost="cps.jianke.com" name="Catalina">
+	
+      <Realm className="org.apache.catalina.realm.UserDatabaseRealm" resourceName="UserDatabase"/>
+	  
+	  <Host name="cps.jianke.com" appBase="web" autoDeploy="true">
+		<!--<Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%t  %s %b %D %r" prefix="localhost_access_log." resolveHosts="false" suffix=".txt"/>-->
+		<Context path="" docBase="/usr/jianke/search/cps/apache-tomcat-6.0.44/webapps/cps"></Context>
+       </Host>
+
+	<!--
+	   <Host name="wx.a6play.com" appBase="web" autoDeploy="true">
+		<Context path="" docBase="/usr/jianke/search/cps/apache-tomcat-6.0.44/webapps/shareBar"></Context>
+       </Host>
+       -->
+	  
+    </Engine>
+	
+  </Service>
+  
+</Server>

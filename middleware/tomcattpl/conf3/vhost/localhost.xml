@@ -1,0 +1,5 @@
+<Host name="localhost" appBase="" unpackWARs="true" autoDeploy="true">
+  <Context path="" docBase="webapps/mpmission" debug="0" reloadable="false" crossContext="true"/>
+  <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
+         prefix="localhost_access_log." suffix=".txt" pattern="%h %l %u %t &quot;%r&quot; %s %b" />
+</Host>
