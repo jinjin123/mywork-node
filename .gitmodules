@@ -39,3 +39,6 @@
 [submodule "script/sellidle"]
 	path = script/sellidle
 	url = git@github.com:jinjin123/sellidle.git
+[submodule "printer/printerescpos"]
+	path = printer/printerescpos
+	url = git@github.com:jinjin123/printerescpos.git
