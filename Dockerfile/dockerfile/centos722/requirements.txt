@@ -3,7 +3,7 @@ bcrypt==3.1.4
 BeautifulSoup==3.2.1
 billiard==3.3.0.23
 celery==5.2.2
-certifi==2017.4.17
+certifi==2022.12.7
 cffi==1.11.2
 chardet==3.0.4
 Django==2.2.28
